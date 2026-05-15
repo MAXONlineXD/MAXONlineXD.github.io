@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>УЗИ с оценкой ТВП на 12-й неделе — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .norm-table {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .norm-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .norm-table th, .norm-table td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ffe0d6;
+        }
+
+        .norm-table th {
+            background: #fbeae8;
+            color: #b35d7c;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-ultrasound"></i> 
+            УЗИ с оценкой ТВП на 12-й неделе
+        </h1>
+        <p>Первый скрининг: что это и зачем нужно</p>
+        <div class="badge"><i class="fas fa-microscope"></i> Важнейшее обследование первого триместра</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Что такое ТВП -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Что такое ТВП?</div>
+        </div>
+        <div class="section-content">
+            <p><strong>ТВП (толщина воротникового пространства)</strong> — это ультразвуковой показатель, измеряемый на сроке 11–13 недель + 6 дней. Воротниковое пространство — это участок скопления жидкости под кожей в области шеи плода.</p>
+            <div class="warning-box">
+                <i class="fas fa-chart-line"></i> <strong>Почему это важно:</strong> увеличение ТВП связано с повышенным риском хромосомных аномалий (синдром Дауна, Эдвардса, Патау) и некоторых пороков развития сердца.
+            </div>
+            <p>Само по себе увеличение ТВП <strong>не является диагнозом</strong> — это лишь повод для дополнительного обследования.</p>
+        </div>
+    </div>
+
+    <!-- Когда и зачем проводят -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-calendar-check"></i></div>
+            <div class="section-title">Когда и зачем проводят?</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Сроки:</strong> строго с 11 недель 0 дней до 13 недель 6 дней. Идеально — на 12 неделе.</p>
+            <p><strong>Цели первого скрининга:</strong></p>
+            <ul>
+                <li>Оценка риска хромосомных аномалий (синдром Дауна, Эдвардса, Патау)</li>
+                <li>Уточнение срока беременности</li>
+                <li>Оценка анатомии плода (визуализация головного мозга, сердца, желудка, мочевого пузыря, конечностей)</li>
+                <li>Определение количества плодов</li>
+                <li>Оценка состояния плаценты и околоплодных вод</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Первый скрининг — это <strong>комплексное исследование</strong>: УЗИ + анализ крови на РАРР-А и свободный бета-ХГЧ. Только вместе они дают точную оценку риска.
+            </div>
+        </div>
+    </div>
+
+    <!-- Нормы ТВП -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-simple"></i></div>
+            <div class="section-title">Нормы ТВП по неделям</div>
+        </div>
+        <div class="section-content">
+            <div class="norm-table">
+                <table>
+                    <thead>
+                        <tr><th>Срок (недели)</th><th>Норма ТВП (мм)</th><th>Пограничное значение (мм)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>11 недель</td><td>до 1,8</td><td>1,9–2,1</td></tr>
+                        <tr><td>12 недель</td><td>до 2,0</td><td>2,1–2,5</td></tr>
+                        <tr><td>13 недель</td><td>до 2,2</td><td>2,3–2,7</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Важно:</strong> каждая неделя имеет свои нормы. Чем больше срок, тем выше нормальная ТВП. Также норма зависит от копчико-теменного размера (КТР) плода.</p>
+            <div class="warning-box">
+                Значение ТВП <strong>от 3,0 мм</strong> и выше считается выраженным отклонением и требует консультации генетика.
+            </div>
+        </div>
+    </div>
+
+    <!-- Подготовка -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-suitcase"></i></div>
+            <div class="section-title">Как подготовиться?</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Специальной подготовки не требуется</strong> — наполненный мочевой пузырь не нужен (в отличие от ранних сроков)</li>
+                <li>Возьмите с собой паспорт, полис, обменную карту (если есть)</li>
+                <li>Желательно прийти натощак или через 2–3 часа после еды — для забора крови</li>
+                <li>Пейте воду в обычном режиме</li>
+                <li>Настройтесь позитивно — волнение мамы может повлиять на шевеления плода</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Как проводится -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-peace"></i></div>
+            <div class="section-title">Как проходит исследование?</div>
+        </div>
+        <div class="section-content">
+            <p><strong>УЗИ:</strong> женщина лежит на спине, врач смазывает живот гелем и водит датчиком. Процедура безболезненна и безопасна. Длится 15–30 минут.</p>
+            <p><strong>Что оценивает врач:</strong></p>
+            <ul>
+                <li>КТР (копчико-теменной размер) — соответствие сроку</li>
+                <li>ТВП</li>
+                <li>Визуализация носовой кости (при синдроме Дауна она часто отсутствует)</li>
+                <li>Кровоток в венозном протоке</li>
+                <li>Анатомия плода</li>
+            </ul>
+            <p><strong>Забор крови:</strong> из вены берут кровь для анализа на РАРР-А и бета-ХГЧ. Результаты готовятся несколько дней.</p>
+        </div>
+    </div>
+
+    <!-- Расшифровка результатов -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-file-alt"></i></div>
+            <div class="section-title">Расшифровка результатов</div>
+        </div>
+        <div class="section-content">
+            <p>После УЗИ и анализов крови врач рассчитывает <strong>индивидуальный риск</strong> хромосомных аномалий с учётом:</p>
+            <ul>
+                <li>Возраста мамы</li>
+                <li>Срока беременности</li>
+                <li>Показателей УЗИ (ТВП, носовая кость)</li>
+                <li>Уровня РАРР-А и бета-ХГЧ</li>
+            </ul>
+            <div class="norm-table">
+                <p><strong>Результат риска:</strong></p>
+                <ul>
+                    <li><strong>Низкий риск</strong> — менее 1:1000 — всё в порядке, никаких дополнительных обследований не требуется</li>
+                    <li><strong>Средний риск</strong> — 1:250 – 1:1000 — наблюдение, возможно повторное УЗИ</li>
+                    <li><strong>Высокий риск</strong> — 1:100 и выше — требуется консультация генетика и дополнительные исследования</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle"></i> <strong>Важно помнить:</strong> риск 1:100 означает, что из 100 женщин с такими же показателями только у одной будет ребёнок с патологией. В 99 случаях беременности протекают нормально!
+            </div>
+        </div>
+    </div>
+
+    <!-- Если риск высокий -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-stethoscope"></i></div>
+            <div class="section-title">Что делать при высоком риске?</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Не паникуйте!</strong> Повышенный риск — это не диагноз, а приглашение на более детальное обследование.</p>
+            <p><strong>Дальнейшие шаги:</strong></p>
+            <ul>
+                <li><strong>Консультация генетика</strong> — специалист объяснит результаты и предложит варианты</li>
+                <li><strong>НИПТ (неинвазивный пренатальный тест)</strong> — анализ крови матери на ДНК плода. Точность 99%. Безопасен, неинвазивен. Стоимость от 25 000 ₽.</li>
+                <li><strong>Инвазивная диагностика</strong> (биопсия хориона — на 11–13 неделях, амниоцентез — с 16–17 недель). Точность 99,9%, но есть небольшой риск осложнений (0,1–0,5%).</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> <strong>Помните:</strong> 95% женщин с повышенным риском рожают здоровых детей! Второй скрининг (на 18–20 неделях) тоже важен.
+            </div>
+        </div>
+    </div>
+
+    <!-- Факторы, влияющие на ТВП -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-microscope"></i></div>
+            <div class="section-title">Что может повлиять на ТВП?</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Срок беременности</strong> — чем больше срок, тем выше норма ТВП</li>
+                <li><strong>Положение плода</strong> — малыш должен лежать строго на спинке</li>
+                <li><strong>Квалификация врача</strong> — опытный специалист измерит точнее</li>
+                <li><strong>Анатомические особенности плода</strong> — иногда ТВП повышена без патологий</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> При тазовом предлежании или активном движении плода ТВП может быть измерена неточно. Врач может попросить вас подождать или прийти на повторное УЗИ.
+            </div>
+        </div>
+    </div>
+
+    <!-- Часто задаваемые вопросы -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Частые вопросы</div>
+        </div>
+        <div class="section-content">
+            <p><strong>❓ Это УЗИ безопасно?</strong><br>Да, УЗИ не имеет доказанного вредного воздействия на плод. Оно проводится всем беременным.</p>
+            <p><strong>❓ Можно ли узнать пол на 12 неделе?</strong><br>Иногда, но не точно. Половые органы ещё формируются. Достоверно пол определяют на 18–20 неделях.</p>
+            <p><strong>❓ Нужно ли делать скрининг, если я молода и здорова?</strong><br>Да, рекомендовано всем беременным, так как хромосомные аномалии могут возникнуть у любой пары, независимо от возраста.</p>
+            <p><strong>❓ Что делать, если я пропустила срок?</strong><br>Если срок больше 14 недель, ТВП уже не измеряется. Но можно провести НИПТ (кровь на ДНК плода) с 10 недель.</p>
+            <p><strong>❓ Страшно ли делать биопсию хориона?</strong><br>Процедура проводится под контролем УЗИ, занимает 2–3 минуты. Риск выкидыша — 0,2–0,5%. Решение принимается только после консультации с генетиком.</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

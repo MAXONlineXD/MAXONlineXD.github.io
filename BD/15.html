@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Вы и ваш малыш: третий месяц (недели 9–13) — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .week-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .week-tab {
+            background: white;
+            border: 1px solid #ffe0d6;
+            padding: 10px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: inherit;
+        }
+
+        .week-tab.active {
+            background: #fbeae8;
+            border-color: #cd7c9b;
+            color: #b35d7c;
+        }
+
+        .week-tab:active {
+            transform: scale(0.96);
+        }
+
+        .week-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .week-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .week-number-badge {
+            background: #fbeae8;
+            border-radius: 60px;
+            padding: 6px 16px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #b35d7c;
+        }
+
+        .week-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #b35d7c;
+            margin: 16px 0 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title i {
+            font-size: 1rem;
+        }
+
+        .week-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .week-content p {
+            margin-bottom: 10px;
+        }
+
+        .baby-size {
+            background: #fffaf5;
+            border-radius: 16px;
+            padding: 10px 14px;
+            margin: 12px 0;
+            font-size: 0.85rem;
+            color: #b45f7f;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .week-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+            .week-tabs {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-baby-carriage"></i> 
+            Вы и ваш малыш
+        </h1>
+        <p>Третий месяц беременности: недели 9–13</p>
+        <div class="badge"><i class="fas fa-calendar-week"></i> Завершение первого триместра — важный рубеж</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <div class="week-tabs">
+        <button class="week-tab active" data-week="9">9-я неделя</button>
+        <button class="week-tab" data-week="10">10-я неделя</button>
+        <button class="week-tab" data-week="11">11-я неделя</button>
+        <button class="week-tab" data-week="12">12-я неделя</button>
+        <button class="week-tab" data-week="13">13-я неделя</button>
+    </div>
+
+    <div id="weekContent"></div>
+
+    <div class="week-card" style="animation-delay: 0.28s">
+        <div class="week-header">
+            <span class="week-number-badge">Важно знать</span>
+            <span class="week-title">О третьем месяце беременности</span>
+        </div>
+        <div class="week-content">
+            <p>Третий месяц (9–13 недели) — завершающий этап первого триместра. В это время:</p>
+            <ul>
+                <li>Все основные органы уже сформированы, теперь они будут расти и созревать</li>
+                <li>Эмбрион официально становится плодом (с 11–12 недель)</li>
+                <li>Завершается формирование плаценты</li>
+                <li>Проводится первый скрининг (11–13 недель) — важнейшее обследование</li>
+                <li>К концу месяца многие женщины замечают, что токсикоз начинает отступать</li>
+            </ul>
+            <div class="warning-box">
+                <i class="fas fa-microscope"></i> <strong>Ключевое событие:</strong> первый пренатальный скрининг (УЗИ + анализ крови) на сроке 11–13 недель. Не пропустите его!
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const weeksData = {
+        9: {
+            title: "Девятая неделя беременности",
+            baby: "Размер плода 22–25 мм (как виноградина). Исчезает хвостик! Формируются веки, уши, нос, рот. Пальчики рук и ног становятся длиннее, появляются локти и колени. Малыш начинает совершать первые движения, но вы их пока не чувствуете.",
+            mom: "Токсикоз может усиливаться, грудь продолжает расти, появляются синие вены на ней. Матка увеличивается до размеров грейпфрута. Возможны головные боли, слабость, сонливость.",
+            development: "Плацента продолжает формироваться и начинает брать на себя гормональную функцию. Формируются голосовые связки. Развиваются мышцы.",
+            size: "22–25 мм (как виноградина)",
+            tip: "Продолжайте принимать фолиевую кислоту. Если тошнота сильная — ешьте маленькими порциями, носите с собой крекеры. Пейте имбирный чай."
+        },
+        10: {
+            title: "Десятая неделя беременности",
+            baby: "Размер плода 30–35 мм (как клубника). Плацента начинает полноценно работать. Формируются ноготки на пальцах. Лицо приобретает человеческие черты — можно различить лоб, щёки, подбородок.",
+            mom: "Живот может начать округляться, особенно у худеньких женщин. Токсикоз всё ещё беспокоит, но у некоторых начинает ослабевать. Повышенная утомляемость сохраняется.",
+            development: "Почки начинают вырабатывать мочу. Кишечник совершает первые сокращения. Формируются зачатки молочных зубов. Эритроциты (красные клетки крови) начинают вырабатываться в печени.",
+            size: "30–35 мм (как клубника)",
+            tip: "Пейте достаточно воды (1,5–2 л в день). Если чувствуете головокружение — носите с собой яблоко или печенье, чтобы поднять сахар."
+        },
+        11: {
+            title: "Одиннадцатая неделя беременности",
+            baby: "Размер плода 40–45 мм (как инжир). Половые органы начинают дифференцироваться — на УЗИ уже можно предположить пол. Малыш сосёт пальчик! Начинает работать кишечник. Формируются голосовые связки.",
+            mom: "Токсикоз часто идёт на спад. Матка поднимается выше лобка, поэтому давление на мочевой пузырь уменьшается — бегать в туалет становитесь реже. Эмоциональное состояние стабилизируется.",
+            development: "Радужная оболочка глаз начинает накапливать пигмент (цвет пока не определён). Формируются суставы. Плод активно двигается, совершает дыхательные движения (тренирует лёгкие).",
+            size: "40–45 мм (как инжир)",
+            tip: "Скоро первый скрининг (11–13 недель). Запишитесь на УЗИ и сдайте кровь. Результаты покажут риск хромосомных аномалий."
+        },
+        12: {
+            title: "Двенадцатая неделя — первый скрининг!",
+            baby: "Размер плода 50–55 мм (как слива). Эмбрион официально становится плодом. Рефлексы: сосательный, глотательный. Малыш открывает и закрывает рот, двигает пальчиками. Лицо почти сформировано.",
+            mom: "Токсикоз обычно отступает. У многих женщин возвращается энергия и хорошее настроение. Живот становится заметнее. Риск выкидыша значительно снижается после 12 недель.",
+            development: "Формируются лимфатические узлы. Селезёнка начинает вырабатывать лейкоциты. Гипофиз (железа в мозге) начинает вырабатывать гормоны. Плод реагирует на свет и звуки.",
+            size: "50–55 мм (как слива)",
+            tip: "Обязательно пройдите первый скрининг! Это УЗИ + анализ крови (РАРР-А и бета-ХГЧ). Результаты помогут оценить риски. Не волнуйтесь, если в заключении напишут «группа риска» — это не диагноз, а повод для дополнительных обследований."
+        },
+        13: {
+            title: "Тринадцатая неделя — завершение первого триместра",
+            baby: "Размер плода 65–75 мм (как персик). Плацента полностью готова. Поджелудочная железа начинает вырабатывать инсулин. Формируются голосовые связки. Малыш умеет хмуриться, улыбаться, открывать и закрывать рот.",
+            mom: "Самочувствие значительно улучшается. Токсикоз обычно проходит. Живот округляется, можно подбирать одежду для беременных. Грудь продолжает расти, могут появиться выделения из сосков (молозиво).",
+            development: "Кости начинают минерализоваться (становятся более плотными). Формируются вкусовые рецепторы. Кишечник учится сокращаться. Плод может заглатывать околоплодные воды.",
+            size: "65–75 мм (как персик)",
+            tip: "Поздравляем — первый триместр завершён! Риск выкидыша теперь минимален. Можно рассказать новость родным и друзьям. Пора подумать о курсах для беременных и выборе роддома."
+        }
+    };
+
+    let currentWeek = "9";
+
+    function renderWeek(week) {
+        const container = document.getElementById("weekContent");
+        if (!container) return;
+
+        const data = weeksData[week];
+        if (!data) return;
+
+        const html = `
+            <div class="week-card" style="animation-delay: 0s">
+                <div class="week-header">
+                    <span class="week-number-badge">Неделя ${week}</span>
+                    <span class="week-title">${data.title}</span>
+                </div>
+                <div class="week-content">
+                    <div class="section-title"><i class="fas fa-baby"></i> Развитие малыша</div>
+                    <p>${data.baby}</p>
+                    <div class="baby-size"><i class="fas fa-ruler"></i> Размер: ${data.size}</div>
+                    <div class="section-title"><i class="fas fa-female"></i> Что происходит с мамой</div>
+                    <p>${data.mom}</p>
+                    <div class="section-title"><i class="fas fa-chart-line"></i> Важные процессы</div>
+                    <p>${data.development}</p>
+                    <div class="tip-box"><i class="fas fa-lightbulb"></i> <strong>Совет недели:</strong> ${data.tip}</div>
+                </div>
+            </div>
+        `;
+        container.innerHTML = html;
+    }
+
+    const weekTabs = document.querySelectorAll(".week-tab");
+    weekTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            const week = tab.getAttribute("data-week");
+            if (!week) return;
+            weekTabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+            currentWeek = week;
+            renderWeek(currentWeek);
+            const contentDiv = document.getElementById("weekContent");
+            if (contentDiv) contentDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    renderWeek("9");
+</script>
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Многоплодная беременность — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .twin-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-baby"></i>
+            <i class="fas fa-baby"></i> 
+            Многоплодная беременность
+        </h1>
+        <p>Всё, что нужно знать о беременности двойней и тройней</p>
+        <div class="badge"><i class="fas fa-chart-line"></i> 1,5–2% всех беременностей — многоплодные</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Что такое многоплодная беременность?</div>
+        </div>
+        <div class="section-content">
+            <p>Многоплодная беременность — это вынашивание двух и более плодов одновременно. Чаще всего встречается двойня (98% случаев), тройни и более — значительно реже.</p>
+            <div class="warning-box">
+                <i class="fas fa-chart-line"></i> <strong>Статистика:</strong> за последние 30 лет частота многоплодных беременностей выросла на 50–70% благодаря ЭКО и поздним родам.
+            </div>
+        </div>
+    </div>
+
+    <!-- Типы двойни -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-dna"></i></div>
+            <div class="section-title">Типы двойни</div>
+        </div>
+        <div class="section-content">
+            <div class="twin-card">
+                <p><strong>👯‍♀️ Дизиготная (разнояйцевая) двойня — 70%</strong></p>
+                <p>Две отдельные яйцеклетки оплодотворены двумя сперматозоидами. Малыши могут быть разного пола, не похожи друг на друга (как обычные братья и сёстры). Каждый имеет свою плаценту и амниотический мешок.</p>
+            </div>
+            <div class="twin-card">
+                <p><strong>👯 Монозиготная (однояйцевая) двойня — 30%</strong></p>
+                <p>Одна яйцеклетка оплодотворена одним сперматозоидом, затем разделилась на два эмбриона. Малыши одного пола, внешне очень похожи. В зависимости от времени разделения:</p>
+                <ul>
+                    <li>Диамниотическая дихориальная — 2 плаценты, 2 мешка (самый безопасный тип)</li>
+                    <li>Диамниотическая монохориальная — 1 плацента, 2 мешка (требует особого контроля)</li>
+                    <li>Моноамниотическая монохориальная — 1 плацента, 1 мешок (очень высокий риск)</li>
+                    <li>Сиамские близнецы — разделение произошло поздно (крайне редко)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Причины -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-microscope"></i></div>
+            <div class="section-title">Почему возникает многоплодная беременность?</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Наследственность</strong> — чаще по женской линии</li>
+                <li><strong>Возраст мамы старше 35 лет</strong> — выше вероятность двойной овуляции</li>
+                <li><strong>ЭКО</strong> — перенос нескольких эмбрионов</li>
+                <li><strong>Приём препаратов для стимуляции овуляции</strong></li>
+                <li><strong>Высокий индекс массы тела</strong></li>
+                <li><strong>Национальность</strong> (в Африке чаще, в Азии реже)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Особенности течения беременности -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="section-title">Особенности беременности</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Сроки:</strong> двойня рождается в среднем на 35–37 неделях, тройня — на 32–34 неделях.</p>
+            <p><strong>Наблюдение:</strong></p>
+            <ul>
+                <li>Визиты к врачу — чаще, чем при одноплодной (с 20 недель каждые 2 недели)</li>
+                <li>УЗИ — чаще (обычно каждые 3–4 недели после 20 недель)</li>
+                <li>Обязательный мониторинг роста каждого плода</li>
+                <li>Допплерометрия (оценка кровотока) — чаще</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> При монохориальной двойне (одна плацента) УЗИ проводят каждые 2 недели из-за риска фето-фетального трансфузионного синдрома (ФФТС).
+            </div>
+        </div>
+    </div>
+
+    <!-- Риски и осложнения -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">Возможные риски</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Для мамы:</strong></p>
+            <ul>
+                <li>Анемия (чаще из-за большего объёма крови)</li>
+                <li>Гестоз (повышение давления, отёки, белок в моче) — в 3–4 раза чаще</li>
+                <li>Гестационный диабет — чаще</li>
+                <li>Варикоз и тромбозы — из-за увеличенного объёма крови</li>
+                <li>Сильная усталость, одышка, боли в спине</li>
+            </ul>
+            <p><strong>Для малышей:</strong></p>
+            <ul>
+                <li>Преждевременные роды — главный риск</li>
+                <li>Задержка внутриутробного роста</li>
+                <li>Низкий вес при рождении</li>
+                <li>Синдром фето-фетальной трансфузии (ФФТС) — у монохориальной двойни</li>
+                <li>Врождённые пороки развития — чуть чаще</li>
+            </ul>
+            <div class="warning-box">
+                <strong>⚠️ ФФТС — осложнение монохориальной двойни:</strong> когда один близнец получает слишком много крови, а другой — слишком мало. Лечится лазерной коагуляцией сосудов плаценты (внутриутробная операция).
+            </div>
+        </div>
+    </div>
+
+    <!-- Питание и образ жизни -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-apple-alt"></i></div>
+            <div class="section-title">Питание и образ жизни</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Калорийность:</strong> +600–1000 ккал в день к обычному рациону (против +300–500 при одноплодной)</li>
+                <li><strong>Белок:</strong> не менее 100–120 г в день</li>
+                <li><strong>Железо:</strong> обязательно дополнительно (двойня требует больше железа)</li>
+                <li><strong>Кальций:</strong> не менее 1500 мг в день</li>
+                <li><strong>Вода:</strong> 2–2,5 литра (если нет отёков)</li>
+                <li><strong>Отдых:</strong> обязателен дневной сон 1–2 часа</li>
+                <li><strong>Физическая активность:</strong> умеренная (ходьба, плавание), но с 20–24 недель нагрузку снижают</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Декретный отпуск:</strong> при двойне выходят на 28 неделе (против 30), больничный 194 дня (против 140).
+            </div>
+        </div>
+    </div>
+
+    <!-- Обследования и скрининги -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-flask"></i></div>
+            <div class="section-title">Особенности скринингов</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Первый скрининг (11–13 недель):</strong> ТВП измеряют каждому плоду. Риски рассчитываются индивидуально. Анализ крови менее точен, чем при одноплодной беременности.</li>
+                <li><strong>НИПТ:</strong> работает для двойни, но некоторые тесты не определяют, у какого именно близнеца аномалия.</li>
+                <li><strong>Инвазивная диагностика</strong> (биопсия хориона, амниоцентез): при высоком риске. Забор материала проводится из каждого плода отдельно.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Роды при многоплодной беременности -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-baby-carriage"></i></div>
+            <div class="section-title">Роды при двойне</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Естественные роды возможны, если:</strong></p>
+            <ul>
+                <li>Первый плод в головном предлежании</li>
+                <li>Двойня диамниотическая дихориальная</li>
+                <li>Нет серьёзных осложнений</li>
+                <li>Срок более 32 недель</li>
+            </ul>
+            <p><strong>Кесарево сечение обычно показано при:</strong></p>
+            <ul>
+                <li>Тазовом предлежании первого плода</li>
+                <li>Монохориальной моноамниотической двойне</li>
+                <li>Тяжёлом ФФТС</li>
+                <li>Поперечном положении плодов</li>
+                <li>Тройне и более</li>
+            </ul>
+            <div class="warning-box">
+                <strong>Важно:</strong> при естественных родах роженица находится в операционной — на случай экстренного кесарева для второго плода. Перерыв между рождениями обычно 10–30 минут.
+            </div>
+        </div>
+    </div>
+
+    <!-- Практические советы -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="section-title">Практические советы</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Готовьтесь раньше:</strong> коляску, две кроватки, два автокресла — всё купите до 30 недель</li>
+                <li><strong>Просите помощь</strong> — одной будет очень тяжело</li>
+                <li><strong>Бандаж</strong> обязателен с 20 недель</li>
+                <li><strong>Подушка для беременных</strong> поможет спать на боку</li>
+                <li><strong>Обувь на низком каблуке</strong> — центр тяжести сильно смещён</li>
+                <li><strong>Планируйте бюджет</strong> — двойня вдвое дороже</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Мифы о двойне -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Мифы и правда</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Двойня всегда передаётся по наследству.<br>
+            <strong>Правда:</strong> Генетически передаётся только склонность к разнояйцевой двойне (по женской линии). Однояйцевая двойня случается случайно.</p>
+            
+            <p><strong>Миф:</strong> Если в роду были близнецы — обязательно родятся и у вас.<br>
+            <strong>Правда:</strong> Вероятность выше, но не 100%.</p>
+            
+            <p><strong>Миф:</strong> Кормить двойню грудью невозможно.<br>
+            <strong>Правда:</strong> Возможно! Многие кормят одновременно. Консультант по грудному вскармливанию поможет.</p>
+            
+            <p><strong>Миф:</strong> Двойня всегда рождается раньше срока.<br>
+            <strong>Правда:</strong> 35–37 недель — норма для двойни, это доношенный срок. Раньше 32 недель — преждевременно.</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>
