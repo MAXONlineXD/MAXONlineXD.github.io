@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Распространенные мифы о беременности — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        /* Хедер */
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        /* Блок с кнопками */
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        /* Карточка мифа */
+        .myth-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .myth-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .myth-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #b35d7c;
+        }
+
+        .myth-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #4a2c3a;
+            flex: 1;
+        }
+
+        .myth-statement {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .myth-statement i {
+            color: #e06c8c;
+            margin-right: 8px;
+        }
+
+        .myth-truth {
+            padding: 8px 0;
+            color: #2d6a4f;
+            font-size: 0.95rem;
+        }
+
+        .myth-truth i {
+            color: #2d6a4f;
+            margin-right: 8px;
+        }
+
+        .myth-truth strong {
+            color: #1b4d3e;
+        }
+
+        /* Плавающая кнопка */
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .myth-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-comment-dots"></i> 
+            Мифы о беременности
+        </h1>
+        <p>Разрушаем популярные заблуждения вместе с экспертами</p>
+        <div class="badge"><i class="fas fa-brain"></i> 15 важных фактов, которые нужно знать</div>
+    </div>
+</div>
+
+<main class="container">
+    <!-- Блок кнопок навигации -->
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Контейнер для мифов -->
+    <div id="mythsContainer"></div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Перинатальный центр «Мама+Центр» — забота на каждом этапе
+    </footer>
+</main>
+
+<!-- Плавающая кнопка "На главную" -->
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    // Данные о мифах
+    const mythsData = [
+        {
+            title: "Миф №1",
+            statement: "Беременным нельзя стричь волосы — это лишит ребёнка сил",
+            truth: "Научного обоснования этому нет. Волосы и ногти не связаны с энергетикой плода. Стрижка никак не влияет на здоровье ребёнка. Это просто народная примета, не имеющая доказательств."
+        },
+        {
+            title: "Миф №2",
+            statement: "Форма живота подскажет пол ребёнка (острый — мальчик, круглый — девочка)",
+            truth: "Форма живота зависит от тонуса мышц брюшного пресса, положения плода, количества околоплодных вод и телосложения мамы. Никакой связи с полом нет. Только УЗИ и анализы дают точный ответ."
+        },
+        {
+            title: "Миф №3",
+            statement: "Беременным нельзя поднимать руки вверх — это вызовет обвитие пуповиной",
+            truth: "Обвитие пуповиной происходит из-за длины пуповины и подвижности малыша, а не из-за позы мамы. Поднимать руки можно и нужно — это полезно для спины и дыхания."
+        },
+        {
+            title: "Миф №4",
+            statement: "Если беременная ест за двоих, ребёнок будет здоровее",
+            truth: "Во втором и третьем триместре требуется добавить всего около 300–500 ккал в день (дополнительный перекус). Переедание ведёт к лишнему весу, гестационному диабету и осложнениям."
+        },
+        {
+            title: "Миф №5",
+            statement: "Кофе строго запрещён при беременности",
+            truth: "Умеренное потребление кофеина (до 200 мг в день — примерно 1 чашка эспрессо) не повышает риск выкидыша. Но злоупотреблять не стоит, и лучше консультироваться с врачом."
+        },
+        {
+            title: "Миф №6",
+            statement: "Беременным нельзя заниматься спортом",
+            truth: "Умеренные нагрузки (ходьба, плавание, йога для беременных, пилатес) полезны и рекомендованы. Они укрепляют мышцы, снижают отёки, улучшают настроение и готовят к родам."
+        },
+        {
+            title: "Миф №7",
+            statement: "Кошку нужно выгнать из дома из-за риска токсоплазмоза",
+            truth: "Токсоплазмоз опасен при первичном заражении во время беременности. Если кошка домашняя, не гуляет на улице и не ест сырое мясо — риск минимален. Достаточно мыть руки после уборки лотка (или поручить это партнёру)."
+        },
+        {
+            title: "Миф №8",
+            statement: "Если живот низкий — роды будут лёгкими и быстрыми",
+            truth: "Положение живота зависит от тонуса мышц и положения плода. Это не связано с течением родов. Лёгкость родов определяется многими факторами: размером таза, весом ребёнка, гормональным фоном."
+        },
+        {
+            title: "Миф №9",
+            statement: "Нельзя красить волосы — химия проникнет к ребёнку",
+            truth: "Современные краски без аммиака почти не всасываются через кожу головы. Тем не менее, первый триместр — период закладки органов, поэтому лучше воздержаться или использовать щадящие средства (тональные шампуни, хну)."
+        },
+        {
+            title: "Миф №10",
+            statement: "Пол ребёнка можно определить по сердцебиению (быстрое — девочка, медленное — мальчик)",
+            truth: "Частота сердечных сокращений плода варьируется от срока беременности и активности малыша, но не зависит от пола. Этот метод не имеет научного обоснования."
+        },
+        {
+            title: "Миф №11",
+            statement: "Беременным нельзя летать на самолёте",
+            truth: "При неосложнённой беременности летать можно до 36 недель (или 32 недель при многоплодной). Важно: пить воду, двигаться во время полёта, носить компрессионные чулки. Рекомендуется консультация врача перед перелётом."
+        },
+        {
+            title: "Миф №12",
+            statement: "Если беременная хочет солёного — значит, будет мальчик",
+            truth: "Тяга к солёному связана с гормональной перестройкой и изменением водно-солевого обмена. Пол ребёнка здесь ни при чём. Организм может сигнализировать о нехватке натрия или микроэлементов."
+        },
+        {
+            title: "Миф №13",
+            statement: "Секс во время беременности вызывает выкидыш",
+            truth: "При нормально протекающей беременности секс безопасен на любом сроке. Ребёнок защищён околоплодными водами и мышечным слоем матки. Противопоказания: угроза прерывания, предлежание плаценты, некоторые инфекции."
+        },
+        {
+            title: "Миф №14",
+            statement: "Греть ноги и париться в бане — полезно для расслабления",
+            truth: "Горячие ванны, сауны и баня на ранних сроках могут повысить риск выкидыша и нарушений развития плода из-за перегрева. Тёплые ванны (37–38°C) и тёплые ноги — безопасны, но не горячие."
+        },
+        {
+            title: "Миф №15",
+            statement: "Если беременная спит на спине, ребёнок задохнётся",
+            truth: "После 28 недель сон на спине может сдавливать нижнюю полую вену, что вызывает головокружение у мамы, но ребёнок не страдает от нехватки кислорода. Лучше спать на левом боку для оптимального кровотока. Но кратковременное лежание на спине не опасно."
+        }
+    ];
+
+    // Рендер мифов с анимацией
+    function renderMyths() {
+        const container = document.getElementById("mythsContainer");
+        if (!container) return;
+
+        let html = "";
+        mythsData.forEach((myth, index) => {
+            const delay = index * 0.03;
+            html += `
+                <div class="myth-card" style="animation-delay: ${delay}s">
+                    <div class="myth-header">
+                        <div class="myth-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="myth-title">${myth.title}</div>
+                    </div>
+                    <div class="myth-statement">
+                        <i class="fas fa-comment"></i> ${myth.statement}
+                    </div>
+                    <div class="myth-truth">
+                        <i class="fas fa-check-circle"></i> <strong>Правда:</strong> ${myth.truth}
+                    </div>
+                </div>
+            `;
+        });
+        container.innerHTML = html;
+    }
+
+    // Кнопка возврата в Базу знаний
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/bz";
+        });
+    }
+
+    // Плавающая кнопка "На главную"
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    // Инициализация
+    renderMyths();
+</script>
+</body>
+</html>
