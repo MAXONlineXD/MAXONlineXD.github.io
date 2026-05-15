@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Причины для посещения врача — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .reason-group {
+            margin: 16px 0;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-stethoscope"></i> 
+            Причины для посещения врача
+        </h1>
+        <p>Когда нужно обратиться к врачу планово, а когда — срочно</p>
+        <div class="badge"><i class="fas fa-heartbeat"></i> Ваше здоровье и здоровье малыша — главный приоритет</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Почему важно вовремя обращаться к врачу</div>
+        </div>
+        <div class="section-content">
+            <p>Беременность — это не болезнь, но это состояние требует регулярного контроля. Многие осложнения (анемия, гестоз, задержка развития плода) на ранних стадиях протекают бессимптомно и выявляются только при осмотре.</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Золотое правило:</strong> лучше лишний раз проконсультироваться с врачом, чем пропустить проблему. Ваше беспокойство всегда оправдано.
+            </div>
+        </div>
+    </div>
+
+    <!-- Плановые визиты -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-calendar-check"></i></div>
+            <div class="section-title">Плановые визиты (по графику)</div>
+        </div>
+        <div class="section-content">
+            <div class="reason-group">
+                <p><strong>До 28 недель:</strong> 1 раз в месяц</p>
+                <p><strong>С 28 до 36 недель:</strong> 1 раз в 2 недели</p>
+                <p><strong>После 36 недель:</strong> 1 раз в неделю</p>
+                <p><strong>При постановке на учёт (до 12 недель):</strong> первичный осмотр, анализы, выдача обменной карты</p>
+                <p><strong>Скрининги:</strong> 11–13 недель (УЗИ + кровь), 18–21 неделя (УЗИ + кровь), 30–34 недели (УЗИ + допплер)</p>
+            </div>
+            <div class="warning-box">
+                <strong>Почему важно не пропускать:</strong> своевременное выявление гестационного диабета, анемии, гипертонии, задержки роста плода, предлежания плаценты и других осложнений.
+            </div>
+        </div>
+    </div>
+
+    <!-- СРОЧНО к врачу! -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ambulance"></i></div>
+            <div class="section-title">🚨 СРОЧНО обратитесь к врачу! 🚨</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle"></i> <strong>Немедленно вызывайте скорую или езжайте в роддом при любом из этих симптомов:</strong>
+                <ul>
+                    <li><strong>Кровянистые выделения из половых путей</strong> любой интенсивности</li>
+                    <li><strong>Отхождение околоплодных вод</strong> (жидкость по ногам, мокрое бельё)</li>
+                    <li><strong>Регулярные схваткообразные боли</strong> внизу живота</li>
+                    <li><strong>Резкая боль в животе</strong> (кинжальная, нестерпимая)</li>
+                    <li><strong>Сильная головная боль + «мушки» перед глазами + тошнота</strong> (признаки преэклампсии)</li>
+                    <li><strong>Отсутствие шевелений более 12 часов после 28 недель</strong></li>
+                    <li><strong>Падение, удар в живот, ДТП</strong> — даже без симптомов</li>
+                    <li><strong>Температура выше 38°C</strong></li>
+                    <li><strong>Обморок, потеря сознания</strong></li>
+                    <li><strong>Одышка, боль в груди</strong></li>
+                    <li><strong>Сильная рвота, невозможность пить воду</strong> (риск обезвоживания)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Тревожные симптомы -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-circle"></i></div>
+            <div class="section-title">К врачу в ближайшее время (не экстренно, но срочно)</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Отеки на ногах, руках, лице</strong> (особенно если не проходят к утру)</li>
+                <li><strong>Головные боли, которые не проходят после отдыха</strong></li>
+                <li><strong>Повышение артериального давления</strong> (выше 130/80 мм рт.ст.)</li>
+                <li><strong>Необычные выделения</strong> (жёлтые, зелёные, творожистые, с неприятным запахом)</li>
+                <li><strong>Зуд кожи</strong> (может быть признаком холестаза беременных)</li>
+                <li><strong>Ухудшение зрения</strong> (расплывчатость, «мушки»)</li>
+                <li><strong>Сильная изжога, не снимаемая препаратами</strong></li>
+                <li><strong>Болезненное или учащённое мочеиспускание</strong> (признак инфекции)</li>
+                <li><strong>Похудание или недостаточная прибавка веса</strong></li>
+                <li><strong>Ощущение, что «живот стал твёрдым» и не расслабляется</strong> (тонус матки)</li>
+                <li><strong>Сильная усталость, бледность, головокружения</strong> (анемия)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- При каких болях идти к врачу -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bolt"></i></div>
+            <div class="section-title">Боли — когда это нормально, а когда нет</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Нормальные боли (неопасные):</strong></p>
+            <ul>
+                <li>Лёгкие тянущие ощущения внизу живота (из-за растяжения связок)</li>
+                <li>Боли в пояснице (смещение центра тяжести)</li>
+                <li>Колющие боли в паху (давление матки)</li>
+                <li>Боли в лобковой области (симфизит — если несильные)</li>
+            </ul>
+            <div class="warning-box">
+                <strong>Опасные боли (срочно к врачу):</strong>
+                <ul>
+                    <li>Схваткообразные, регулярные боли (каждые 5–10 минут)</li>
+                    <li>Острая, резкая, нестерпимая боль в животе</li>
+                    <li>Боль, отдающая в прямую кишку или поясницу</li>
+                    <li>Боль на фоне кровотечения</li>
+                    <li>Боль при мочеиспускании (резь, жжение)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Выделения — норма и патология -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-tint"></i></div>
+            <div class="section-title">Выделения — когда нужно к врачу</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Нормальные выделения:</strong> прозрачные или беловатые, без запаха, необильные.</p>
+            <p><strong>Повод обратиться к врачу:</strong></p>
+            <ul>
+                <li><strong>Кровянистые</strong> — любые (розовые, коричневые, алые) — СРОЧНО!</li>
+                <li><strong>Водянистые, обильные</strong> — возможно подтекание околоплодных вод</li>
+                <li><strong>Жёлтые, зелёные, серые</strong> — признак инфекции</li>
+                <li><strong>Творожистые с кислым запахом</strong> — молочница</li>
+                <li><strong>С резким неприятным запахом</strong> — бактериальный вагиноз</li>
+                <li><strong>С зудом, жжением, раздражением</strong> — инфекция или аллергия</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Шевеления плода -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-baby"></i></div>
+            <div class="section-title">Изменение шевелений плода</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Когда нужно беспокоиться и идти к врачу:</strong></p>
+            <ul>
+                <li><strong>Нет шевелений более 12 часов</strong> (после 28 недель)</li>
+                <li><strong>Шевелений стало заметно меньше</strong> (менее 10 за 2 часа)</li>
+                <li><strong>Шевеления резко усилились, стали хаотичными, болезненными</strong></li>
+                <li><strong>Изменение характера движений</strong> (были активными, стали вялыми)</li>
+                <li><strong>Внезапное затишье после активного периода</strong></li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Не ждите «пока само пройдёт». Врач сделает КТГ и УЗИ, чтобы проверить состояние малыша.
+            </div>
+        </div>
+    </div>
+
+    <!-- Хронические заболевания -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-heartbeat"></i></div>
+            <div class="section-title">Если у вас есть хронические заболевания</div>
+        </div>
+        <div class="section-content">
+            <p>Обязательно сообщите врачу о любых хронических болезнях. Некоторые из них требуют особого контроля во время беременности:</p>
+            <ul>
+                <li>Сахарный диабет (1-го и 2-го типа)</li>
+                <li>Гипертоническая болезнь</li>
+                <li>Болезни щитовидной железы</li>
+                <li>Аутоиммунные заболевания</li>
+                <li>Эпилепсия</li>
+                <li>Болезни сердца и почек</li>
+                <li>Анемия</li>
+                <li>Тромбофилия</li>
+            </ul>
+            <div class="warning-box">
+                <strong>Важно:</strong> не прекращайте приём назначенных препаратов без консультации с врачом. Многие лекарства можно продолжать принимать во время беременности (после согласования).
+            </div>
+        </div>
+    </div>
+
+    <!-- Психологические симптомы -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-brain"></i></div>
+            <div class="section-title">Когда нужна помощь психолога</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>Постоянное чувство тревоги, страха за малыша</li>
+                <li>Панические атаки</li>
+                <li>Депрессивное состояние (апатия, безразличие, плаксивость)</li>
+                <li>Навязчивые мысли о вреде себе или ребёнку</li>
+                <li>Бессонница, не связанная с физическим дискомфортом</li>
+                <li>Сильный страх перед родами, мешающий нормальной жизни</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-phone-alt"></i> В нашем центре работают перинатальные психологи. Вы можете записаться на консультацию анонимно. <strong>Горячая линия психологической поддержки:</strong> 8 800 555 35 35.
+            </div>
+        </div>
+    </div>
+
+    <!-- Памятка: что взять в роддом -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-suitcase"></i></div>
+            <div class="section-title">Когда ехать в роддом</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Схватки регулярные</strong> — каждые 5–7 минут (для первородящих) или каждые 10 минут (для повторнородящих)</li>
+                <li><strong>Отошли воды</strong> — немедленно, даже без схваток</li>
+                <li><strong>Кровотечение</strong> — любого объёма</li>
+                <li><strong>Резкое ухудшение самочувствия</strong> (сильная головная боль, «мушки», скачок давления)</li>
+                <li><strong>Сильная боль в животе</strong></li>
+                <li><strong>При плановой госпитализации</strong> — по назначению врача</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Сумка в роддом должна быть собрана с 34–35 недель. Документы (паспорт, полис, обменная карта) всегда носите с собой на последних неделях.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

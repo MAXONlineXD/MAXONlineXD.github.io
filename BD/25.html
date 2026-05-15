@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Вы и ваш малыш: пятый месяц (недели 18–21) — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .week-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .week-tab {
+            background: white;
+            border: 1px solid #ffe0d6;
+            padding: 10px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: inherit;
+        }
+
+        .week-tab.active {
+            background: #fbeae8;
+            border-color: #cd7c9b;
+            color: #b35d7c;
+        }
+
+        .week-tab:active {
+            transform: scale(0.96);
+        }
+
+        .week-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .week-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .week-number-badge {
+            background: #fbeae8;
+            border-radius: 60px;
+            padding: 6px 16px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #b35d7c;
+        }
+
+        .week-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #b35d7c;
+            margin: 16px 0 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title i {
+            font-size: 1rem;
+        }
+
+        .week-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .week-content p {
+            margin-bottom: 10px;
+        }
+
+        .baby-size {
+            background: #fffaf5;
+            border-radius: 16px;
+            padding: 10px 14px;
+            margin: 12px 0;
+            font-size: 0.85rem;
+            color: #b45f7f;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .week-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+            .week-tabs {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-baby-carriage"></i> 
+            Вы и ваш малыш
+        </h1>
+        <p>Пятый месяц беременности: недели 18–21</p>
+        <div class="badge"><i class="fas fa-calendar-week"></i> Середина беременности — самый активный малыш</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <div class="week-tabs">
+        <button class="week-tab active" data-week="18">18-я неделя</button>
+        <button class="week-tab" data-week="19">19-я неделя</button>
+        <button class="week-tab" data-week="20">20-я неделя</button>
+        <button class="week-tab" data-week="21">21-я неделя</button>
+    </div>
+
+    <div id="weekContent"></div>
+
+    <div class="week-card" style="animation-delay: 0.28s">
+        <div class="week-header">
+            <span class="week-number-badge">Важно знать</span>
+            <span class="week-title">О пятом месяце беременности</span>
+        </div>
+        <div class="week-content">
+            <p>Пятый месяц (18–21 недели) — один из самых приятных периодов беременности:</p>
+            <ul>
+                <li>Вы отчётливо чувствуете шевеления малыша</li>
+                <li>Живот уже заметен, но ещё не мешает</li>
+                <li>Токсикоз давно прошёл, энергии много</li>
+                <li>На 20–21 неделе проводится второй скрининг — важнейшее УЗИ</li>
+                <li>Можно узнать пол малыша (если он не стесняется)</li>
+            </ul>
+            <div class="warning-box">
+                <i class="fas fa-stethoscope"></i> <strong>Ключевое событие:</strong> второй пренатальный скрининг (УЗИ + анализ крови) на сроке 18–21 неделя. Не пропустите его!
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const weeksData = {
+        18: {
+            title: "Восемнадцатая неделя беременности",
+            baby: "Размер плода 140–150 мм (как сладкий перец). Малыш активно сгибает и разгибает конечности. Формируется уникальный рисунок пальцев. Он уже умеет зевать, икать, сосать пальчик.",
+            mom: "Вы отчётливо чувствуете шевеления! Живот округлился, возможно появление растяжек. Может усилиться изжога. Сон становится менее комфортным из-за растущего живота.",
+            development: "Миелинизация нервных волокон (ускорение передачи сигналов). Формируются вкусовые рецепторы. Малыш различает сладкий, солёный и кислый вкус околоплодных вод.",
+            size: "140–150 мм, около 200 г (как сладкий перец)",
+            tip: "Начинайте использовать крем от растяжек — увлажняйте живот, грудь и бёдра. Пейте достаточно воды."
+        },
+        19: {
+            title: "Девятнадцатая неделя беременности",
+            baby: "Размер плода 150–160 мм (как помидор). Органы чувств активно развиваются. Малыш реагирует на прикосновения к животу — может повернуться к вашей руке.",
+            mom: "Аппетит отличный. Возможны головокружения из-за снижения давления. Ноги могут отекать к вечеру. Грудь продолжает расти, может выделяться молозиво.",
+            development: "Почки активно работают — малыш выделяет мочу в околоплодные воды. Начинают формироваться зачатки постоянных зубов. Селезёнка начинает вырабатывать красные кровяные клетки.",
+            size: "150–160 мм, около 240 г (как помидор)",
+            tip: "Носите удобную обувь без каблуков, чтобы снизить нагрузку на ноги. При отёках поднимайте ноги выше во время отдыха."
+        },
+        20: {
+            title: "Двадцатая неделя — второй скрининг!",
+            baby: "Размер плода 160–180 мм (как банан). Малыш глотает околоплодные воды, его кишечник начинает работать. На УЗИ уже можно рассмотреть все органы, включая камеры сердца.",
+            mom: "Матка достигает уровня пупка. Живот уже трудно скрыть. Возможны тренировочные схватки Брекстона-Хикса (безболезненное напряжение живота).",
+            development: "На втором скрининге оценивают анатомию плода: головной мозг, сердце, позвоночник, желудок, почки, конечности. Малыш активно глотает, его кишечник наполняется меконием.",
+            size: "160–180 мм, около 300 г (как банан)",
+            tip: "Обязательно пройдите второй скрининг (УЗИ + анализ крови на АФП, ХГЧ, свободный эстриол). Это важное обследование для выявления пороков развития."
+        },
+        21: {
+            title: "Двадцать первая неделя беременности",
+            baby: "Размер плода 260–270 г, около 18 см (как морковка). Укрепляется костная система. Малыш имеет циклы сна и бодрствования — примерно 12–14 часов бодрствования в сутки.",
+            mom: "Вы чувствуете шевеления всё чётче. Живот быстро растёт. Может усилиться изжога из-за давления матки на желудок. Ноги отекают больше.",
+            development: "Кости активно накапливают кальций. Мозг продолжает развиваться, формируются извилины. Малыш тренирует дыхательные движения, хотя лёгкие ещё не раскрыты.",
+            size: "260–270 г, около 18 см (как морковка)",
+            tip: "Увеличьте потребление кальция (творог, сыр, кунжут, миндаль, зелень). Это важно для костей малыша. Пейте воду с лимоном — помогает при изжоге."
+        }
+    };
+
+    let currentWeek = "18";
+
+    function renderWeek(week) {
+        const container = document.getElementById("weekContent");
+        if (!container) return;
+
+        const data = weeksData[week];
+        if (!data) return;
+
+        const html = `
+            <div class="week-card" style="animation-delay: 0s">
+                <div class="week-header">
+                    <span class="week-number-badge">Неделя ${week}</span>
+                    <span class="week-title">${data.title}</span>
+                </div>
+                <div class="week-content">
+                    <div class="section-title"><i class="fas fa-baby"></i> Развитие малыша</div>
+                    <p>${data.baby}</p>
+                    <div class="baby-size"><i class="fas fa-ruler"></i> Размер: ${data.size}</div>
+                    <div class="section-title"><i class="fas fa-female"></i> Что происходит с мамой</div>
+                    <p>${data.mom}</p>
+                    <div class="section-title"><i class="fas fa-chart-line"></i> Важные процессы</div>
+                    <p>${data.development}</p>
+                    <div class="tip-box"><i class="fas fa-lightbulb"></i> <strong>Совет недели:</strong> ${data.tip}</div>
+                </div>
+            </div>
+        `;
+        container.innerHTML = html;
+    }
+
+    const weekTabs = document.querySelectorAll(".week-tab");
+    weekTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            const week = tab.getAttribute("data-week");
+            if (!week) return;
+            weekTabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+            currentWeek = week;
+            renderWeek(currentWeek);
+            const contentDiv = document.getElementById("weekContent");
+            if (contentDiv) contentDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    renderWeek("18");
+</script>
+</body>
+</html>

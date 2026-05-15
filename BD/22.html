@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Гардероб во время беременности — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-tshirt"></i> 
+            Гардероб во время беременности
+        </h1>
+        <p>Комфорт, стиль и здоровье — всё в одном</p>
+        <div class="badge"><i class="fas fa-check-circle"></i> Правильная одежда помогает легче переносить беременность</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Основные принципы -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-star-of-life"></i></div>
+            <div class="section-title">Главные правила</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Комфорт превыше всего</strong> — одежда не должна сдавливать живот, грудь и бёдра</li>
+                <li><strong>Натуральные ткани</strong> — хлопок, лён, вискоза, шерсть, бамбук (кожа дышит, меньше потливости)</li>
+                <li><strong>Свободный крой</strong> — не облегающий, но и не мешковатый</li>
+                <li><strong>Регулируемые элементы</strong> — завязки, резинки, пуговицы на животе</li>
+                <li><strong>Слои</strong> — легко регулировать температуру (беременные часто чувствуют жар)</li>
+                <li><strong>Обувь на низком каблуке</strong> — до 3–4 см, устойчивая</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Не покупайте много вещей «на вырост». Лучше купить 3–4 удобные позиции и менять их. Многие вещи можно носить и после родов.
+            </div>
+        </div>
+    </div>
+
+    <!-- По триместрам -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-calendar-week"></i></div>
+            <div class="section-title">Гардероб по триместрам</div>
+        </div>
+        <div class="section-content">
+            <p><strong>I триместр (1–13 недель):</strong> живот только начинает появляться. Можно носить обычную одежду на размер больше или вещи с завышенной талией. Эластичные джинсы, платья-свитера, туники.</p>
+            <p><strong>II триместр (14–27 недель):</strong> живот уже заметен. Время покупать специальную одежду для беременных: джинсы с эластичной вставкой, леггинсы с завышенной талией, платья-трансформеры, туники.</p>
+            <p><strong>III триместр (28–40 недель):</strong> живот максимальный. Нужны вещи из мягких тянущихся тканей. Бандаж (пояс или трусы) обязателен для поддержки спины. Свободные рубашки, блузы, платья.</p>
+        </div>
+    </div>
+
+    <!-- Что обязательно купить -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-shopping-bag"></i></div>
+            <div class="section-title">Топ-10 вещей для беременных</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-item"><i class="fas fa-check-circle" style="color: #2d6a4f;"></i> <strong>Джинсы/брюки для беременных</strong> — с эластичной вставкой на животе</div>
+            <div class="checklist-item"><i class="fas fa-check-circle" style="color: #2d6a4f;"></i> <strong>Леггинсы для беременных</strong> — самые удобные на все случаи</div>
+            <div class="checklist-item"><i class="fas fa-check-circle" style="color: #2d6a4f;"></i> <strong>Туника или платье-свитер</strong> — 2–3 штуки на каждый день</div>
+            <div class="checklist-item"><i class="fas fa-check-circle" style="color: #2d6a4f;"></i> <strong>Бюстгальтер для кормления</strong> — мягкий, без косточек, с широкими лямками</div>
+            <div class="checklist-item"><i class="fas fa-check-circle" style="color: #2d6a4f;"></i> <strong>Трусы для беременных</strong> — с низкой или завышенной талией (как удобнее)</div>
+            <div class="checklist-item"><i class="fas fa-check-circle" style="color: #2d6a4f;"></i> <strong>Бандаж дородовый</strong> — поддерживает живот и снижает нагрузку на спину</div>
+            <div class="checklist-item"><i class="fas fa-check-circle" style="color: #2d6a4f;"></i> <strong>Платье для беременных</strong> — на выход, из мягкой струящейся ткани</div>
+            <div class="checklist-item"><i class="fas fa-check-circle" style="color: #2d6a4f;"></i> <strong>Пижама/ночная рубашка для беременных</strong> — с удобным доступом к груди</div>
+            <div class="checklist-item"><i class="fas fa-check-circle" style="color: #2d6a4f;"></i> <strong>Пальто/куртка с утеплителем на животе</strong> — или накидка-вставка</div>
+            <div class="checklist-item"><i class="fas fa-check-circle" style="color: #2d6a4f;"></i> <strong>Устойчивая обувь</strong> — без каблука, на нескользящей подошве</div>
+            <div class="tip-box">
+                <i class="fas fa-ruble-sign"></i> <strong>Совет:</strong> не покупайте всё сразу. Начните с джинсов/леггинсов, 2 туник и бюстгальтера. Добавляйте по мере роста живота.
+            </div>
+        </div>
+    </div>
+
+    <!-- Бюстгальтер -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ribbon"></i></div>
+            <div class="section-title">Выбор бюстгальтера</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>Грудь увеличивается на 1–3 размера за беременность</li>
+                <li><strong>Купите бюстгальтер для беременных/кормления</strong> — без косточек, из мягкого хлопка</li>
+                <li>Широкие лямки — для лучшей поддержки</li>
+                <li>Несколько застёжек на спинке — регулировка по мере роста</li>
+                <li>Съёмные чашечки — удобно для кормления после родов</li>
+                <li><strong>Размер:</strong> лучше покупать с примеркой. Дышите — не должно давить под грудью и в лямках</li>
+            </ul>
+            <div class="warning-box">
+                <strong>Не носите:</strong> бюстгальтеры с косточками, тесные топы, бюстгальтеры, которые врезаются в плечи.
+            </div>
+        </div>
+    </div>
+
+    <!-- Трусы и бандаж -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-peace"></i></div>
+            <div class="section-title">Трусы и бандаж</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Трусы для беременных:</strong></p>
+            <ul>
+                <li>С низкой талией — под растянутый живот</li>
+                <li>С завышенной талией — полностью закрывают живот, поддерживают</li>
+                <li>Только из натуральных тканей (хлопок, бамбук)</li>
+                <li>Не сдавливают, не оставляют следов на коже</li>
+            </ul>
+            <p><strong>Дородовый бандаж (с 20–24 недель):</strong></p>
+            <ul>
+                <li>Поддерживает живот, снижает нагрузку на поясницу</li>
+                <li>Профилактика растяжек и болей в спине</li>
+                <li>Два типа: пояс-лента (одевается под/над животом) или трусы-бандаж</li>
+                <li>Надевать лёжа, носить не более 3–4 часов подряд</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Бандаж нужен не всем! Если у вас сильные боли в спине или большой живот — проконсультируйтесь с врачом. При многоплодной беременности бандаж обязателен.
+            </div>
+        </div>
+    </div>
+
+    <!-- Обувь -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-shoe-prints"></i></div>
+            <div class="section-title">Правильная обувь</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Каблук:</strong> максимум 3–4 см (устойчивый). Шпильки категорически нет — риск падения и нагрузка на позвоночник</li>
+                <li><strong>Подошва:</strong> нескользящая, рифлёная</li>
+                <li><strong>Размер:</strong> ноги часто отекают, покупайте обувь на 0,5–1 размер больше</li>
+                <li><strong>Лучшие варианты:</strong> кроссовки, кеды, мокасины, слипоны, балетки на небольшой танкетке</li>
+                <li><strong>Зимой:</strong> устойчивые сапоги на плоской подошве, с широким голенищем (ноги отекают)</li>
+                <li><strong>Летом:</strong> сандалии с регулируемыми ремешками, дышащие</li>
+            </ul>
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle"></i> <strong>Опасно:</strong> шпильки, обувь на высоком каблуке, скользкая подошва, обувь «не по размеру» (жмёт или слишком велика).
+            </div>
+        </div>
+    </div>
+
+    <!-- Как сэкономить -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-coins"></i></div>
+            <div class="section-title">Как сэкономить на гардеробе</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Берите вещи «на вырост»</strong> — обычные футболки, свитера на 2–3 размера больше</li>
+                <li><strong>Покупайте на Авито/в комиссионных магазинах</strong> — вещи для беременных часто носятся несколько месяцев и выглядят как новые</li>
+                <li><strong>Меняйтесь с подругами</strong> — если кто-то недавно родил, вещи могут пригодиться вам</li>
+                <li><strong>Ищите распродажи</strong> — в онлайн-магазинах часто есть скидки на одежду для беременных</li>
+                <li><strong>Покупайте базовые вещи</strong> — джинсы, чёрные леггинсы, белую тунику — комбинируются со всем</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Не тратьтесь на дорогую одежду для беременных — через 5–6 месяцев она вам не пригодится. Лучше вложите деньги в комфортную обувь и хороший бюстгальтер.
+            </div>
+        </div>
+    </div>
+
+    <!-- Что НЕЛЬЗЯ носить -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего избегать</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ Узкие джинсы и брюки с низкой посадкой — сдавливают живот</li>
+                <li>❌ Пояса и ремни на талии — пережимают сосуды</li>
+                <li>❌ Синтетика — нарушает теплообмен, вызывает потливость и раздражение</li>
+                <li>❌ Высокие каблуки — нагрузка на позвоночник, риск падения</li>
+                <li>❌ Бюстгальтеры с косточками — могут сдавливать молочные протоки</li>
+                <li>❌ Слишком тёплая одежда — перегрев опасен для плода</li>
+                <li>❌ Туфли на плоской подошве без супинатора — плоскостопие усиливается при беременности</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Особенности по сезонам -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-cloud-sun"></i></div>
+            <div class="section-title">Гардероб по сезонам</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Зима:</strong> термобельё из натуральных тканей, свободный свитер, пуховик с капюшоном (можно купить вставку на живот). Тёплые устойчивые сапоги.</p>
+            <p><strong>Лето:</strong> хлопковые платья, сарафаны, шорты-бермуды, лёгкие туники. Головной убор обязателен! Сандалии на нескользящей подошве.</p>
+            <p><strong>Весна/осень:</strong> дождевик-пончо, свободное пальто, худи, толстовки, мягкие джинсы на резинке. Резиновые сапоги на плоском ходу.</p>
+        </div>
+    </div>
+
+    <!-- Чек-лист в роддом -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-suitcase"></i></div>
+            <div class="section-title">Что взять в роддом из одежды</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>📄 Документы — отдельная папка</li>
+                <li>👕 Ночная рубашка для родов (2 шт.) — с застёжками спереди или на пуговицах</li>
+                <li>🧥 Халат — лёгкий, хлопковый</li>
+                <li>🩴 Тапочки моющиеся (шлёпанцы) — для душа и палаты</li>
+                <li>🩲 Трусы — специальные послеродовые или обычные хлопковые (5–7 шт.)</li>
+                <li>🧦 Носки — 3–4 пары, можно с компрессией</li>
+                <li>👙 Бюстгальтер для кормления — 2 шт.</li>
+                <li>🧥 Верхняя одежда — куртка/пальто на выписку (с учётом живота)</li>
+                <li>👗 Платье/костюм на выписку — удобное, не облегающее</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Уточните список в вашем роддоме — везде свои требования. Обычно запрещены: синтетика, обувь без задника, бюстгальтеры с косточками.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

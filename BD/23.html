@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Официальная занятость во время беременности — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .highlight {
+            background: #f0e8e0;
+            border-radius: 16px;
+            padding: 10px 14px;
+            font-weight: 600;
+            color: #b45f7f;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-briefcase"></i> 
+            Официальная занятость
+        </h1>
+        <p>Права и льготы беременных на работе</p>
+        <div class="badge"><i class="fas fa-gavel"></i> Что положено по закону</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-balance-scale"></i></div>
+            <div class="section-title">Ваши права защищены законом</div>
+        </div>
+        <div class="section-content">
+            <p>Трудовой кодекс РФ предоставляет беременным женщинам особые гарантии. Главный принцип: <strong>беременность не может быть основанием для увольнения или ухудшения условий труда</strong>.</p>
+            <div class="warning-box">
+                <i class="fas fa-gavel"></i> <strong>Статья 261 ТК РФ:</strong> увольнение беременной женщины по инициативе работодателя запрещено (за исключением ликвидации организации).
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> О своих правах нужно сообщать работодателю после получения справки от врача. Без официального подтверждения беременности льготы не действуют.
+            </div>
+        </div>
+    </div>
+
+    <!-- Льготы и гарантии -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="section-title">Что положено беременной сотруднице</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Сокращённый рабочий день или неполная неделя</strong> — по вашему заявлению (оплата пропорционально отработанному времени)</li>
+                <li><strong>Перевод на лёгкий труд</strong> — если работа связана с вредными условиями, тяжёлыми нагрузками, ночными сменами, командировками</li>
+                <li><strong>Освобождение от работы во время медосмотров</strong> — с сохранением среднего заработка</li>
+                <li><strong>Запрет на ночные смены, сверхурочную работу, работу в выходные и праздники</strong></li>
+                <li><strong>Запрет на направление в командировки</strong> (без вашего письменного согласия)</li>
+                <li><strong>Запрет на работу вахтовым методом</strong></li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> все льготы предоставляются на основании медицинского заключения (справки от гинеколога или заявления с приложением справки).
+            </div>
+        </div>
+    </div>
+
+    <!-- Запрет на увольнение -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="section-title">Запрет на увольнение</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>Работодатель НЕ может уволить беременную женщину:</strong>
+                <ul>
+                    <li>По сокращению штата</li>
+                    <li>За несоответствие должности</li>
+                    <li>За дисциплинарные проступки (прогулы, опоздания и т.д.)</li>
+                    <li>По истечении срочного трудового договора (договор продлевается до окончания беременности)</li>
+                </ul>
+            </div>
+            <p><strong>Исключения:</strong></p>
+            <ul>
+                <li>Ликвидация организации</li>
+                <li>Окончание беременности (если договор заключался на период замещения отсутствующего сотрудника, но работодатель обязан предложить другую вакансию)</li>
+                <li>По собственному желанию — работодатель не может препятствовать</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-gavel"></i> Если вас уволили незаконно — обращайтесь в трудовую инспекцию (онлайн-приёмная) или в суд. Срок исковой давности — 1 год.
+            </div>
+        </div>
+    </div>
+
+    <!-- Срочный договор -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-file-signature"></i></div>
+            <div class="section-title">Срочный трудовой договор</div>
+        </div>
+        <div class="section-content">
+            <p>Если у вас срочный трудовой договор, работодатель обязан продлить его до окончания беременности. Для этого нужно:</p>
+            <ul>
+                <li>Написать заявление на продление договора</li>
+                <li>Приложить справку о беременности (с указанием срока)</li>
+            </ul>
+            <p>Работодатель может запрашивать справку не чаще одного раза в 3 месяца. Договор продлевается на весь срок беременности и даже на время декретного отпуска (до окончания отпуска по беременности и родам).</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> После родов работодатель может уволить вас в течение недели (если не предложит другую подходящую работу или если нет другой вакансии).
+            </div>
+        </div>
+    </div>
+
+    <!-- Вредные условия труда -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-flask"></i></div>
+            <div class="section-title">Вредные условия труда</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Беременную женщину нельзя оставлять на работе:</strong></p>
+            <ul>
+                <li>С химическими веществами (краски, растворители, пестициды)</li>
+                <li>С ионизирующим излучением (рентген, радиация)</li>
+                <li>С вибрацией, подъёмом тяжестей</li>
+                <li>На конвейере с вынужденным ритмом</li>
+                <li>В условиях повышенной влажности, сквозняков, перепадов температур</li>
+                <li>В ночные смены (с 22:00 до 06:00)</li>
+                <li>В командировках</li>
+            </ul>
+            <div class="warning-box">
+                <strong>Что делать:</strong> получите справку от врача о необходимости перевода на лёгкий труд. Работодатель обязан перевести вас на другую должность с сохранением среднего заработка. Если подходящей работы нет — вы освобождаетесь от работы с сохранением оплаты.
+            </div>
+        </div>
+    </div>
+
+    <!-- Декретные выплаты -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ruble-sign"></i></div>
+            <div class="section-title">Декретные выплаты и пособия</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Декретный отпуск делится на две части:</strong></p>
+            <ul>
+                <li>70 дней до родов + 70 дней после (всего 140 дней)</li>
+                <li>При многоплодной беременности: 84 дня до + 110 дней после = 194 дня</li>
+                <li>При осложнённых родах: 70 + 86 = 156 дней</li>
+            </ul>
+            <p><strong>Пособие по беременности и родам:</strong></p>
+            <ul>
+                <li>Рассчитывается из среднего заработка за 2 предыдущих года</li>
+                <li>Минимальная сумма в 2024 году: около 88 000 ₽ (при МРОТ)</li>
+                <li>Максимальная: около 565 000 ₽ (за 140 дней)</li>
+                <li>Выплачивается единовременно (за весь декрет)</li>
+            </ul>
+            <p><strong>Единовременное пособие при постановке на учёт в ранние сроки (до 12 недель):</strong> около 900 ₽ (индексируется ежегодно).</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> пособие по беременности и родам не облагается налогом и не уменьшает налогооблагаемую базу. Если вы работаете по совместительству, пособие платят оба работодателя.
+            </div>
+        </div>
+    </div>
+
+    <!-- Отпуск по уходу за ребёнком -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-baby-carriage"></i></div>
+            <div class="section-title">Отпуск по уходу за ребёнком</div>
+        </div>
+        <div class="section-content">
+            <p>После декретного отпуска можно оформить отпуск по уходу за ребёнком:</p>
+            <ul>
+                <li>До 1,5 лет — с ежемесячным пособием (40% среднего заработка, но не ниже минимальной суммы — около 9 000 ₽ и не выше 49 000 ₽)</li>
+                <li>До 3 лет — без сохранения зарплаты, но с компенсацией около 50–100 ₽ в месяц (сумма символическая)</li>
+                <li>Место работы сохраняется на весь отпуск</li>
+                <li>Можно выйти на неполный день до окончания отпуска с сохранением пособия</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> В отпуск по уходу за ребёнком может уйти не только мама, но и папа, бабушка или другой родственник — тогда пособие будет платить работодатель этого родственника.
+            </div>
+        </div>
+    </div>
+
+    <!-- Как оформить льготы -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-file-alt"></i></div>
+            <div class="section-title">Как оформить льготы</div>
+        </div>
+        <div class="section-content">
+            <ol style="padding-left: 20px;">
+                <li>Встаньте на учёт в женскую консультацию</li>
+                <li>Получите справку о беременности (с указанием срока)</li>
+                <li>Напишите заявление на имя работодателя:</li>
+                <ul>
+                    <li>О переводе на лёгкий труд (если есть медпоказания)</li>
+                    <li>О сокращённом рабочем дне/неделе</li>
+                    <li>Об освобождении от ночных смен, командировок</li>
+                </ul>
+                <li>Приложите к заявлению справку от врача</li>
+                <li>Для оформления декретных выплат:</li>
+                <ul>
+                    <li>Больничный лист (выдают в ЖК на 30 неделях)</li>
+                    <li>Заявление на выплату пособия</li>
+                </ul>
+            </ol>
+            <div class="warning-box">
+                <strong>Важно:</strong> все заявления пишутся в двух экземплярах (один с отметкой о принятии оставляете себе). Это защитит вас в случае споров.
+            </div>
+        </div>
+    </div>
+
+    <!-- Если работодатель нарушает права -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">Что делать, если нарушают права</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Шаг 1.</strong> Поговорите с работодателем — возможно, он просто не знает о ваших правах.</p>
+            <p><strong>Шаг 2.</strong> Напишите письменное заявление о нарушении (с отметкой о получении).</p>
+            <p><strong>Шаг 3.</strong> Обратитесь в:</p>
+            <ul>
+                <li><strong>Трудовую инспекцию</strong> — онлайн через сайт, анонимно или лично</li>
+                <li><strong>Прокуратуру</strong> — по месту нахождения организации</li>
+                <li><strong>Суд</strong> — если нарушение серьёзное (увольнение, отказ в выплатах)</li>
+                <li><strong>Профсоюз</strong> (если есть)</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-phone-alt"></i> <strong>Горячая линия по трудовым правам:</strong> 8 800 707 86 86 (Роструд, бесплатно).
+            </div>
+        </div>
+    </div>
+
+    <!-- Дополнительные советы -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-lightbulb"></i></div>
+            <div class="section-title">Советы работающим беременным</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Не скрывайте беременность</strong> — сообщите работодателю как можно раньше (после 12 недель). Это защищает ваши права.</li>
+                <li><strong>Берите перерывы</strong> — каждые 45–60 минут вставайте, разминайтесь, пейте воду.</li>
+                <li><strong>Организуйте рабочее место</strong> — удобный стул с подлокотниками, подставка под ноги, хорошее освещение.</li>
+                <li><strong>Носите с собой перекус</strong> — орехи, сухофрукты, яблоко.</li>
+                <li><strong>Не берите сверхурочные</strong> — вы имеете право отказаться.</li>
+                <li><strong>Следите за стрессом</strong> — если работа нервирует, обсудите с врачом возможность перевода на лёгкий труд.</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> Помните: ваше здоровье и здоровье малыша важнее любой работы. Не бойтесь отстаивать свои права.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

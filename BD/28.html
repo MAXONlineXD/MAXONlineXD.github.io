@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Красота во время беременности — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .ingredient-safe {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 20px;
+            padding: 2px 10px;
+            font-size: 0.7rem;
+            margin-left: 6px;
+        }
+
+        .ingredient-danger {
+            display: inline-block;
+            background: #ffebee;
+            color: #c62828;
+            border-radius: 20px;
+            padding: 2px 10px;
+            font-size: 0.7rem;
+            margin-left: 6px;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-spa"></i> 
+            Красота во время беременности
+        </h1>
+        <p>Как оставаться красивой и безопасной для малыша</p>
+        <div class="badge"><i class="fas fa-check-circle"></i> Гормональные изменения — не повод отказываться от ухода</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Красота и беременность — совместимы!</div>
+        </div>
+        <div class="section-content">
+            <p>Беременность — прекрасное время, но гормональные изменения могут влиять на кожу, волосы и ногти. Хорошая новость: большинство косметических процедур безопасны, если соблюдать меры предосторожности.</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Главные правила: натуральные составы, минимум агрессивных компонентов, консультация с врачом перед процедурами.
+            </div>
+        </div>
+    </div>
+
+    <!-- Изменения кожи -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-face-smile"></i></div>
+            <div class="section-title">Что происходит с кожей?</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Хлоазма («маска беременности»)</strong> — тёмные пятна на лице из-за повышения меланина. Защищайте кожу SPF 50+ и носите шляпы.</li>
+                <li><strong>Акне</strong> — у одних кожа становится чище, у других — появляются высыпания. Используйте мягкие средства без ретиноидов.</li>
+                <li><strong>Растяжки (стрии)</strong> — на животе, груди, бёдрах. Увлажнение и массаж помогают профилактировать.</li>
+                <li><strong>Сухость или жирность</strong> — зависит от гормонов. Подбирайте уход по текущему состоянию.</li>
+                <li><strong>Сосудистые звёздочки</strong> — из-за увеличения объёма крови. Можно использовать тональный крем-корректор.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Уход за кожей -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-sparkles"></i></div>
+            <div class="section-title">Безопасный уход за кожей</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Можно:</strong></p>
+            <ul>
+                <li>Очищение мягкими гелями, пенками (без кислот, скрабов)</li>
+                <li>Увлажнение кремами с гиалуроновой кислотой, церамидами, пантенолом</li>
+                <li>Защита от солнца — SPF 30–50 (физические фильтры: оксид цинка, диоксид титана)</li>
+                <li>Масла для профилактики растяжек (миндальное, кокосовое, ши, какао)</li>
+            </ul>
+            <div class="warning-box">
+                <strong>❌ Избегайте:</strong>
+                <ul>
+                    <li>Ретиноиды (ретинол, третиноин, адапален) <span class="ingredient-danger">опасно!</span></li>
+                    <li>Высокие концентрации салициловой кислоты (BHA)</li>
+                    <li>Гидрохинон (отбеливающий крем) — может всасываться</li>
+                    <li>Фталаты, парабены в больших концентрациях</li>
+                    <li>Эфирные масла в первом триместре (может быть аллергия)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Волосы -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-feather"></i></div>
+            <div class="section-title">Волосы: густота и безопасность</div>
+        </div>
+        <div class="section-content">
+            <p>Гормоны делают волосы гуще (меньше выпадения) — это бонус беременности. После родов избыток волос выпадет — это нормально.</p>
+            <p><strong>Окрашивание волос:</strong></p>
+            <ul>
+                <li>В первом триместре лучше воздержаться (период закладки органов).</li>
+                <li>Со второго триместра — окрашивание возможно. Выбирайте безаммиачные краски, тоники, хну, басму.</li>
+                <li>Делайте в хорошо проветриваемом помещении, избегайте контакта краски с кожей головы.</li>
+            </ul>
+            <p><strong>Химическая завивка, кератин, ботокс для волос:</strong> лучше отложить до послеродового периода. Химия может не «взяться» из-за гормонов.</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> мелирование или шатуш — безопаснее, так как краска не касается кожи головы.
+            </div>
+        </div>
+    </div>
+
+    <!-- Ногти -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-peace"></i></div>
+            <div class="section-title">Маникюр и педикюр</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>Маникюр и педикюр — <strong>можно</strong>. Но лучше отказаться от гель-лака? Необязательно, но помните, что ногти могут стать ломкими.</li>
+                <li>Избегайте лаков с формальдегидом, толуолом, дибутилфталатом (ищите маркировку «3-free», «5-free», «7-free»).</li>
+                <li>Делайте педикюр в хорошо проветриваемом салоне или дома.</li>
+                <li>Наращивание ногтей — можно, но аллергия на материалы бывает чаще из-за гормонов.</li>
+            </ul>
+            <div class="warning-box">
+                <strong>Важно:</strong> на больших сроках педикюр делать сложно. Запишитесь до 30–32 недель или попросите мужа помочь.
+            </div>
+        </div>
+    </div>
+
+    <!-- Косметологические процедуры -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bolt"></i></div>
+            <div class="section-title">Косметологические процедуры: что можно?</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Безопасно:</strong></p>
+            <ul>
+                <li>Мягкие чистки (энзимные, ультразвуковые) — без кислот</li>
+                <li>Увлажняющие и питательные маски</li>
+                <li>Лимфодренажный массаж лица (можно, но аккуратно)</li>
+                <li>Пилинги молочной, гликолевой кислотой (низкие концентрации, 3–5%)</li>
+            </ul>
+            <div class="warning-box">
+                <strong>❌ Категорически нельзя:</strong>
+                <ul>
+                    <li>Ботокс и филлеры (не изучена безопасность)</li>
+                    <li>Срединные и глубокие пилинги</li>
+                    <li>Лазерная эпиляция (влияние на плод не изучено)</li>
+                    <li>Элос-омоложение, RF-лифтинг, фотоомоложение</li>
+                    <li>Аппаратные процедуры с тепловым воздействием</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Эпиляция -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-razor"></i></div>
+            <div class="section-title">Эпиляция и депиляция</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Бритьё</strong> — безопасно, но на поздних сроках неудобно.</li>
+                <li><strong>Крем для депиляции</strong> — можно, но делайте тест на аллергию (кожа чувствительнее).</li>
+                <li><strong>Шугаринг / восковая эпиляция</strong> — можно, но больно из-за усиления кровотока. Возможны синяки.</li>
+                <li><strong>Лазерная / фотоэпиляция</strong> — <strong>НЕТ</strong> (влияние на плод не изучено).</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Бикини лучше выщипывать или брить — шугаринг может быть слишком болезненным при повышенной чувствительности.
+            </div>
+        </div>
+    </div>
+
+    <!-- Загар и солярий -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-sun"></i></div>
+            <div class="section-title">Загар и солярий</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Солярий — НЕТ!</strong> Перегрев опасен для плода, особенно в первом триместре.</li>
+                <li><strong>Автозагар</strong> — можно, но проверьте состав (дигидроксиацетон считается безопасным, но лучше проконсультироваться).</li>
+                <li><strong>Солнце</strong> — можно, но без перегрева, в шляпе, с SPF 50. Загорать лучше утром или вечером.</li>
+            </ul>
+            <div class="warning-box">
+                Из-за повышения меланина хлоазма и пигментные пятна становятся заметнее на солнце. Используйте солнцезащитный крем всегда, даже в городе.
+            </div>
+        </div>
+    </div>
+
+    <!-- Растяжки -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-flask"></i></div>
+            <div class="section-title">Профилактика растяжек</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>Увлажняйте кожу живота, груди, бёдер специальными маслами и кремами (миндальное, кокосовое, масло какао, ши).</li>
+                <li>Делайте лёгкий массаж (поглаживания, без надавливания).</li>
+                <li>Пейте достаточно воды (1,5–2 л), чтобы кожа была эластичной.</li>
+                <li>Контролируйте набор веса (быстрый набор растягивает кожу).</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Миф:</strong> никакой крем не гарантирует отсутствие растяжек — 50–90% зависит от генетики и эластичности кожи. Но увлажнение точно не помешает.
+            </div>
+        </div>
+    </div>
+
+    <!-- Безопасные ингредиенты -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clipboard-list"></i></div>
+            <div class="section-title">Безопасные и опасные компоненты</div>
+        </div>
+        <div class="section-content">
+            <p><strong>✅ Безопасно:</strong> гиалуроновая кислота, церамиды, пантенол, алоэ вера, масла (миндальное, кокосовое, ши), оксид цинка, диоксид титана (SPF), витамины C, E, B5, молочная кислота (в низких концентрациях).</p>
+            <div class="warning-box">
+                <p><strong>❌ Опасно / ограничить:</strong></p>
+                <ul>
+                    <li>Ретиноиды (ретинол, третиноин, адапален) — <span class="ingredient-danger">категорически нет</span></li>
+                    <li>Гидрохинон — <span class="ingredient-danger">нет</span></li>
+                    <li>Салициловая кислота (>2% концентрация) — <span class="ingredient-danger">ограничить</span></li>
+                    <li>Формальдегид, толуол, дибутилфталат — <span class="ingredient-danger">нет</span></li>
+                    <li>Эфирные масла (в первом триместре) — <span class="ingredient-danger">осторожно</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Фотосессия -->
+    <div class="section-card" style="animation-delay: 0.3s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-camera"></i></div>
+            <div class="section-title">Фотосессия и другие активности</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Фотосессия на память</strong> — прекрасная идея! Идеальное время — 28–34 недели (живот уже большой, но ещё не слишком тяжело).</p>
+            <p>Другие безопасные процедуры: расслабляющий массаж (у профессионального массажиста, без надавливания на живот), короткие стрижки, укладки, маникюр.</p>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> Главное — ваше хорошее настроение. Если процедура вызывает стресс или дискомфорт — отложите её.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

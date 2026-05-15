@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>УЗИ на 20-й неделе (второй скрининг) — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .norm-table {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            overflow-x: auto;
+        }
+
+        .norm-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .norm-table th, .norm-table td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ffe0d6;
+        }
+
+        .norm-table th {
+            background: #fbeae8;
+            color: #b35d7c;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+            .norm-table {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-ultrasound"></i> 
+            УЗИ на 20-й неделе
+        </h1>
+        <p>Второй скрининг: оценка анатомии плода</p>
+        <div class="badge"><i class="fas fa-microscope"></i> Самое детальное УЗИ за всю беременность</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Что такое второй скрининг -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Что такое второй скрининг?</div>
+        </div>
+        <div class="section-content">
+            <p>Второй пренатальный скрининг — это комплексное обследование на сроке <strong>18–21 неделя</strong> (оптимально — 20 недель), которое включает:</p>
+            <ul>
+                <li><strong>УЗИ плода</strong> — детальная оценка анатомии всех органов и систем</li>
+                <li><strong>Анализ крови</strong> (тройной тест) — на АФП, ХГЧ, свободный эстриол</li>
+            </ul>
+            <div class="warning-box">
+                <i class="fas fa-chart-line"></i> <strong>Цели:</strong> выявление пороков развития плода, задержки роста, патологий плаценты, аномалий околоплодных вод.
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Это УЗИ — самое подробное. Врач оценивает каждый орган: головной мозг, сердце, лёгкие, желудок, почки, позвоночник, конечности.
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда проводится -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-calendar-alt"></i></div>
+            <div class="section-title">Когда и зачем проводят?</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Сроки:</strong> строго с 18 недель 0 дней до 21 недели 6 дней. Идеально — на 20 неделе.</p>
+            <p><strong>Что оценивают:</strong></p>
+            <ul>
+                <li>Анатомию плода — головной мозг, лицо, позвоночник, сердце, лёгкие, желудок, почки, мочевой пузырь, конечности</li>
+                <li>Фетометрию — размеры плода (БПР, ОГ, ОЖ, Длина бедра)</li>
+                <li>Состояние плаценты, пуповины, околоплодных вод</li>
+                <li>Кровоток в сосудах матки и плода (допплерометрия)</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-smile"></i> <strong>Приятный бонус:</strong> на этом сроке можно с высокой точностью определить пол малыша (если он не стесняется).
+            </div>
+        </div>
+    </div>
+
+    <!-- Что смотрят на УЗИ -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-eye"></i></div>
+            <div class="section-title">Что именно оценивает врач</div>
+        </div>
+        <div class="section-content">
+            <div class="norm-table">
+                <p><strong>Головной мозг:</strong> форма черепа, наличие обоих полушарий, мозжечок, желудочки</p>
+                <p><strong>Лицо:</strong> профиль, глазницы, нос, верхняя губа (для исключения заячьей губы)</p>
+                <p><strong>Позвоночник:</strong> целостность, нет ли расщепления</p>
+                <p><strong>Сердце:</strong> 4 камеры, клапаны, перегородки, крупные сосуды</p>
+                <p><strong>Лёгкие:</strong> размеры, симметричность</p>
+                <p><strong>Органы брюшной полости:</strong> желудок, кишечник, печень, почки, мочевой пузырь</p>
+                <p><strong>Конечности:</strong> обе руки (плечо, предплечье, кисть), обе ноги (бедро, голень, стопа)</p>
+                <p><strong>Плацента:</strong> толщина, структура, расположение (нет ли предлежания)</p>
+                <p><strong>Пуповина:</strong> количество сосудов (норма — 3), есть ли обвитие</p>
+                <p><strong>Околоплодные воды:</strong> количество (норма — не многоводие и не маловодие)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Нормы размеров плода на 20 неделе -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-simple"></i></div>
+            <div class="section-title">Нормы фетометрии на 20 неделе</div>
+        </div>
+        <div class="section-content">
+            <div class="norm-table">
+                <table>
+                    <thead>
+                        <tr><th>Показатель</th><th>Норма (20 недель)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>БПР (бипариетальный размер)</td><td>43–53 мм</td></tr>
+                        <tr><td>ОГ (окружность головы)</td><td>154–186 мм</td></tr>
+                        <tr><td>ОЖ (окружность живота)</td><td>124–164 мм</td></tr>
+                        <tr><td>Длина бедра</td><td>26–38 мм</td></tr>
+                        <tr><td>Вес плода</td><td>260–350 г</td></tr>
+                        <tr><td>Толщина плаценты</td><td>16–28 мм</td></tr>
+                        <tr><td>Индекс амниотической жидкости</td><td>80–180 мм</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-chart-line"></i> <strong>Важно:</strong> нормы могут немного отличаться в разных источниках. Ориентируйтесь на заключение вашего врача.
+            </div>
+        </div>
+    </div>
+
+    <!-- Тройной тест (анализ крови) -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-flask"></i></div>
+            <div class="section-title">Тройной тест (анализ крови)</div>
+        </div>
+        <div class="section-content">
+            <p>Второй скрининг включает анализ крови на три маркера:</p>
+            <ul>
+                <li><strong>АФП (альфа-фетопротеин)</strong> — белок, вырабатываемый плодом. Повышение может указывать на дефекты нервной трубки, понижение — на синдром Дауна.</li>
+                <li><strong>ХГЧ (хорионический гонадотропин)</strong> — гормон беременности. Отклонения могут быть при хромосомных аномалиях.</li>
+                <li><strong>Свободный эстриол</strong> — гормон, вырабатываемый плацентой и печенью плода. Низкий уровень — признак патологий.</li>
+            </ul>
+            <div class="warning-box">
+                <strong>Важно:</strong> точность второго скрининга ниже, чем первого (около 70–80%). При отклонениях обычно назначают дополнительную диагностику.
+            </div>
+        </div>
+    </div>
+
+    <!-- Подготовка -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-suitcase"></i></div>
+            <div class="section-title">Подготовка к исследованию</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Специальной подготовки не требуется</strong> — наполненный мочевой пузырь не нужен (плод уже крупный)</li>
+                <li>Возьмите с собой паспорт, полис, обменную карту</li>
+                <li>Для забора крови желательно прийти натощак (или через 3–4 часа после еды)</li>
+                <li>Возьмите с собой пелёнку (для кушетки) и салфетки</li>
+                <li>Настройтесь на то, что УЗИ может длиться 30–40 минут (врач очень детально осматривает органы)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Если нашли отклонения -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">Что делать, если обнаружены отклонения</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Не паникуйте!</strong> Отклонения на УЗИ бывают ложноположительными (в 5–10% случаев).</p>
+            <p><strong>Дальнейшие шаги:</strong></p>
+            <ul>
+                <li><strong>Повторное УЗИ через 1–2 недели</strong> — иногда малыш просто неудобно лежал</li>
+                <li><strong>Консультация генетика</strong> — специалист оценит риски</li>
+                <li><strong>Расширенное УЗИ (экспертное)</strong> — в перинатальном центре</li>
+                <li><strong>Эхокардиография плода</strong> — детальное УЗИ сердца (при подозрении на порок)</li>
+                <li><strong>Инвазивная диагностика</strong> — амниоцентез (с 16–17 недель) для точного определения хромосомных аномалий. Риск осложнений — 0,1–0,3%.</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> <strong>Помните:</strong> даже если подтвердится порок развития, многие из них успешно лечатся сразу после рождения. Современная медицина творит чудеса.
+            </div>
+        </div>
+    </div>
+
+    <!-- Можно ли узнать пол -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-venus-mars"></i></div>
+            <div class="section-title">Можно ли узнать пол?</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Да, на 20 неделе пол определяется с высокой точностью (около 95%)</strong>. Врач смотрит на наружные половые органы — у мальчиков видна мошонка и половой член, у девочек — большие половые губы.</p>
+            <div class="tip-box">
+                <i class="fas fa-smile"></i> Если малыш стесняется и лежит неудобно (ножки скрещены) — определение пола может быть затруднено. В этом случае попросите вернуться на УЗИ через 10–15 минут — малыш может перевернуться.
+            </div>
+        </div>
+    </div>
+
+    <!-- Частые вопросы -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Частые вопросы</div>
+        </div>
+        <div class="section-content">
+            <p><strong>❓ Это УЗИ безопасно?</strong><br>Да, УЗИ не имеет доказанного вредного воздействия на плод. Оно проводится всем беременным.</p>
+            
+            <p><strong>❓ Можно ли не делать второй скрининг?</strong><br>По закону вы можете отказаться, но врачи настоятельно рекомендуют его пройти. Это единственный способ выявить многие пороки развития на раннем сроке.</p>
+            
+            <p><strong>❓ Влияет ли положение плода на точность?</strong><br>Да. Если малыш лежит неудобно, врач может попросить вас подождать 10–15 минут, пройтись, съесть что-то сладкое — чтобы он перевернулся.</p>
+            
+            <p><strong>❓ Что делать, если ребёнок очень активный?</strong><br>Активность мешает осмотру. Попробуйте прилечь на бок или на спину — иногда это успокаивает малыша. Врач может подождать, пока он замрёт.</p>
+            
+            <p><strong>❓ Можно ли делать УЗИ чаще трёх раз за беременность?</strong><br>Да, при медицинских показаниях — хоть каждые 2 недели (например, при задержке роста плода, многоплодной беременности). Безопасность доказана.</p>
+        </div>
+    </div>
+
+    <!-- Что ещё проверяют -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-plug"></i></div>
+            <div class="section-title">Дополнительные исследования</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Допплерометрия</strong> — оценка кровотока в сосудах матки, пуповины и плода. Позволяет выявить плацентарную недостаточность.</li>
+                <li><strong>Цервикометрия</strong> — измерение длины шейки матки (для прогноза риска преждевременных родов).</li>
+                <li><strong>Оценка биопрофиля плода</strong> — шевеления, дыхательные движения, тонус, объём вод.</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-stethoscope"></i> <strong>Важно:</strong> после 20 недель врач уже может оценить риск преждевременных родов по длине шейки матки (норма — более 30 мм).
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>
