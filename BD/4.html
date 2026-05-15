@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Вы узнали, что ждете ребенка — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        /* Хедер */
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        /* Блок с кнопками */
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        /* Карточка шага */
+        .step-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .step-number {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #b35d7c;
+        }
+
+        .step-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #4a2c3a;
+            flex: 1;
+        }
+
+        .step-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+            padding-left: 8px;
+        }
+
+        .step-content p {
+            margin-bottom: 10px;
+        }
+
+        .step-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .step-content li {
+            margin: 6px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: #b45f7f;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+        }
+
+        /* Плавающая кнопка */
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .step-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-heart"></i> 
+            Вы узнали, что ждете ребенка
+        </h1>
+        <p>Первые шаги на пути к материнству — спокойствие и знания</p>
+        <div class="badge"><i class="fas fa-star-of-life"></i> Ваш чек-лист первых дел</div>
+    </div>
+</div>
+
+<main class="container">
+    <!-- Блок кнопок навигации -->
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Контейнер для шагов -->
+    <div id="stepsContainer"></div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Перинатальный центр «Мама+Центр» — забота на каждом этапе
+    </footer>
+</main>
+
+<!-- Плавающая кнопка "На главную" -->
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    // Данные о шагах
+    const stepsData = [
+        {
+            number: 1,
+            title: "Подтвердите беременность",
+            content: `
+                <p>Положительный тест — это только первый шаг. Для официального подтверждения необходимо:</p>
+                <ul>
+                    <li><strong>Сдать анализ крови на ХГЧ</strong> — самый точный метод на ранних сроках.</li>
+                    <li><strong>Посетить врача-гинеколога</strong> для осмотра и постановки на учет.</li>
+                    <li><strong>Сделать УЗИ</strong> на 5–7 неделе, чтобы убедиться, что плодное яйцо находится в матке (исключить внематочную беременность).</li>
+                </ul>
+            `,
+            tip: "Не паникуйте, если тест слабоположительный — повторите его через 2–3 дня. Уровень ХГЧ удваивается каждые 48–72 часа."
+        },
+        {
+            number: 2,
+            title: "Выберите врача и женскую консультацию",
+            content: `
+                <p>Лучше встать на учет до 12 недель — это даст право на единовременное пособие и позволит вовремя пройти все скрининги.</p>
+                <ul>
+                    <li>Вы можете наблюдаться в государственной ЖК (бесплатно) или в частном медицинском центре.</li>
+                    <li>Важно найти врача, которому вы доверяете. Не бойтесь сменить специалиста, если чувствуете дискомфорт.</li>
+                    <li>Запишите все вопросы, которые хотите задать на первом приеме.</li>
+                </ul>
+            `,
+            tip: "Возьмите с собой на первый приём: паспорт, полис ОМС, СНИЛС, результаты анализов и УЗИ (если есть)."
+        },
+        {
+            number: 3,
+            title: "Начните принимать фолиевую кислоту",
+            content: `
+                <p>Фолиевая кислота (витамин B9) критически важна для формирования нервной трубки плода. Это помогает предотвратить дефекты развития мозга и позвоночника.</p>
+                <ul>
+                    <li><strong>Рекомендуемая доза:</strong> 400–800 мкг в день (по назначению врача).</li>
+                    <li>Начинать приём лучше ещё на этапе планирования, но если вы узнали о беременности — начните прямо сейчас.</li>
+                    <li>Продолжать приём рекомендуется весь первый триместр.</li>
+                </ul>
+            `,
+            tip: "Многие витаминные комплексы для беременных уже содержат фолиевую кислоту. Проконсультируйтесь с врачом о выборе препарата."
+        },
+        {
+            number: 4,
+            title: "Пересмотрите питание и образ жизни",
+            content: `
+                <p>То, что вы едите и пьете, влияет на развитие малыша. Важно:</p>
+                <ul>
+                    <li><strong>Исключить алкоголь и курение</strong> (в том числе электронные сигареты и вейпы).</li>
+                    <li><strong>Ограничить кофеин</strong> — не более 200 мг в день (1 небольшая чашка кофе).</li>
+                    <li><strong>Избегать сырых продуктов</strong> — суши, непастеризованное молоко, сырое мясо и рыба.</li>
+                    <li><strong>Добавить в рацион</strong> больше овощей, фруктов, белка, цельнозерновых продуктов.</li>
+                </ul>
+            `,
+            tip: "Пейте достаточно воды — около 1,5–2 литров в день, если нет противопоказаний от врача."
+        },
+        {
+            number: 5,
+            title: "Запишитесь на первый скрининг",
+            content: `
+                <p>Первый пренатальный скрининг проводится на сроке 11–13 недель + 6 дней. Он включает:</p>
+                <ul>
+                    <li><strong>УЗИ</strong> — оценка ТВП (толщины воротникового пространства), визуализация органов плода.</li>
+                    <li><strong>Анализ крови</strong> (РАРР-А и свободный бета-ХГЧ) — для оценки риска хромосомных аномалий.</li>
+                </ul>
+                <p>Это исследование помогает оценить риск синдрома Дауна, Эдвардса и других патологий.</p>
+            `,
+            tip: "Не волнуйтесь, если результат покажет «повышенный риск» — это не диагноз, а лишь повод для дополнительной диагностики (НИПТ или амниоцентез)."
+        },
+        {
+            number: 6,
+            title: "Позаботьтесь об эмоциональном состоянии",
+            content: `
+                <p>Гормональная перестройка может вызывать перепады настроения, тревожность и раздражительность. Это нормально!</p>
+                <ul>
+                    <li>Разговаривайте с партнером о своих чувствах — не держите эмоции в себе.</li>
+                    <li>Не стесняйтесь обращаться к перинатальному психологу, если тревога мешает жить.</li>
+                    <li>Практикуйте релаксацию: дыхательные упражнения, прогулки на свежем воздухе, легкую йогу.</li>
+                    <li>Уделяйте время хобби и отдыху — вы имеете на это право.</li>
+                </ul>
+            `,
+            tip: "Послеродовая депрессия может начинаться ещё во время беременности. Если вы чувствуете апатию, постоянную грусть — обратитесь к специалисту."
+        },
+        {
+            number: 7,
+            title: "Сообщите новость близким в удобное для вас время",
+            content: `
+                <p>Нет правильного или неправильного времени, чтобы делиться новостью. Главное — ваши чувства.</p>
+                <ul>
+                    <li>Некоторые женщины рассказывают сразу после положительного теста.</li>
+                    <li>Другие предпочитают дождаться первого скрининга (12–13 недель).</li>
+                    <li>На работе официально сообщать о беременности лучше после 12 недель (если нет потребности раньше).</li>
+                </ul>
+            `,
+            tip: "Если вы переживаете о реакции окружающих — начните с самых близких и поддерживающих людей. Это снизит стресс."
+        },
+        {
+            number: 8,
+            title: "Начните вести дневник беременности",
+            content: `
+                <p>Записывайте свои ощущения, вопросы к врачу, изменения в самочувствии. Это поможет:</p>
+                <ul>
+                    <li>Отслеживать динамику симптомов (тошнота, усталость, боли).</li>
+                    <li>Не забыть спросить врача о важных моментах.</li>
+                    <li>Сохранить тёплые воспоминания о беременности.</li>
+                </ul>
+                <p>Используйте приложение на телефоне, обычный блокнот или специальные дневники для будущих мам.</p>
+            `,
+            tip: "Отмечайте не только медицинские моменты, но и радостные события — первые шевеления, удачные фото живота, приятные покупки."
+        }
+    ];
+
+    // Рендер шагов с анимацией
+    function renderSteps() {
+        const container = document.getElementById("stepsContainer");
+        if (!container) return;
+
+        let html = "";
+        stepsData.forEach((step, index) => {
+            const delay = index * 0.03;
+            html += `
+                <div class="step-card" style="animation-delay: ${delay}s">
+                    <div class="step-header">
+                        <div class="step-number">${step.number}</div>
+                        <div class="step-title">${step.title}</div>
+                    </div>
+                    <div class="step-content">
+                        ${step.content}
+                    </div>
+                    ${step.tip ? `<div class="tip-box"><i class="fas fa-lightbulb"></i> ${step.tip}</div>` : ''}
+                </div>
+            `;
+        });
+        container.innerHTML = html;
+    }
+
+    // Кнопка возврата в Базу знаний
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    // Плавающая кнопка "На главную"
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    // Инициализация
+    renderSteps();
+</script>
+</body>
+</html>
