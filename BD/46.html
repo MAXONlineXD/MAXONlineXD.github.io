@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Когда пора в роддом — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .checklist-group {
+            margin: 16px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: #fffaf5;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #fef0ea;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #cd7c9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .checklist-check.completed {
+            background: #cd7c9b;
+            color: white;
+        }
+
+        .checklist-text {
+            flex: 1;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ffe0d6;
+        }
+
+        .comparison-table th {
+            background: #fbeae8;
+            color: #b35d7c;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+            .comparison-table {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-ambulance"></i> 
+            Когда пора в роддом
+        </h1>
+        <p>Как понять, что роды начались, и не приехать слишком рано</p>
+        <div class="badge"><i class="fas fa-clock"></i> Главное — не паниковать и знать признаки</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Главное правило</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>🚨 Лучше приехать раньше и убедиться, что всё в порядке, чем пропустить начало родов.</strong> Не бойтесь «ложных тревог» — врачи привыкли к этому и не осуждают.
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Сумка в роддом должна быть собрана с <strong>34–35 недель</strong>. Документы (паспорт, полис, обменная карта) носите с собой на последних неделях.
+            </div>
+        </div>
+    </div>
+
+    <!-- Истинные vs ложные схватки -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-waveform"></i></div>
+            <div class="section-title">Истинные vs ложные схватки</div>
+        </div>
+        <div class="section-content">
+            <table class="comparison-table">
+                <thead>
+                    <tr><th>Признак</th><th>Истинные схватки</th><th>Ложные (Брекстона-Хикса)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Регулярность</td><td>Регулярные, интервал сокращается</td><td>Нерегулярные, хаотичные</td></tr>
+                    <tr><td>Усиление</td><td>Становятся сильнее и дольше</td><td>Не усиливаются</td></tr>
+                    <tr><td>Проходят при смене позы</td><td>Нет, продолжаются</td><td>Да, часто проходят</td></tr>
+                    <tr><td>Проходят после тёплого душа</td><td>Нет</td><td>Да, часто проходят</td></tr>
+                    <tr><td>Локализация боли</td><td>Низ живота + поясница</td><td>Только низ живота</td></tr>
+                    <tr><td>Приводят к раскрытию шейки</td><td>Да</td><td>Нет</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ТОП-5 признаков ехать в роддом -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">ТОП-5 признаков, что пора ехать</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <ol style="margin-left: 20px;">
+                    <li><strong>Регулярные схватки</strong> — каждые 5–7 минут (для первородящих) или каждые 10 минут (для повторнородящих)</li>
+                    <li><strong>Отошли околоплодные воды</strong> — даже без схваток! (Срочно!)</li>
+                    <li><strong>Кровянистые выделения</strong> — любого объёма и цвета</li>
+                    <li><strong>Сильная боль, которую вы не можете терпеть</strong> — не ждите, когда схватки станут регулярными</li>
+                    <li><strong>Резкое ухудшение самочувствия</strong> — сильная головная боль, «мушки» перед глазами, тошнота, скачок давления</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Схватки: когда ехать -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hourglass-half"></i></div>
+            <div class="section-title">Схватки: точные критерии</div>
+        </div>
+        <div class="section-content">
+            <div class="tip-box">
+                <p><strong>📏 Правило 5-1-1 (для первородящих):</strong></p>
+                <ul>
+                    <li>Схватки каждые 5 минут</li>
+                    <li>Длятся по 1 минуте</li>
+                    <li>Такой ритм держится 1 час</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <p><strong>📏 Правило 10-1-1 (для повторнородящих):</strong></p>
+                <ul>
+                    <li>Схватки каждые 10 минут</li>
+                    <li>Длятся по 1 минуте</li>
+                    <li>Такой ритм держится 1 час</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> если вы живёте далеко от роддома (более 40 минут в пробках), выезжайте раньше, при схватках каждые 7–10 минут.
+            </div>
+        </div>
+    </div>
+
+    <!-- Отошли воды -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-tint"></i></div>
+            <div class="section-title">Отошли воды — что делать?</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❗ Если отошли околоплодные воды — НЕМЕДЛЕННО в роддом, даже если схваток нет!</strong>
+                <ul style="margin-top: 8px;">
+                    <li>Запомните цвет вод: прозрачные/светлые — норма, зелёные/коричневые — возможен меконий (скажите врачу)</li>
+                    <li>Засеките время отхождения вод</li>
+                    <li>Не принимайте ванну (можно душ)</li>
+                    <li>Не вставляйте тампоны</li>
+                    <li>Положите прокладку, чтобы оценить количество и цвет вод</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> после отхождения вод риск инфицирования плода повышается, поэтому роды должны начаться в ближайшие 12–24 часа. Врачи будут стимулировать, если схватки не начнутся сами.
+            </div>
+        </div>
+    </div>
+
+    <!-- Кровянистые выделения -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-peace"></i></div>
+            <div class="section-title">Кровянистые выделения</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>🚨 Срочно в роддом при любых кровянистых выделениях:</strong>
+                <ul>
+                    <li>Алые выделения (свежая кровь)</li>
+                    <li>Коричневые выделения сгустками</li>
+                    <li>Мажущие выделения после 38 недель (это может быть признаком отслойки плаценты)</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> отхождение слизистой пробки (розоватые или коричневатые выделения) — не повод для паники, это может произойти за 1–2 недели до родов. Но если выделения стали обильными или алыми — срочно к врачу.
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда плановая госпитализация -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-calendar-alt"></i></div>
+            <div class="section-title">Плановая госпитализация</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Перенашивание</strong> — на 41–42 неделе для стимуляции родов</li>
+                <li><strong>Плановое кесарево сечение</strong> — за 1–2 недели до ПДР</li>
+                <li><strong>Многоплодная беременность</strong> — на 35–37 неделях</li>
+                <li><strong>Гестоз, преэклампсия</strong> — для лечения и наблюдения</li>
+                <li><strong>Тазовое предлежание</strong> — для решения вопроса о кесаревом сечении</li>
+                <li><strong>Крупный плод, узкий таз</strong> — для выбора тактики</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Что делать перед отъездом -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clipboard-list"></i></div>
+            <div class="section-title">Чек-лист перед отъездом в роддом</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="checklist">
+                <div class="checklist-item" data-id="check1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">📄 Взять документы (паспорт, полис, обменная карта, родовой сертификат)</div>
+                </div>
+                <div class="checklist-item" data-id="check2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🛍 Взять сумку в роддом (должна быть собрана заранее)</div>
+                </div>
+                <div class="checklist-item" data-id="check3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">📱 Зарядить телефон, взять power bank</div>
+                </div>
+                <div class="checklist-item" data-id="check4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🚗 Вызвать такси или предупредить партнёра с машиной</div>
+                </div>
+                <div class="checklist-item" data-id="check5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🍎 Взять перекус (бутылка воды, печенье, банан)</div>
+                </div>
+                <div class="checklist-item" data-id="check6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧥 Надеть удобную одежду и обувь</div>
+                </div>
+                <div class="checklist-item" data-id="check7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">👶 Предупредить близких (партнёра, маму)</div>
+                </div>
+                <div class="checklist-item" data-id="check8">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🚪 Проверить, закрыта ли дверь, выключены ли газ и утюг</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Что НЕ нужно делать -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего НЕ нужно делать</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ Паниковать и метаться по дому</li>
+                <li>❌ Есть тяжёлую, жирную пищу (тошнота, рвота)</li>
+                <li>❌ Принимать обезболивающие без назначения врача</li>
+                <li>❌ Лежать неподвижно на спине (ухудшает кровоток)</li>
+                <li>❌ Мыть полы, поднимать тяжести, бегать — лишняя нагрузка</li>
+                <li>❌ Долго сидеть в ванне (после отхождения вод — запрещено)</li>
+                <li>❌ Самостоятельно вводить лекарства</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Чего НЕ нужно бояться -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-heart"></i></div>
+            <div class="section-title">Не бойтесь «ложных» вызовов</div>
+        </div>
+        <div class="section-content">
+            <div class="tip-box">
+                <p><strong>В роддоме вас всегда осмотрят:</strong></p>
+                <ul>
+                    <li>Посмотрят на кресле — оценят раскрытие шейки матки</li>
+                    <li>Сделают КТГ — оценят сердцебиение малыша и схватки</li>
+                    <li>Скажут — роды уже или ещё рано</li>
+                </ul>
+                <p>Если окажется, что это ложная тревога — вас отправят домой. <strong>В этом нет ничего страшного.</strong> Лучше лишний раз провериться, чем пропустить начало родов.</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> некоторые роддома берут плату за «ложный вызов» (осмотр без госпитализации) — уточните заранее. Обычно это 500–2000 ₽, но здоровье важнее.
+            </div>
+        </div>
+    </div>
+
+    <!-- Мифы о начале родов -->
+    <div class="section-card" style="animation-delay: 0.3s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Разрушаем мифы</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Если схватки начались ночью, можно подождать до утра.<br>
+            <strong>Правда:</strong> Нет, если схватки регулярные — езжайте сразу. Роды могут быть быстрыми.</p>
+            
+            <p><strong>Миф:</strong> Нельзя ехать в роддом, если только отошла пробка.<br>
+            <strong>Правда:</strong> Пробка может отойти за 1–2 недели до родов. Если нет схваток и вод, можно оставаться дома.</p>
+            
+            <p><strong>Миф:</strong> Если воды отошли, нужно рожать в течение часа.<br>
+            <strong>Правда:</strong> Обычно роды начинаются в ближайшие 12–24 часа. Врачи не будут стимулировать сразу, если всё хорошо.</p>
+            
+            <p><strong>Миф:</strong> Повторнородящие всегда рожают очень быстро.<br>
+            <strong>Правда:</strong> Да, чаще быстрее, но бывает по-разному. Не расслабляйтесь, но и не паникуйте.</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    function initChecklist() {
+        const items = document.querySelectorAll('.checklist-item');
+        items.forEach(item => {
+            const id = item.getAttribute('data-id');
+            if (!id) return;
+            const stored = localStorage.getItem(`when_hospital_${id}`);
+            const checkDiv = item.querySelector('.checklist-check');
+            if (stored === 'true') {
+                checkDiv.classList.add('completed');
+                checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+            } else {
+                checkDiv.classList.remove('completed');
+                checkDiv.innerHTML = '';
+            }
+            
+            item.addEventListener('click', () => {
+                const isCompleted = checkDiv.classList.contains('completed');
+                if (isCompleted) {
+                    checkDiv.classList.remove('completed');
+                    checkDiv.innerHTML = '';
+                    localStorage.setItem(`when_hospital_${id}`, 'false');
+                } else {
+                    checkDiv.classList.add('completed');
+                    checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+                    localStorage.setItem(`when_hospital_${id}`, 'true');
+                }
+            });
+        });
+    }
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    initChecklist();
+</script>
+</body>
+</html>

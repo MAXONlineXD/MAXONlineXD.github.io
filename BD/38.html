@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Подготовка к материнству — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .checklist-group {
+            margin: 16px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: #fffaf5;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #fef0ea;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #cd7c9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .checklist-check.completed {
+            background: #cd7c9b;
+            color: white;
+        }
+
+        .checklist-text {
+            flex: 1;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-heart"></i> 
+            Подготовка к материнству
+        </h1>
+        <p>Как психологически и физически подготовиться к новой роли</p>
+        <div class="badge"><i class="fas fa-clipboard-list"></i> Материнство — это путешествие, и к нему можно подготовиться</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Что значит «подготовиться к материнству»?</div>
+        </div>
+        <div class="section-content">
+            <p>Материнство — это не только уход за ребёнком, но и огромная внутренняя работа. Подготовка включает:</p>
+            <ul>
+                <li><strong>Психологическую готовность</strong> — принятие новой роли, работа со страхами</li>
+                <li><strong>Физическую подготовку</strong> — упражнения для лёгких родов и восстановления</li>
+                <li><strong>Практическую базу</strong> — знания об уходе, кормлении, развитии малыша</li>
+                <li><strong>Социальную поддержку</strong> — кто поможет, с кем поделиться</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> быть «идеальной мамой» невозможно, и это нормально. Главное — любовь, забота и принятие своих несовершенств.
+            </div>
+        </div>
+    </div>
+
+    <!-- Психологическая подготовка -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-brain"></i></div>
+            <div class="section-title">Психологическая подготовка</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="psycho">
+                <div class="checklist-item" data-id="psy1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Признать, что страхи и сомнения — нормальны (страх не справиться, страх боли, страх за здоровье малыша)</div>
+                </div>
+                <div class="checklist-item" data-id="psy2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Разговаривать о своих чувствах с партнёром, подругой, психологом</div>
+                </div>
+                <div class="checklist-item" data-id="psy3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Посетить курсы для беременных (они снижают тревожность на 30–50%)</div>
+                </div>
+                <div class="checklist-item" data-id="psy4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Познакомиться с реальными историями родов (но без фанатизма — негатив не читать)</div>
+                </div>
+                <div class="checklist-item" data-id="psy5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Освоить дыхательные техники для снятия тревоги</div>
+                </div>
+                <div class="checklist-item" data-id="psy6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Принять, что идеальных мам не существует, и ваша любовь — это уже 90% успеха</div>
+                </div>
+            </div>
+            <div class="warning-box">
+                <strong>Важно:</strong> если тревога не проходит, мешает спать и есть — обратитесь к перинатальному психологу. Это не стыдно, а ответственно.
+            </div>
+        </div>
+    </div>
+
+    <!-- Физическая подготовка -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-heartbeat"></i></div>
+            <div class="section-title">Физическая подготовка</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="physical">
+                <div class="checklist-item" data-id="phys1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Выполнять упражнения Кегеля каждый день — укрепляют мышцы тазового дна</div>
+                </div>
+                <div class="checklist-item" data-id="phys2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Делать дыхательные упражнения для родов (вдох на 4 счета, выдох на 6, «свечка»)</div>
+                </div>
+                <div class="checklist-item" data-id="phys3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Заниматься йогой для беременных или плаванием — укрепляют мышцы и снимают нагрузку</div>
+                </div>
+                <div class="checklist-item" data-id="phys4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Ежедневные прогулки — не менее 30 минут</div>
+                </div>
+                <div class="checklist-item" data-id="phys5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Спать на левом боку с подушкой между ног — для хорошего кровотока</div>
+                </div>
+                <div class="checklist-item" data-id="phys6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Следить за осанкой — не сутулиться, носить бандаж при необходимости</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Практические знания -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-book-open"></i></div>
+            <div class="section-title">Что нужно знать о уходе за новорождённым</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="knowledge">
+                <div class="checklist-item" data-id="know1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Как правильно держать малыша (поддерживать головку)</div>
+                </div>
+                <div class="checklist-item" data-id="know2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Как пеленать и одевать (по погоде, не перегревать)</div>
+                </div>
+                <div class="checklist-item" data-id="know3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Как купать (температура воды 36–37°C, использовать детское мыло)</div>
+                </div>
+                <div class="checklist-item" data-id="know4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Как обрабатывать пупочную ранку (перекись + зелёнка)</div>
+                </div>
+                <div class="checklist-item" data-id="know5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Как понять, что малыш хочет есть (поисковый рефлекс, причмокивание)</div>
+                </div>
+                <div class="checklist-item" data-id="know6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Как отличить плач от голода, усталости, боли</div>
+                </div>
+                <div class="checklist-item" data-id="know7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Как кормить грудью (прикладывание, позы, признаки достаточности молока)</div>
+                </div>
+                <div class="checklist-item" data-id="know8">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Как помочь при коликах (выкладывание на живот, массаж, тёплая пелёнка)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Организация помощи -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hands-helping"></i></div>
+            <div class="section-title">Кто поможет в первые недели</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="support">
+                <div class="checklist-item" data-id="supp1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Партнёр — обсудить заранее, как распределить обязанности (ночные смены, готовка, уборка)</div>
+                </div>
+                <div class="checklist-item" data-id="supp2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Бабушки/дедушки — если они готовы помогать, не стесняйтесь просить</div>
+                </div>
+                <div class="checklist-item" data-id="supp3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Няня или доула (постнатальная) — профессиональная помощь в первые недели</div>
+                </div>
+                <div class="checklist-item" data-id="supp4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Подруги с детьми — их опыт бесценен, они поймут лучше всех</div>
+                </div>
+                <div class="checklist-item" data-id="supp5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Консультант по грудному вскармливанию — если возникают проблемы</div>
+                </div>
+                <div class="checklist-item" data-id="supp6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Перинатальный психолог — если справляться сложно</div>
+                </div>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> просить помощь — не признак слабости, а забота о себе и малыше. Вы не обязаны всё делать одна.
+            </div>
+        </div>
+    </div>
+
+    <!-- Эмоциональная готовность -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-face-smile"></i></div>
+            <div class="section-title">Чего ожидать эмоционально</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Первые дни:</strong> эйфория, усталость, «бэби-блюз» (3–5 день). Плаксивость, раздражительность — это гормоны, проходит через 2 недели.</li>
+                <li><strong>Первые недели:</strong> недосып, неуверенность в своих силах. Это нормально! Каждая мама проходит через это.</li>
+                <li><strong>Материнство — это марафон, а не спринт.</strong> Не требуйте от себя совершенства с первого дня.</li>
+                <li><strong>Любовь к ребёнку может прийти не сразу</strong> — это нормально. Она вырастет из заботы и привыкания.</li>
+            </ul>
+            <div class="warning-box">
+                <strong>Когда бить тревогу:</strong> если через 2 недели после родов апатия, плаксивость, бессонница не проходят или усиливаются — это может быть послеродовая депрессия. Обратитесь к врачу!
+            </div>
+        </div>
+    </div>
+
+    <!-- Что почитать -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-book"></i></div>
+            <div class="section-title">Полезные книги для будущих мам</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>«Секреты спокойствия "ленивой мамы"»</strong> — Анна Быкова (о том, как не выгореть)</li>
+                <li><strong>«После трёх уже поздно»</strong> — Масару Ибука (о раннем развитии)</li>
+                <li><strong>«Мамочка и смысл жизни»</strong> — Ирвин Ялом (психология материнства)</li>
+                <li><strong>«Ваш малыш от рождения до двух лет»</strong> — Уильям и Марта Сирс (всё об уходе и развитии)</li>
+                <li><strong>«Счастливый ребёнок. Универсальные правила»</strong> — Андрей Курпатов</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Не пытайтесь прочитать всё сразу. Выберите 1–2 книги, которые откликаются.
+            </div>
+        </div>
+    </div>
+
+    <!-- Мифы о материнстве -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Разрушаем мифы о материнстве</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Материнский инстинкт просыпается в момент рождения.<br>
+            <strong>Правда:</strong> У многих чувство любви приходит не сразу, а через недели и месяцы заботы. Это нормально.</p>
+            
+            <p><strong>Миф:</strong> Идеальная мама всё знает и умеет.<br>
+            <strong>Правда:</strong> Идеальных мам не существует. Все учатся на ошибках.</p>
+            
+            <p><strong>Миф:</strong> Если ребёнок плачет — мама плохая.<br>
+            <strong>Правда:</strong> Плач — единственный способ общения малыша. Это не показатель вашей состоятельности.</p>
+            
+            <p><strong>Миф:</strong> Нужно быть в ресурсе 24/7 и не уставать.<br>
+            <strong>Правда:</strong> Усталость — норма. Просить отдых и помощь — правильно.</p>
+        </div>
+    </div>
+
+    <!-- Самопомощь -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-spa"></i></div>
+            <div class="section-title">Как заботиться о себе после родов</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="selfcare">
+                <div class="checklist-item" data-id="self1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Спать, когда спит малыш (хотя бы 20–30 минут)</div>
+                </div>
+                <div class="checklist-item" data-id="self2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Пить достаточно воды и нормально питаться (простой едой, замороженные полуфабрикаты — ок)</div>
+                </div>
+                <div class="checklist-item" data-id="self3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Принимать помощь — не геройствовать</div>
+                </div>
+                <div class="checklist-item" data-id="self4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Гулять хотя бы 15–20 минут в день (свежий воздух для обоих)</div>
+                </div>
+                <div class="checklist-item" data-id="self5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Находить 10–15 минут в день на себя (ванна, чай с книгой, разговор с подругой)</div>
+                </div>
+                <div class="checklist-item" data-id="self6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Не сравнивать себя с блогерами-мамами (они показывают только идеальную картинку)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    function initChecklist() {
+        const items = document.querySelectorAll('.checklist-item');
+        items.forEach(item => {
+            const id = item.getAttribute('data-id');
+            if (!id) return;
+            const stored = localStorage.getItem(`motherhood_${id}`);
+            const checkDiv = item.querySelector('.checklist-check');
+            if (stored === 'true') {
+                checkDiv.classList.add('completed');
+                checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+            } else {
+                checkDiv.classList.remove('completed');
+                checkDiv.innerHTML = '';
+            }
+            
+            item.addEventListener('click', () => {
+                const isCompleted = checkDiv.classList.contains('completed');
+                if (isCompleted) {
+                    checkDiv.classList.remove('completed');
+                    checkDiv.innerHTML = '';
+                    localStorage.setItem(`motherhood_${id}`, 'false');
+                } else {
+                    checkDiv.classList.add('completed');
+                    checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+                    localStorage.setItem(`motherhood_${id}`, 'true');
+                }
+            });
+        });
+    }
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    initChecklist();
+</script>
+</body>
+</html>

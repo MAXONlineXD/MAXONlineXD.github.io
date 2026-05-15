@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Краткий обзор процесса родов — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .period-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .period-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #b35d7c;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 12px;
+            margin: 16px 0;
+            align-items: flex-start;
+        }
+
+        .timeline-badge {
+            background: #fbeae8;
+            border-radius: 30px;
+            padding: 4px 12px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-baby-carriage"></i> 
+            Краткий обзор процесса родов
+        </h1>
+        <p>Что происходит в каждый период — от схваток до встречи с малышом</p>
+        <div class="badge"><i class="fas fa-clock"></i> Знание процесса снижает страх на 70%</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Из чего состоят роды?</div>
+        </div>
+        <div class="section-content">
+            <p>Роды — это естественный физиологический процесс, который делится на <strong>три основных периода</strong>. Общая продолжительность у первородящих в среднем 8–12 часов, у повторнородящих — 5–8 часов.</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> каждая женщина и каждые роды уникальны. Не стремитесь уложиться в «нормы» — слушайте своё тело и врача.
+            </div>
+        </div>
+    </div>
+
+    <!-- Период 1: Схватки и раскрытие -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-waveform"></i></div>
+            <div class="section-title">I период — схватки и раскрытие шейки матки</div>
+        </div>
+        <div class="section-content">
+            <div class="period-card">
+                <div class="period-title"><i class="fas fa-hourglass-start"></i> Латентная фаза (0–3 см раскрытия)</div>
+                <p>Схватки лёгкие, нерегулярные (каждые 15–20 минут), длятся 20–30 секунд. Длительность: у первородящих 6–8 часов, у повторнородящих 3–5 часов.</p>
+                <p><strong>Что делать:</strong> можно принимать душ, ходить, отдыхать, пить воду. В роддом ехать, когда схватки станут регулярными (каждые 7–10 минут).</p>
+            </div>
+            <div class="period-card">
+                <div class="period-title"><i class="fas fa-hourglass-half"></i> Активная фаза (4–7 см раскрытия)</div>
+                <p>Схватки каждые 3–5 минут, длятся 45–60 секунд. Сильные, требуют концентрации. Длительность: 3–5 часов.</p>
+                <p><strong>Что делать:</strong> дышать «свечой», менять позы, принимать душ, массаж поясницы. В роддоме — КТГ-контроль.</p>
+            </div>
+            <div class="period-card">
+                <div class="period-title"><i class="fas fa-hourglass-end"></i> Переходная фаза (8–10 см раскрытия)</div>
+                <p>Самые сильные схватки, каждые 1–2 минуты, длятся 60–90 секунд. Длительность: 30–90 минут.</p>
+                <p><strong>Что делать:</strong> дышать часто и поверхностно («собачка»). НЕ тужиться до команды врача!</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Полное раскрытие — 10 см. В этот момент может появиться желание тужиться. Сообщите врачу!
+            </div>
+        </div>
+    </div>
+
+    <!-- Период 2: Потуги и рождение малыша -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-fist-raised"></i></div>
+            <div class="section-title">II период — потуги и рождение малыша</div>
+        </div>
+        <div class="section-content">
+            <div class="period-card">
+                <div class="period-title"><i class="fas fa-child"></i> От полного раскрытия до рождения</div>
+                <p>Длительность: у первородящих 30–60 минут, у повторнородящих 15–30 минут.</p>
+                <p>Потуги — это рефлекторные сокращения мышц брюшного пресса, помогающие продвигать малыша по родовым путям. Между потугами есть паузы для отдыха.</p>
+                <p><strong>Техника потуг:</strong> глубокий вдох → задержка дыхания → натуживание вниз (как при запоре) на 10–15 секунд → плавный выдох. 3–4 потуги за схватку.</p>
+                <p><strong>Как дышать между потугами:</strong> часто и поверхностно, чтобы не напрягать мышцы таза.</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> В момент рождения головки вы почувствуете сильное жжение («огненный обруч») — это нормально. По команде врача перестаньте тужиться и дышите часто, чтобы избежать разрывов.
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> После рождения головки врач помогает родиться плечикам и телу. Малыша выкладывают вам на живот для первого контакта «кожа к коже».
+            </div>
+        </div>
+    </div>
+
+    <!-- Период 3: Рождение плаценты -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="section-title">III период — рождение плаценты</div>
+        </div>
+        <div class="section-content">
+            <div class="period-card">
+                <div class="period-title"><i class="fas fa-dove"></i> От рождения малыша до выхода последа</div>
+                <p>Длительность: 5–30 минут.</p>
+                <p>После рождения малыша матка сокращается, и плацента (детское место) отделяется от её стенки. Врач просит слегка потужиться, и плацента выходит.</p>
+                <p><strong>Что делают с плацентой:</strong> осматривают на целостность (чтобы не осталось кусочков в матке). При необходимости делают ручное обследование полости матки.</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Сразу после рождения малыша вам на живот кладут холодный компресс (для сокращения матки) и могут поставить капельницу с окситоцином (для профилактики кровотечения).
+            </div>
+        </div>
+    </div>
+
+    <!-- Предвестники родов -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bell"></i></div>
+            <div class="section-title">Как понять, что роды начинаются?</div>
+        </div>
+        <div class="section-content">
+            <div class="timeline-item">
+                <div class="timeline-badge">За 2–4 недели</div>
+                <div>Опущение живота, отхождение слизистой пробки (розоватые или коричневатые выделения).</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-badge">За 1–2 дня</div>
+                <div>Учащение тренировочных схваток (нерегулярные, безболезненные).</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-badge">Начало родов</div>
+                <div>Регулярные схватки (каждые 10–15 минут) или отхождение околоплодных вод.</div>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Когда срочно ехать в роддом:</strong>
+                <ul>
+                    <li>Схватки каждые 5–7 минут (для первородящих) или 10 минут (для повторнородящих)</li>
+                    <li>Отхождение околоплодных вод (даже без схваток!)</li>
+                    <li>Кровянистые выделения</li>
+                    <li>Резкая боль в животе</li>
+                    <li>Ухудшение самочувствия (головная боль, «мушки»)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Продолжительность по типам -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="section-title">Продолжительность родов</div>
+        </div>
+        <div class="section-content">
+            <div class="tip-box">
+                <p><strong>Первородящие:</strong> в среднем 8–12 часов (не более 18 часов)</p>
+                <p><strong>Повторнородящие:</strong> в среднем 5–8 часов (не более 12 часов)</p>
+                <p><strong>Быстрые роды:</strong> менее 4 часов</p>
+                <p><strong>Стремительные роды:</strong> менее 2 часов</p>
+                <p><strong>Затяжные роды:</strong> более 18 часов</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Не переживайте, если роды идут «не по графику». Каждый организм индивидуален. Главное — чтобы малыш и мама были под контролем врачей.
+            </div>
+        </div>
+    </div>
+
+    <!-- Обезболивание в родах -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-syringe"></i></div>
+            <div class="section-title">Обезболивание в родах</div>
+        </div>
+        <div class="section-content">
+            <div class="tip-box">
+                <p><strong>Немедикаментозное:</strong> дыхание, массаж, тёплый душ, позы на фитболе, ароматерапия, акупрессура.</p>
+                <p><strong>Медикаментозное:</strong> эпидуральная анестезия (ставится при раскрытии 4–5 см), закись азота, промедол (по назначению).</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Эпидуральная анестезия не влияет на плод и не увеличивает риск кесарева сечения. Вы можете попросить её в любой момент.
+            </div>
+        </div>
+    </div>
+
+    <!-- Что можно и нельзя в родах -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="section-title">Что можно и нельзя в родах</div>
+        </div>
+        <div class="section-content">
+            <div class="tip-box">
+                <p><strong>✅ МОЖНО:</strong> двигаться, принимать удобные позы, пить воду, есть лёгкие углеводы (крекеры, банан), слушать музыку, принимать тёплый душ.</p>
+                <p><strong>❌ НЕЛЬЗЯ:</strong> кричать (отнимает силы), зажиматься, лежать неподвижно на спине (ухудшает кровоток), тужиться без команды врача.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Золотой час -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clock"></i></div>
+            <div class="section-title">Первый час после родов («Золотой час»)</div>
+        </div>
+        <div class="section-content">
+            <div class="period-card">
+                <p>Сразу после рождения малыша выкладывают вам на живот для контакта «кожа к коже». Это запускает механизмы:</p>
+                <ul>
+                    <li>Стабилизирует сердцебиение и дыхание малыша</li>
+                    <li>Запускает лактацию (первое прикладывание к груди)</li>
+                    <li>Укрепляет эмоциональную связь</li>
+                    <li>Снижает стресс у мамы</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> в этот час врачи не забирают малыша без крайней необходимости. Весь осмотр проводится на вас или рядом.
+            </div>
+        </div>
+    </div>
+
+    <!-- Кесарево сечение -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-procedures"></i></div>
+            <div class="section-title">Кесарево сечение</div>
+        </div>
+        <div class="section-content">
+            <div class="tip-box">
+                <p>Если роды не могут пройти естественным путём, проводится кесарево сечение — операция, при которой малыша извлекают через разрез на матке.</p>
+                <p><strong>Показания:</strong> тазовое предлежание, крупный плод, узкий таз, предлежание плаценты, рубец на матке, гипоксия плода и др.</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> <strong>Важно:</strong> кесарево сечение — это не «лёгкий путь», а серьёзная операция. Но иногда это самый безопасный способ для мамы и малыша.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Эпидуральная анестезия — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .method-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .pros-cons {
+            display: flex;
+            gap: 12px;
+            margin: 12px 0;
+            flex-wrap: wrap;
+        }
+
+        .pros {
+            flex: 1;
+            background: #e8f5e9;
+            border-radius: 16px;
+            padding: 12px;
+        }
+
+        .cons {
+            flex: 1;
+            background: #ffebee;
+            border-radius: 16px;
+            padding: 12px;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 12px;
+            margin: 12px 0;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background: #fbeae8;
+            border-radius: 30px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #b35d7c;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+            .pros-cons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-spine"></i> 
+            Эпидуральная анестезия
+        </h1>
+        <p>Всё, что нужно знать о самом эффективном обезболивании в родах</p>
+        <div class="badge"><i class="fas fa-check-circle"></i> Безопасно, эффективно, по желанию</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Что это -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Что такое эпидуральная анестезия?</div>
+        </div>
+        <div class="section-content">
+            <p>Эпидуральная анестезия — это метод обезболивания, при котором анестетик вводится в <strong>эпидуральное пространство позвоночника</strong> (окружает спинной мозг). Лекарство блокирует передачу болевых импульсов от матки и родовых путей, полностью снимая боль в схватках.</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> эпидуральная анестезия не делает вас «парализованной» — вы сохраняете сознание, можете общаться с врачом и даже двигать ногами (хотя чувствительность снижается).
+            </div>
+        </div>
+    </div>
+
+    <!-- Как проводится -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-procedures"></i></div>
+            <div class="section-title">Как проходит процедура</div>
+        </div>
+        <div class="section-content">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <div>Роженица сидит, согнув спину «кошечкой», или лежит на боку.</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <div>Врач обрабатывает кожу спины антисептиком, делает местную анестезию (тонкая игла, как укол).</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <div>Специальной иглой врач проникает в эпидуральное пространство (вы чувствуете давление, но не боль).</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">4</div>
+                <div>Через иглу вводится тонкий катетер (пластиковая трубочка), игла удаляется.</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">5</div>
+                <div>Катетер фиксируется пластырем на спине, по нему подаётся анестетик.</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">6</div>
+                <div>Эффект наступает через 10–20 минут.</div>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Длительность:</strong> вся процедура занимает 10–15 минут. Катетер остаётся в спине до конца родов, позволяя добавлять анестетик по необходимости.
+            </div>
+        </div>
+    </div>
+
+    <!-- Показания -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-stethoscope"></i></div>
+            <div class="section-title">Когда показана эпидуральная анестезия</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>По желанию женщины</strong> — при нормально протекающих родах (в большинстве роддомов)</li>
+                <li><strong>Низкий болевой порог</strong> — если женщина не переносит боль</li>
+                <li><strong>Стимуляция окситоцином</strong> — окситоцин усиливает боль, эпидуральная анестезия её снимает</li>
+                <li><strong>Длительные роды</strong> (более 12 часов) — чтобы сохранить силы для потуг</li>
+                <li><strong>Преэклампсия, гипертония</strong> — эпидуральная анестезия снижает давление</li>
+                <li><strong>Крупный плод, тазовое предлежание</strong> — чтобы при необходимости быстро перейти на кесарево сечение</li>
+                <li><strong>Рубец на матке после кесарева сечения</strong> — позволяет безопасно провести роды с возможностью экстренного перехода</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Противопоказания -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Противопоказания</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❌ Эпидуральную анестезию НЕ делают при:</strong>
+                <ul>
+                    <li>Нарушениях свёртываемости крови (гемофилия, тромбоцитопения)</li>
+                    <li>Приёме антикоагулянтов (разжижающих кровь препаратов) — варфарин, ксарелто и др.</li>
+                    <li>Инфекциях кожи в месте пункции</li>
+                    <li>Сепсисе (общей инфекции)</li>
+                    <li>Тяжёлых деформациях позвоночника (сколиоз, кифоз, перенесённые операции)</li>
+                    <li>Геморрагическом шоке</li>
+                    <li>Отказе пациентки</li>
+                    <li>Некоторых неврологических заболеваниях</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Решение о возможности эпидуральной анестезии принимает анестезиолог после осмотра и изучения анализов (коагулограмма обязательна).
+            </div>
+        </div>
+    </div>
+
+    <!-- Плюсы и минусы -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="section-title">Плюсы и минусы</div>
+        </div>
+        <div class="section-content">
+            <div class="pros-cons">
+                <div class="pros">
+                    <strong>✅ Плюсы</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Полное или почти полное снятие боли в схватках</li>
+                        <li>Возможность отдохнуть и набраться сил до потуг</li>
+                        <li>Сознание остаётся ясным</li>
+                        <li>Безопасна для плода (анестетик не проникает через плаценту)</li>
+                        <li>Снижает давление при преэклампсии</li>
+                        <li>При необходимости легко перейти на кесарево сечение</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <strong>❌ Минусы</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Онемение ног (трудно двигаться, нужен катетер в мочевой пузырь)</li>
+                        <li>Может удлинить первый период родов на 1–2 часа</li>
+                        <li>Риск головной боли после родов (1–3% случаев, проходит через несколько дней)</li>
+                        <li>Редко — снижение давления (лечится капельницами)</li>
+                        <li>Редко — неэффективность (не снимает боль, тогда ставят заново)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Влияние на роды -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-baby-carriage"></i></div>
+            <div class="section-title">Влияет ли на процесс родов?</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>На схватки:</strong> эпидуральная анестезия может замедлить схватки (снижает выработку окситоцина), поэтому часто дополнительно вводят окситоцин для стимуляции.</li>
+                <li><strong>На потуги:</strong> из-за онемения сложнее чувствовать нужный момент. Но большинство женщин успешно тужатся по команде врача.</li>
+                <li><strong>На кесарево сечение:</strong> эпидуральная анестезия не увеличивает риск кесарева сечения. Исследования показывают, что разницы в частоте операций между группами с эпидуральной анестезией и без неё нет.</li>
+                <li><strong>На малыша:</strong> анестетик практически не проникает через плаценту, поэтому ребёнок не испытывает угнетения дыхания или сонливости.</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> если вы уже хотите поставить эпидуральную анестезию, не ждите «последней минуты». Оптимальное время — раскрытие 4–5 см (активная фаза родов).
+            </div>
+        </div>
+    </div>
+
+    <!-- Осложнения -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">Возможные осложнения (редко)</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>Редкие осложнения:</strong>
+                <ul>
+                    <li><strong>Головная боль после пункции</strong> — 1–3% случаев, проходит через несколько дней, может потребоваться «blood patch» (введение собственной крови в место пункции).</li>
+                    <li><strong>Снижение давления</strong> — быстро купируется капельницами.</li>
+                    <li><strong>Затруднённое мочеиспускание</strong> — ставят катетер на время действия анестезии.</li>
+                    <li><strong>Неэффективность обезболивания</strong> — 5–10% случаев (обычно переставляют катетер).</li>
+                    <li><strong>Инфекция в месте пункции</strong> — крайне редко (менее 0,01%).</li>
+                    <li><strong>Повреждение нерва</strong> — исключительная редкость, временное.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> эпидуральная анестезия считается очень безопасной процедурой. Осложнения бывают редко и чаще всего временные.
+            </div>
+        </div>
+    </div>
+
+    <!-- После родов -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clock"></i></div>
+            <div class="section-title">Что после родов</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>Катетер удаляют сразу после родов.</li>
+                <li>Чувствительность ног возвращается через 1–2 часа.</li>
+                <li>Если была головная боль, она проходит через 2–5 дней. При сильной боли — обратитесь к анестезиологу.</li>
+                <li>Уход за малышом возможен сразу после восстановления чувствительности (пеленать, прикладывать к груди можно, даже если ноги ещё немного онемели).</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> Эпидуральная анестезия не влияет на грудное вскармливание — прикладывать малыша к груди можно сразу после родов.
+            </div>
+        </div>
+    </div>
+
+    <!-- Частые вопросы -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Частые вопросы</div>
+        </div>
+        <div class="section-content">
+            <p><strong>❓ Больно ли ставить эпидуральную анестезию?</strong><br>➡️ Не больнее обычного укола. Местная анестезия почти полностью убирает боль.</p>
+            <p><strong>❓ Можно ли попросить эпидуральную анестезию, если я не знала, что она есть?</strong><br>➡️ Да, в любой момент. Скажите акушерке или врачу, что хотите обезболивание.</p>
+            <p><strong>❓ Если поздно попросить (раскрытие 8–9 см), поставят?</strong><br>➡️ Можно, но иногда анестезиолог может отказать, если до потуг осталось мало времени (риск не успеть).</p>
+            <p><strong>❓ Будет ли болеть спина после родов?</strong><br>➡️ У большинства нет. Место пункции может быть чувствительным 1–2 дня. Хронических болей эпидуральная анестезия не вызывает.</p>
+            <p><strong>❓ Бесплатно ли это?</strong><br>➡️ По ОМС при наличии показаний или по желанию (если в роддоме есть такая практика) — бесплатно. В некоторых роддомах требуется платный контракт (5–15 тыс. ₽). Уточните заранее.</p>
+            <p><strong>❓ Можно ли двигаться после эпидуральной анестезии?</strong><br>➡️ Можно, но ноги будут «ватными». Вы сможете переворачиваться с боку на бок, садиться (с поддержкой), но ходить нежелательно из-за риска падения.</p>
+        </div>
+    </div>
+
+    <!-- Мифы -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Разрушаем мифы</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Эпидуральная анестезия вызывает паралич.<br>
+            <strong>Правда:</strong> Временное онемение ног проходит через 1–2 часа. Постоянный паралич при правильно проведённой процедуре невозможен.</p>
+            
+            <p><strong>Миф:</strong> После эпидуральной анестезии обязательно будет кесарево сечение.<br>
+            <strong>Правда:</strong> Большинство женщин с эпидуральной анестезией рожают естественным путём.</p>
+            
+            <p><strong>Миф:</strong> Эпидуральная анестезия вредна для малыша.<br>
+            <strong>Правда:</strong> Анестетик практически не проникает через плаценту. Ребёнок рождается без угнетения дыхания и с нормальной активностью.</p>
+            
+            <p><strong>Миф:</strong> Надо терпеть боль, иначе я «слабая мать».<br>
+            <strong>Правда:</strong> Выдерживание боли не делает вас лучше. Спокойная, отдохнувшая мама — лучший подарок для малыша.</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

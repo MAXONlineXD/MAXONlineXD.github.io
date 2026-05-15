@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Перенашивание беременности — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 12px;
+            margin: 16px 0;
+            align-items: flex-start;
+        }
+
+        .timeline-badge {
+            background: #fbeae8;
+            border-radius: 30px;
+            padding: 4px 12px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-hourglass-end"></i> 
+            Перенашивание беременности
+        </h1>
+        <p>Что делать, если малыш не торопится</p>
+        <div class="badge"><i class="fas fa-calendar-week"></i> Когда 40 недель позади — важные ответы</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Что такое перенашивание -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Что такое перенашивание беременности?</div>
+        </div>
+        <div class="section-content">
+            <p>Перенашиванием считается беременность, которая длится более <strong>42 недель</strong> (294 дня) от первого дня последней менструации. Однако на практике врачи начинают внимательно наблюдать уже с 40–41 недели.</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> только 5–10% беременностей действительно перенашиваются. Чаще всего дата просто была изначально рассчитана неправильно (нерегулярный цикл, поздняя овуляция).
+            </div>
+            <div class="warning-box">
+                <strong>Разница между «пролонгированной» и «переношенной» беременностью:</strong>
+                <ul>
+                    <li><strong>Пролонгированная</strong> — беременность длится дольше 40 недель, но плацента работает нормально, ребёнок чувствует себя хорошо. Это не опасно.</li>
+                    <li><strong>Переношенная</strong> — плацента стареет, перестаёт полноценно снабжать малыша кислородом и питанием. Это требует вмешательства.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Причины -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-microscope"></i></div>
+            <div class="section-title">Почему беременность может перенашиваться?</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Неправильный расчёт срока</strong> (нерегулярный цикл, поздняя овуляция) — самая частая причина</li>
+                <li><strong>Гормональные нарушения</strong> — низкий уровень эстрогенов, прогестерона, окситоцина</li>
+                <li><strong>Генетическая предрасположенность</strong> — если у мамы была переношенная беременность</li>
+                <li><strong>Ожирение или лишний вес</strong> у мамы</li>
+                <li><strong>Сидячий образ жизни</strong> — недостаток физической активности</li>
+                <li><strong>Первая беременность</strong> (чаще, чем повторные)</li>
+                <li><strong>Возраст мамы старше 35 лет</strong></li>
+                <li><strong>Крупный плод</strong> (механическая причина — голова не вставляется в малый таз)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Когда начинать волноваться -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="section-title">Сроки и тактика наблюдения</div>
+        </div>
+        <div class="section-content">
+            <div class="timeline-item">
+                <div class="timeline-badge">40 недель</div>
+                <div>ПДР (предполагаемая дата родов). Паниковать не нужно. Начинается усиленное наблюдение.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-badge">40–41 неделя</div>
+                <div>КТГ 1 раз в 2–3 дня, УЗИ с допплерометрией. Оценивают состояние плаценты и малыша.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-badge">41–42 недели</div>
+                <div>Обследование каждые 1–2 дня. Обсуждается вопрос о стимуляции родов.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-badge">42+ недели</div>
+                <div>Рекомендована госпитализация и стимуляция родов (или кесарево сечение по показаниям).</div>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> отклонение до 42 недель при хороших показателях КТГ и УЗИ — вариант нормы. Не все дети рождаются ровно в срок.
+            </div>
+        </div>
+    </div>
+
+    <!-- Риски для малыша -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">Риски для малыша</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>Чем опасно истинное перенашивание:</strong>
+                <ul>
+                    <li>Плацента стареет, хуже снабжает малыша кислородом → риск гипоксии</li>
+                    <li>Уменьшается количество околоплодных вод (маловодие) → сдавливание пуповины</li>
+                    <li>Малыш продолжает расти → крупный плод (более 4–4,5 кг), риск травм при родах</li>
+                    <li>Кости черепа становятся более плотными → хуже конфигурация при прохождении родовых путей</li>
+                    <li>В околоплодные воды может выделиться меконий (первый кал) → синдром аспирации мекония (попадание в лёгкие)</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> <strong>Хорошая новость:</strong> при регулярном наблюдении (КТГ, УЗИ) эти риски можно вовремя заметить и предотвратить.
+            </div>
+        </div>
+    </div>
+
+    <!-- Обследования при перенашивании -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-stethoscope"></i></div>
+            <div class="section-title">Какие обследования проводят?</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>КТГ (кардиотокография)</strong> — оценивает сердцебиение плода и тонус матки. Проводится каждые 2–3 дня после 40 недель.</li>
+                <li><strong>УЗИ с допплерометрией</strong> — оценивает состояние плаценты (степень зрелости), количество околоплодных вод, кровоток в сосудах пуповины.</li>
+                <li><strong>Биофизический профиль плода</strong> — комплексная оценка: дыхательные движения, тонус, шевеления, объём вод.</li>
+                <li><strong>Амниоскопия</strong> — осмотр околоплодных вод через шейку матки (оценивает цвет вод, наличие мекония).</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Если все показатели в норме — беременность считается пролонгированной (безопасной), и можно ждать естественного начала родов.
+            </div>
+        </div>
+    </div>
+
+    <!-- Симптомы перенашивания -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-symptoms"></i></div>
+            <div class="section-title">Признаки перенашивания (для мамы)</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>Окружность живота уменьшилась на 1–2 см (из-за маловодия)</li>
+                <li>Матка стала плотнее</li>
+                <li>Малыш стал менее активным (шевеления редкие или слабые)</li>
+                <li>Снизилась масса тела или не набирается</li>
+                <li>Появились сухость кожи, шелушение (признак старения плаценты)</li>
+            </ul>
+            <div class="warning-box">
+                <strong>Важно:</strong> эти симптомы — повод срочно обратиться к врачу для проверки состояния малыша!
+            </div>
+        </div>
+    </div>
+
+    <!-- Стимуляция родов -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-syringe"></i></div>
+            <div class="section-title">Стимуляция родов</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Когда рекомендуют стимуляцию:</strong></p>
+            <ul>
+                <li>Срок 41–42 недели (даже при хороших показателях — для снижения рисков)</li>
+                <li>Признаки старения плаценты на УЗИ</li>
+                <li>Маловодие</li>
+                <li>Снижение шевелений или изменения на КТГ</li>
+                <li>Наличие мекония в околоплодных водах</li>
+                <li>Сопутствующие заболевания мамы (диабет, гипертония)</li>
+            </ul>
+            <p><strong>Методы стимуляции:</strong></p>
+            <ul>
+                <li>Амниотомия (прокол плодного пузыря) — если шейка матки готова</li>
+                <li>Введение простагландинов (гель или таблетки) — для созревания шейки</li>
+                <li>Введение окситоцина — для усиления схваток (через капельницу)</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> стимуляция проводится только в роддоме под контролем КТГ. Домашние методы (касторка, горячая ванна) опасны и неэффективны!
+            </div>
+        </div>
+    </div>
+
+    <!-- Что можно делать дома -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-home"></i></div>
+            <div class="section-title">Что можно делать дома (после 40 недель)</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Ходьба и лёгкая активность</strong> — стимулирует выработку окситоцина</li>
+                <li><strong>Секс</strong> (при отсутствии противопоказаний) — в сперме есть простагландины, размягчающие шейку матки</li>
+                <li><strong>Стимуляция сосков</strong> (аккуратно, 5–10 минут в день) — выделяется окситоцин</li>
+                <li><strong>Тёплая ванна</strong> (не горячая!) — расслабляет</li>
+                <li><strong>Иглоукалывание</strong> — некоторые техники стимулируют роды</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Главное — сохранять спокойствие. Стресс и тревога тормозят выработку окситоцина, отодвигая роды.
+            </div>
+            <div class="warning-box">
+                <strong>Что НЕЛЬЗЯ делать:</strong> пить касторовое масло (опасно), ставить клизмы, париться в бане, поднимать тяжести.
+            </div>
+        </div>
+    </div>
+
+    <!-- Эмоциональная поддержка -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-heart"></i></div>
+            <div class="section-title">Как справиться с тревогой</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Не читайте негативные форумы</strong> — паника передаётся и отдаляет роды.</li>
+                <li><strong>Доверяйте врачу</strong> — если он говорит, что КТГ и УЗИ в норме, значит, пока всё хорошо.</li>
+                <li><strong>Занимайтесь приятными делами</strong> — вязание, чтение, просмотр добрых фильмов.</li>
+                <li><strong>Гуляйте</strong> — свежий воздух успокаивает и стимулирует родовую деятельность.</li>
+                <li><strong>Разговаривайте с малышом</strong> — уговаривайте его поскорее выбраться на свет.</li>
+                <li><strong>Обратитесь к психологу</strong> — если тревога не даёт спать и есть.</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Помните:</strong> ваш малыш тоже чувствует вашу тревогу. Спокойная мама — спокойный ребёнок.
+            </div>
+        </div>
+    </div>
+
+    <!-- Чего НЕ надо делать -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего категорически нельзя</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ Пить касторовое масло — вызывает диарею, обезвоживание и не доказано эффективность</li>
+                <li>❌ Принимать горячую ванну или сауну — перегрев опасен для плода</li>
+                <li>❌ Самостоятельно принимать лекарства для стимуляции</li>
+                <li>❌ Прокручивать негативные сценарии в голове</li>
+                <li>❌ Игнорировать рекомендации врача о госпитализации</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Частые вопросы -->
+    <div class="section-card" style="animation-delay: 0.3s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Частые вопросы</div>
+        </div>
+        <div class="section-content">
+            <p><strong>❓ 40 недель и 5 дней — это перенашивание?</strong><br>Нет, до 42 недель при хороших показателях — вариант нормы.</p>
+            
+            <p><strong>❓ Скажут ли сразу делать кесарево при перенашивании?</strong><br>Нет, сначала пробуют стимуляцию, если нет противопоказаний. Кесарево — если есть риски (крупный плод, гипоксия, тазовое предлежание).</p>
+            
+            <p><strong>❓ Влияет ли перенашивание на здоровье малыша в будущем?</strong><br>Если роды прошли без осложнений — нет. При истинном перенашивании с гипоксией возможны неврологические проблемы, но это редкость.</p>
+            
+            <p><strong>❓ Можно ли родить здорового малыша после 42 недель?</strong><br>Да, многие женщины рожают в 42–43 недели здоровых детей. Но чем дольше, тем выше риски, поэтому врачи рекомендуют стимуляцию.</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

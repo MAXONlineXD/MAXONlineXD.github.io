@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Собираем сумку в роддом — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .checklist-group {
+            margin: 16px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: #fffaf5;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #fef0ea;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #cd7c9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .checklist-check.completed {
+            background: #cd7c9b;
+            color: white;
+        }
+
+        .checklist-text {
+            flex: 1;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-suitcase"></i> 
+            Собираем сумку в роддом
+        </h1>
+        <p>Что взять с собой, чтобы ничего не забыть</p>
+        <div class="badge"><i class="fas fa-clipboard-list"></i> Полный чек-лист для спокойствия и комфорта</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Когда начинать собирать?</div>
+        </div>
+        <div class="section-content">
+            <p>Идеальное время — <strong>34–35 недель беременности</strong>. К этому сроку вы уже знаете, в каком роддоме будете рожать, и можете уточнить их требования. Роды могут начаться раньше, поэтому лучше подготовиться заранее.</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Главное правило:</strong> сумка должна стоять на видном месте с 36 недель. Положите её рядом с выходом или в машину.
+            </div>
+            <div class="warning-box">
+                <strong>Важно:</strong> в разных роддомах списки могут отличаться. Обязательно уточните в вашем роддоме, что можно и что нельзя!
+            </div>
+        </div>
+    </div>
+
+    <!-- Документы -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-folder-open"></i></div>
+            <div class="section-title">Документы (самое важное!)</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="documents">
+                <div class="checklist-item" data-id="doc1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">📄 Паспорт</div>
+                </div>
+                <div class="checklist-item" data-id="doc2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">📄 Полис ОМС</div>
+                </div>
+                <div class="checklist-item" data-id="doc3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">📄 СНИЛС</div>
+                </div>
+                <div class="checklist-item" data-id="doc4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">📄 Обменная карта (выдают в ЖК на 28–30 неделях)</div>
+                </div>
+                <div class="checklist-item" data-id="doc5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">📄 Родовой сертификат</div>
+                </div>
+                <div class="checklist-item" data-id="doc6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">📄 Контракт на роды (если есть)</div>
+                </div>
+                <div class="checklist-item" data-id="doc7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">📄 Результаты анализов и УЗИ (всё в одной папке)</div>
+                </div>
+                <div class="checklist-item" data-id="doc8">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">📄 Документы партнёра (для партнёрских родов): паспорт, флюорография, анализы на ВИЧ, сифилис, гепатиты (список уточняйте)</div>
+                </div>
+            </div>
+            <div class="warning-box">
+                <strong>Эти вещи должны быть с вами всегда на последних неделях!</strong> Положите их в маленькую сумочку, которую не будете вынимать из сумки.
+            </div>
+        </div>
+    </div>
+
+    <!-- Для мамы (родовая палата) -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-female"></i></div>
+            <div class="section-title">Для мамы — в родовую палату</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="mom">
+                <div class="checklist-item" data-id="mom1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">👚 Ночная рубашка или футболка (свободная, лучше с застёжками спереди) — 2 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="mom2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧦 Носки (2–3 пары, не тесные)</div>
+                </div>
+                <div class="checklist-item" data-id="mom3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🩴 Тапочки моющиеся (шлёпанцы для душа и палаты)</div>
+                </div>
+                <div class="checklist-item" data-id="mom4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🚿 Полотенце (2 шт.: маленькое для лица, большое для тела)</div>
+                </div>
+                <div class="checklist-item" data-id="mom5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">💧 Бутылка с водой (негазированной, с трубочкой удобнее)</div>
+                </div>
+                <div class="checklist-item" data-id="mom6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🍎 Перекус (сухарики, печенье, банан, шоколадка — для восстановления сил после родов)</div>
+                </div>
+                <div class="checklist-item" data-id="mom7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">📱 Телефон + зарядное устройство + power bank</div>
+                </div>
+                <div class="checklist-item" data-id="mom8">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🎧 Наушники (музыка для расслабления, аудиокниги)</div>
+                </div>
+                <div class="checklist-item" data-id="mom9">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧴 Резинки для волос, заколки (чтобы волосы не мешали)</div>
+                </div>
+                <div class="checklist-item" data-id="mom10">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">💄 Гигиеническая помада (дыхание пересушивает губы)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Для мамы (послеродовая палата) -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-heart"></i></div>
+            <div class="section-title">Для мамы — в послеродовую палату</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="postpartum">
+                <div class="checklist-item" data-id="pp1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧥 Халат лёгкий (хлопковый)</div>
+                </div>
+                <div class="checklist-item" data-id="pp2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">👚 Ночная рубашка для кормления (с разрезами на груди) — 2–3 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="pp3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🩲 Трусы (обычные хлопковые 5–7 шт. или специальные послеродовые одноразовые)</div>
+                </div>
+                <div class="checklist-item" data-id="pp4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🩸 Прокладки послеродовые (супервпитывающие) — 1–2 упаковки</div>
+                </div>
+                <div class="checklist-item" data-id="pp5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🩸 Прокладки урологические (на случай разрывов) — можно взять для большего комфорта</div>
+                </div>
+                <div class="checklist-item" data-id="pp6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧴 Средства гигиены: мыло, зубная паста, щётка, шампунь, гель для душа, мочалка</div>
+                </div>
+                <div class="checklist-item" data-id="pp7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧴 Крем для сосков (Бепантен, Пурелан) — от трещин</div>
+                </div>
+                <div class="checklist-item" data-id="pp8">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🩸 Кровоостанавливающие прокладки-сеточки (по желанию)</div>
+                </div>
+                <div class="checklist-item" data-id="pp9">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧣 Компрессионные чулки (при варикозе или после кесарева — по назначению)</div>
+                </div>
+                <div class="checklist-item" data-id="pp10">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🍽 Посуда: кружка, ложка, тарелка (если не выдают)</div>
+                </div>
+                <div class="checklist-item" data-id="pp11">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧻 Туалетная бумага (мягкая), бумажные полотенца, влажные салфетки</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Для малыша -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-baby"></i></div>
+            <div class="section-title">Для малыша</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="baby">
+                <div class="checklist-item" data-id="baby1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">👕 Боди с длинным рукавом — 3–4 шт. (размер 56–62)</div>
+                </div>
+                <div class="checklist-item" data-id="baby2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">👖 Ползунки или слипы — 3–4 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="baby3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧦 Носочки — 2–3 пары</div>
+                </div>
+                <div class="checklist-item" data-id="baby4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧢 Шапочки тонкие — 2 шт., тёплая — 1 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="baby5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🖐 Царапки-антицарапки — 2 пары</div>
+                </div>
+                <div class="checklist-item" data-id="baby6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🩲 Подгузники (размер 0 или 1, 1–2 упаковки по 20–30 шт.)</div>
+                </div>
+                <div class="checklist-item" data-id="baby7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧼 Влажные салфетки — 1 упаковка (без спирта)</div>
+                </div>
+                <div class="checklist-item" data-id="baby8">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧴 Детское мыло (жидкое) — для подмывания</div>
+                </div>
+                <div class="checklist-item" data-id="baby9">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧴 Крем под подгузник — тюбик</div>
+                </div>
+                <div class="checklist-item" data-id="baby10">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧺 Пелёнки тонкие (3–5 шт.) и фланелевые (2–3 шт.)</div>
+                </div>
+                <div class="checklist-item" data-id="baby11">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🍼 Бутылочка с соской (на случай докорма)</div>
+                </div>
+                <div class="checklist-item" data-id="baby12">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🛏 Одеяло или конверт на выписку (по сезону)</div>
+                </div>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> в некоторых роддомах выдают казённую одежду для малыша. Уточните заранее, чтобы не везти лишнего.
+            </div>
+        </div>
+    </div>
+
+    <!-- Для партнёра -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="section-title">Для партнёра (при партнёрских родах)</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="partner">
+                <div class="checklist-item" data-id="part1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">📄 Документы: паспорт, флюорография, анализы (список уточняйте в роддоме)</div>
+                </div>
+                <div class="checklist-item" data-id="part2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🩴 Сменная обувь (шлёпанцы)</div>
+                </div>
+                <div class="checklist-item" data-id="part3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧥 Одежда (футболка, шорты/спортивные штаны)</div>
+                </div>
+                <div class="checklist-item" data-id="part4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🍎 Перекус и вода (еда может занять много времени)</div>
+                </div>
+                <div class="checklist-item" data-id="part5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">📱 Телефон, зарядка</div>
+                </div>
+                <div class="checklist-item" data-id="part6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🎧 Наушники, книга (на случай ожидания)</div>
+                </div>
+                <div class="checklist-item" data-id="part7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🩺 Маска и санитайзер (если требуется)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Дополнительные полезные мелочи -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-grip-lines"></i></div>
+            <div class="section-title">Полезные мелочи</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="extra">
+                <div class="checklist-item" data-id="ex1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">✂️ Ножницы (если понадобится вскрыть упаковки)</div>
+                </div>
+                <div class="checklist-item" data-id="ex2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">📘 Книга или журнал (отвлечься в ожидании)</div>
+                </div>
+                <div class="checklist-item" data-id="ex3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">📝 Блокнот и ручка (записывать вопросы врачу)</div>
+                </div>
+                <div class="checklist-item" data-id="ex4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧴 Средство от укачивания (если вас укачивает в машине)</div>
+                </div>
+                <div class="checklist-item" data-id="ex5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🩴 Сменная обувь для партнёра (если он будет с вами)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Как упаковать -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-box"></i></div>
+            <div class="section-title">Как упаковать сумку</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Лучше всего — 3 отдельные сумки:</strong>
+                    <ul>
+                        <li>Сумка №1 — в родовую палату (самое необходимое)</li>
+                        <li>Сумка №2 — в послеродовую палату (остальные вещи)</li>
+                        <li>Сумка №3 — на выписку (красивая одежда для мамы и малыша)</li>
+                    </ul>
+                </li>
+                <li><strong>Используйте прозрачные зип-пакеты</strong> — в роддоме всё проверяют на безопасность, и вам будет легче ориентироваться.</li>
+                <li><strong>Подпишите пакеты</strong> («для родов», «после родов», «для малыша», «для папы»).</li>
+                <li><strong>Не используйте кожаные или текстильные сумки</strong> — во многих роддомах их запрещают. Лучше прозрачные пакеты или пластиковые контейнеры.</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> положите в сумку пакет для грязного белья — пригодится.
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда ехать в роддом -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ambulance"></i></div>
+            <div class="section-title">Когда пора ехать</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>Немедленно ехать, если:</strong>
+                <ul>
+                    <li>Схватки регулярные: каждые 5–7 минут (для первородящих) или каждые 10 минут (для повторнородящих)</li>
+                    <li>Отошли воды (даже без схваток!)</li>
+                    <li>Кровянистые выделения</li>
+                    <li>Резкая боль в животе</li>
+                    <li>Резкое ухудшение самочувствия (сильная головная боль, «мушки» перед глазами)</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Не бойтесь ложных тревог. Лучше приехать и убедиться, что всё в порядке, чем пропустить начало родов.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    function initChecklist() {
+        const items = document.querySelectorAll('.checklist-item');
+        items.forEach(item => {
+            const id = item.getAttribute('data-id');
+            if (!id) return;
+            const stored = localStorage.getItem(`hospitalbag_${id}`);
+            const checkDiv = item.querySelector('.checklist-check');
+            if (stored === 'true') {
+                checkDiv.classList.add('completed');
+                checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+            } else {
+                checkDiv.classList.remove('completed');
+                checkDiv.innerHTML = '';
+            }
+            
+            item.addEventListener('click', () => {
+                const isCompleted = checkDiv.classList.contains('completed');
+                if (isCompleted) {
+                    checkDiv.classList.remove('completed');
+                    checkDiv.innerHTML = '';
+                    localStorage.setItem(`hospitalbag_${id}`, 'false');
+                } else {
+                    checkDiv.classList.add('completed');
+                    checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+                    localStorage.setItem(`hospitalbag_${id}`, 'true');
+                }
+            });
+        });
+    }
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    initChecklist();
+</script>
+</body>
+</html>

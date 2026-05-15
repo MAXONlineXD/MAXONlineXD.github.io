@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Обезболивание в родах — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .method-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .method-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #b35d7c;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .pros-cons {
+            display: flex;
+            gap: 12px;
+            margin: 12px 0;
+            flex-wrap: wrap;
+        }
+
+        .pros {
+            flex: 1;
+            background: #e8f5e9;
+            border-radius: 16px;
+            padding: 12px;
+        }
+
+        .cons {
+            flex: 1;
+            background: #ffebee;
+            border-radius: 16px;
+            padding: 12px;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+            .pros-cons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-syringe"></i> 
+            Обезболивание в родах
+        </h1>
+        <p>Как сделать роды комфортнее — безопасные методы</p>
+        <div class="badge"><i class="fas fa-check-circle"></i> Каждая женщина имеет право на обезболивание</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Нужно ли обезболивание?</div>
+        </div>
+        <div class="section-content">
+            <p>Роды — это естественный процесс, но интенсивность боли у всех разная. Одни женщины рожают без обезболивания, другие предпочитают медицинские методы. <strong>Оба варианта нормальны</strong>. Вы имеете право на обезболивание, если чувствуете, что оно необходимо.</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> боль в родах не означает, что вы «слабая мать». У всех разный болевой порог, и это нормально — просить помощи.
+            </div>
+        </div>
+    </div>
+
+    <!-- Немедикаментозные методы -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-spa"></i></div>
+            <div class="section-title">Немедикаментозные методы</div>
+        </div>
+        <div class="section-content">
+            <div class="method-card">
+                <div class="method-title"><i class="fas fa-lungs"></i> Дыхательные техники</div>
+                <p>Медленное глубокое дыхание в начале схватки, частое поверхностное («собачка») — в пике, задержка дыхания в потугах. Дыхание снижает боль, насыщает кровь кислородом, расслабляет мышцы.</p>
+            </div>
+            <div class="method-card">
+                <div class="method-title"><i class="fas fa-hand-peace"></i> Массаж</div>
+                <p>Массаж поясницы, крестца, круговые движения ладонями, надавливание на активные точки. Особенно эффективен в паре с партнёром.</p>
+            </div>
+            <div class="method-card">
+                <div class="method-title"><i class="fas fa-water"></i> Тёплая ванна или душ</div>
+                <p>Вода расслабляет мышцы, снижает боль, улучшает кровоток. В некоторых роддомах есть роды в воде. Душ помогает при болях в спине.</p>
+            </div>
+            <div class="method-card">
+                <div class="method-title"><i class="fas fa-chair"></i> Свободные позы и движение</div>
+                <p>Ходьба, поза на четвереньках, сидя на фитболе, вис на партнёре, лёжа на боку — любые позы, в которых вам комфортно. Не лежите на спине!</p>
+            </div>
+            <div class="method-card">
+                <div class="method-title"><i class="fas fa-music"></i> Музыка и аудио-гипноз</div>
+                <p>Расслабляющая музыка, звуки природы, управляемые визуализации снижают восприятие боли. Аудио-гипноз (например, метод Монгана) обучает отключать боль.</p>
+            </div>
+            <div class="method-card">
+                <div class="method-title"><i class="fas fa-brain"></i> Акупрессура и TENS</div>
+                <p>Надавливание на определённые точки (крестец, запястья) или использование TENS-аппарата (электрические импульсы) блокируют болевые сигналы.</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Немедикаментозные методы можно сочетать с медикаментозными. Начните с них — иногда их достаточно.
+            </div>
+        </div>
+    </div>
+
+    <!-- Эпидуральная анестезия -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-spine"></i></div>
+            <div class="section-title">Эпидуральная анестезия</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Золотой стандарт обезболивания родов</strong> — введение анестетика в эпидуральное пространство позвоночника. Полностью убирает боль в схватках, сохраняя сознание и чувствительность ног (в меньшей степени).</p>
+            <div class="pros-cons">
+                <div class="pros">
+                    <strong>✅ Плюсы</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Полное снятие боли в схватках</li>
+                        <li>Можно отдыхать до потуг</li>
+                        <li>Сознание ясное, можно участвовать в родах</li>
+                        <li>Безопасна для малыша</li>
+                        <li>Снижает давление и тревогу</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <strong>❌ Минусы</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Может удлинить первый период родов</li>
+                        <li>Онемение ног (трудно двигаться)</li>
+                        <li>Риск головной боли после родов (редко)</li>
+                        <li>Требуется катетер в мочевой пузырь</li>
+                        <li>Увеличивает риск оперативных родов (незначительно)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Когда ставят:</strong> при раскрытии шейки матки 4–5 см (активная фаза). Можно позже, но не во время потуг.
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-check-circle"></i> Эпидуральная анестезия безопасна для плода. Анестетик не проникает через плаценту в значимых количествах.
+            </div>
+        </div>
+    </div>
+
+    <!-- Другие виды обезболивания -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-gas-pump"></i></div>
+            <div class="section-title">Другие виды медикаментозного обезболивания</div>
+        </div>
+        <div class="section-content">
+            <div class="method-card">
+                <div class="method-title"><i class="fas fa-mask"></i> Закись азота (веселящий газ)</div>
+                <p>Вдыхается через маску. Действует быстро, выводится через лёгкие. Снижает чувствительность к боли, не теряя сознания.</p>
+                <p><strong>Плюсы:</strong> безопасна, можно использовать на любом этапе.<br>
+                <strong>Минусы:</strong> не убирает боль полностью, может вызвать тошноту, сонливость.</p>
+            </div>
+            <div class="method-card">
+                <div class="method-title"><i class="fas fa-syringe"></i> Наркотические анальгетики (Промедол, Трамадол)</div>
+                <p>Внутримышечные или внутривенные инъекции. Снижают боль, вызывают сонливость и эйфорию.</p>
+                <p><strong>Плюсы:</strong> действуют 2–4 часа, расслабляют.<br>
+                <strong>Минусы:</strong> могут вызвать угнетение дыхания у плода (поэтому не применяют за 2–3 часа до родов).</p>
+            </div>
+            <div class="method-card">
+                <div class="method-title"><i class="fas fa-hand-peace"></i> Парацервикальная блокада</div>
+                <p>Укол анестетика в области шейки матки. Используется редко, только в I периоде. Снимает боль, но не влияет на схватки.</p>
+                <p><strong>Минусы:</strong> возможна брадикардия у плода.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Показания к обезболиванию -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-stethoscope"></i></div>
+            <div class="section-title">Когда обезболивание особенно рекомендуется</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Низкий болевой порог</strong> — если вы знаете, что плохо переносите боль</li>
+                <li><strong>Длительные роды</strong> (более 12 часов) — чтобы сохранить силы</li>
+                <li><strong>Стимуляция окситоцином</strong> — окситоцин усиливает боль</li>
+                <li><strong>Преэклампсия или гипертония</strong> — эпидуральная анестезия снижает давление</li>
+                <li><strong>Крупный плод, тазовое предлежание</strong> — для возможности перехода на кесарево сечение</li>
+                <li><strong>Рубей на матке</strong> — эпидуральная анестезия позволяет быстро перейти на кесарево при необходимости</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Противопоказания -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Противопоказания к эпидуральной анестезии</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❌ Эпидуральную анестезию НЕ делают при:</strong>
+                <ul>
+                    <li>Нарушениях свёртываемости крови (тромбоцитопения)</li>
+                    <li>Инфекциях кожи в месте пункции</li>
+                    <li>Тяжёлых деформациях позвоночника</li>
+                    <li>Сепсисе</li>
+                    <li>Отказе пациентки</li>
+                    <li>Некоторых заболеваниях нервной системы</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> В большинстве случаев эпидуральная анестезия возможна. Решение принимает анестезиолог после осмотра.
+            </div>
+        </div>
+    </div>
+
+    <!-- Мифы об обезболивании -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Разрушаем мифы</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Эпидуральная анестезия вызывает паралич.<br>
+            <strong>Правда:</strong> Временное онемение ног проходит через 1–2 часа после родов. Постоянный паралич при правильно проведённой процедуре невозможен.</p>
+            
+            <p><strong>Миф:</strong> Обезболивание вредно для малыша.<br>
+            <strong>Правда:</strong> Современные анестетики в малых дозах безопасны для плода. Ребёнок не «засыпает» и не страдает.</p>
+            
+            <p><strong>Миф:</strong> После эпидуральной анестезии обязательно будет кесарево сечение.<br>
+            <strong>Правда:</strong> Большинство женщин с эпидуральной анестезией рожают естественным путём. Кесарево показано по другим причинам.</p>
+            
+            <p><strong>Миф:</strong> Надо терпеть боль, чтобы быть «настоящей мамой».<br>
+            <strong>Правда:</strong> Выдерживание боли не делает вас лучшей мамой. Ваша задача — сохранить силы для ухода за малышом после родов.</p>
+        </div>
+    </div>
+
+    <!-- Как попросить обезболивание -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comments"></i></div>
+            <div class="section-title">Как попросить обезболивание</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Обсудите план обезболивания заранее</strong> — на приёме у врача или на курсах. Внесите это в план родов.</li>
+                <li><strong>Скажите акушерке или врачу, когда боль стала сильной</strong> — не терпите «до последнего». Эпидуральную анестезию лучше ставить при раскрытии 4–5 см.</li>
+                <li><strong>Не бойтесь, что «ещё рано» или «стыдно»</strong> — врачи не осуждают просьбы об обезболивании.</li>
+                <li><strong>Если в роддоме нет анестезиолога 24/7, уточните это заранее</strong> и выберите роддом с круглосуточной анестезиологической службой.</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> ваше право на обезболивание закреплено законом (Приказ Минздрава № 808н). Вам не могут отказать без медицинских противопоказаний.
+            </div>
+        </div>
+    </div>
+
+    <!-- Бесплатно или платно -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ruble-sign"></i></div>
+            <div class="section-title">Эпидуральная анестезия по ОМС и платно</div>
+        </div>
+        <div class="section-content">
+            <div class="tip-box">
+                <p><strong>По ОМС:</strong> эпидуральная анестезия проводится бесплатно при наличии медицинских показаний (сильная боль, стимуляция, гипертония, крупный плод и т.д.) или по желанию женщины (если в роддоме есть такая практика). Уточните заранее в вашем роддоме.</p>
+                <p><strong>Платно:</strong> можно заключить контракт на роды с анестезиологом. Стоимость эпидуральной анестезии — от 5 000 до 15 000 ₽.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Советы -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="section-title">Что запомнить</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>✅ Вы имеете право на обезболивание</li>
+                <li>✅ Эпидуральная анестезия безопасна для вас и малыша</li>
+                <li>✅ Не терпите боль — просите помощи</li>
+                <li>✅ Начинайте с немедикаментозных методов (дыхание, массаж)</li>
+                <li>✅ Обсудите план обезболивания с врачом заранее</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> Помните: роды — это не экзамен на прочность. Спокойная, отдохнувшая мама — лучший подарок для малыша.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

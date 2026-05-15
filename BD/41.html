@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Стимулирование родовой деятельности — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .method-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 14px;
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .method-icon {
+            font-size: 1.8rem;
+            width: 50px;
+            text-align: center;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-hand-holding-heart"></i> 
+            Стимулирование родовой деятельности
+        </h1>
+        <p>Когда и зачем нужна стимуляция, и как она проходит</p>
+        <div class="badge"><i class="fas fa-clinic-medical"></i> Безопасные методы помощи малышу появиться на свет</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Что такое стимуляция родов -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Что такое стимуляция родов?</div>
+        </div>
+        <div class="section-content">
+            <p>Стимуляция родов — это комплекс медицинских процедур, направленных на искусственное вызывание или усиление родовой деятельности, когда естественные роды не начинаются вовремя или протекают вяло.</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> стимуляция проводится только по медицинским показаниям и в условиях роддома под постоянным контролем. Самостоятельные попытки вызвать роды дома опасны!
+            </div>
+        </div>
+    </div>
+
+    <!-- Показания -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-stethoscope"></i></div>
+            <div class="section-title">Показания к стимуляции</div>
+        </div>
+        <div class="section-content">
+            <div class="method-card">
+                <div class="method-icon">📅</div>
+                <div><strong>Перенашивание беременности</strong> — срок 41–42 недели, признаки старения плаценты.</div>
+            </div>
+            <div class="method-card">
+                <div class="method-icon">💧</div>
+                <div><strong>Преждевременное излитие околоплодных вод</strong> — если схватки не начались в течение 6–12 часов (риск инфекции).</div>
+            </div>
+            <div class="method-card">
+                <div class="method-icon">🤰</div>
+                <div><strong>Слабость родовой деятельности</strong> — схватки есть, но шейка матки не раскрывается.</div>
+            </div>
+            <div class="method-card">
+                <div class="method-icon">🩸</div>
+                <div><strong>Преэклампсия или гестоз</strong> — высокое давление, отёки, белок в моче.</div>
+            </div>
+            <div class="method-card">
+                <div class="method-icon">🫀</div>
+                <div><strong>Заболевания мамы</strong> (диабет, болезни сердца, почек) — требуют родоразрешения раньше срока.</div>
+            </div>
+            <div class="method-card">
+                <div class="method-icon">📉</div>
+                <div><strong>Гипоксия плода</strong> — изменения на КТГ.</div>
+            </div>
+            <div class="method-card">
+                <div class="method-icon">🔄</div>
+                <div><strong>Резус-конфликт</strong> — требует досрочного родоразрешения.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Противопоказания -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Противопоказания</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>Стимуляция НЕ проводится при:</strong>
+                <ul>
+                    <li>Тазовом предлежании плода</li>
+                    <li>Поперечном положении плода</li>
+                    <li>Предлежании плаценты</li>
+                    <li>Рубце на матке (после кесарева сечения)</li>
+                    <li>Узком тазе мамы</li>
+                    <li>Крупном плоде (более 4,5 кг)</li>
+                    <li>Острой гипоксии плода</li>
+                    <li>Миоме матки (в некоторых случаях)</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> В этих случаях обычно проводят плановое кесарево сечение.
+            </div>
+        </div>
+    </div>
+
+    <!-- Медицинские методы стимуляции -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-syringe"></i></div>
+            <div class="section-title">Медицинские методы стимуляции</div>
+        </div>
+        <div class="section-content">
+            <div class="method-card">
+                <div class="method-icon">💊</div>
+                <div><strong>Амниотомия (прокол плодного пузыря)</strong> — самый мягкий метод. Применяется, когда шейка матки готова (сглажена, открыта на 2–3 см). Прокол безболезненный, после него выделяются простагландины, запускающие схватки.</div>
+            </div>
+            <div class="method-card">
+                <div class="method-icon">🧪</div>
+                <div><strong>Простагландины (гель, таблетки, катетер)</strong> — вводятся во влагалище или цервикальный канал для созревания шейки матки. Часто используется при неготовой шейке. Действие начинается через 4–12 часов.</div>
+            </div>
+            <div class="method-card">
+                <div class="method-icon">💉</div>
+                <div><strong>Окситоцин (внутривенная капельница)</strong> — синтетический гормон, усиливающий схватки. Используется при раскрытии шейки на 4–5 см. Дозировка подбирается индивидуально, обязательно КТГ-контроль.</div>
+            </div>
+            <div class="method-card">
+                <div class="method-icon">🌊</div>
+                <div><strong>Акупрессура, иглоукалывание</strong> — вспомогательные методы, стимулируют выработку эндорфинов. Безопасны, но эффективность не доказана.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Естественные методы -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-leaf"></i></div>
+            <div class="section-title">Естественные методы (при доношенной беременности)</div>
+        </div>
+        <div class="section-content">
+            <div class="method-card">
+                <div class="method-icon">🚶</div>
+                <div><strong>Ходьба и лёгкая активность</strong> — стимулирует выработку окситоцина. Гуляйте в комфортном темпе 30–40 минут в день.</div>
+            </div>
+            <div class="method-card">
+                <div class="method-icon">❤️</div>
+                <div><strong>Секс</strong> — в сперме содержатся простагландины, размягчающие шейку матки. А оргазм вызывает сокращения матки. Разрешён при целом плодном пузыре и отсутствии противопоказаний.</div>
+            </div>
+            <div class="method-card">
+                <div class="method-icon">👆</div>
+                <div><strong>Стимуляция сосков</strong> — аккуратное круговое массирование в течение 5–10 минут несколько раз в день. Выделяется окситоцин, вызывающий сокращения матки.</div>
+            </div>
+            <div class="method-card">
+                <div class="method-icon">🛁</div>
+                <div><strong>Тёплая ванна</strong> (не горячая! 37–38°C) — расслабляет мышцы, снижает стресс. Не дольше 15–20 минут.</div>
+            </div>
+            <div class="method-card">
+                <div class="method-icon">🍍</div>
+                <div><strong>Финики, ананас, острый перец</strong> — народные методы, научно не доказаны, но безопасны в разумных количествах.</div>
+            </div>
+            <div class="warning-box">
+                <strong>⚠️ Естественные методы можно пробовать ТОЛЬКО при доношенной беременности (после 37 недель) и после консультации с врачом!</strong> До 37 недель стимуляция опасна преждевременными родами.
+            </div>
+        </div>
+    </div>
+
+    <!-- Что НЕЛЬЗЯ делать -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Категорически нельзя</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ Пить касторовое масло — вызывает диарею, обезвоживание, может спровоцировать преждевременную отслойку плаценты</li>
+                <li>❌ Пить спиртное (в том числе «коктейли для родов»)</li>
+                <li>❌ Париться в бане или сауне — перегрев опасен для плода</li>
+                <li>❌ Поднимать тяжести — риск отслойки плаценты</li>
+                <li>❌ Ставить клизмы — может стимулировать слишком бурную родовую деятельность</li>
+                <li>❌ Самостоятельно принимать лекарства (Но-шпу, папаверин и т.д.) — они могут затормозить роды</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Запомните:</strong> если врач говорит, что роды нужно стимулировать, лучше довериться медицине. Домашние эксперименты опасны!
+            </div>
+        </div>
+    </div>
+
+    <!-- Как проходит стимуляция в роддоме -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hospital"></i></div>
+            <div class="section-title">Как проходит медицинская стимуляция</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Шаг 1:</strong> Оценка состояния шейки матки (зрелая или незрелая).</li>
+                <li><strong>Шаг 2:</strong> При незрелой шейке — введение простагландинов (гель, таблетки) на 6–12 часов.</li>
+                <li><strong>Шаг 3:</strong> При зрелой шейке — амниотомия (прокол пузыря). Часто этого достаточно для начала схваток.</li>
+                <li><strong>Шаг 4:</strong> Если схватки слабые — подключение окситоцина через капельницу (дозировку регулируют каждые 15–30 минут).</li>
+                <li><strong>Шаг 5:</strong> Постоянный КТГ-контроль (сердцебиение малыша и тонус матки).</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> стимуляция может длиться от нескольких часов до суток. Пациентка находится в родзале под наблюдением.
+            </div>
+        </div>
+    </div>
+
+    <!-- Риски стимуляции -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">Возможные риски стимуляции</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>Побочные эффекты (редко):</strong>
+                <ul>
+                    <li>Гиперстимуляция матки (слишком частые или сильные схватки) — корректируется снижением дозы окситоцина.</li>
+                    <li>Учащение сердцебиения плода — при передозировке окситоцина.</li>
+                    <li>Инфекция (при длительном безводном периоде после амниотомии) — профилактика антибиотиками.</li>
+                    <li>Разрыв матки (при рубце) — крайне редко, но стимуляция при рубце противопоказана.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> при правильно проведённой стимуляции риски минимальны. Врачи контролируют состояние мамы и малыша каждые 15–30 минут.
+            </div>
+        </div>
+    </div>
+
+    <!-- Мифы о стимуляции -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Разрушаем мифы о стимуляции</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Стимуляция всегда болезненнее естественных родов.<br>
+            <strong>Правда:</strong> Окситоцин может сделать схватки более частыми и интенсивными, но эпидуральная анестезия снимает боль. При естественных родах тоже бывают сильные схватки.</p>
+            
+            <p><strong>Миф:</strong> Стимуляция опасна для малыша.<br>
+            <strong>Правда:</strong> При правильном проведении и мониторинге КТГ стимуляция безопасна. Гораздо опаснее — перенашивание беременности и гипоксия плода.</p>
+            
+            <p><strong>Миф:</strong> Если начали стимуляцию, то в итоге всё равно будет кесарево.<br>
+            <strong>Правда:</strong> Большинство стимулированных родов заканчиваются естественным путём. Кесарево — если стимуляция неэффективна или есть осложнения.</p>
+            
+            <p><strong>Миф:</strong> Можно попросить стимуляцию в удобный день.<br>
+            <strong>Правда:</strong> Стимуляция без показаний (только по желанию) не проводится из-за рисков. Исключение — плановое кесарево сечение.</p>
+        </div>
+    </div>
+
+    <!-- Подготовка -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clipboard-list"></i></div>
+            <div class="section-title">Что нужно знать перед стимуляцией</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>Обсудите с врачом все риски и преимущества</li>
+                <li>Подпишите информированное согласие</li>
+                <li>Перед стимуляцией можно (и нужно) поесть лёгкую пищу (за 2–3 часа до)</li>
+                <li>Возьмите в роддом удобную одежду, тапочки, зарядку для телефона</li>
+                <li>Настройтесь позитивно — стресс тормозит родовую деятельность</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> <strong>Помните:</strong> стимуляция — это помощь, а не наказание. Врачи хотят, чтобы роды прошли безопасно для вас и малыша.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

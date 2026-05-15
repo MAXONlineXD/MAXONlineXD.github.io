@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Активная фаза родов — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-chart-line"></i> 
+            Активная фаза родов
+        </h1>
+        <p>Самый интенсивный период — от 4–5 см до полного раскрытия</p>
+        <div class="badge"><i class="fas fa-clock"></i> Главное — правильное дыхание и позы</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Что такое активная фаза -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Что такое активная фаза родов?</div>
+        </div>
+        <div class="section-content">
+            <p>Активная фаза — это <strong>второй этап первого периода родов</strong>, когда шейка матки раскрывается от <strong>4–5 см до полного раскрытия (10 см)</strong>. Это самый интенсивный и болезненный период, но также самый короткий.</p>
+            <div class="phase-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">📊 Характеристики активной фазы</div>
+                <ul style="margin-top: 12px;">
+                    <li><strong>Раскрытие шейки матки:</strong> от 4–5 см до 10 см</li>
+                    <li><strong>Схватки:</strong> каждые 2–4 минуты, длятся 45–70 секунд</li>
+                    <li><strong>Продолжительность:</strong> у первородящих — 3–5 часов, у повторнородящих — 2–4 часа</li>
+                    <li><strong>Ощущения:</strong> сильные, требуют концентрации на дыхании</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Важно:</strong> в активной фазе важно не кричать (отнимает силы), а правильно дышать и менять позы. Если боль невыносима — можно попросить эпидуральную анестезию.
+            </div>
+        </div>
+    </div>
+
+    <!-- Как понять, что началась активная фаза -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bell"></i></div>
+            <div class="section-title">Как понять, что вы в активной фазе?</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>✅ Схватки стали <strong>очень сильными</strong>, сложно разговаривать во время них</li>
+                <li>✅ Схватки происходят <strong>каждые 2–4 минуты</strong>, длятся 45–70 секунд</li>
+                <li>✅ Шейка матки раскрыта на <strong>4 см и более</strong> (определяет врач)</li>
+                <li>✅ Возможно <strong>отхождение околоплодных вод</strong> (если не отошли раньше)</li>
+                <li>✅ Вы чувствуете <strong>давление внизу живота и в прямой кишке</strong></li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Если вы ещё не в роддоме — при активной фазе вы уже должны быть там. При таких схватках ехать самостоятельно нельзя — вызывайте такси или скорую.
+            </div>
+        </div>
+    </div>
+
+    <!-- Дыхание в активной фазе -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-lungs"></i></div>
+            <div class="section-title">Дыхательные техники</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">🕯 Техника «Свечка» (для пика схватки)</div>
+                <p>Частое поверхностное дыхание ртом: вдох-выдох, вдох-выдох (как задуваем свечу). Дышите так 20–30 секунд в самом пике боли.</p>
+            </div>
+            <div class="phase-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">🌊 Техника «Паровозик»</div>
+                <p>Медленное дыхание в начале схватки → переход на «свечку» в пике → снова медленное дыхание на затухании.</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Тренируйтесь заранее!</strong> Дыхание должно стать автоматическим. Попросите партнёра напоминать вам дышать.
+            </div>
+        </div>
+    </div>
+
+    <!-- Позы для облегчения боли -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-person-walking"></i></div>
+            <div class="section-title">Позы для облегчения боли</div>
+        </div>
+        <div class="section-content">
+            <div class="tip-box">
+                <p><strong>✅ Лучшие позы в активной фазе:</strong></p>
+                <ul>
+                    <li><strong>На четвереньках</strong> — снимает нагрузку с поясницы, помогает малышу принять правильное положение</li>
+                    <li><strong>Сидя на фитболе</strong> — покачивания тазом расслабляют, ускоряют раскрытие</li>
+                    <li><strong>Стоя с опорой на партнёра</strong> — можно висеть на шее партнёра, покачивая бёдрами</li>
+                    <li><strong>Лёжа на боку</strong> — между схватками для отдыха (не на спине!)</li>
+                    <li><strong>На корточках</strong> — ускоряет раскрытие, используйте опору (стена, стул)</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <strong>❌ Не рекомендуется:</strong> лежать на спине (сдавливает полую вену), сидеть на стуле без наклона вперёд (замедляет раскрытие).
+            </div>
+        </div>
+    </div>
+
+    <!-- Массаж и помощь партнёра -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-peace"></i></div>
+            <div class="section-title">Как партнёр может помочь</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Массаж поясницы</strong> — круговые движения кулаками, надавливание на крестец</li>
+                <li><strong>Напоминать дышать</strong> — «Вдох, выдох, хорошо, расслабься»</li>
+                <li><strong>Предлагать воду</strong> — маленькими глотками между схватками</li>
+                <li><strong>Помогать менять позы</strong> — поддерживать на четвереньках, помогать лечь на бок</li>
+                <li><strong>Протирать лоб влажной салфеткой</strong> — снижает перегрев</li>
+                <li><strong>Говорить слова поддержки</strong> — «Ты справляешься», «Я рядом»</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно партнёру:</strong> сохраняйте спокойствие. Ваше волнение передаётся роженице.
+            </div>
+        </div>
+    </div>
+
+    <!-- Медицинская помощь в активной фазе -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-stethoscope"></i></div>
+            <div class="section-title">Медицинская помощь</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">🩺 Что делают врачи</div>
+                <ul>
+                    <li><strong>КТГ-мониторинг</strong> — постоянно следят за сердцебиением малыша</li>
+                    <li><strong>Влагалищные осмотры</strong> — каждые 2–3 часа (оценка раскрытия, положения головки)</li>
+                    <li><strong>Измерение давления, пульса, температуры</strong></li>
+                    <li><strong>При необходимости — амниотомия</strong> (прокол плодного пузыря) для ускорения родов</li>
+                    <li><strong>По желанию — эпидуральная анестезия</strong> (ставится при раскрытии 4–5 см)</li>
+                    <li><strong>При слабости родовой деятельности — капельница с окситоцином</strong></li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Если вы хотите эпидуральную анестезию — сообщите об этом при поступлении в роддом. Лучше ставить её в начале активной фазы (4–5 см).
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда ждать потуги -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hourglass-end"></i></div>
+            <div class="section-title">Переходная фаза (8–10 см)</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>⚠️ Самый сложный, но короткий этап (30–90 минут):</strong>
+                <ul>
+                    <li>Схватки каждые 1–2 минуты, длятся 60–90 секунд</li>
+                    <li>Появляется <strong>сильное давление в прямую кишку</strong> — хочется тужиться</li>
+                    <li><strong>НЕ тужитесь до команды врача!</strong> Дышите часто и поверхностно («собачка»)</li>
+                    <li>Возможны тошнота, рвота, озноб — это нормально</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> когда почувствуете желание тужиться, скажите акушерке. Она проверит раскрытие. Если полное (10 см) — можно тужиться. Если нет — придётся потерпеть.
+            </div>
+        </div>
+    </div>
+
+    <!-- Чего НЕ делать -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего НЕ делать в активной фазе</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ <strong>Кричать</strong> — отнимает силы, мешает дышать, усиливает боль</li>
+                <li>❌ <strong>Зажиматься</strong> — напряжение мышц усиливает боль</li>
+                <li>❌ <strong>Задерживать дыхание</strong> — ухудшает кровоток, снижает кислород для малыша</li>
+                <li>❌ <strong>Лежать на спине</strong> — сдавливает полую вену, вызывает головокружение</li>
+                <li>❌ <strong>Тужиться до полного раскрытия</strong> — опасно для шейки матки</li>
+                <li>❌ <strong>Есть тяжёлую пищу</strong> — возможна тошнота</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Осложнения -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">Когда активная фаза считается затяжной</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>Затяжная активная фаза (патология):</strong>
+                <ul>
+                    <li>Более 5 часов у первородящих</li>
+                    <li>Более 4 часов у повторнородящих</li>
+                    <li>Схватки не усиливаются, раскрытие не идёт</li>
+                </ul>
+                <p><strong>Что делают врачи:</strong> обычно стимулируют окситоцином, амниотомией (прокол пузыря). Если неэффективно — может быть рекомендовано кесарево сечение.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Мифы -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Мифы об активной фазе</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> В активной фазе обязательно нужна эпидуральная анестезия.<br>
+            <strong>Правда:</strong> Многие женщины рожают без обезболивания. Но если боль невыносима — нет ничего страшного в том, чтобы её попросить.</p>
+            
+            <p><strong>Миф:</strong> Если тужиться, раскрытие пойдёт быстрее.<br>
+            <strong>Правда:</strong> Наоборот, преждевременные потуги могут вызвать отёк шейки матки и замедлить раскрытие.</p>
+            
+            <p><strong>Миф:</strong> В активной фазе нельзя пить.<br>
+            <strong>Правда:</strong> Можно и нужно — маленькими глотками, чтобы избежать обезвоживания.</p>
+            
+            <p><strong>Миф:</strong> Чем больше кричать, тем легче будет.<br>
+            <strong>Правда:</strong> Крик отнимает силы, мешает правильному дыханию и усиливает боль. Лучше стонать низким голосом.</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

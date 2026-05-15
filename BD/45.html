@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Начало родов (латентная фаза) — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 12px;
+            margin: 12px 0;
+            align-items: flex-start;
+        }
+
+        .timeline-badge {
+            background: #fbeae8;
+            border-radius: 30px;
+            padding: 4px 12px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-waveform"></i> 
+            Начало родов (латентная фаза)
+        </h1>
+        <p>Первый период родов — от первой схватки до раскрытия 3–4 см</p>
+        <div class="badge"><i class="fas fa-clock"></i> Самый длительный этап родов</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Что такое латентная фаза -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Что такое латентная фаза родов?</div>
+        </div>
+        <div class="section-content">
+            <p>Латентная фаза — это <strong>начальный период родов</strong>, когда шейка матки раскрывается от 0 до 3–4 см. Это самый длительный этап родов, который может длиться от нескольких часов до суток.</p>
+            <div class="phase-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">📊 Характеристики латентной фазы</div>
+                <ul style="margin-top: 12px;">
+                    <li><strong>Раскрытие шейки матки:</strong> от 0 до 3–4 см</li>
+                    <li><strong>Схватки:</strong> нерегулярные в начале, постепенно становятся чаще (каждые 10–20 минут)</li>
+                    <li><strong>Длительность схваток:</strong> 20–40 секунд</li>
+                    <li><strong>Продолжительность:</strong> у первородящих — 6–12 часов, у повторнородящих — 3–8 часов</li>
+                    <li><strong>Ощущения:</strong> терпимые, как при месячных, можно разговаривать и заниматься делами</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Как понять, что роды начались -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bell"></i></div>
+            <div class="section-title">Как понять, что началась латентная фаза?</div>
+        </div>
+        <div class="section-content">
+            <div class="tip-box">
+                <p><strong>Признаки начала родов:</strong></p>
+                <ul>
+                    <li>Регулярные схватки — повторяются с одинаковым интервалом (сначала 15–20 минут)</li>
+                    <li>Схватки становятся сильнее и дольше</li>
+                    <li>Боль не проходит при смене позы или отдыхе (в отличие от ложных схваток)</li>
+                    <li>Возможно отхождение слизистой пробки (розоватые или коричневатые выделения)</li>
+                    <li>Иногда — отхождение околоплодных вод (но это чаще в активной фазе)</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Как отличить от ложных схваток (Брекстона-Хикса):</strong>
+                <ul>
+                    <li>Ложные схватки нерегулярные, не усиливаются, проходят при смене позы или после тёплого душа</li>
+                    <li>Истинные схватки регулярные, постепенно учащаются и усиливаются, не проходят в покое</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Продолжительность -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hourglass-half"></i></div>
+            <div class="section-title">Сколько длится латентная фаза?</div>
+        </div>
+        <div class="section-content">
+            <div class="timeline-item">
+                <div class="timeline-badge">Первородящие</div>
+                <div><strong>6–12 часов</strong> (иногда до 20 часов, что считается вариантом нормы)</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-badge">Повторнородящие</div>
+                <div><strong>3–8 часов</strong></div>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> не пугайтесь, если раскрытие идёт медленно. Латентная фаза может быть долгой — это нормально. Главное, чтобы схватки постепенно усиливались.
+            </div>
+        </div>
+    </div>
+
+    <!-- Что делать в латентной фазе -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="section-title">Что делать в латентной фазе?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">✅ МОЖНО и НУЖНО:</div>
+                <ul style="margin-top: 12px;">
+                    <li><strong>Отдыхать и набираться сил</strong> — полежать, поспать, если можете</li>
+                    <li><strong>Принимать тёплый душ или ванну</strong> (если воды не отошли) — расслабляет мышцы</li>
+                    <li><strong>Легко перекусить</strong> — йогурт, банан, печенье, бульон (не жирное, не тяжелое)</li>
+                    <li><strong>Пить воду, травяной чай</strong> — избегайте обезвоживания</li>
+                    <li><strong>Ходить, двигаться, менять позы</strong> — вертикальное положение ускоряет раскрытие</li>
+                    <li><strong>Дышать медленно и глубоко</strong> — вдох на 4 счета, выдох на 6</li>
+                    <li><strong>Записывать схватки</strong> — отмечать время начала, длительность, интервал (поможет понять, когда ехать в роддом)</li>
+                    <li><strong>Заняться спокойными делами</strong> — собрать сумку, посмотреть фильм, почитать</li>
+                    <li><strong>Позвонить врачу или в роддом</strong> — предупредить о начале родов</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Чего НЕ делать -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего НЕ делать в латентной фазе</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❌ НЕ рекомендуется:</strong>
+                <ul>
+                    <li>❌ Паниковать и нервничать — стресс тормозит родовую деятельность</li>
+                    <li>❌ Лежать неподвижно на спине — ухудшает кровоток и замедляет раскрытие</li>
+                    <li>❌ Есть тяжёлую, жирную, острую пищу</li>
+                    <li>❌ Принимать обезболивающие без назначения врача</li>
+                    <li>❌ Сразу ехать в роддом (если схватки редкие и терпимые) — лучше побыть дома, где спокойнее</li>
+                    <li>❌ Терпеть сильную боль — если боль невыносима, лучше поехать в роддом раньше</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда ехать в роддом -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ambulance"></i></div>
+            <div class="section-title">Когда пора ехать в роддом</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>🚨 Срочно ехать, если:</strong>
+                <ul>
+                    <li>Отошли околоплодные воды (даже без схваток)</li>
+                    <li>Появились кровянистые выделения</li>
+                    <li>Схватки каждые 5–7 минут (для первородящих) или каждые 10 минут (для повторнородящих)</li>
+                    <li>Сильная боль, которую вы не можете терпеть</li>
+                    <li>Ребёнок стал слишком активным или, наоборот, затих</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Для спокойствия:</strong> если вы в сомнениях, лучше поехать в роддом раньше. Вас посмотрят на кресле и скажут, ехать домой или оставаться.
+            </div>
+        </div>
+    </div>
+
+    <!-- Дыхание в латентной фазе -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-lungs"></i></div>
+            <div class="section-title">Как дышать в латентной фазе</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">🌬 Техника медленного дыхания</div>
+                <p>Вдох через нос на 4 счета → задержка дыхания на 2 счета → выдох через рот на 6 счетов.</p>
+                <p>Это насыщает кровь кислородом, расслабляет мышцы и снижает восприятие боли.</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> практикуйте эту технику заранее, чтобы на родах она стала автоматической.
+            </div>
+        </div>
+    </div>
+
+    <!-- Как помочь раскрытию -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="section-title">Как ускорить раскрытие шейки матки</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Вертикальное положение</strong> — ходьба, стояние на коленях, сидение на фитболе помогают раскрытию силой тяжести</li>
+                <li><strong>Тёплая ванна или душ</strong> — расслабляет мышцы, улучшает кровоток</li>
+                <li><strong>Массаж поясницы</strong> — стимулирует рефлекторные зоны</li>
+                <li><strong>Секс с мужем</strong> (если воды не отошли) — простагландины в сперме размягчают шейку</li>
+                <li><strong>Стимуляция сосков</strong> — выделяется окситоцин, усиливающий схватки</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Осложнения -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">Когда латентная фаза считается затяжной?</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>Затяжная латентная фаза (патология):</strong>
+                <ul>
+                    <li>Более 20 часов у первородящих</li>
+                    <li>Более 14 часов у повторнородящих</li>
+                    <li>Схватки не усиливаются, не учащаются, раскрытие не происходит</li>
+                </ul>
+                <p><strong>Что делают врачи:</strong> обычно предлагают «медикаментозный сон-отдых» (введение седативных препаратов), после которого роды часто активизируются. Иногда требуется стимуляция окситоцином.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Мифы -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Мифы о начале родов</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Роды всегда начинаются с сильных болей.<br>
+            <strong>Правда:</strong> В латентной фазе боль часто слабая, как при месячных. Многие женщины даже не понимают, что рожают.</p>
+            
+            <p><strong>Миф:</strong> Если схватки начались, надо сразу ехать в роддом.<br>
+            <strong>Правда:</strong> Лучше побыть дома, где спокойно, и ехать, когда схватки станут чаще 5–7 минут.</p>
+            
+            <p><strong>Миф:</strong> В латентной фазе нельзя ничего есть.<br>
+            <strong>Правда:</strong> Можно и нужно лёгкие углеводы (печенье, банан, йогурт) — для поддержания сил.</p>
+            
+            <p><strong>Миф:</strong> При отхождении пробки надо ехать в роддом.<br>
+            <strong>Правда:</strong> Пробка может отойти за 1–2 недели до родов. Если нет схваток и вод, можно оставаться дома.</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>
