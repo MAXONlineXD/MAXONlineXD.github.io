@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Шевеления плода — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 12px;
+            margin: 16px 0;
+            align-items: flex-start;
+        }
+
+        .timeline-badge {
+            background: #fbeae8;
+            border-radius: 30px;
+            padding: 4px 12px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            min-width: 70px;
+            text-align: center;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-baby"></i> 
+            Шевеления плода
+        </h1>
+        <p>Как распознать, когда ждать и на что обращать внимание</p>
+        <div class="badge"><i class="fas fa-heartbeat"></i> Первый разговор мамы с малышом</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Что такое шевеления -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Что такое шевеления плода?</div>
+        </div>
+        <div class="section-content">
+            <p>Шевеления плода — это первые ощутимые признаки жизни малыша внутриутробно. Это не просто движения, а целый язык общения: так малыш сообщает вам о своём самочувствии, активности и даже настроении.</p>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> Первые шевеления — один из самых трогательных моментов беременности. Многие мамы описывают их как «бабочки в животе», «рыбка плывёт» или «лёгкое щекотание».
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда появляются -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-calendar-alt"></i></div>
+            <div class="section-title">Когда начинаются шевеления?</div>
+        </div>
+        <div class="section-content">
+            <div class="timeline-item">
+                <div class="timeline-badge">16–20 недель</div>
+                <div>Первые шевеления у первородящих. Слабые, нерегулярные, их легко пропустить.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-badge">14–18 недель</div>
+                <div>У повторнородящих (мышцы матки более чувствительны).</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-badge">20–24 недели</div>
+                <div>Большинство женщин уже отчётливо чувствуют движения.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-badge">24–28 недель</div>
+                <div>Шевеления становятся регулярными, их может чувствовать партнёр, приложив руку к животу.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-badge">28–36 недель</div>
+                <div>Пик активности. Малыш двигается наиболее энергично.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-badge">36–40 недель</div>
+                <div>Движения становятся менее резкими, но более сильными (малышу тесно).</div>
+            </div>
+            <div class="warning-box">
+                <strong>Важно:</strong> у худощавых женщин шевеления ощущаются раньше, у полных — позже. Если после 22–24 недель вы не чувствуете движений — обязательно сообщите врачу.
+            </div>
+        </div>
+    </div>
+
+    <!-- Как меняются шевеления -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="section-title">Как меняются шевеления по срокам</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>16–20 недель:</strong> лёгкие толчки, похожие на перистальтику кишечника</li>
+                <li><strong>20–24 недели:</strong> более чёткие движения, малыш начинает реагировать на звуки</li>
+                <li><strong>24–28 недель:</strong> появляются серии толчков, можно различить удары ножками и ручками</li>
+                <li><strong>28–32 недели:</strong> максимальная активность, малыш кувыркается, икает</li>
+                <li><strong>32–36 недели:</strong> движения становятся сильными, можно определить части тела</li>
+                <li><strong>36–40 недель:</strong> амплитуда движений уменьшается (мало места), но сила ударов растёт</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Что влияет на активность -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-microscope"></i></div>
+            <div class="section-title">Что влияет на активность малыша?</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Время суток</strong> — чаще всего малыши активны вечером и ночью (когда мама отдыхает)</li>
+                <li><strong>Приём пищи</strong> — через 20–30 минут после еды уровень сахара в крови растёт, и малыш активизируется</li>
+                <li><strong>Эмоции мамы</strong> — при стрессе или испуге малыш может замереть или, наоборот, резко шевельнуться</li>
+                <li><strong>Физическая активность</strong> — когда мама двигается, малыш часто успокаивается (укачивание)</li>
+                <li><strong>Звуки</strong> — громкие звуки, музыка, голос папы могут вызывать реакцию</li>
+                <li><strong>Поза мамы</strong> — на спине или лежа на левом боку малыш активнее</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Лайфхак:</strong> если вы хотите «разбудить» малыша — выпейте стакан холодной воды или съешьте что-то сладкое и лягте на левый бок.
+            </div>
+        </div>
+    </div>
+
+    <!-- Икота плода -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-wind"></i></div>
+            <div class="section-title">Что такое икота плода?</div>
+        </div>
+        <div class="section-content">
+            <p>Икота — это ритмичные, равномерные толчки в животе, которые могут длиться от нескольких минут до получаса. Это нормальное явление, связанное с тренировкой дыхательной системы и заглатыванием околоплодных вод.</p>
+            <div class="tip-box">
+                <i class="fas fa-check-circle"></i> <strong>Икоту не нужно лечить.</strong> Если она возникает несколько раз в день — это вариант нормы. Но если икота стала очень частой и продолжительной — скажите врачу.
+            </div>
+        </div>
+    </div>
+
+    <!-- Как считать шевеления -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-calculator"></i></div>
+            <div class="section-title">Тест «Сосчитай до 10»</div>
+        </div>
+        <div class="section-content">
+            <p>С 28 недель врачи рекомендуют подсчитывать шевеления. Это простой способ убедиться, что с малышом всё в порядке.</p>
+            <div class="warning-box">
+                <strong>Как выполнять:</strong>
+                <ol style="padding-left: 20px;">
+                    <li>Выберите время, когда малыш обычно активен (обычно вечер)</li>
+                    <li>Лягте на левый бок или сядьте удобно</li>
+                    <li>Засеките время и считайте каждое шевеление (толчок, удар, переворот — 1 движение)</li>
+                    <li>В норме вы должны насчитать <strong>10 шевелений за 2 часа</strong></li>
+                    <li>Если малыш неактивен — съешьте что-то сладкое, выпейте холодной воды и повторите</li>
+                </ol>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-chart-line"></i> <strong>Норма:</strong> 10 шевелений за 2 часа. У некоторых мам — за 30–60 минут. Главное — регулярность и привычный для вашего малыша ритм.
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда бить тревогу -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">Когда срочно к врачу?</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <i class="fas fa-ambulance"></i> <strong>Немедленно обратитесь к врачу, если:</strong>
+                <ul>
+                    <li><strong>Нет шевелений более 12 часов</strong> (особенно после 28 недель)</li>
+                    <li><strong>Меньше 10 шевелений за 2 часа</strong> после стимуляции (сладкое, холодная вода)</li>
+                    <li><strong>Шевеления стали значительно слабее</strong> или изменился их характер</li>
+                    <li><strong>Резкое снижение активности</strong> после периода нормальных движений</li>
+                    <li><strong>Шевеления стали слишком сильными, болезненными</strong></li>
+                    <li><strong>Активность резко усилилась, а затем резко упала</strong></li>
+                </ul>
+            </div>
+            <p><strong>Что сделает врач:</strong> КТГ (кардиотокография) или УЗИ с допплерометрией для оценки состояния плода.</p>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> <strong>Помните:</strong> лучше лишний раз сходить к врачу и убедиться, что всё хорошо, чем пропустить проблему.
+            </div>
+        </div>
+    </div>
+
+    <!-- Мифы о шевелениях -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Мифы о шевелениях</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> По силе шевелений можно предсказать характер ребёнка.<br>
+            <strong>Правда:</strong> Активность зависит от многих факторов, но не от будущего темперамента.</p>
+            
+            <p><strong>Миф:</strong> Если малыш не шевелится — он спит.<br>
+            <strong>Правда:</strong> Да, плод спит 60–80% времени, но циклы сна короткие (20–40 минут). Если нет шевелений дольше 12 часов — это тревожный признак.</p>
+            
+            <p><strong>Миф:</strong> При тазовом предлежании шевеления чувствуются слабее.<br>
+            <strong>Правда:</strong> Необязательно. При тазовом предлежании удары ножками приходятся на мочевой пузырь и кишечник, что очень ощутимо.</p>
+            
+            <p><strong>Миф:</strong> Не нужно считать шевеления, если беременность протекает нормально.<br>
+            <strong>Правда:</strong> Рекомендовано всем с 28 недель. Это лучший способ домашнего мониторинга состояния плода.</p>
+        </div>
+    </div>
+
+    <!-- Что чувствует папа -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="section-title">Когда папа почувствует шевеления?</div>
+        </div>
+        <div class="section-content">
+            <p>Обычно партнёр может почувствовать движения рукой с 24–26 недель. Чтобы малыш не «стеснялся», маме лучше лечь на спину, расслабиться, а папе положить руку на живот и подождать 10–15 минут. Многие малыши реагируют на голос папы и начинают двигаться активнее.</p>
+            <div class="tip-box">
+                <i class="fas fa-microphone-alt"></i> <strong>Совет папам:</strong> разговаривайте с малышом, читайте сказки, пойте колыбельные. Исследования показывают, что плод различает голос отца с 24 недель.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

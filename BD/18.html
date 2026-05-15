@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Подготовка к отцовству и поддержка партнера — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .father-quote {
+            background: linear-gradient(135deg, #fef0e8 0%, #ffe8e0 100%);
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-hand-holding-heart"></i> 
+            Подготовка к отцовству
+        </h1>
+        <p>Как стать лучшей поддержкой для своей семьи</p>
+        <div class="badge"><i class="fas fa-users"></i> Вы — команда, и это командная работа</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Главный посыл -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-quote-left"></i></div>
+            <div class="section-title">Ты справишься, папа!</div>
+        </div>
+        <div class="section-content">
+            <p>Беременность, роды и первые месяцы с малышом — испытание не только для мамы, но и для вас. Ваша поддержка в этот период бесценна. И вы тоже имеете право на эмоции, страхи и неуверенность — это нормально.</p>
+            <div class="father-quote">
+                <i class="fas fa-heart" style="color: #e06c8c;"></i> «Лучшее, что может сделать отец для своих детей — это любить их мать» — Теодор Хезберг
+            </div>
+        </div>
+    </div>
+
+    <!-- Как поддержать жену во время беременности -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hands-helping"></i></div>
+            <div class="section-title">Поддержка во время беременности</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Слушайте и не обесценивайте</strong> — её усталость, перепады настроения, страхи реальны. Не говорите «да ладно, всё нормально». Скажите: «Я с тобой, мы справимся».</li>
+                <li><strong>Ходите на приёмы к врачу</strong> — так вы будете в курсе событий и покажете свою вовлечённость.</li>
+                <li><strong>Берите на себя часть домашних дел</strong> — готовка, уборка, походы в магазин. Токсикоз и усталость — не капризы, а реальные симптомы.</li>
+                <li><strong>Учитесь делать массаж</strong> — поясница и стопы у беременных болят часто.</li>
+                <li><strong>Готовьте вместе приданное</strong> — выбирайте коляску, кроватку, вещи. Это сближает.</li>
+                <li><strong>Посещайте курсы для будущих родителей</strong> — вместе. Вы узнаете, что происходит с её телом и как помочь в родах.</li>
+                <li><strong>Будьте терпеливы к её пищевым причудам</strong> — если хочет солёного клубничного мороженого в 3 часа ночи, это нормально.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Как подготовиться к родам -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-baby-carriage"></i></div>
+            <div class="section-title">Подготовка к родам</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Изучите процесс родов</strong> — книги, видео, курсы. Чем больше вы знаете, тем меньше страха.</li>
+                <li><strong>Составьте план родов</strong> — вместе обсудите: желаемые позы, обезболивание, присутствие партнёра.</li>
+                <li><strong>Соберите «тревожный чемодан»</strong> — документы, вещи для мамы и малыша, ваши сменные вещи, зарядки, вода, перекус.</li>
+                <li><strong>Выучите дыхательные техники</strong> — вы сможете напоминать жене, как дышать во время схваток.</li>
+                <li><strong>Обсудите с врачом</strong> — когда ехать в роддом, какие анализы нужны для партнёрских родов (флюорография, флора).</li>
+                <li><strong>Договоритесь о транспорте</strong> — машина всегда должна быть заправлена, такси на быстром наборе.</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>На курсах для пап:</strong> учат массажу, дыханию, пеленанию, купанию. Очень рекомендую!
+            </div>
+        </div>
+    </div>
+
+    <!-- Ваша роль в родах -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hands-praying"></i></div>
+            <div class="section-title">Ваша роль в родах</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Будьте спокойны</strong> — ваше волнение передаётся. Ваша задача — быть «якорем».</li>
+                <li><strong>Помогайте дышать</strong> — повторяйте: «вдох-выдох», считайте секунды.</li>
+                <li><strong>Делайте массаж поясницы</strong> — круговые движения кулаками во время схваток.</li>
+                <li><strong>Предлагайте воду, лёд, смоченное полотенце для лба</strong>.</li>
+                <li><strong>Помогайте менять позы</strong> — фитбол, ходьба, поза на четвереньках, вис на вас.</li>
+                <li><strong>Говорите слова поддержки</strong> — «ты справляешься», «ты сильная», «я горжусь тобой».</li>
+                <li><strong>В потугах:</strong> держите за руку, поддерживайте голову, не мешайте врачу.</li>
+                <li><strong>После родов:</strong> будьте рядом, помогите приложить малыша к груди, сходите за врачом, если нужно.</li>
+            </ul>
+            <div class="warning-box">
+                <strong>Важно:</strong> если вы чувствуете, что не готовы присутствовать в родзале — это нормально! Вы можете ждать за дверью и помогать морально. Честность лучше, чем паника в ответственный момент.
+            </div>
+        </div>
+    </div>
+
+    <!-- Подготовка к жизни с новорожденным -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-baby"></i></div>
+            <div class="section-title">Первое время с малышом</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Учитесь пеленать, купать, держать столбиком</strong> — это реально не сложно, и жена оценит помощь.</li>
+                <li><strong>Берите ночные смены</strong> — поменять подгузник, принести малыша на кормление, укачать.</li>
+                <li><strong>Готовьте еду</strong> — хотя бы простые блюда. Жене некогда и не до кулинарных изысков.</li>
+                <li><strong>Следите за её эмоциональным состоянием</strong> — послеродовая депрессия начинается незаметно. Если она плачет, раздражена, не спит — не игнорируйте, помогите обратиться к врачу.</li>
+                <li><strong>Хвалите и благодарите</strong> — она делает огромную работу, даже если лежит с малышом.</li>
+                <li><strong>Не забывайте о себе</strong> — вы тоже имеете право на отдых и свои эмоции. Выдыхайте, высыпайтесь, когда есть возможность.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Эмоциональная подготовка папы -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-brain"></i></div>
+            <div class="section-title">Эмоциональная подготовка</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Страх перемен — норма.</strong> Бояться стать отцом, ответственности, что «не справитесь» — это испытывают почти все мужчины.</li>
+                <li><strong>Обсуждайте свои чувства</strong> — с женой, другом, психологом. Не держите в себе.</li>
+                <li><strong>Не ждите мгновенной любви к ребёнку</strong> — она может прийти не сразу, и это нормально. Настоящая любовь часто приходит через заботу.</li>
+                <li><strong>Ревность к ребёнку бывает</strong> — внимание жены переключилось. Это пройдёт. Напомните себе, что вы — команда.</li>
+                <li><strong>Найдите сообщество отцов</strong> — форумы, чаты, группы поддержки. Другие папы поймут то, чего не понимают мамы.</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> <strong>Важно:</strong> послеродовая депрессия бывает и у пап. Если вы чувствуете апатию, гнев, безнадёжность — обратитесь к психологу.
+            </div>
+        </div>
+    </div>
+
+    <!-- Практические дела -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clipboard-list"></i></div>
+            <div class="section-title">Что сделать заранее (чек-лист)</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>📄 Подготовить документы — паспорт, полис, флюорографию, анализы для партнёрских родов</li>
+                <li>🛏 Собрать и поставить кроватку, комод, коляску</li>
+                <li>🧼 Постирать детское бельё специальным порошком</li>
+                <li>🛒 Закупить памперсы, влажные салфетки, крем под подгузник</li>
+                <li>🚗 Установить автокресло (потренироваться закреплять)</li>
+                <li>📱 Установить приложения для отслеживания схваток</li>
+                <li>🍲 Приготовить замороженные полуфабрикаты (супы, котлеты, пельмени)</li>
+                <li>🧹 Сделать генеральную уборку (или заказать клининг)</li>
+                <li>📞 Проверить, кто может приехать помочь в экстренном случае</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Как говорить с партнёром -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comments"></i></div>
+            <div class="section-title">Правильные слова поддержки</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Что сказать жене:</strong></p>
+            <ul>
+                <li>«Ты справляешься, я рядом»</li>
+                <li>«Ты прекрасно выглядишь» (даже когда она в халате и уставшая)</li>
+                <li>«Давай я помогу» (без конкретики — «скажи, что сделать»)</li>
+                <li>«Я горжусь тобой»</li>
+            </ul>
+            <p><strong>Чего лучше НЕ говорить:</strong></p>
+            <ul>
+                <li>«Не ной, все беременные проходят через это»</li>
+                <li>«Успокойся, ничего страшного»</li>
+                <li>«А вот моя мама в твоём возрасте...»</li>
+                <li>«Ты сама виновата, что...»</li>
+            </ul>
+            <div class="father-quote">
+                «Не бойтесь сказать "я тебя люблю". Это самые важные слова сейчас».
+            </div>
+        </div>
+    </div>
+
+    <!-- Ресурсы для пап -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-book-open"></i></div>
+            <div class="section-title">Полезные ресурсы</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Книги для отцов:</strong> «Отец. Как воспитать чемпионов в прямом и переносном смысле» (Д. Норман), «Мужчина в ожидании ребёнка» (Г. Беркович)</li>
+                <li><strong>Курсы:</strong> Школа осознанного отцовства, курсы партнёрских родов при перинатальном центре</li>
+                <li><strong>Приложения:</strong> «Папа-гид», Daddy Guide, «Беременность+» (для пар)</li>
+                <li><strong>Сообщества:</strong> телеграм-каналы для пап, форумы на Babyblog.ru и др.</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-phone-alt"></i> <strong>Горячая линия психологической поддержки для родителей:</strong> 8 800 555 35 35 (круглосуточно).
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>
