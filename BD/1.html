@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Календарь беременности: 40 недель — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        /* Хедер */
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        /* Навигация по триместрам */
+        .trimester-nav {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .trimester-btn {
+            background: white;
+            border: 1px solid #ffe0d6;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: inherit;
+        }
+
+        .trimester-btn.active {
+            background: #fbeae8;
+            border-color: #cd7c9b;
+            color: #b35d7c;
+        }
+
+        .trimester-btn:active {
+            transform: scale(0.96);
+        }
+
+        /* Карточки недель */
+        .week-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .week-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .week-number {
+            background: #fbeae8;
+            border-radius: 60px;
+            padding: 6px 14px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #b35d7c;
+        }
+
+        .week-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .week-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+            margin-top: 8px;
+        }
+
+        .week-content p {
+            margin-bottom: 10px;
+        }
+
+        .baby-size {
+            background: #fffaf5;
+            border-radius: 16px;
+            padding: 10px 14px;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #b45f7f;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        /* Блок с кнопками навигации (обычные) */
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        /* ★★★ ПЛАВАЮЩАЯ КНОПКА "НА ГЛАВНУЮ" ★★★ */
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        /* Для мобильных устройств — чуть выше, чтобы не перекрывать нижнюю навигацию */
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .week-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-calendar-alt"></i> 
+            Календарь беременности
+        </h1>
+        <p>40 недель ожидания — неделя за неделей</p>
+        <div class="badge"><i class="fas fa-baby-carriage"></i> Ваш гид по развитию малыша и изменениям в организме</div>
+    </div>
+</div>
+
+<main class="container">
+    <!-- Блок кнопок навигации: возврат в Базу знаний -->
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Навигация по триместрам -->
+    <div class="trimester-nav">
+        <button class="trimester-btn active" data-trimester="first">🌱 Первый триместр (1–13 нед.)</button>
+        <button class="trimester-btn" data-trimester="second">🌸 Второй триместр (14–27 нед.)</button>
+        <button class="trimester-btn" data-trimester="third">🍂 Третий триместр (28–40 нед.)</button>
+    </div>
+
+    <!-- Контейнер для недель -->
+    <div id="weeksContainer"></div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Перинатальный центр «Мама+Центр» — забота на каждом этапе
+    </footer>
+</main>
+
+<!-- ★★★ ПЛАВАЮЩАЯ КНОПКА "НА ГЛАВНУЮ" — ВСЕГДА НА ЭКРАНЕ ★★★ -->
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    // Полные данные по 40 неделям беременности
+    const weeksData = {
+        // Первый триместр (1-13)
+        1: { title: "Первая неделя", description: "Начало менструального цикла. Яйцеклетка готовится к оплодотворению. Ваш организм начинает подготовку к возможной беременности. Рекомендуется начать приём фолиевой кислоты.", babySize: "Размер маковой зёрнышка" },
+        2: { title: "Вторая неделя", description: "Овуляция. Яйцеклетка выходит из фолликула и готова к оплодотворению. Это лучшее время для зачатия.", babySize: "Менее 0,2 мм" },
+        3: { title: "Третья неделя — зачатие", description: "Происходит оплодотворение. Зигота начинает делиться и движется к матке. Начинается формирование генетического кода малыша.", babySize: "0,1–0,2 мм" },
+        4: { title: "Четвертая неделя", description: "Эмбрион имплантируется в стенку матки. Начинают формироваться плацента и пуповина. Возможны первые признаки беременности — задержка.", babySize: "1 мм (как маковое зёрнышко)" },
+        5: { title: "Пятая неделя", description: "Формируется нервная трубка — начало центральной нервной системы. Закладывается сердце. Возможны первые симптомы токсикоза.", babySize: "2–3 мм (как кунжутное семя)" },
+        6: { title: "Шестая неделя", description: "Начинает биться сердечко! Формируются зачатки рук и ног. Закладываются глаза и уши.", babySize: "4–6 мм (как горошина)" },
+        7: { title: "Седьмая неделя", description: "Развивается головной мозг. Формируются внутренние органы. На УЗИ уже можно увидеть эмбрион.", babySize: "7–9 мм (как черника)" },
+        8: { title: "Восьмая неделя", description: "Пальчики начинают формироваться, но пока соединены перепонками. Появляются веки. Малыш начинает двигаться!", babySize: "14–16 мм (как фасолина)" },
+        9: { title: "Девятая неделя", description: "Исчезает хвостик. Формируются веки, уши, нос. Начинают развиваться мышцы.", babySize: "22–25 мм (как виноградина)" },
+        10: { title: "Десятая неделя", description: "Плацента начинает полноценно работать. Формируются ноготки. Лицо приобретает человеческие черты.", babySize: "30–35 мм (как клубника)" },
+        11: { title: "Одиннадцатая неделя", description: "Половые органы начинают дифференцироваться. Малыш сосёт пальчик. Начинает работать кишечник.", babySize: "40–45 мм (как инжир)" },
+        12: { title: "Двенадцатая неделя", description: "Первый скрининг. Малыш активно двигается, но вы пока не чувствуете. Формируются голосовые связки.", babySize: "50–55 мм (как слива)" },
+        13: { title: "Тринадцатая неделя", description: "Завершается первый триместр. Плацента полностью готова. Поджелудочная железа начинает вырабатывать инсулин.", babySize: "65–75 мм (как персик)" },
+        // Второй триместр (14-27)
+        14: { title: "Четырнадцатая неделя", description: "Малыш может хмуриться и строить гримасы. Появляются ресницы и брови. Начинает различать свет и темноту.", babySize: "85–90 мм (как киви)" },
+        15: { title: "Пятнадцатая неделя", description: "Кости становятся более крепкими. Уши занимают правильное положение. Малыш слышит звуки извне.", babySize: "95–100 мм (как яблоко)" },
+        16: { title: "Шестнадцатая неделя", description: "Можно определить пол ребёнка. Малыш совершает дыхательные движения (тренирует лёгкие).", babySize: "110–120 мм (как авокадо)" },
+        17: { title: "Семнадцатая неделя", description: "Появляется жировая прослойка. Малыш начинает икать. Вы можете почувствовать первые шевеления!", babySize: "130–140 мм (как репа)" },
+        18: { title: "Восемнадцатая неделя", description: "Малыш активно сгибает и разгибает конечности. Формируется уникальный рисунок пальцев.", babySize: "140–150 мм (как сладкий перец)" },
+        19: { title: "Девятнадцатая неделя", description: "Органы чувств активно развиваются. Малыш реагирует на прикосновения к животу.", babySize: "150–160 мм (как помидор)" },
+        20: { title: "Двадцатая неделя", description: "Второй скрининг. Малыш глотает околоплодные воды. Начинают формироваться зачатки постоянных зубов.", babySize: "160–180 мм (как банан)" },
+        21: { title: "Двадцать первая неделя", description: "Укрепляется костная система. Малыш имеет циклы сна и бодрствования.", babySize: "260–270 г, около 18 см (как морковка)" },
+        22: { title: "Двадцать вторая неделя", description: "Малыш слышит ваш голос и может различать мелодии. Появляются тактильные ощущения.", babySize: "350–380 г, около 20 см (как кокос)" },
+        23: { title: "Двадцать третья неделя", description: "Начинают работать лёгкие. Малыш открывает глаза. Вес активно увеличивается.", babySize: "450–500 г, 22–23 см (как баклажан)" },
+        24: { title: "Двадцать четвёртая неделя", description: "Малыш различает вкус околоплодных вод, которые зависят от вашего питания.", babySize: "550–600 г, около 25 см (как кукуруза)" },
+        25: { title: "Двадцать пятая неделя", description: "Кожа розовеет, появляются складочки. Малыш реагирует на яркий свет.", babySize: "650–700 г, около 27 см (как брокколи)" },
+        26: { title: "Двадцать шестая неделя", description: "Малыш открывает глаза в утробе. Начинает формироваться режим дня.", babySize: "750–850 г, около 30 см (как кабачок)" },
+        27: { title: "Двадцать седьмая неделя", description: "Завершается второй триместр. Лёгкие продолжают созревать. Малыш активно шевелится.", babySize: "850–950 г, около 32 см (как цветная капуста)" },
+        // Третий триместр (28-40)
+        28: { title: "Двадцать восьмая неделя", description: "Мозг активно растёт. Малыш может моргать. Начинается третий триместр.", babySize: "1000–1100 г, около 35 см (как баклажан)" },
+        29: { title: "Двадцать девятая неделя", description: "Кости черепа пока мягкие — это важно для прохождения по родовым путям. Малыш набирает жировую массу.", babySize: "1150–1250 г, около 36 см (как тыква)" },
+        30: { title: "Тридцатая неделя", description: "Малыш занимает положение головкой вниз (у большинства). Реагирует на ваши эмоции.", babySize: "1300–1400 г, около 38 см (как капуста)" },
+        31: { title: "Тридцать первая неделя", description: "Продолжается набор веса. Малыш различает лица и огоньки.", babySize: "1500–1600 г, около 39 см (как кокос)" },
+        32: { title: "Тридцать вторая неделя", description: "На УЗИ можно рассмотреть черты лица. Малыш тренирует дыхание.", babySize: "1700–1800 г, около 40–41 см (как ананас)" },
+        33: { title: "Тридцать третья неделя", description: "Черепные кости ещё подвижны. Малыш различает день и ночь.", babySize: "1900–2000 г, около 42 см (как дыня)" },
+        34: { title: "Тридцать четвертая неделя", description: "Пушковые волосы (лануго) начинают исчезать. Малыш активно шевелится.", babySize: "2100–2200 г, около 43 см (как арбуз)" },
+        35: { title: "Тридцать пятая неделя", description: "Почки полностью сформированы. Малыш набирает вес по 200–250 г в неделю.", babySize: "2300–2500 г, около 44–45 см (как тыква-гигант)" },
+        36: { title: "Тридцать шестая неделя", description: "Малыш опускается ниже (у некоторых). Становится теснее, шевеления ощущаются иначе.", babySize: "2600–2800 г, около 45–46 см (как дыня-канталупа)" },
+        37: { title: "Тридцать седьмая неделя", description: "С этого срока беременность считается доношенной. Малыш готов к появлению на свет.", babySize: "2900–3100 г, около 47–48 см (как небольшая тыква)" },
+        38: { title: "Тридцать восьмая неделя", description: "Малыш ждёт своего часа. Сыровидная смазка покрывает кожу для облегчения прохождения.", babySize: "3100–3300 г, около 48–49 см (как арбузик)" },
+        39: { title: "Тридцать девятая неделя", description: "Плацента постепенно стареет. Малыш реже шевелится — копит силы для родов.", babySize: "3300–3500 г, около 49–50 см (как спелый арбуз)" },
+        40: { title: "Сороковая неделя — ПДР", description: "Предполагаемая дата родов. Малыш полностью готов встретить этот мир. Прислушивайтесь к предвестникам — схваткам, отхождению пробки.", babySize: "3200–3800 г, 50–53 см (как маленький арбуз)" }
+    };
+
+    // Рендер недель по выбранному триместру
+    let currentTrimester = "first";
+
+    function renderWeeks(trimester) {
+        const container = document.getElementById("weeksContainer");
+        if (!container) return;
+
+        let weeksHtml = "";
+        let startWeek, endWeek;
+        
+        if (trimester === "first") {
+            startWeek = 1;
+            endWeek = 13;
+        } else if (trimester === "second") {
+            startWeek = 14;
+            endWeek = 27;
+        } else {
+            startWeek = 28;
+            endWeek = 40;
+        }
+
+        for (let w = startWeek; w <= endWeek; w++) {
+            const data = weeksData[w];
+            if (data) {
+                const delay = (w - startWeek) * 0.02;
+                weeksHtml += `
+                    <div class="week-card" style="animation-delay: ${delay}s">
+                        <div class="week-header">
+                            <span class="week-number">Неделя ${w}</span>
+                            <span class="week-title">${data.title}</span>
+                        </div>
+                        <div class="week-content">
+                            <p>${data.description}</p>
+                            <div class="baby-size">
+                                <i class="fas fa-ruler"></i> Размер малыша: ${data.babySize}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        if (weeksHtml === "") {
+            weeksHtml = `<div style="text-align: center; padding: 40px; background: white; border-radius: 28px;">
+                            <i class="fas fa-info-circle" style="font-size: 3rem; color: #cd7c9b;"></i>
+                            <p style="margin-top: 12px;">Информация для этого триместра загружается</p>
+                        </div>`;
+        }
+
+        container.innerHTML = weeksHtml;
+    }
+
+    // Переключение триместра
+    const trimesterBtns = document.querySelectorAll(".trimester-btn");
+    trimesterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const trimester = btn.getAttribute("data-trimester");
+            if (!trimester) return;
+            
+            trimesterBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            
+            currentTrimester = trimester;
+            renderWeeks(currentTrimester);
+            
+            const container = document.getElementById("weeksContainer");
+            if (container) {
+                container.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        });
+    });
+
+    // Кнопка возврата в Базу знаний
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/bz";
+        });
+    }
+
+    // ★★★ ПЛАВАЮЩАЯ КНОПКА "НА ГЛАВНУЮ" — ВСЕГДА НА ЭКРАНЕ ★★★
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    // Инициализация — показываем первый триместр
+    renderWeeks("first");
+</script>
+</body>
+</html>
