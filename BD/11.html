@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Ведение беременности — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+            margin: 16px 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            border-left: 2px solid #f3bfcf;
+        }
+
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 4px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #cd7c9b;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-file-medical"></i> 
+            Ведение беременности
+        </h1>
+        <p>Полный гид по наблюдению будущей мамы</p>
+        <div class="badge"><i class="fas fa-calendar-alt"></i> От постановки на учёт до родов</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Зачем нужно ведение беременности -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-heartbeat"></i></div>
+            <div class="section-title">Зачем нужно наблюдение?</div>
+        </div>
+        <div class="section-content">
+            <p>Регулярное наблюдение у врача помогает:</p>
+            <ul>
+                <li>✅ Вовремя выявить возможные осложнения (анемия, гестоз, задержка развития плода)</li>
+                <li>✅ Отслеживать рост и развитие малыша</li>
+                <li>✅ Контролировать здоровье мамы (давление, вес, анализы)</li>
+                <li>✅ Своевременно проводить скрининги на генетические патологии</li>
+                <li>✅ Получить индивидуальные рекомендации по питанию, физической активности</li>
+                <li>✅ Подготовиться к родам психологически и физически</li>
+            </ul>
+            <div class="warning-box">
+                <i class="fas fa-calendar-check"></i> <strong>Важно:</strong> встать на учёт рекомендуется до 12 недель — это даёт право на единовременное пособие и позволяет вовремя пройти первый скрининг.
+            </div>
+        </div>
+    </div>
+
+    <!-- Как выбрать врача -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-user-md"></i></div>
+            <div class="section-title">Как выбрать врача</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>По ОМС:</strong> вас направят к врачу женской консультации по месту жительства. Можно попросить замену, если не сложились отношения.</li>
+                <li><strong>Платно (контракт):</strong> можно выбрать конкретного врача в частном центре или в государственном роддоме. Стоимость ведения беременности — от 50 000 до 200 000 ₽ за весь срок.</li>
+                <li><strong>Что важно в враче:</strong> опыт, отзывы, умение слушать, готовность отвечать на вопросы, поддерживающий стиль общения.</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Не бойтесь менять врача, если чувствуете дискомфорт или недоверие. Ваше спокойствие важно.
+            </div>
+        </div>
+    </div>
+
+    <!-- График визитов -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-calendar-week"></i></div>
+            <div class="section-title">График визитов к врачу</div>
+        </div>
+        <div class="section-content">
+            <div class="timeline">
+                <div class="timeline-item"><strong>1 раз в месяц</strong> — до 28 недель (I и II триместр)</div>
+                <div class="timeline-item"><strong>1 раз в 2 недели</strong> — с 28 до 36 недель</div>
+                <div class="timeline-item"><strong>1 раз в неделю</strong> — с 36 недель до родов</div>
+            </div>
+            <p>При многоплодной беременности, хронических заболеваниях или осложнениях — чаще, по назначению врача.</p>
+            <div class="tip-box">
+                <i class="fas fa-stethoscope"></i> <strong>Всего за беременность:</strong> около 10–15 визитов к акушеру-гинекологу при нормальном течении.
+            </div>
+        </div>
+    </div>
+
+    <!-- Обязательные анализы и обследования -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-flask"></i></div>
+            <div class="section-title">Обязательные анализы</div>
+        </div>
+        <div class="section-content">
+            <p><strong>При постановке на учёт (до 12 недель):</strong></p>
+            <ul>
+                <li>Общий анализ крови</li>
+                <li>Общий анализ мочи</li>
+                <li>Биохимический анализ крови (глюкоза, белок, ферменты печени)</li>
+                <li>Коагулограмма (свёртываемость)</li>
+                <li>Группа крови и резус-фактор</li>
+                <li>Анализы на ВИЧ, сифилис, гепатиты B и C</li>
+                <li>TORCH-комплекс (токсоплазмоз, краснуха, цитомегаловирус, герпес)</li>
+                <li>Мазок на флору и ПЦР на половые инфекции</li>
+            </ul>
+            <p><strong>В I и II триместре:</strong></p>
+            <ul>
+                <li>Общий анализ мочи — перед каждым визитом</li>
+                <li>Общий анализ крови — 1 раз в триместр</li>
+                <li>Глюкозотолерантный тест (24–28 недель) — на гестационный диабет</li>
+            </ul>
+            <p><strong>В III триместре:</strong></p>
+            <ul>
+                <li>Мазок на стрептококк группы B (35–37 недель)</li>
+                <li>Повторный анализ на ВИЧ, сифилис, гепатиты (30 недель)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- УЗИ скрининги -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ultrasound"></i></div>
+            <div class="section-title">УЗИ скрининги</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Первое УЗИ (11–13 недель + 6 дней)</strong><br>
+            Оценка ТВП (толщины воротникового пространства), визуализация органов плода, определение срока, количества плодов. + анализ крови на РАРР-А и бета-ХГЧ — первый скрининг на синдром Дауна, Эдвардса.</p>
+            
+            <p><strong>Второе УЗИ (18–21 неделя)</strong><br>
+            Детальное исследование анатомии плода: головной мозг, сердце, позвоночник, желудок, почки, конечности. Оценка плаценты, околоплодных вод. Можно узнать пол (если малыш покажет).</p>
+            
+            <p><strong>Третье УЗИ (30–34 недели)</strong><br>
+            Оценка роста плода, положения (головное, тазовое), состояния плаценты, количества околоплодных вод, кровотока в сосудах (допплерометрия).</p>
+            
+            <div class="warning-box">
+                <i class="fas fa-microscope"></i> При необходимости — дополнительные УЗИ (например, при подозрении на задержку роста, многоплодной беременности, резус-конфликте).
+            </div>
+        </div>
+    </div>
+
+    <!-- Измерения на каждом приёме -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-arrows-alt"></i></div>
+            <div class="section-title">Что проверяют на каждом приёме</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Вес</strong> — набор должен быть в пределах нормы</li>
+                <li><strong>Артериальное давление</strong> — повышение может быть признаком гестоза</li>
+                <li><strong>Окружность живота и высота стояния дна матки</strong> — оценивают рост малыша</li>
+                <li><strong>Сердцебиение плода</strong> — с помощью стетоскопа или КТГ</li>
+                <li><strong>Анализ мочи</strong> (перед каждым визитом) — на белок, лейкоциты, сахар</li>
+                <li><strong>Наличие отёков</strong> — может быть симптомом гестоза</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Дополнительные обследования -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-plus-circle"></i></div>
+            <div class="section-title">Дополнительные обследования</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>НИПТ (неинвазивный пренатальный тест)</strong> — анализ крови на хромосомные аномалии (синдром Дауна и др.) с 10 недель, точность 99%. Платно — от 25 000 ₽.</li>
+                <li><strong>Инвазивная диагностика</strong> (амниоцентез, биопсия хориона, кордоцентез) — при высоком риске генетических патологий.</li>
+                <li><strong>КТГ (кардиотокография)</strong> — с 32 недель, оценка сердцебиения плода и тонуса матки.</li>
+                <li><strong>Допплерометрия</strong> — исследование кровотока в сосудах матки, плаценты и плода.</li>
+                <li><strong>Эхокардиография плода</strong> — детальное УЗИ сердца (по показаниям).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Постановка на учёт и обменная карта -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-id-card"></i></div>
+            <div class="section-title">Обменная карта и документы</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Обменная карта</strong> — главный документ беременной. Её выдают в ЖК около 28–30 недель. Она содержит:</p>
+            <ul>
+                <li>Данные о течении беременности</li>
+                <li>Результаты всех анализов и УЗИ</li>
+                <li>Группу крови, резус-фактор</li>
+                <li>Заключения врачей</li>
+            </ul>
+            <div class="warning-box">
+                <i class="fas fa-gavel"></i> <strong>Важно:</strong> обменная карта должна быть всегда с собой! Без неё вас могут отказаться принимать в роддоме.
+            </div>
+            <p><strong>Другие документы:</strong> паспорт, полис ОМС, СНИЛС, родовой сертификат (выдаётся в ЖК).</p>
+        </div>
+    </div>
+
+    <!-- Когда нужна госпитализация -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hospital-user"></i></div>
+            <div class="section-title">Плановая и экстренная госпитализация</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Плановая госпитализация:</strong></p>
+            <ul>
+                <li>При многоплодной беременности — обычно за 2–3 недели до родов</li>
+                <li>При тазовом предлежании — для выбора тактики родов</li>
+                <li>При сахарном диабете, гипертонии, пороках сердца — для подготовки</li>
+                <li>При резус-конфликте — для планового лечения</li>
+            </ul>
+            <p><strong>Экстренная госпитализация при:</strong></p>
+            <ul>
+                <li>Кровянистых выделениях</li>
+                <li>Сильных болях в животе</li>
+                <li>Повышении давления, сильной головной боли, «мушках» перед глазами</li>
+                <li>Отхождении околоплодных вод</li>
+                <li>Регулярных схватках до 37 недель</li>
+                <li>Ухудшении шевелений плода</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Преимущества частного ведения -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-gem"></i></div>
+            <div class="section-title">Платное ведение беременности</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Плюсы:</strong></p>
+            <ul>
+                <li>✅ Личный врач, доступный 24/7 (по телефону)</li>
+                <li>✅ Приёмы без очередей, в удобное время</li>
+                <li>✅ Анализы и УЗИ в том же центре</li>
+                <li>✅ Спокойная, поддерживающая атмосфера</li>
+                <li>✅ Возможность заключить контракт на роды с тем же врачом</li>
+            </ul>
+            <p><strong>Стоимость:</strong> от 50 000 до 200 000 ₽ за ведение всей беременности (в зависимости от региона и уровня клиники).</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> если финансы позволяют, платное ведение часто даёт больше комфорта и уверенности. Но и по ОМС можно получить квалифицированную помощь — главное, чтобы был контакт с врачом.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

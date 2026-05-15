@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Другие симптомы беременности на раннем сроке — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        /* Хедер */
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        /* Блок с кнопками */
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        /* Карточки разделов */
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        /* Плавающая кнопка */
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-stethoscope"></i> 
+            Другие симптомы беременности
+        </h1>
+        <p>Ранние признаки, о которых важно знать</p>
+        <div class="badge"><i class="fas fa-heartbeat"></i> Задержка и тест — не единственные признаки</div>
+    </div>
+</div>
+
+<main class="container">
+    <!-- Блок кнопок навигации -->
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-info-circle"></i></div>
+            <div class="section-title">Помимо задержки и токсикоза</div>
+        </div>
+        <div class="section-content">
+            <p>Многие женщины замечают изменения в организме ещё до задержки менструации или положительного теста. Организм начинает перестраиваться с первых дней после зачатия.</p>
+            <div class="warning-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> Все эти симптомы не являются 100% доказательством беременности. Они могут быть связаны с ПМС, гормональными изменениями или другими состояниями. Только тест или анализ крови на ХГЧ дают точный ответ.
+            </div>
+        </div>
+    </div>
+
+    <!-- Изменения в груди -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ribbon"></i></div>
+            <div class="section-title">👙 Изменения в груди</div>
+        </div>
+        <div class="section-content">
+            <p>Один из самых ранних признаков — грудь начинает готовиться к кормлению уже на 2–3 неделе после зачатия.</p>
+            <ul>
+                <li><strong>Набухание и увеличение размера</strong> — грудь становится более плотной, тяжёлой</li>
+                <li><strong>Повышенная чувствительность</strong> — прикосновения могут быть болезненными</li>
+                <li><strong>Потемнение сосков и ареол</strong> — за счёт усиления пигментации</li>
+                <li><strong>Увеличение венозной сетки</strong> — кровоснабжение усиливается</li>
+                <li><strong>Появление бугорков Монтгомери</strong> — маленькие выпуклости на ареоле</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-check-circle"></i> У некоторых женщин эти изменения могут быть настолько сильными, что бюстгальтер становится мал уже на 4–5 неделе.
+            </div>
+        </div>
+    </div>
+
+    <!-- Усталость и сонливость -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bed"></i></div>
+            <div class="section-title">😴 Усталость и сонливость</div>
+        </div>
+        <div class="section-content">
+            <p>Ощущение хронической усталости — частый спутник первого триместра. Организм тратит огромное количество энергии на перестройку.</p>
+            <ul>
+                <li><strong>Хочется спать даже после полноценного ночного сна</strong></li>
+                <li><strong>Быстро устаёте от привычных дел</strong></li>
+                <li><strong>Снижается работоспособность и концентрация</strong></li>
+                <li><strong>Тянет прилечь днём</strong></li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> Не боритесь с усталостью — отдыхайте, когда есть возможность. Сонливость обычно проходит к началу второго триместра.
+            </div>
+        </div>
+    </div>
+
+    <!-- Частое мочеиспускание -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-toilet"></i></div>
+            <div class="section-title">🚽 Частое мочеиспускание</div>
+        </div>
+        <div class="section-content">
+            <p>Уже на 4–5 неделе многие женщины замечают, что бегают в туалет «по-маленькому» гораздо чаще обычного.</p>
+            <ul>
+                <li><strong>Матка увеличивается и давит на мочевой пузырь</strong></li>
+                <li><strong>Усиливается кровоток в органах малого таза</strong></li>
+                <li><strong>Почки работают активнее</strong></li>
+            </ul>
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle"></i> <strong>Важно отличить от цистита:</strong> при беременности позывы частые, но безболезненные. Если есть боль, жжение, резь — срочно к врачу.
+            </div>
+        </div>
+    </div>
+
+    <!-- Изменение вкуса и обоняния -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-utensils"></i></div>
+            <div class="section-title">🍽 Изменение вкуса и обоняния</div>
+        </div>
+        <div class="section-content">
+            <p>Многие будущие мамы замечают, что привычные продукты начинают казаться отвратительными, а раньше нелюбимые — невероятно вкусными.</p>
+            <ul>
+                <li><strong>Повышенная чувствительность к запахам</strong> — запах духов, готовящейся еды, табачного дыма может вызывать тошноту</li>
+                <li><strong>Металлический привкус во рту</strong> — дисгевзия, связанная с гормональной перестройкой</li>
+                <li><strong>Тяга к определённым продуктам</strong> — солёным, кислым или, наоборот, сладким</li>
+                <li><strong>Отвращение к ранее любимой еде</strong> (например, к кофе или мясу)</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> «Хочется мела или земли» — это может быть признаком анемии или дефицита минералов. Сообщите врачу.
+            </div>
+        </div>
+    </div>
+
+    <!-- Имплантационное кровотечение -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-tint"></i></div>
+            <div class="section-title">🩸 Имплантационное кровотечение</div>
+        </div>
+        <div class="section-content">
+            <p>Примерно у 25% женщин на 6–12 день после зачатия возникают мажущие выделения — когда эмбрион прикрепляется к стенке матки.</p>
+            <ul>
+                <li><strong>Выделения розоватого, коричневого или светло-красного цвета</strong></li>
+                <li><strong>Скудные, чаще мажущие, а не обильные</strong></li>
+                <li><strong>Длится от нескольких часов до 2–3 дней</strong></li>
+                <li><strong>Может сопровождаться лёгким тянущим ощущением внизу живота</strong></li>
+            </ul>
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle"></i> <strong>Важно отличить от месячных и выкидыша:</strong> имплантационные выделения гораздо скуднее, короче и наступают раньше ожидаемой менструации (на 3–7 дней). Если кровотечение усиливается — срочно к врачу!
+            </div>
+        </div>
+    </div>
+
+    <!-- Перепады настроения -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-face-smile"></i></div>
+            <div class="section-title">🎭 Перепады настроения</div>
+        </div>
+        <div class="section-content">
+            <p>Гормональная буря может вызывать резкие смены эмоций — от эйфории до слёз за несколько минут.</p>
+            <ul>
+                <li><strong>Плаксивость без причины</strong></li>
+                <li><strong>Повышенная раздражительность</strong></li>
+                <li><strong>Тревожность и беспокойство</strong></li>
+                <li><strong>Эмоциональная чувствительность к фильмам, новостям, разговорам</strong></li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> Это нормально! Организм адаптируется к новому гормональному фону. Если перепады настроения сильно мешают жизни — обратитесь к психологу.
+            </div>
+        </div>
+    </div>
+
+    <!-- Вздутие и запоры -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bloat"></i></div>
+            <div class="section-title">💨 Вздутие и запоры</div>
+        </div>
+        <div class="section-content">
+            <p>Прогестерон расслабляет не только мышцы матки, но и кишечник, замедляя перистальтику. Это приводит к:</p>
+            <ul>
+                <li><strong>Чувству распирания в животе</strong></li>
+                <li><strong>Повышенному газообразованию</strong></li>
+                <li><strong>Запорам</strong> — стул становится реже, плотнее</li>
+                <li><strong>Чувству тяжести после еды</strong></li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-apple-alt"></i> <strong>Совет:</strong> пейте больше воды, добавьте в рацион клетчатку (овощи, фрукты, цельнозерновые), лёгкую физическую активность (ходьба).
+            </div>
+        </div>
+    </div>
+
+    <!-- Головокружения и обмороки -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-dizzy"></i></div>
+            <div class="section-title">😵 Головокружения и обмороки</div>
+        </div>
+        <div class="section-content">
+            <p>Из-за расширения кровеносных сосудов и снижения давления кровь может оттекать от головного мозга, вызывая:</p>
+            <ul>
+                <li><strong>Ощущение дурноты, «ватные ноги»</strong></li>
+                <li><strong>Потемнение в глазах при резком вставании</strong></li>
+                <li><strong>В редких случаях — обмороки</strong></li>
+            </ul>
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle"></i> <strong>Меры предосторожности:</strong> вставайте медленно, не голодайте, пейте воду, избегайте душных помещений. Если обмороки повторяются — скажите врачу.
+            </div>
+        </div>
+    </div>
+
+    <!-- Базальная температура -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-thermometer-half"></i></div>
+            <div class="section-title">🌡 Повышение базальной температуры</div>
+        </div>
+        <div class="section-content">
+            <p>Те, кто измеряют базальную температуру, могут заметить:</p>
+            <ul>
+                <li><strong>Температура остаётся высокой (выше 37°C) более 18 дней после овуляции</strong></li>
+                <li><strong>Нет привычного предменструального падения</strong></li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Это один из самых ранних признаков беременности, который можно заметить ещё до задержки. Однако метод требует регулярных измерений и не даёт 100% гарантии.
+            </div>
+        </div>
+    </div>
+
+    <!-- Кожные изменения -->
+    <div class="section-card" style="animation-delay: 0.3s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-face-smile"></i></div>
+            <div class="section-title">✨ Кожные изменения</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Акне или, наоборот, улучшение состояния кожи</strong> — зависит от реакции на гормоны</li>
+                <li><strong>Потемнение линии на животе (linea nigra)</strong> — от лобка до пупка</li>
+                <li><strong>Хлоазма — тёмные пятна на лице</strong> («маска беременности»)</li>
+                <li><strong>Сухость или жирность кожи</strong></li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-sun"></i> Избегайте длительного пребывания на солнце — пигментация может усилиться. Используйте солнцезащитный крем.
+            </div>
+        </div>
+    </div>
+
+    <!-- Выделения -->
+    <div class="section-card" style="animation-delay: 0.33s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-peace"></i></div>
+            <div class="section-title">💧 Выделения из влагалища</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Увеличение количества белых или прозрачных выделений</strong> (лейкорея) — из-за усиления кровотока в малом тазу</li>
+                <li><strong>Без запаха и зуда</strong> — это норма</li>
+            </ul>
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle"></i> <strong>Когда к врачу:</strong> выделения стали жёлтыми, зелёными, с неприятным запахом, творожистыми или вызвали зуд — это может быть инфекция.
+            </div>
+        </div>
+    </div>
+
+    <!-- Боли внизу живота -->
+    <div class="section-card" style="animation-delay: 0.36s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bolt"></i></div>
+            <div class="section-title">⚡ Тянущие боли внизу живота</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Несильные, тянущие ощущения</strong>, как перед месячными — из-за растяжения связок матки</li>
+                <li><strong>Кратковременные, проходят самостоятельно</strong></li>
+            </ul>
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle"></i> <strong>Срочно к врачу, если:</strong> боль острая, схваткообразная, отдаёт в поясницу, сопровождается кровотечением или температурой.
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда они появляются -->
+    <div class="section-card" style="animation-delay: 0.39s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-calendar-alt"></i></div>
+            <div class="section-title">📅 Когда появляются симптомы</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>1–2 неделя</strong> (ещё до задержки): имплантационное кровотечение, повышение базальной температуры</li>
+                <li><strong>3–4 неделя</strong> (первые дни задержки): набухание груди, усталость, частое мочеиспускание, перепады настроения</li>
+                <li><strong>5–6 недель</strong>: токсикоз, изменения вкуса и запахов</li>
+                <li><strong>6–8 недель</strong>: усиление всех симптомов</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-stethoscope"></i> <strong>Помните:</strong> каждая женщина уникальна. У кого-то есть все симптомы, у кого-то — ни одного. Это не говорит о проблемах с беременностью.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<!-- Плавающая кнопка "На главную" -->
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    // Кнопка возврата в Базу знаний
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    // Плавающая кнопка "На главную"
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>
