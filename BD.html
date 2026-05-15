@@ -1,0 +1,542 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>База знаний — Перинатальный центр</title>
+    <!-- Подключение шрифта Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.4;
+            padding-bottom: 40px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        /* Хедер */
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+            .hero h1 {
+                font-size: 1.85rem;
+                font-weight: 700;
+                letter-spacing: -0.3px;
+                color: #4a2c3a;
+                margin-bottom: 8px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+                .hero h1 i {
+                    background: #ffffffcc;
+                    padding: 8px;
+                    border-radius: 60px;
+                    font-size: 1.4rem;
+                    color: #b35d7c;
+                }
+
+            .hero p {
+                font-size: 1rem;
+                font-weight: 500;
+                color: #5e3e4b;
+                margin-top: 6px;
+            }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .search-box {
+            background: white;
+            border-radius: 60px;
+            padding: 12px 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border: 1px solid #ffe0d6;
+        }
+
+            .search-box i {
+                color: #cd7c9b;
+                font-size: 1.2rem;
+            }
+
+            .search-box input {
+                flex: 1;
+                border: none;
+                outline: none;
+                font-size: 1rem;
+                font-family: inherit;
+                background: transparent;
+                padding: 4px 0;
+            }
+
+                .search-box input::placeholder {
+                    color: #cba7b4;
+                }
+
+        /* Разделы */
+        .section {
+            margin-bottom: 28px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px dotted #ffe0d6;
+        }
+
+            .section-title i {
+                font-size: 1.4rem;
+                color: #cd7c9b;
+                background: #fff2ec;
+                padding: 8px;
+                border-radius: 20px;
+            }
+
+            .section-title h2 {
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: #4a2c3a;
+            }
+
+        /* Сетка тем */
+        .topics-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .topic-card {
+            background: white;
+            border-radius: 20px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+            .topic-card:active {
+                background: #fef0ea;
+                transform: scale(0.98);
+            }
+
+        .topic-number {
+            background: #fbeae8;
+            border-radius: 40px;
+            min-width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #b35d7c;
+        }
+
+        .topic-content {
+            flex: 1;
+        }
+
+        .topic-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #2d2a2e;
+            line-height: 1.3;
+        }
+
+        .topic-sub {
+            font-size: 0.7rem;
+            color: #cba7b4;
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .topic-arrow {
+            color: #cd7c9b;
+            font-size: 1rem;
+            opacity: 0.6;
+        }
+
+        /* Кнопка назад */
+        .back-button {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: 0.2s;
+        }
+
+            .back-button:active {
+                background: #f0dbd6;
+                transform: scale(0.97);
+            }
+
+            .back-button i {
+                font-size: 1rem;
+            }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .topic-card {
+                padding: 12px 14px;
+            }
+
+            .topic-number {
+                min-width: 38px;
+                height: 38px;
+                font-size: 0.85rem;
+            }
+
+            .topic-title {
+                font-size: 0.88rem;
+            }
+        }
+
+        /* Анимация появления */
+        .topic-card {
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="container" style="padding: 0;">
+            <h1>
+                <i class="fas fa-database"></i>
+                База знаний
+            </h1>
+            <p>Всё, что нужно знать будущим мамам и папам</p>
+            <div class="badge"><i class="fas fa-book-open"></i> 77 полезных тем</div>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- Кнопка назад на главную -->
+        <button class="back-button" id="backToMainBtn">
+            <i class="fas fa-arrow-left"></i> На главную
+        </button>
+
+        <!-- Поиск по темам -->
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Поиск по темам...">
+        </div>
+
+        <!-- Контейнер для всех разделов -->
+        <div id="topicsContainer"></div>
+
+        <footer>
+            <i class="fas fa-seedling"></i> Перинатальный центр «Мама+Центр» — забота на каждом этапе
+        </footer>
+    </main>
+
+    <script>
+    // Полный список тем (77 штук) с нумерацией и разделами
+    const topicsData = [
+        // Первый триместр (1-18)
+        { id: 1, number: 1, title: "Календарь беременности: 40 недель", section: "Первый триместр", order: 1 },
+        { id: 2, number: 2, title: "Распространенные мифы о беременности", section: "Первый триместр", order: 2 },
+        { id: 3, number: 3, title: "Вы узнали, что ждете ребенка", section: "Первый триместр", order: 3 },
+        { id: 4, number: 4, title: "Вы и ваш малыш: первый месяц (недели 1–4)", section: "Первый триместр", order: 4 },
+        { id: 5, number: 5, title: "Питание во время беременности", section: "Первый триместр", order: 5 },
+        { id: 6, number: 6, title: "Ранний выкидыш", section: "Первый триместр", order: 6 },
+        { id: 7, number: 7, title: "Вы и ваш малыш: второй месяц (недели 5–8)", section: "Первый триместр", order: 7 },
+        { id: 8, number: 8, title: "Токсикоз при беременности", section: "Первый триместр", order: 8 },
+        { id: 9, number: 9, title: "Другие симптомы беременности на раннем сроке", section: "Первый триместр", order: 9 },
+        { id: 10, number: 10, title: "Где рожать", section: "Первый триместр", order: 10 },
+        { id: 11, number: 11, title: "Ведение беременности", section: "Первый триместр", order: 11 },
+        { id: 12, number: 12, title: "Занятия спортом во время беременности", section: "Первый триместр", order: 12 },
+        { id: 13, number: 13, title: "Упражнения на укрепление мышц тазового дна", section: "Первый триместр", order: 13 },
+        { id: 14, number: 14, title: "Позаботьтесь о себе", section: "Первый триместр", order: 14 },
+        { id: 15, number: 15, title: "Вы и ваш малыш: третий месяц (недели 9–13)", section: "Первый триместр", order: 15 },
+        { id: 16, number: 16, title: "УЗИ с оценкой ТВП на 12-й неделе", section: "Первый триместр", order: 16 },
+        { id: 17, number: 17, title: "Многоплодная беременность", section: "Первый триместр", order: 17 },
+        { id: 18, number: 18, title: "Подготовка к отцовству и поддержка партнера", section: "Первый триместр", order: 18 },
+        // Второй триместр (19-30)
+        { id: 19, number: 19, title: "Вы и ваш малыш: четвертый месяц (недели 14–17)", section: "Второй триместр", order: 19 },
+        { id: 20, number: 20, title: "Занятия для беременных", section: "Второй триместр", order: 20 },
+        { id: 21, number: 21, title: "Шевеления плода", section: "Второй триместр", order: 21 },
+        { id: 22, number: 22, title: "Гардероб во время беременности", section: "Второй триместр", order: 22 },
+        { id: 23, number: 23, title: "Официальная занятость во время беременности", section: "Второй триместр", order: 23 },
+        { id: 24, number: 24, title: "Причины для посещения врача", section: "Второй триместр", order: 24 },
+        { id: 25, number: 25, title: "Вы и ваш малыш: пятый месяц (недели 18–21)", section: "Второй триместр", order: 25 },
+        { id: 26, number: 26, title: "УЗИ на 20-й неделе (на выявление патологий развития плода)", section: "Второй триместр", order: 26 },
+        { id: 27, number: 27, title: "Вы и ваш малыш: шестой месяц (недели 22–26)", section: "Второй триместр", order: 27 },
+        { id: 28, number: 28, title: "Красота во время беременности", section: "Второй триместр", order: 28 },
+        { id: 29, number: 29, title: "Эмоциональное состояние во время беременности", section: "Второй триместр", order: 29 },
+        { id: 30, number: 30, title: "Сексуальная жизнь во время беременности", section: "Второй триместр", order: 30 },
+        // Третий триместр (31-51)
+        { id: 31, number: 31, title: "Вы и ваш малыш: седьмой месяц (недели 27–30)", section: "Третий триместр", order: 31 },
+        { id: 32, number: 32, title: "Сон во время беременности", section: "Третий триместр", order: 32 },
+        { id: 33, number: 33, title: "Вы и ваш малыш: восьмой месяц (недели 31–35)", section: "Третий триместр", order: 33 },
+        { id: 34, number: 34, title: "Набор новорожденного", section: "Третий триместр", order: 34 },
+        { id: 35, number: 35, title: "Аптечка для мамы и ребенка", section: "Третий триместр", order: 35 },
+        { id: 36, number: 36, title: "Подготовка к рождению ребенка", section: "Третий триместр", order: 36 },
+        { id: 37, number: 37, title: "Вы и ваш малыш: девятый месяц (недели 36–40)", section: "Третий триместр", order: 37 },
+        { id: 38, number: 38, title: "Подготовка к материнству", section: "Третий триместр", order: 38 },
+        { id: 39, number: 39, title: "Собираем сумку в роддом", section: "Третий триместр", order: 39 },
+        { id: 40, number: 40, title: "Перенашивание беременности", section: "Третий триместр", order: 40 },
+        { id: 41, number: 41, title: "Стимулирование родовой деятельности", section: "Третий триместр", order: 41 },
+        { id: 42, number: 42, title: "Краткий обзор процесса родов", section: "Третий триместр", order: 42 },
+        { id: 43, number: 43, title: "Обезболивание в родах", section: "Третий триместр", order: 43 },
+        { id: 44, number: 44, title: "Эпидуральная анестезия", section: "Третий триместр", order: 44 },
+        { id: 45, number: 45, title: "Начало родов (латентная фаза)", section: "Третий триместр", order: 45 },
+        { id: 46, number: 46, title: "Когда пора в роддом", section: "Третий триместр", order: 46 },
+        { id: 47, number: 47, title: "Активная фаза родов", section: "Третий триместр", order: 47 },
+        { id: 48, number: 48, title: "Потуги и отделение последа", section: "Третий триместр", order: 48 },
+        { id: 49, number: 49, title: "Медицинские пособия в родах", section: "Третий триместр", order: 49 },
+        { id: 50, number: 50, title: "Кесарево сечение", section: "Третий триместр", order: 50 },
+        { id: 51, number: 51, title: "Будущим папам: ваша роль во время родов", section: "Третий триместр", order: 51 },
+        // Вы и ваш малыш (52-77)
+        { id: 52, number: 52, title: "Первое кормление", section: "Вы и ваш малыш", order: 52 },
+        { id: 53, number: 53, title: "Восстановление после родов", section: "Вы и ваш малыш", order: 53 },
+        { id: 54, number: 54, title: "Ваш новорожденный малыш", section: "Вы и ваш малыш", order: 54 },
+        { id: 55, number: 55, title: "Первая ночь дома", section: "Вы и ваш малыш", order: 55 },
+        { id: 56, number: 56, title: "Первый год жизни", section: "Вы и ваш малыш", order: 56 },
+        { id: 57, number: 57, title: "Вы и ваш малыш: первые две недели", section: "Вы и ваш малыш", order: 57 },
+        { id: 58, number: 58, title: "Эмоциональные «качели»", section: "Вы и ваш малыш", order: 58 },
+        { id: 59, number: 59, title: "Основная забота о малыше", section: "Вы и ваш малыш", order: 59 },
+        { id: 60, number: 60, title: "Грудное вскармливание", section: "Вы и ваш малыш", order: 60 },
+        { id: 61, number: 61, title: "Кормление из бутылочки", section: "Вы и ваш малыш", order: 61 },
+        { id: 62, number: 62, title: "Отрыжка у грудничков", section: "Вы и ваш малыш", order: 62 },
+        { id: 63, number: 63, title: "Почему малыш плачет", section: "Вы и ваш малыш", order: 63 },
+        { id: 64, number: 64, title: "Как понять малыша и общаться с ним", section: "Вы и ваш малыш", order: 64 },
+        { id: 65, number: 65, title: "Колики и срыгивание", section: "Вы и ваш малыш", order: 65 },
+        { id: 66, number: 66, title: "Вы и ваш малыш: третья и четвертая недели", section: "Вы и ваш малыш", order: 66 },
+        { id: 67, number: 67, title: "Молодым папам: забота о маме и малыше", section: "Вы и ваш малыш", order: 67 },
+        { id: 68, number: 68, title: "Немного о какашках", section: "Вы и ваш малыш", order: 68 },
+        { id: 69, number: 69, title: "Первая прогулка с малышом", section: "Вы и ваш малыш", order: 69 },
+        { id: 70, number: 70, title: "Одежда для малыша", section: "Вы и ваш малыш", order: 70 },
+        { id: 71, number: 71, title: "Вы и ваш малыш: шестая неделя", section: "Вы и ваш малыш", order: 71 },
+        { id: 72, number: 72, title: "Сон малыша в первые месяцы жизни", section: "Вы и ваш малыш", order: 72 },
+        { id: 73, number: 73, title: "Сон молодой мамы", section: "Вы и ваш малыш", order: 73 },
+        { id: 74, number: 74, title: "Физические упражнения после родов", section: "Вы и ваш малыш", order: 74 },
+        { id: 75, number: 75, title: "Первые месяцы жизни с двойняшками или тройняшками", section: "Вы и ваш малыш", order: 75 },
+        { id: 76, number: 76, title: "«Тревожные звоночки» в первый месяц жизни малыша", section: "Вы и ваш малыш", order: 76 },
+        { id: 77, number: 77, title: "Вакцинация", section: "Вы и ваш малыш", order: 77 }
+    ];
+
+    // Иконки для разделов
+    const sectionIcons = {
+        "Первый триместр": "fa-baby-carriage",
+        "Второй триместр": "fa-heartbeat",
+        "Третий триместр": "fa-star-of-life",
+        "Вы и ваш малыш": "fa-hand-holding-heart"
+    };
+
+    // Функция для генерации HTML всех тем
+    function renderTopics(filterText = "") {
+        const container = document.getElementById("topicsContainer");
+        if (!container) return;
+
+        // Фильтруем темы
+        let filteredTopics = topicsData;
+        if (filterText.trim() !== "") {
+            const searchLower = filterText.toLowerCase();
+            filteredTopics = topicsData.filter(topic =>
+                topic.title.toLowerCase().includes(searchLower) ||
+                topic.number.toString().includes(searchLower)
+            );
+        }
+
+        // Группируем по разделам
+        const sections = {};
+        filteredTopics.forEach(topic => {
+            if (!sections[topic.section]) {
+                sections[topic.section] = [];
+            }
+            sections[topic.section].push(topic);
+        });
+
+        // Порядок разделов
+        const sectionOrder = ["Первый триместр", "Второй триместр", "Третий триместр", "Вы и ваш малыш"];
+
+        let html = "";
+        for (const sectionName of sectionOrder) {
+            const topicsInSection = sections[sectionName];
+            if (topicsInSection && topicsInSection.length > 0) {
+                const iconClass = sectionIcons[sectionName] || "fa-book";
+                html += `
+                    <div class="section">
+                        <div class="section-title">
+                            <i class="fas ${iconClass}"></i>
+                            <h2>${sectionName}</h2>
+                        </div>
+                        <div class="topics-grid">
+                `;
+                topicsInSection.forEach(topic => {
+                    // Добавляем анимацию с задержкой
+                    html += `
+                        <div class="topic-card" data-topic-id="${topic.id}" data-topic-number="${topic.number}" data-topic-title="${topic.title.replace(/"/g, '&quot;')}">
+                            <div class="topic-number">${topic.number}</div>
+                            <div class="topic-content">
+                                <div class="topic-title">${escapeHtml(topic.title)}</div>
+                                <div class="topic-sub">
+                                    <i class="fas fa-chevron-right"></i> Нажмите для перехода
+                                </div>
+                            </div>
+                            <div class="topic-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    `;
+                });
+                html += `</div></div>`;
+            }
+        }
+
+        // Если ничего не найдено
+        if (filteredTopics.length === 0) {
+            html = `<div style="text-align: center; padding: 40px 20px; background: white; border-radius: 28px;">
+                        <i class="fas fa-search" style="font-size: 3rem; color: #cd7c9b; margin-bottom: 12px;"></i>
+                        <p style="color: #ab8a96;">Ничего не найдено 😔</p>
+                        <p style="font-size: 0.8rem; margin-top: 8px;">Попробуйте изменить поисковый запрос</p>
+                    </div>`;
+        }
+
+        container.innerHTML = html;
+
+        // Добавляем обработчики кликов на каждую тему
+        document.querySelectorAll(".topic-card").forEach(card => {
+            card.addEventListener("click", (e) => {
+                // Не даем всплыть, если клик по внутренним элементам
+                e.stopPropagation();
+                const topicId = card.getAttribute("data-topic-id");
+                const topicNumber = card.getAttribute("data-topic-number");
+                const topicTitle = card.getAttribute("data-topic-title");
+
+                // Формируем URL для перехода
+                // Здесь можно настроить ссылки индивидуально для каждой темы
+                // Пока используем единую структуру: /topic/номер-темы.html
+                // Вы можете изменить этот шаблон под свои нужды
+                let targetUrl = `https://maxonlinexd.github.io/topic/${topicNumber}.html`;
+
+                // Альтернативный вариант: можно показывать модальное окно с напоминанием, что нужно настроить ссылки
+                // Для демонстрации сделаем переход с предупреждением (можно убрать)
+                console.log(`Переход по теме ${topicNumber}: ${topicTitle} -> ${targetUrl}`);
+
+                // Выполняем переход
+                window.location.href = targetUrl;
+            });
+        });
+    }
+
+    // Функция для экранирования HTML
+    function escapeHtml(str) {
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+            return c;
+        });
+    }
+
+    // Поиск с debounce
+    let searchTimeout;
+    const searchInput = document.getElementById("searchInput");
+    if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                renderTopics(e.target.value);
+            }, 300);
+        });
+    }
+
+    // Кнопка назад на главную
+    const backBtn = document.getElementById("backToMainBtn");
+    if (backBtn) {
+        backBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    // Инициализация
+    renderTopics("");
+
+    // Для страниц, открытых из главного меню, можно добавить подсветку
+    console.log("База знаний загружена. Всего тем: " + topicsData.length);
+    </script>
+</body>
+</html>
