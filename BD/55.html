@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Первая ночь дома — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .checklist-group {
+            margin: 16px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: #fffaf5;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #fef0ea;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #cd7c9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .checklist-check.completed {
+            background: #cd7c9b;
+            color: white;
+        }
+
+        .checklist-text {
+            flex: 1;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-moon"></i> 
+            Первая ночь дома
+        </h1>
+        <p>Как пережить самую волнительную ночь с малышом</p>
+        <div class="badge"><i class="fas fa-heart"></i> Вы справитесь — миллионы родителей прошли через это</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Главное — дышите -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-quote-left"></i></div>
+            <div class="section-title">Вы не одни</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Первая ночь дома с новорождённым пугает почти всех родителей. Это нормально. Вы не обязаны знать всё. Малыш не требует идеальности — ему нужны вы, ваша забота и тепло.</p>
+                <p><strong>Главное правило:</strong> дышите. Вы справитесь. Каждый родитель через это прошёл.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Чек-лист подготовки -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clipboard-list"></i></div>
+            <div class="section-title">Чек-лист: что подготовить ДО ночи</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="night-checklist">
+                <div class="checklist-item" data-id="night1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🛏 Приготовить кроватку: жёсткий матрас, простыня на резинке, без подушек, одеял и мягких игрушек</div>
+                </div>
+                <div class="checklist-item" data-id="night2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">👕 Приготовить 2–3 комплекта сменной одежды (боди, ползунки, пижама)</div>
+                </div>
+                <div class="checklist-item" data-id="night3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🩲 Подгузники — 8–10 штук (ночью меняют чаще, чем днём)</div>
+                </div>
+                <div class="checklist-item" data-id="night4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧴 Влажные салфетки, крем под подгузник, ватные диски</div>
+                </div>
+                <div class="checklist-item" data-id="night5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🍼 Близко к кровати: вода для мамы, лёгкий перекус (печенье, банан), телефон, пауэрбанк</div>
+                </div>
+                <div class="checklist-item" data-id="night6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🌡 Ночник или приглушённый свет (яркий свет будит малыша)</div>
+                </div>
+                <div class="checklist-item" data-id="night7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🛌 Если вы кормите лёжа — подготовьте подушки для поддержки спины и колен</div>
+                </div>
+                <div class="checklist-item" data-id="night8">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">📞 Номер педиатра или скорой на видном месте (на случай тревоги)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Как проходит первая ночь -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clock"></i></div>
+            <div class="section-title">Как проходит типичная первая ночь</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>20:00–23:00</strong> — малыш может быть активным, плохо засыпать (перепутал день с ночью).</li>
+                    <li><strong>23:00–02:00</strong> — кормление, смена подгузника, срыгивание, укачивание. Цикл повторяется.</li>
+                    <li><strong>02:00–05:00</strong> — самый глубокий сон (и у мамы, и у малыша), но всё равно будут пробуждения на кормление.</li>
+                    <li><strong>05:00–07:00</strong> — частое пробуждение, малыш может быть беспокойным.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> не ждите, что вы выспитесь. Первые ночи — это марафон. Ложитесь спать днём, когда спит малыш.
+            </div>
+        </div>
+    </div>
+
+    <!-- Если малыш плачет -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-face-frown"></i></div>
+            <div class="section-title">Малыш плачет — что делать?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Пошаговый алгоритм:</strong></p>
+                <ol style="margin-left: 20px;">
+                    <li><strong>Проверьте голод</strong> — предложите грудь или бутылочку (даже если кормили 30 минут назад).</li>
+                    <li><strong>Проверьте подгузник</strong> — мокрый или грязный?</li>
+                    <li><strong>Проверьте температуру</strong> — не жарко/не холодно? (пощупайте шею сзади, не руки/ноги).</li>
+                    <li><strong>Проверьте колики</strong> — массаж живота по часовой стрелке, «велосипед» ножками, выкладывание на живот.</li>
+                    <li><strong>Возьмите на руки</strong> — покачайте, прижмите к себе, дайте послушать сердцебиение.</li>
+                    <li><strong>Включите белый шум</strong> — фен, пылесос, специальное приложение (имитирует звуки внутриутробной жизни).</li>
+                    <li><strong>Если ничего не помогает</strong> — возможно, малыш просто устал и не может заснуть. Попробуйте покормить лежа в темноте.</li>
+                </ol>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> новорожденные не умеют «манипулировать» и «капризничать». Плач — их единственный способ что-то сказать.
+            </div>
+        </div>
+    </div>
+
+    <!-- Как уложить спать -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bed"></i></div>
+            <div class="section-title">Как помочь малышу заснуть</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>🌙 <strong>Приглушите свет</strong> — вырабатывается мелатонин (гормон сна).</li>
+                    <li>🤱 <strong>Кормите в темноте</strong> — после еды малыш часто засыпает у груди.</li>
+                    <li>🔄 <strong>Укачивание</strong> — плавные покачивания (не тряска!).</li>
+                    <li>🔊 <strong>Белый шум</strong> — шум воды, фена, специальные записи (громкостью как душ).</li>
+                    <li>🛌 <strong>Правило «золотой середины»</strong> — не перевозбуждать (активные игры перед сном не нужны), но и не переутомлять.</li>
+                    <li>👶 <strong>Пеленание</strong> — успокаивает, имитирует тесноту матки.</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Правила безопасного сна:</strong>
+                <ul>
+                    <li>Спать на <strong>спине</strong> (не на животе, не на боку).</li>
+                    <li>Жёсткий матрас, без подушек, одеял, бортиков.</li>
+                    <li>Температура в комнате 18–22°C, влажность 50–70%.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Роль папы -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="section-title">Как папа может помочь</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>✅ <strong>Сменить подгузник</strong> — пока мама готовится кормить.</li>
+                    <li>✅ <strong>Взять малыша после кормления</strong> — подержать «столбиком», чтобы отошёл воздух.</li>
+                    <li>✅ <strong>Принести маме воду и еду</strong> — кормление вызывает жажду.</li>
+                    <li>✅ <strong>Успокоить маму</strong> — если она плачет или паникует, обнять, сказать «ты справишься».</li>
+                    <li>✅ <strong>Принимать «дежурства»</strong> — например, с 21:00 до 00:00 папа берёт малыша (кроме кормления), давая маме поспать.</li>
+                    <li>✅ <strong>Отвезти в роддом, если что-то не так</strong> — держите телефон заряженным.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Эмоциональное состояние -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-brain"></i></div>
+            <div class="section-title">Эмоции: страх, тревога, чувство вины</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Первая ночь домой может вызвать:</strong></p>
+                <ul>
+                    <li>Страх «я не справлюсь», «а вдруг с ним что-то случится»</li>
+                    <li>Чувство вины, что вы не знаете, чего хочет малыш</li>
+                    <li>Тревогу, что он слишком много/мало спит, ест, плачет</li>
+                    <li>Усталость и раздражение (это нормально)</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> <strong>Запомните:</strong> вы не обязаны быть идеальными. Малышу не нужна идеальная мама — ему нужна рядом. Если тревога не отпускает — позвоните подруге, маме, педиатру, психологу.
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда вызывать врача -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ambulance"></i></div>
+            <div class="section-title">Когда срочно вызывать скорую</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❗ Немедленно к врачу, если:</strong>
+                <ul>
+                    <li>Температура выше 38°C (у малыша до 3 месяцев) — вызывайте скорую.</li>
+                    <li>Не просыпается на кормление (спит более 4–5 часов подряд).</li>
+                    <li>Отказывается от еды, вялый.</li>
+                    <li>Затруднённое дыхание, синюшность губ.</li>
+                    <li>Судороги.</li>
+                    <li>Рвота фонтаном.</li>
+                    <li>Необычный крик (монотонный, пронзительный).</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> если вы чувствуете, что «что-то не так», даже без явных симптомов — позвоните педиатру или вызовите скорую. Ваша интуиция важна.
+            </div>
+        </div>
+    </div>
+
+    <!-- Чего НЕ надо делать -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего НЕ нужно делать в первую ночь</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ <strong>Не кладите малыша спать на живот или на бок</strong> — только на спину!</li>
+                <li>❌ <strong>Не накрывайте одеялом выше груди</strong> — риск перегрева и СВДС.</li>
+                <li>❌ <strong>Не трясите малыша, чтобы успокоить</strong> — синдром сотрясения опасен.</li>
+                <li>❌ <strong>Не оставляйте без присмотра на пеленальном столике</strong> — даже на секунду.</li>
+                <li>❌ <strong>Не слушайте «советчиков» в 3 часа ночи</strong> — доверяйте себе и врачу.</li>
+                <li>❌ <strong>Не корите себя, если плачете</strong> — это нормально, вы устали.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Утро после первой ночи -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-sun"></i></div>
+            <div class="section-title">Утро наступит</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Вы пережили первую ночь. Поздравьте себя — это огромный шаг. Что делать утром:</p>
+                <ul>
+                    <li>☀️ <strong>Откройте шторы</strong> — яркий свет помогает настроить циркадные ритмы.</li>
+                    <li>🍽 <strong>Позавтракайте</strong> — даже если не хочется.</li>
+                    <li>🛌 <strong>Постарайтесь поспать днём</strong> — когда малыш спит.</li>
+                    <li>🤱 <strong>Покормите малыша</strong> — после ночного перерыва он будет голоден.</li>
+                    <li>📞 <strong>Позвоните педиатру</strong> — если есть вопросы или беспокойство.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> <strong>Помните:</strong> каждая ночь будет легче. Вы учитесь понимать своего малыша. Доверяйте себе.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    function initChecklist() {
+        const items = document.querySelectorAll('.checklist-item');
+        items.forEach(item => {
+            const id = item.getAttribute('data-id');
+            if (!id) return;
+            const stored = localStorage.getItem(`firstnight_${id}`);
+            const checkDiv = item.querySelector('.checklist-check');
+            if (stored === 'true') {
+                checkDiv.classList.add('completed');
+                checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+            } else {
+                checkDiv.classList.remove('completed');
+                checkDiv.innerHTML = '';
+            }
+            
+            item.addEventListener('click', () => {
+                const isCompleted = checkDiv.classList.contains('completed');
+                if (isCompleted) {
+                    checkDiv.classList.remove('completed');
+                    checkDiv.innerHTML = '';
+                    localStorage.setItem(`firstnight_${id}`, 'false');
+                } else {
+                    checkDiv.classList.add('completed');
+                    checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+                    localStorage.setItem(`firstnight_${id}`, 'true');
+                }
+            });
+        });
+    }
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    initChecklist();
+</script>
+</body>
+</html>

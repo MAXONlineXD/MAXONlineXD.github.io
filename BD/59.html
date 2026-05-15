@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Основная забота о малыше — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .checklist-group {
+            margin: 16px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: #fffaf5;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #fef0ea;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #cd7c9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .checklist-check.completed {
+            background: #cd7c9b;
+            color: white;
+        }
+
+        .checklist-text {
+            flex: 1;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-hand-holding-heart"></i> 
+            Основная забота о малыше
+        </h1>
+        <p>Как ухаживать за новорождённым в первые месяцы</p>
+        <div class="badge"><i class="fas fa-baby"></i> Всё, что нужно знать, чтобы чувствовать себя увереннее</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Главная мысль -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-lightbulb"></i></div>
+            <div class="section-title">Вы справитесь!</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Уход за новорождённым кажется сложным только в первые дни. Каждый родитель проходит через это. Ваш малыш не требует идеальности — ему нужны ваша любовь, тепло и забота.</p>
+                <p><strong>Золотое правило:</strong> если вы сомневаетесь — лучше спросить у педиатра, чем ошибиться. Но помните: природа заложила в вас инстинкты, доверяйте себе.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ежедневный уход: чек-лист -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clipboard-list"></i></div>
+            <div class="section-title">Ежедневный уход — чек-лист</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="daily-checklist">
+                <div class="checklist-item" data-id="daily1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧼 Умывание лица (кипячёной водой или отваром ромашки)</div>
+                </div>
+                <div class="checklist-item" data-id="daily2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">👀 Промывание глаз (от внешнего уголка к внутреннему)</div>
+                </div>
+                <div class="checklist-item" data-id="daily3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">👃 Чистка носика (жгутиками из ваты, смоченными физраствором)</div>
+                </div>
+                <div class="checklist-item" data-id="daily4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">👂 Чистка ушей (только видимую часть, неглубоко)</div>
+                </div>
+                <div class="checklist-item" data-id="daily5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🩲 Смена подгузника каждые 2–3 часа и после стула</div>
+                </div>
+                <div class="checklist-item" data-id="daily6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧴 Обработка складочек детским маслом или кремом</div>
+                </div>
+                <div class="checklist-item" data-id="daily7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🕳 Обработка пупочной ранки (до заживления)</div>
+                </div>
+                <div class="checklist-item" data-id="daily8">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">✂️ Стрижка ногтей (раз в 3–5 дней)</div>
+                </div>
+                <div class="checklist-item" data-id="daily9">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🛁 Купание (каждый день или через день)</div>
+                </div>
+                <div class="checklist-item" data-id="daily10">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🚶 Прогулка (ежедневно по 1,5–2 часа)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Купание -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bath"></i></div>
+            <div class="section-title">Купание</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>Начинать купать после <strong>отпадения пуповины</strong> (5–15 день). До этого — обтирание влажными салфетками.</li>
+                    <li><strong>Температура воды</strong> — 36–37°C (проверять локтем или термометром).</li>
+                    <li><strong>Температура воздуха</strong> — 24–25°C.</li>
+                    <li><strong>Длительность</strong> — 5–10 минут, затем постепенно увеличивать.</li>
+                    <li><strong>Мыло/шампунь</strong> — 1–2 раза в неделю, остальное время — просто вода.</li>
+                    <li><strong>После купания</strong> — промокнуть полотенцем (не тереть!), обработать складочки маслом.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> если малыш боится воды, заверните его в тонкую пелёнку перед погружением — ему будет спокойнее.
+            </div>
+        </div>
+    </div>
+
+    <!-- Обработка пупка -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-band-aid"></i></div>
+            <div class="section-title">Уход за пупочной ранкой</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Частота:</strong> 1–2 раза в день (после купания и при необходимости).</li>
+                    <li><strong>Чем обрабатывать:</strong> капнуть <strong>перекисью водорода 3%</strong> (подождать шипения), промокнуть ватной палочкой. Затем обработать <strong>зелёнкой или хлорофиллиптом</strong>.</li>
+                    <li><strong>Важно:</strong> не накрывать подгузником (вырезать вырез или подгибать).</li>
+                    <li>Остаток пуповины отпадёт самостоятельно на <strong>5–15 день</strong>.</li>
+                    <li>После отпадения может выделяться сукровица — продолжайте обработку до полного заживления (обычно 2–3 недели).</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Срочно к врачу:</strong> покраснение вокруг пупка, гнойные выделения, неприятный запах, кровотечение.
+            </div>
+        </div>
+    </div>
+
+    <!-- Смена подгузника и подмывание -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-toilet"></i></div>
+            <div class="section-title">Гигиена и смена подгузника</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Частота:</strong> каждые 2–3 часа и сразу после стула.</li>
+                    <li><strong>Как подмывать:</strong> под проточной тёплой водой <strong>спереди назад</strong> (у девочек особенно важно).</li>
+                    <li><strong>Чем подмывать:</strong> только водой, мыло — 1 раз в день (оно сушит кожу).</li>
+                    <li><strong>Уход:</strong> промокнуть кожу (не тереть!), нанести крем под подгузник или присыпку.</li>
+                    <li><strong>«Воздушные ванны»:</strong> оставляйте малыша без подгузника на 10–15 минут несколько раз в день — профилактика опрелостей.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Если появилось покраснение — используйте крем с цинком (Бепантен, Деситин, Судокрем).
+            </div>
+        </div>
+    </div>
+
+    <!-- Стрижка ногтей -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-cut"></i></div>
+            <div class="section-title">Стрижка ногтей</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Как часто:</strong> раз в 3–5 дней (у новорождённых ногти растут быстро).</li>
+                    <li><strong>Чем стричь:</strong> специальными детскими ножницами с закруглёнными концами или безопасной пилочкой.</li>
+                    <li><strong>Когда лучше:</strong> когда малыш спит или сразу после купания (ногти мягче).</li>
+                    <li><strong>Как стричь:</strong> на руках — закругляя кончики, на ногах — ровно (чтобы не врастали).</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Если порезали пальчик — прижмите стерильной салфеткой, обработайте перекисью и заклейте пластырем.
+            </div>
+        </div>
+    </div>
+
+    <!-- Уход за кожей -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-face-smile"></i></div>
+            <div class="section-title">Уход за кожей</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Шелушение кожи</strong> — норма (адаптация к воздушной среде). Увлажняйте детским маслом или кремом.</li>
+                    <li><strong>Потничка</strong> — мелкая красная сыпь. Лечится «воздушными ваннами» и сухой кожей.</li>
+                    <li><strong>Себорейные корочки на голове</strong> — перед купанием смазать маслом, после купания расчесать мягкой щёткой.</li>
+                    <li><strong>Опрелости</strong> — крем с цинком, частая смена подгузника, «воздушные ванны».</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Одежда и температурный режим -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-tshirt"></i></div>
+            <div class="section-title">Одежда и температура</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Правило:</strong> одевать малыша как себя + один слой. Не перегревайте!</li>
+                    <li><strong>Температура в комнате:</strong> 18–22°C, влажность 50–70%.</li>
+                    <li><strong>Проверка температуры:</strong> не по рукам/ногам (они могут быть прохладными), а по затылку или шее сзади — там должно быть тепло и сухо.</li>
+                    <li><strong>Перегрев опаснее переохлаждения!</strong> Если малыш красный, потный, беспокойный — снимите лишний слой.</li>
+                    <li><strong>Ткани:</strong> только натуральные (хлопок, бамбук), без грубых швов.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Прогулки -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-walking"></i></div>
+            <div class="section-title">Прогулки</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>Начинать гулять с <strong>7–10 дня</strong> жизни.</li>
+                    <li><strong>Первая прогулка:</strong> 15–20 минут, затем увеличивать до 1,5–2 часов.</li>
+                    <li><strong>Температура:</strong> от -10°C до +30°C (для доношенного малыша).</li>
+                    <li><strong>Летом:</strong> избегать прямых солнечных лучей, использовать москитную сетку, надевать панамку.</li>
+                    <li><strong>Зимой:</strong> защищать лицо от ветра, использовать защитный крем.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Сон и безопасность -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bed"></i></div>
+            <div class="section-title">Безопасный сон</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Положение:</strong> только <strong>на спине</strong> (не на животе, не на боку).</li>
+                    <li><strong>Матрас:</strong> жёсткий, без подушек, одеял, мягких игрушек, бортиков.</li>
+                    <li><strong>Температура:</strong> 18–22°C.</li>
+                    <li><strong>Совместный сон</strong> — спать в одной комнате (но не в одной кровати) снижает риск СВДС.</li>
+                    <li><strong>Если малыш спит днём в коляске</strong> — не накрывайте лицо одеялом, следите за температурой.</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <strong>❗ СВДС (синдром внезапной детской смерти):</strong> риск снижается при соблюдении правил безопасного сна.
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда срочно к врачу -->
+    <div class="section-card" style="animation-delay: 0.3s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ambulance"></i></div>
+            <div class="section-title">Когда срочно к врачу</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❗ Немедленно к врачу, если:</strong>
+                <ul>
+                    <li>🌡 Температура выше 38°C (у малыша до 3 месяцев) — вызывайте скорую</li>
+                    <li>🍼 Отказ от еды, вялость, не просыпается на кормление</li>
+                    <li>💧 Мало мокрых подгузников (менее 6 в сутки)</li>
+                    <li>💛 Желтуха распространяется на ноги и руки (после 2 недель)</li>
+                    <li>💙 Синюшность губ, затруднённое дыхание</li>
+                    <li>🤮 Рвота фонтаном</li>
+                    <li>🩸 Кровь в стуле</li>
+                    <li>😭 Необычный крик (монотонный, пронзительный)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    function initChecklist() {
+        const items = document.querySelectorAll('.checklist-item');
+        items.forEach(item => {
+            const id = item.getAttribute('data-id');
+            if (!id) return;
+            const stored = localStorage.getItem(`babycare_${id}`);
+            const checkDiv = item.querySelector('.checklist-check');
+            if (stored === 'true') {
+                checkDiv.classList.add('completed');
+                checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+            } else {
+                checkDiv.classList.remove('completed');
+                checkDiv.innerHTML = '';
+            }
+            
+            item.addEventListener('click', () => {
+                const isCompleted = checkDiv.classList.contains('completed');
+                if (isCompleted) {
+                    checkDiv.classList.remove('completed');
+                    checkDiv.innerHTML = '';
+                    localStorage.setItem(`babycare_${id}`, 'false');
+                } else {
+                    checkDiv.classList.add('completed');
+                    checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+                    localStorage.setItem(`babycare_${id}`, 'true');
+                }
+            });
+        });
+    }
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    initChecklist();
+</script>
+</body>
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Как понять малыша и общаться с ним — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .signal-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 12px 0;
+            padding: 12px;
+            background: #fffaf5;
+            border-radius: 20px;
+        }
+
+        .signal-icon {
+            font-size: 1.8rem;
+            width: 50px;
+            text-align: center;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-comments"></i> 
+            Как понять малыша и общаться с ним
+        </h1>
+        <p>Язык тела, первые сигналы и секреты взаимопонимания</p>
+        <div class="badge"><i class="fas fa-heart"></i> Вы можете понимать своего ребёнка без слов</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Главная мысль -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-quote-left"></i></div>
+            <div class="section-title">Вы уже понимаете друг друга</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Новорождённый не говорит словами, но он постоянно общается с вами — с помощью <strong>мимики, движений тела, звуков и плача</strong>. Ваша задача — научиться распознавать эти сигналы. И у вас это получится!</p>
+                <p>С каждым днём вы будете понимать малыша всё лучше. Доверяйте своей интуиции.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ранние сигналы (до плача) -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bell"></i></div>
+            <div class="section-title">Ранние сигналы — наблюдайте до плача</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Плач — это уже <strong>поздний сигнал</strong>. Намного легче отреагировать на ранние признаки дискомфорта, когда малыш ещё не начал кричать.</p>
+            </div>
+            <div class="signal-card">
+                <div class="signal-icon">😐</div>
+                <div><strong>«Я спокоен»</strong> — ровное дыхание, расслабленное лицо, глаза открыты или прикрыты. Лучшее время для общения.</div>
+            </div>
+            <div class="signal-card">
+                <div class="signal-icon">👀</div>
+                <div><strong>«Я заинтересован»</strong> — широко открытые глаза, пристальный взгляд, приоткрытый рот. Хочет общаться, играть.</div>
+            </div>
+            <div class="signal-card">
+                <div class="signal-icon">😕</div>
+                <div><strong>«Я начинаю уставать»</strong> — отводит взгляд, зевает, трёт глазки, хмурится. Пора готовиться ко сну.</div>
+            </div>
+            <div class="signal-card">
+                <div class="signal-icon">🍼</div>
+                <div><strong>«Я голоден»</strong> — поисковый рефлекс (поворачивает голову), причмокивание, сосание кулачка, «чавкающие» звуки.</div>
+            </div>
+            <div class="signal-card">
+                <div class="signal-icon">💨</div>
+                <div><strong>«У меня газы / хочу в туалет»</strong> — кряхтит, поджимает ножки, краснеет, напрягается.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Зоны комфорта и перегрузки -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="section-title">Зоны комфорта и перегрузки</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>У новорождённых очень незрелая нервная система. Слишком много впечатлений — стресс. Слишком мало — скука. Важно найти баланс.</p>
+            </div>
+            <div class="signal-card">
+                <div class="signal-icon">😌</div>
+                <div><strong>Зелёная зона (комфорт)</strong> — спокойное бодрствование, малыш смотрит на вас, улыбается, «агукает».</div>
+            </div>
+            <div class="signal-card">
+                <div class="signal-icon">😟</div>
+                <div><strong>Жёлтая зона (скоро перегрузка)</strong> — отворачивается, зевает, икает, хмурится, моргает.</div>
+            </div>
+            <div class="signal-card">
+                <div class="signal-icon">😫</div>
+                <div><strong>Красная зона (перегрузка)</strong> — плачет, выгибается, кричит, «неутешим». Нужно успокоить и убрать стимулы.</div>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> если малыш отворачивается или закрывает глаза — дайте ему отдохнуть от общения. Это не отказ от вас, а защита от перегрузки.
+            </div>
+        </div>
+    </div>
+
+    <!-- Мимика и жесты -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-face-smile"></i></div>
+            <div class="section-title">Мимика и жесты: что они значат</div>
+        </div>
+        <div class="section-content">
+            <div class="signal-card">
+                <div class="signal-icon">😊</div>
+                <div><strong>Улыбка</strong> — с 1,5–2 месяцев осознанная улыбка. Показывает, что малыш рад вас видеть.</div>
+            </div>
+            <div class="signal-card">
+                <div class="signal-icon">🤨</div>
+                <div><strong>Нахмуренные брови</strong> — дискомфорт, усталость, перегрузка.</div>
+            </div>
+            <div class="signal-card">
+                <div class="signal-icon">👐</div>
+                <div><strong>Сжимает кулачки</strong> — может быть голоден, тревожен или перегружен.</div>
+            </div>
+            <div class="signal-card">
+                <div class="signal-icon">🫲</div>
+                <div><strong>Отталкивает, выгибается</strong> — не нравится, хочет закончить (пеленание, кормление, купание).</div>
+            </div>
+            <div class="signal-card">
+                <div class="signal-icon">🦵</div>
+                <div><strong>Поджимает ножки к животу</strong> — колики, газы, боль в животе.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Как общаться с новорождённым -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comments"></i></div>
+            <div class="section-title">Как общаться с новорождённым</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Говорите с ним с самого рождения</strong> — комментируйте всё, что делаете: «сейчас будем кушать», «идём гулять», «вот твоя ручка».</li>
+                    <li><strong>Смотрите в глаза</strong> — новорождённые различают лица на расстоянии 20–30 см.</li>
+                    <li><strong>Используйте «материнский язык» (инфантильная речь)</strong> — высокий голос, растянутые гласные, преувеличенная интонация. Это нравится малышам.</li>
+                    <li><strong>Отвечайте на его звуки</strong> — на «агу» отвечайте «агу», имитируйте его вокализации. Это учит диалогу.</li>
+                    <li><strong>Пойте колыбельные</strong> — ритм и мелодия успокаивают.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Игры и развитие -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-gamepad"></i></div>
+            <div class="section-title">Игры для развития общения</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>0–2 месяца:</strong> чёрно-белые картинки (10–15 секунд), «разговаривайте» лицом к лицу, водите погремушкой.</li>
+                    <li><strong>2–4 месяца:</strong> «ладушки», игры с отражением в зеркале, прятание лица за ладонями («ку-ку»).</li>
+                    <li><strong>4–6 месяцев:</strong> чтение книжек с крупными картинками, называние частей тела («где носик?»), «сорока-ворона».</li>
+                    <li><strong>6–9 месяцев:</strong> простые просьбы («дай ручку»), башни из кубиков, прятки с игрушкой.</li>
+                    <li><strong>9–12 месяцев:</strong> жесты («пока-пока», «дай»), подражание звукам животных, простые указания («принеси мячик»).</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> если малыш отворачивается, отводит взгляд — значит, устал. Сделайте перерыв.
+            </div>
+        </div>
+    </div>
+
+    <!-- Крик как последний этап -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-face-frown"></i></div>
+            <div class="section-title">Плач — это SOS</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Плач — это уже <strong>сигнал «срочная помощь»</strong>. Малыш перепробовал всё, что мог (движения, мимика, гуление), но его не поняли. Ваша задача — не допускать до плача, реагируя на ранние сигналы.</p>
+                <p><strong>Не игнорируйте плач</strong>. Отклик на плач в первые месяцы формирует базовое доверие к миру.</p>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Запомните:</strong> нельзя «воспитывать» ребёнка до года с помощью игнорирования плача. Он ещё не способен на манипуляции.
+            </div>
+        </div>
+    </div>
+
+    <!-- Массаж и телесный контакт -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-peace"></i></div>
+            <div class="section-title">Язык прикосновений</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>🤗 <strong>Обнимайте</strong> — объятия снижают стресс, укрепляют иммунитет, улучшают сон.</li>
+                    <li>🖐️ <strong>Делайте массаж</strong> — лёгкие поглаживания, разминания. Лучшее время — перед сном.</li>
+                    <li>😴 <strong>«Кенгуру» (кожа к коже)</strong> — выкладывайте малыша на голый живот. Это снижает колики, улучшает лактацию, стабилизирует сердцебиение.</li>
+                    <li>👶 <strong>Носите в слинге</strong> — тесный контакт успокаивает.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Чего НЕ делать -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего НЕ нужно делать</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ <strong>Не игнорируйте ранние сигналы</strong> — ждать плача сложнее.</li>
+                <li>❌ <strong>Не навязывайте общение</strong> — если малыш отворачивается, дайте отдохнуть.</li>
+                <li>❌ <strong>Не кричите на малыша</strong> — он не понимает, только пугается.</li>
+                <li>❌ <strong>Не сравнивайте с другими детьми</strong> — у каждого свой темп развития.</li>
+                <li>❌ <strong>Не стесняйтесь выглядеть глупо</strong> — «материнский язык» со сюсюканьем полезен, даже если странно звучит.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Ключевые слова и фразы -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-language"></i></div>
+            <div class="section-title">Какие слова понимает новорождённый?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Ребёнок не понимает смысла слов, но улавливает <strong>интонацию, ритм и эмоции</strong>. Уже в 2–3 месяца малыш может различать «мама», «папа» (частота звуков).</p>
+                <p>Простые, повторяющиеся фразы помогают устанавливать связь:</p>
+                <ul>
+                    <li>«Иди к маме» (перед тем, как взять на руки)</li>
+                    <li>«Кушать» (перед кормлением)</li>
+                    <li>«Спать» (перед укладыванием)</li>
+                    <li>«Пока-пока» (махать рукой)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда обращаться к специалисту -->
+    <div class="section-card" style="animation-delay: 0.3s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-stethoscope"></i></div>
+            <div class="section-title">Когда нужно беспокоиться</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>Повод обратиться к педиатру или неврологу:</strong>
+                <ul>
+                    <li>В 2–3 месяца не улыбается в ответ на улыбку</li>
+                    <li>В 4–5 месяцев не гулит, не издаёт звуки</li>
+                    <li>В 6–7 месяцев не поворачивается на имя</li>
+                    <li>В 8–9 месяцев не лепечет («ма-ма», «ба-ба»)</li>
+                    <li>Не смотрит в глаза, не следит за предметами</li>
+                    <li>Нет реакции на громкие звуки</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Помните:</strong> все дети разные. Ранняя диагностика помогает скорректировать задержки.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

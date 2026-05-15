@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Грудное вскармливание — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .checklist-group {
+            margin: 16px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: #fffaf5;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #fef0ea;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #cd7c9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .checklist-check.completed {
+            background: #cd7c9b;
+            color: white;
+        }
+
+        .checklist-text {
+            flex: 1;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-hand-holding-heart"></i> 
+            Грудное вскармливание
+        </h1>
+        <p>Всё, что нужно знать, чтобы кормить с комфортом и удовольствием</p>
+        <div class="badge"><i class="fas fa-heart"></i> Грудное молоко — идеальная еда для малыша</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Преимущества -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-star-of-life"></i></div>
+            <div class="section-title">Почему грудное молоко — лучшее?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>💪 <strong>Защита от инфекций</strong> — антитела, которые не даст никакая смесь</li>
+                    <li>🧠 <strong>Развитие мозга</strong> — жирные кислоты омега-3</li>
+                    <li>🦷 <strong>Профилактика аллергии</strong> — снижает риск атопического дерматита</li>
+                    <li>🤱 <strong>Эмоциональная связь</strong> — укрепляет привязанность</li>
+                    <li>🩺 <strong>Польза для мамы</strong> — снижает риск рака груди и яичников, помогает сокращению матки</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Молозиво -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-tint"></i></div>
+            <div class="section-title">Молозиво — первое золото</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>В первые 2–4 дня из груди выделяется <strong>молозиво</strong> — густая желтоватая жидкость. Это не «пустое молоко», а концентрат полезных веществ:</p>
+                <ul>
+                    <li>Богато антителами — защищает малыша от инфекций</li>
+                    <li>Идеально усваивается — готовит кишечник к зрелому молоку</li>
+                    <li>Содержит мало жира — не перегружает незрелые почки</li>
+                    <li>Слабит — помогает отойти меконию (первому калу)</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> молозива мало (чайная ложка за кормление), но этого достаточно для малыша. Его желудок размером с вишню. Не нужно докармливать смесью!
+            </div>
+        </div>
+    </div>
+
+    <!-- Правильный захват -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="section-title">Правильный захват груди</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Признаки правильного захвата:</strong></p>
+                <ul>
+                    <li>✅ Рот широко открыт, губы вывернуты наружу («рыбка»)</li>
+                    <li>✅ Подбородок и нос касаются груди</li>
+                    <li>✅ Видно и слышно, как малыш глотает</li>
+                    <li>✅ В начале кормления сосание быстрое, затем медленное и глубокое</li>
+                    <li>✅ Кормление безболезненно</li>
+                    <li>✅ После кормления грудь мягкая, сосок округлый, не сплющенный</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <strong>❌ Признаки неправильного захвата:</strong>
+                <ul>
+                    <li>Щёлкающие звуки при сосании</li>
+                    <li>Боль в сосках</li>
+                    <li>Сосок сплющенный после кормления («помада»)</li>
+                    <li>Малыш вертит головой, плачет у груди</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Как приложить к груди -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-peace"></i></div>
+            <div class="section-title">Пошаговая техника прикладывания</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ol style="margin-left: 20px;">
+                    <li>Расположите малыша «живот к животу» — лицом к груди, ухо, плечо и бедро на одной линии.</li>
+                    <li>Поддерживайте головку и плечики (не затылок — малыш должен свободно запрокидывать голову).</li>
+                    <li>Коснитесь соском верхней губы малыша — он рефлекторно откроет рот широко (как при зевании).</li>
+                    <li>Вложите грудь в открытый рот — ареола должна быть глубоко во рту, подбородок касается груди.</li>
+                    <li>Проверьте захват по признакам выше.</li>
+                </ol>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> если больно — отцепите малыша мизинцем (разомкнув десны) и приложите заново. Не терпите боль.
+            </div>
+        </div>
+    </div>
+
+    <!-- Удобные позы -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bed"></i></div>
+            <div class="section-title">Удобные позы для кормления</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>🤱 «Колыбелька»</strong> — классическая поза, малыш лежит на руке, голова на локтевом сгибе.</li>
+                    <li><strong>🛌 Лёжа на боку</strong> — идеальна после родов (особенно после эпизиотомии или кесарева сечения).</li>
+                    <li><strong>✊ «Из-под мышки» (футбольный мяч)</strong> — удобно при маленькой груди, после кесарева.</li>
+                    <li><strong>🤰 «На бедре»</strong> — для активных малышей.</li>
+                    <li><strong>🪑 Сидя с подушкой</strong> — специальная подушка для кормления снижает нагрузку на спину.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Частота кормлений -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clock"></i></div>
+            <div class="section-title">Как часто кормить?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>По требованию</strong> — не по часам, а когда малыш проявляет признаки голода (причмокивание, сосание кулачка, беспокойство). Плач — поздний признак.</li>
+                    <li><strong>В первые дни:</strong> 8–12 кормлений в сутки и чаще.</li>
+                    <li><strong>Ночные кормления</strong> — очень важны для становления лактации (пролактин вырабатывается ночью).</li>
+                    <li><strong>Не ограничивайте время у груди</strong> — новорождённые могут сосать 15–40 минут, иногда дольше (комфортное сосание).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Трудности -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">Возможные трудности и их решение</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>🤱 Боль в сосках</strong> — проверьте захват. Используйте крем с ланолином (Пурелан, Бепантен) после кормления. Не мойте грудь мылом перед каждым кормлением.</p>
+                <p><strong>🥛 Лактостаз (застой молока)</strong> — кормите чаще, сцеживайте после кормления, делайте тёплый компресс перед кормлением, холодный после. При температуре выше 38°C — к врачу.</p>
+                <p><strong>🤒 Мастит (воспаление)</strong> — покраснение, боль, температура. Срочно к врачу! Обычно лечат антибиотиками, совместимыми с ГВ.</p>
+                <p><strong>😴 Малыш засыпает у груди</strong> — погладьте по щёчке, пяткам, спинке. Поменяйте грудь.</p>
+                <p><strong>🍼 Малыш отказывается от груди</strong> — проверьте, не заложен ли носик, смените позу, попробуйте кормить в темноте, обратитесь к консультанту по ГВ.</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> при лактостазе и мастите НЕ прекращайте кормление! Молоко не заразно.
+            </div>
+        </div>
+    </div>
+
+    <!-- Прибавка в весе -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-weight-scale"></i></div>
+            <div class="section-title">Как понять, что молока хватает?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Признаки достаточного питания:</strong></p>
+                <ul>
+                    <li>✅ Мокрых подгузников <strong>не менее 6–8 в сутки</strong> (моча прозрачная, без запаха)</li>
+                    <li>✅ Стул жёлтый, кашицеобразный, 1–5 раз в день</li>
+                    <li>✅ Малыш хорошо прибавляет в весе (от 500 г в месяц в первые месяцы)</li>
+                    <li>✅ После кормления грудь мягкая, малыш выглядит удовлетворённым</li>
+                </ul>
+                <p><strong>Ложные признаки нехватки молока:</strong></p>
+                <ul>
+                    <li>❌ Малыш часто просит грудь — норма в первые недели</li>
+                    <li>❌ Короткое кормление — многие малыши едят быстро</li>
+                    <li>❌ Грудь мягкая — при установившейся лактации это норма</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Чего НЕ делать -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего НЕ нужно делать</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ <strong>Мыть грудь мылом перед каждым кормлением</strong> — сушит кожу, убивает защитную смазку</li>
+                <li>❌ <strong>Давать пустышку или бутылочку в первые недели</strong> — риск «путаницы сосков»</li>
+                <li>❌ <strong>Допаивать водой</strong> — до 6 месяцев грудное молоко содержит всю необходимую жидкость</li>
+                <li>❌ <strong>Докармливать смесью без назначения врача</strong> — снижает лактацию</li>
+                <li>❌ <strong>Сцеживаться «до последней капли»</strong> — это вызывает гиперлактацию</li>
+                <li>❌ <strong>Терпеть боль</strong> — при правильном захвате больно не должно быть</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Питание мамы -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-apple-alt"></i></div>
+            <div class="section-title">Питание кормящей мамы</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>💧 <strong>Пить</strong> — 2–2,5 литра жидкости в день (вода, компот, травяной чай).</li>
+                    <li>🥩 <strong>Белок</strong> — мясо, рыба, яйца, творог.</li>
+                    <li>🥦 <strong>Клетчатка</strong> — овощи, фрукты, цельнозерновые.</li>
+                    <li>🦷 <strong>Кальций</strong> — творог, сыр, кунжут.</li>
+                    <li>🚫 <strong>Что ограничить:</strong> кофеин (1 чашка кофе в день), алкоголь (полностью исключить), аллергены (если у малыша сыпь).</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> не нужно есть «за двоих» — достаточно добавить 300–500 ккал к обычному рациону.
+            </div>
+        </div>
+    </div>
+
+    <!-- Мифы -->
+    <div class="section-card" style="animation-delay: 0.3s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Разрушаем мифы о ГВ</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Если грудь мягкая — молока нет.<br>
+            <strong>Правда:</strong> При установившейся лактации грудь мягкая между кормлениями — это норма.</p>
+            
+            <p><strong>Миф:</strong> Нельзя кормить, если ты болеешь.<br>
+            <strong>Правда:</strong> Можно и нужно! С молоком передаются антитела, защищающие малыша.</p>
+            
+            <p><strong>Миф:</strong> Ребёнок не наедается, если часто просит грудь.<br>
+            <strong>Правда:</strong> Частые прикладывания — норма в первые недели для установления лактации.</p>
+            
+            <p><strong>Миф:</strong> Если кормить дольше года — это вредно для ребёнка.<br>
+            <strong>Правда:</strong> ВОЗ рекомендует кормить до 2 лет и дольше по желанию мамы и малыша.</p>
+        </div>
+    </div>
+
+    <!-- Куда обратиться за помощью -->
+    <div class="section-card" style="animation-delay: 0.33s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="section-title">Куда обратиться за помощью</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>📞 <strong>Консультант по грудному вскармливанию</strong> — очно или онлайн (есть как платные, так и бесплатные службы).</li>
+                    <li>📞 <strong>Педиатр</strong> — при проблемах с прибавкой веса.</li>
+                    <li>📞 <strong>Акушерка или неонатолог</strong> — в роддоме.</li>
+                    <li>📞 <strong>Телефон доверия по ГВ</strong> — 8 800 555 35 35 (круглосуточно).</li>
+                    <li>📱 <strong>Приложение «Молочная мама»</strong> — чат поддержки.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> <strong>Помните:</strong> любая трудность с ГВ решаема. Не сдавайтесь после первого же «не получается». Вы и ваш малыш учитесь вместе.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Кормление из бутылочки — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .checklist-group {
+            margin: 16px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: #fffaf5;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #fef0ea;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #cd7c9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .checklist-check.completed {
+            background: #cd7c9b;
+            color: white;
+        }
+
+        .checklist-text {
+            flex: 1;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-baby"></i> 
+            Кормление из бутылочки
+        </h1>
+        <p>Как выбрать бутылочку, смесь и правильно кормить малыша</p>
+        <div class="badge"><i class="fas fa-heart"></i> Не всегда есть возможность грудного вскармливания — и это нормально</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Когда нужно бутылочное кормление -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Когда используется бутылочка?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>🍼 <strong>Искусственное вскармливание</strong> — если мама не может или не хочет кормить грудью</li>
+                    <li>🍼 <strong>Смешанное вскармливание</strong> — докорм смесью при нехватке грудного молока</li>
+                    <li>🍼 <strong>Сцеженное молоко</strong> — мама сцеживает, а кормит папа или бабушка</li>
+                    <li>🍼 <strong>Медицинские показания</strong> — приём лекарств, несовместимых с ГВ, болезни мамы</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> кормление из бутылочки — это не «плохо». Главное, чтобы малыш был сыт и здоров.
+            </div>
+        </div>
+    </div>
+
+    <!-- Выбор бутылочки -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="section-title">Как выбрать бутылочку</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Материал:</strong> стекло (тяжёлое, легко бьётся) или пластик (лёгкий, но может царапаться). Выбирайте качественный пластик (PP, PPSU) без бисфенола А (BPA-free).</li>
+                    <li><strong>Объём:</strong> для новорождённого — 120–150 мл, для ребёнка 3–6 месяцев — 250–300 мл.</li>
+                    <li><strong>Форма:</strong> анатомическая (ближе к груди) или классическая. Для новорождённых лучше анатомические.</li>
+                    <li><strong>Соска:</strong>
+                        <ul>
+                            <li>Силиконовая (прозрачная) — долговечнее</li>
+                            <li>Латексная (жёлтая) — мягче, но быстрее изнашивается</li>
+                            <li>Размер отверстия: 0 (медленный поток) — для новорождённых, 1–2 для 2–4 месяцев, 3 для 4–6 месяцев</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> купите 3–4 бутылочки (менять во время стерилизации) и запасные соски.
+            </div>
+        </div>
+    </div>
+
+    <!-- Выбор смеси -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-capsules"></i></div>
+            <div class="section-title">Как выбрать смесь</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Смесь назначает ТОЛЬКО педиатр!</strong> Не покупайте по совету подруг или рекламе.</li>
+                    <li><strong>Для здоровых детей:</strong> стандартные смеси (Нутрилон, НАН, Симилак, Фрисолак и др.)</li>
+                    <li><strong>При аллергии на белок коровьего молока:</strong> гипоаллергенные (НА), лечебные (на основе козьего молока, гидролизаты)</li>
+                    <li><strong>При лактазной недостаточности:</strong> низколактозные или безлактозные</li>
+                    <li><strong>При срыгиваниях:</strong> антирефлюксные (с камедью)</li>
+                    <li><strong>Для недоношенных:</strong> специализированные смеси с повышенным содержанием белка</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Не меняйте смесь без назначения врача!</strong> Частая смена вызывает расстройство ЖКТ.
+            </div>
+        </div>
+    </div>
+
+    <!-- Подготовка смеси -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-peace"></i></div>
+            <div class="section-title">Как приготовить смесь</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ol style="margin-left: 20px;">
+                    <li>Вымойте руки с мылом.</li>
+                    <li>Прокипятите бутылочку и соску (или используйте стерилизатор).</li>
+                    <li>Вскипятите воду, остудите до 40–50°C (проверьте на запястье — капля не должна жечь).</li>
+                    <li>Налейте нужное количество воды в бутылочку (см. таблицу на упаковке смеси).</li>
+                    <li>Добавьте мерной ложкой смесь (без горки), используя прилагаемую мерную ложку.</li>
+                    <li>Закрутите крышку и взбалтывайте до полного растворения (не трясите сильно, чтобы не было пены).</li>
+                    <li>Проверьте температуру — капните на запястье, должно быть тёплым, не горячим.</li>
+                </ol>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Не храните готовую смесь более 1 часа при комнатной температуре и более 24 часов в холодильнике.</strong> Остатки смеси после кормления выливайте.
+            </div>
+        </div>
+    </div>
+
+    <!-- Стерилизация -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-soap"></i></div>
+            <div class="section-title">Стерилизация бутылочек</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Кипячение:</strong> 5–10 минут в кастрюле с водой. Бутылочки и соски кипятить отдельно.</li>
+                    <li><strong>Электрический стерилизатор:</strong> самый удобный способ, сушит бутылочки.</li>
+                    <li><strong>Таблетки для холодной стерилизации:</strong> замачивание в растворе на 30 минут.</li>
+                    <li><strong>Частота:</strong> все аксессуары для кормления нужно стерилизовать до 4–6 месяцев.</li>
+                    <li>После 6 месяцев можно мыть горячей водой с мылом и ополаскивать кипятком.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Техника кормления -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-baby"></i></div>
+            <div class="section-title">Как правильно кормить из бутылочки</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ol style="margin-left: 20px;">
+                    <li>Посадите малыша <strong>почти вертикально</strong> (головка выше живота) — не в горизонтальном положении.</li>
+                    <li>Бутылочку держите <strong>горизонтально</strong>, слегка наклоняя, чтобы соска была заполнена смесью (не воздухом).</li>
+                    <li>Коснитесь соской губ малыша — он откроет рот.</li>
+                    <li>Позвольте малышу самому регулировать темп сосания. Не заливайте смесь насильно.</li>
+                    <li>Каждые 5–10 секунд делайте паузу — приподнимайте бутылочку, чтобы соска опустела (имитация смены груди).</li>
+                    <li>Следите за тем, чтобы малыш не заглатывал воздух — если соска сжимается, проверьте отверстие.</li>
+                    <li>После кормления подержите малыша «столбиком» 10–15 минут, чтобы отошёл воздух.</li>
+                </ol>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> не оставляйте бутылочку без присмотра — риск подавиться! Не кладите её подушкой.
+            </div>
+        </div>
+    </div>
+
+    <!-- Объём и частота кормлений -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clock"></i></div>
+            <div class="section-title">Сколько и как часто кормить</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Количество смеси в сутки:</strong> 1/5–1/6 от веса малыша (например, при весе 4 кг — 800 мл в сутки).</p>
+                <p><strong>Частота кормлений:</strong></p>
+                <ul>
+                    <li><strong>0–2 месяца:</strong> 7–8 раз в сутки (каждые 2,5–3 часа)</li>
+                    <li><strong>2–4 месяца:</strong> 6–7 раз (каждые 3–3,5 часа)</li>
+                    <li><strong>4–6 месяцев:</strong> 5–6 раз (каждые 3,5–4 часа)</li>
+                    <li><strong>6–12 месяцев:</strong> 4–5 раз + прикорм</li>
+                </ul>
+                <p><strong>Ночные кормления:</strong> обязательны до 4–5 месяцев (интервал не более 4–5 часов).</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> эти цифры ориентировочные. Следите за признаками голода малыша, а не за часами.
+            </div>
+        </div>
+    </div>
+
+    <!-- Признаки, что смесь подходит -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-thumbs-up"></i></div>
+            <div class="section-title">Как понять, что смесь подходит</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Хорошие признаки:</strong></p>
+                <ul>
+                    <li>✅ Малыш хорошо прибавляет в весе (не менее 500 г в месяц)</li>
+                    <li>✅ Стул жёлтый/коричневатый, кашицеобразный, без резкого запаха</li>
+                    <li>✅ Нет беспокойства, колик, срыгиваний фонтаном</li>
+                    <li>✅ Кожа чистая, нет сыпи</li>
+                </ul>
+                <p><strong>Плохие признаки (нужна смена смеси по назначению врача):</strong></p>
+                <ul>
+                    <li>❌ Сыпь, покраснения на коже (аллергия)</li>
+                    <li>❌ Понос или запор</li>
+                    <li>❌ Сильное беспокойство после кормления, колики</li>
+                    <li>❌ Срыгивание фонтаном</li>
+                    <li>❌ Плохая прибавка веса</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Смешанное вскармливание -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="section-title">Смешанное вскармливание (грудь + бутылочка)</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Правило:</strong> сначала грудь (обе), затем бутылочка со смесью (докорм).</li>
+                    <li><strong>Объём докорма:</strong> после кормления грудью давайте смесь, пока малыш не насытится.</li>
+                    <li><strong>Как сохранить лактацию:</strong> обязательно сцеживайтесь после докорма смесью.</li>
+                    <li><strong>Чтобы избежать путаницы сосков:</strong> используйте соски с маленьким отверстием, кормите из ложки/шприца, если малыш отказывается от груди.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> при смешанном вскармливании риск отказа от груди выше, поэтому следите за техникой.
+            </div>
+        </div>
+    </div>
+
+    <!-- Что НЕ делать -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего НЕ нужно делать</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ <strong>Не подогревайте смесь в микроволновке</strong> — неравномерный нагрев, можно обжечь малыша</li>
+                <li>❌ <strong>Не храните готовую смесь в термосе</strong> — бактерии размножаются</li>
+                <li>❌ <strong>Не кормите лежа</strong> — малыш может подавиться</li>
+                <li>❌ <strong>Не заставляйте есть, если не хочет</strong> — не вливайте смесь силой</li>
+                <li>❌ <strong>Не используйте соску с большим отверстием</strong> для новорождённых</li>
+                <li>❌ <strong>Не разбавляйте смесь больше нормы</strong> — это опасно! Только строго по инструкции</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Плюсы и минусы ИВ -->
+    <div class="section-card" style="animation-delay: 0.3s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="section-title">Плюсы и минусы искусственного вскармливания</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>✅ Плюсы:</strong></p>
+                <ul>
+                    <li>Может кормить любой член семьи</li>
+                    <li>Точно знаете, сколько съел малыш</li>
+                    <li>Не нужно соблюдать диету</li>
+                    <li>Можно точно контролировать интервалы между кормлениями</li>
+                </ul>
+                <p><strong>❌ Минусы:</strong></p>
+                <ul>
+                    <li>Нет антител, защищающих от инфекций</li>
+                    <li>Выше риск аллергии и колик</li>
+                    <li>Нужно стерилизовать бутылочки</li>
+                    <li>Смесь стоит дорого</li>
+                    <li>Может возникнуть «путаница сосков» при смешанном вскармливании</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Будущим папам: ваша роль во время родов — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-hand-holding-heart"></i> 
+            Будущим папам
+        </h1>
+        <p>Ваша роль во время родов — как стать лучшей поддержкой</p>
+        <div class="badge"><i class="fas fa-users"></i> Вы — команда, и ваша помощь бесценна</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Вы нужны ей больше, чем вы думаете</div>
+        </div>
+        <div class="section-content">
+            <p>Присутствие любящего партнёра в родах <strong>снижает уровень стресса у женщины на 50%, уменьшает боль и риск осложнений</strong>. Ваша задача — не быть врачом, а быть <strong>опорой, защитой и голосом поддержки</strong>.</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Вы справитесь!</strong> Страхи — это нормально. Главное — подготовиться заранее.
+            </div>
+        </div>
+    </div>
+
+    <!-- Подготовка к родам -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clipboard-list"></i></div>
+            <div class="section-title">Подготовка к родам</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>📚 <strong>Сходите на курсы партнёрских родов</strong> — узнаете, что происходит на каждом этапе.</li>
+                <li>📄 <strong>Подготовьте документы</strong> — паспорт, флюорография, анализы (список уточните в роддоме).</li>
+                <li>👕 <strong>Соберите свою сумку</strong> — сменная обувь, футболка, шорты, перекус, вода, телефон, пауэрбанк.</li>
+                <li>🗣 <strong>Обсудите с женой план родов</strong> — её желания по поводу обезболивания, поз, присутствия.</li>
+                <li>🚗 <strong>Подготовьте машину</strong> — заправьте, поставьте детское кресло, проверьте маршрут до роддома.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Что говорить и чего НЕ говорить -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comments"></i></div>
+            <div class="section-title">Правильные слова поддержки</div>
+        </div>
+        <div class="section-content">
+            <div class="tip-box">
+                <p><strong>✅ Говорите:</strong></p>
+                <ul>
+                    <li>«Ты справляешься, я рядом»</li>
+                    <li>«Ты сильная, я горжусь тобой»</li>
+                    <li>«Давай дышать — вдох, выдох»</li>
+                    <li>«Я люблю тебя»</li>
+                    <li>«Сейчас пройдёт, отдыхай между схватками»</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <p><strong>❌ НЕ говорите:</strong></p>
+                <ul>
+                    <li>«Ну потерпи, все проходят через это»</li>
+                    <li>«А вот моя мама…»</li>
+                    <li>«Ты сама виновата»</li>
+                    <li>«Успокойся, ничего страшного»</li>
+                    <li>«Ты громко кричишь»</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Лабораторная фаза (0–4 см) -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-waveform"></i></div>
+            <div class="section-title">I период: латентная фаза (0–4 см)</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>✅ <strong>Помогайте ей расслабиться</strong> — предложите тёплый душ, включите музыку.</li>
+                    <li>✅ <strong>Предлагайте воду и лёгкий перекус</strong> (йогурт, банан, печенье).</li>
+                    <li>✅ <strong>Записывайте схватки</strong> — время начала, длительность, интервал (есть приложения).</li>
+                    <li>✅ <strong>Дышите вместе с ней</strong> — медленно вдох-выдох.</li>
+                    <li>✅ <strong>Собирайте сумку</strong> (если ещё не собрали).</li>
+                    <li>✅ <strong>Не паникуйте</strong> — ваше спокойствие передаётся.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Активная фаза (4–8 см) -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="section-title">I период: активная фаза (4–8 см)</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>✅ <strong>Массаж поясницы</strong> — круговые движения кулаками, надавливание на крестец.</li>
+                    <li>✅ <strong>Помогайте менять позы</strong> — на четвереньках, сидя на фитболе, стоя с опорой на вас.</li>
+                    <li>✅ <strong>Напоминайте дышать</strong> — «свечка» (частое поверхностное дыхание) в пик схватки.</li>
+                    <li>✅ <strong>Предлагайте воду</strong> — маленькими глотками между схватками.</li>
+                    <li>✅ <strong>Протирайте лицо влажной салфеткой</strong> — ей жарко.</li>
+                    <li>✅ <strong>Общайтесь с врачом</strong> — задавайте вопросы, если что-то непонятно.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Переходная фаза (8–10 см) -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hourglass-end"></i></div>
+            <div class="section-title">I период: переходная фаза (8–10 см)</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>✅ <strong>Будьте максимально спокойны</strong> — это самый трудный этап.</li>
+                    <li>✅ <strong>Напоминайте: НЕ тужиться</strong> — дышать часто и поверхностно («собачка»).</li>
+                    <li>✅ <strong>Держите за руку</strong> — сжимайте, если ей от этого легче.</li>
+                    <li>✅ <strong>Не обижайтесь на резкость</strong> — в этой фазе женщины могут быть агрессивными.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Потуги (II период) -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-fist-raised"></i></div>
+            <div class="section-title">II период — потуги</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>✅ <strong>Поддерживайте голову и плечи</strong> — помогайте приподниматься в потуге.</li>
+                    <li>✅ <strong>Считайте</strong> — «Тужься, раз, два, три, четыре, пять — выдох, молодец!»</li>
+                    <li>✅ <strong>Хвалите после каждой потуги</strong> — «Отлично, малыш продвинулся!»</li>
+                    <li>✅ <strong>Напоминайте дышать</strong> — между потугами часто и поверхностно.</li>
+                    <li>✅ <strong>В момент рождения головки</strong> — поддерживайте жену, говорите: «Сейчас родится, ты почти справилась!»</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- После родов -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-heart"></i></div>
+            <div class="section-title">После родов — золотой час</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>✅ <strong>Поздравьте её</strong> — скажите, как вы гордитесь.</li>
+                    <li>✅ <strong>Будьте рядом</strong> — если её трясёт (озноб после родов), укройте одеялом.</li>
+                    <li>✅ <strong>Помогите приложить малыша к груди</strong> — попросите акушерку помочь.</li>
+                    <li>✅ <strong>Сфотографируйте первый момент встречи</strong> — это память на всю жизнь.</li>
+                    <li>✅ <strong>Возьмите на себя организационные вопросы</strong> — документы, общение с медперсоналом.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Чего НЕ делать -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего НЕ нужно делать папе</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ <strong>Паниковать и кричать</strong> — ваше волнение передаётся жене.</li>
+                <li>❌ <strong>Задавать слишком много вопросов врачу</strong> — отвлекает от процесса.</li>
+                <li>❌ <strong>Смотреть в экран телефона</strong> — вы здесь, чтобы поддерживать.</li>
+                <li>❌ <strong>Обесценивать её чувства</strong> — «не ной, всё нормально».</li>
+                <li>❌ <strong>Покидать родзал без необходимости</strong> — даже в туалет лучше отходить, когда она отдыхает.</li>
+                <li>❌ <strong>Указывать, что делать</strong> — вместо «делай так» лучше «попробуй такую позу».</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Что взять с собой -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-suitcase"></i></div>
+            <div class="section-title">Что взять папе в роддом</div>
+        </div>
+        <div class="section-content">
+            <div class="tip-box">
+                <ul>
+                    <li>📄 <strong>Документы</strong> — паспорт, флюорография, анализы (список уточните в роддоме).</li>
+                    <li>👕 <strong>Сменная одежда</strong> — футболка, шорты/спортивные штаны, тёплые носки.</li>
+                    <li>🩴 <strong>Обувь</strong> — шлёпанцы (моющиеся).</li>
+                    <li>🍎 <strong>Перекус и вода</strong> — бутерброды, орехи, бананы, печенье, бутылка воды.</li>
+                    <li>📱 <strong>Зарядка и пауэрбанк</strong> — роды могут длиться долго.</li>
+                    <li>🎧 <strong>Наушники</strong> — если захотите послушать музыку или подкаст в ожидании.</li>
+                    <li>📸 <strong>Фотоаппарат/телефон</strong> — запечатлеть первый момент.</li>
+                    <li>🧴 <strong>Дезодорант, влажные салфетки, зубная щётка, паста</strong> — на случай долгого ожидания.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Если вы не готовы присутствовать -->
+    <div class="section-card" style="animation-delay: 0.3s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-heart"></i></div>
+            <div class="section-title">Если вы не готовы присутствовать</div>
+        </div>
+        <div class="section-content">
+            <div class="tip-box">
+                <p><strong>Это нормально — бояться и не хотеть присутствовать.</strong> Не все мужчины могут выдержать вид крови и боли. Честность лучше, чем паника в родзале.</p>
+                <p>Вы можете помогать иначе:</p>
+                <ul>
+                    <li>Отвезти жену в роддом и ждать в коридоре</li>
+                    <li>Быть на связи по телефону</li>
+                    <li>Помочь с документами и организацией</li>
+                    <li>Поддержать морально до и после родов</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> обсудите это с женой заранее. Ложь и обещание прийти, а потом «слабость» — хуже, чем честность.
+            </div>
+        </div>
+    </div>
+
+    <!-- Мифы -->
+    <div class="section-card" style="animation-delay: 0.33s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Мифы о партнёрских родах</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Присутствие папы в родах убивает романтику и сексуальное желание.<br>
+            <strong>Правда:</strong> Для многих пар роды становятся самым сильным опытом близости и доверия. Желание возвращается.</p>
+            
+            <p><strong>Миф:</strong> Папе будет очень страшно и противно.<br>
+            <strong>Правда:</strong> Страшно, но не настолько, как кажется. Если вы подготовлены, вы будете сосредоточены на поддержке, а не на «страшных вещах».</p>
+            
+            <p><strong>Миф:</strong> Только слабый папа не идёт на роды.<br>
+            <strong>Правда:</strong> Решение присутствовать или нет — личное. Не идти, потому что вы боитесь, что упадёте в обморок — это нормально.</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

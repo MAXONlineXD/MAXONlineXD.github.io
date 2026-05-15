@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Немного о какашках — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .stool-table {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            overflow-x: auto;
+        }
+
+        .stool-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .stool-table th, .stool-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ffe0d6;
+        }
+
+        .stool-table th {
+            background: #fbeae8;
+            color: #b35d7c;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+            .stool-table {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-toilet"></i> 
+            Немного о какашках
+        </h1>
+        <p>Что нужно знать о стуле новорождённого и грудничка</p>
+        <div class="badge"><i class="fas fa-heart"></i> Стул — важный показатель здоровья малыша</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Главная мысль -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-quote-left"></i></div>
+            <div class="section-title">Почему это важно?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Стул новорождённого может многое рассказать о его здоровье. Цвет, консистенция, запах и частота меняются с возрастом и типом вскармливания. <strong>Не пугайтесь, если видите необычный стул — часто это вариант нормы!</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Нормы по возрасту -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-calendar-alt"></i></div>
+            <div class="section-title">Нормы стула по возрасту</div>
+        </div>
+        <div class="section-content">
+            <div class="stool-table">
+                <table>
+                    <thead>
+                        <tr><th>Возраст</th><th>Стул</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1–3 дни</td><td>Меконий — чёрный, смолистый, без запаха</td></tr>
+                        <tr><td>3–6 дни</td><td>Переходный — зелёный, водянистый, с комочками</td></tr>
+                        <tr><td>1–6 мес (ГВ)</td><td>Жёлтый/горчичный, кашицеобразный, кисловатый запах, часто после каждого кормления</td></tr>
+                        <tr><td>1–6 мес (ИВ)</td><td>Коричневый/зеленоватый, более плотный, запах обычный</td></tr>
+                        <tr><td>6–12 мес</td><td>С введением прикорма — более оформленный, цвет зависит от еды</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Цвет стула и что значит -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-palette"></i></div>
+            <div class="section-title">Цвет стула — что значит</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>🟡 Жёлтый / горчичный</strong> — норма для грудного вскармливания.</p>
+                <p><strong>🟢 Зелёный</strong> — норма (переходный стул, реакция на прикорм, железо в смеси). Но если с пеной и слизью — может быть дисбактериозом.</p>
+                <p><strong>🟤 Коричневый</strong> — норма для искусственного вскармливания и после введения прикорма.</p>
+                <p><strong>⚪ Белый / серый</strong> — возможны проблемы с печенью (нарушение оттока желчи). <strong>Срочно к врачу!</strong></p>
+                <p><strong>🔴 Красный</strong> — примесь крови. <strong>Срочно к врачу!</strong> (трещина ануса, аллергия, инфекция).</p>
+                <p><strong>⚫ Чёрный</strong> — меконий в первые дни (норма). После — чёрный стул может быть из-за крови в верхних отделах ЖКТ. <strong>Срочно к врачу!</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Консистенция -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-water"></i></div>
+            <div class="section-title">Консистенция</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>🥄 Кашицеобразный</strong> — норма для грудничка.</p>
+                <p><strong>💧 Жидкий, водянистый</strong> — может быть поносом (особенно если часто и с неприятным запахом).</p>
+                <p><strong>🧱 Твёрдый, «какашки-шарики»</strong> — запор.</p>
+                <p><strong>🫧 Пенистый</strong> — может быть при лактазной недостаточности или дисбактериозе.</p>
+                <p><strong>🧴 Слизь</strong> — небольшое количество допустимо, много — признак воспаления или аллергии.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Частота стула -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="section-title">Частота стула — как часто должен какать?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Грудное вскармливание:</strong> от 1 раза в 7–10 дней до 10 раз в день — всё может быть нормой! Главное — чтобы стул был мягким, а малыш спокойным.</p>
+                <p><strong>Искусственное вскармливание:</strong> обычно 1–2 раза в день, реже — 1 раз в 2–3 дня.</p>
+                <p><strong>После введения прикорма:</strong> 1–2 раза в день, стул становится более оформленным.</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> у детей на ГВ редкий стул (раз в 5–7 дней) при хорошем самочувствии — это не запор, а полное усвоение молока.
+            </div>
+        </div>
+    </div>
+
+    <!-- Запор -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-poop"></i></div>
+            <div class="section-title">Запор — когда беспокоиться</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Признаки запора:</strong></p>
+                <ul>
+                    <li>Стул твёрдый, сухой («какашки-шарики»)</li>
+                    <li>Малыш тужится, краснеет, плачет при дефекации</li>
+                    <li>Стул очень редкий для ИВ (реже 1 раза в 2 дня) при беспокойстве</li>
+                </ul>
+                <p><strong>Что делать?</strong></p>
+                <ul>
+                    <li>При ГВ — маме пить больше воды, есть чернослив, свеклу, курагу</li>
+                    <li>При ИВ — проверьте смесь, возможно, нужна кисломолочная</li>
+                    <li>Массаж живота по часовой стрелке</li>
+                    <li>Тёплая ванна, «велосипед» ножками</li>
+                    <li><strong>НЕ используйте клизму и газоотводную трубку без назначения врача</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Понос -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-water"></i></div>
+            <div class="section-title">Понос — когда срочно к врачу</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❗ Признаки поноса:</strong>
+                <ul>
+                    <li>Очень частый жидкий стул (более 8–10 раз в сутки)</li>
+                    <li>Водянистый, с резким неприятным запахом</li>
+                    <li>Примесь крови, слизи, пены</li>
+                    <li>Сопровождается температурой, рвотой, вялостью</li>
+                </ul>
+                <p><strong>Что делать?</strong> Срочно к врачу! Опасно обезвоживанием.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Зеленый стул -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-leaf"></i></div>
+            <div class="section-title">Зелёный стул — когда норма, когда нет</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Безопасный зелёный стул:</strong></p>
+                <ul>
+                    <li>Переходный стул в первые дни (норма)</li>
+                    <li>При введении прикорма (брокколи, шпинат, зелёное яблоко)</li>
+                    <li>При смеси, обогащённой железом</li>
+                    <li>При приёме мамой железосодержащих препаратов</li>
+                </ul>
+                <p><strong>Опасный зелёный стул (к врачу):</strong></p>
+                <ul>
+                    <li>С пеной, слизью, неприятным запахом</li>
+                    <li>Сопровождается беспокойством, плохой прибавкой веса</li>
+                    <li>Часто может быть при лактазной недостаточности, дисбактериозе, аллергии</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Кровь в стуле -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-peace"></i></div>
+            <div class="section-title">Кровь в стуле — срочно к врачу!</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❗ Если увидели кровь в стуле:</strong>
+                <ul>
+                    <li>Алые прожилки — возможны трещины ануса (от тужащихся потуг) или аллергия на белок коровьего молока</li>
+                    <li>Тёмная кровь (чёрный стул) — кровотечение в верхних отделах ЖКТ — <strong>СРОЧНО В БОЛЬНИЦУ!</strong></li>
+                    <li>Не паникуйте, но покажите малыша врачу в ближайшее время</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Введение прикорма -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-apple-alt"></i></div>
+            <div class="section-title">Как меняется стул после введения прикорма</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Стул становится более оформленным</strong> — ближе к «колбаске»</li>
+                    <li><strong>Цвет зависит от еды</strong> — красный от свёклы, зелёный от брокколи, оранжевый от моркови</li>
+                    <li><strong>Могут быть кусочки непереваренной пищи</strong> — норма (пока ЖКТ не созрел)</li>
+                    <li><strong>Запах становится более «взрослым»</strong></li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> если после нового продукта появился жидкий стул с пеной, сыпь, беспокойство — возможно, аллергия. Уберите продукт на неделю и повторите позже.
+            </div>
+        </div>
+    </div>
+
+    <!-- Частые вопросы -->
+    <div class="section-card" style="animation-delay: 0.3s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Частые вопросы</div>
+        </div>
+        <div class="section-content">
+            <p><strong>❓ Ребёнок тужится, краснеет, кряхтит — это запор?</strong><br>
+            ➡️ Нет, это нормально! Новорождённые ещё не умеют расслаблять мышцы таза, поэтому им приходится тужиться. Если стул мягкий — всё в порядке.</p>
+            
+            <p><strong>❓ Почему при ГВ стул зелёный и пенистый?</strong><br>
+            ➡️ Возможно, ребёнок получает много «переднего молока» (водянистого, богатого лактозой) и мало «заднего» (жирного). Попробуйте дольше кормить одной грудью, чтобы малыш получал жирное молоко.</p>
+            
+            <p><strong>❓ Почему при ГВ стул редкий (раз в 5 дней)?</strong><br>
+            ➡️ Это норма! Грудное молоко усваивается почти полностью, поэтому стула может не быть несколько дней. Если стул мягкий, малыш спокоен — всё хорошо.</p>
+            
+            <p><strong>❓ Стул со слизью — это опасно?</strong><br>
+            ➡️ Небольшое количество слизи допустимо. Много слизи с пеной и неприятным запахом — повод показать врачу.</p>
+        </div>
+    </div>
+
+    <!-- Когда к врачу -->
+    <div class="section-card" style="animation-delay: 0.33s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ambulance"></i></div>
+            <div class="section-title">Когда срочно к врачу</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❗ Срочно к врачу, если:</strong>
+                <ul>
+                    <li>Белый или серый стул</li>
+                    <li>Кровь в стуле (алая или чёрная)</li>
+                    <li>Понос + температура, рвота, вялость</li>
+                    <li>Отсутствие стула более 3 дней + беспокойство + вздутый живот</li>
+                    <li>Стул «фонтаном» (очень жидкий, с резким запахом)</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Помните:</strong> если вы сомневаетесь, лучше показать малыша педиатру. Спокойствие мамы — залог здоровья малыша.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

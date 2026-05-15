@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Колики и срыгивание — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .checklist-group {
+            margin: 16px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: #fffaf5;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #fef0ea;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #cd7c9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .checklist-check.completed {
+            background: #cd7c9b;
+            color: white;
+        }
+
+        .checklist-text {
+            flex: 1;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-stomach"></i> 
+            Колики и срыгивание
+        </h1>
+        <p>Как помочь малышу и сохранить спокойствие</p>
+        <div class="badge"><i class="fas fa-heart"></i> 70% родителей сталкиваются с коликами — вы не одни</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Что такое колики?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Колики</strong> — это приступы беспокойства и плача у здорового ребёнка, которые возникают без видимой причины, обычно в одно и то же время суток (чаще вечером).</p>
+                <p><strong>Правило 3:</strong> колики начинаются примерно с <strong>3 недель</strong>, длятся не менее <strong>3 часов в день</strong>, не менее <strong>3 дней в неделю</strong> и проходят к <strong>3–4 месяцам</strong>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Симптомы колик -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-symptoms"></i></div>
+            <div class="section-title">Как распознать колики</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>😭 <strong>Пронзительный, громкий плач</strong> — часто начинается внезапно, без видимой причины</li>
+                    <li>🦵 <strong>Поджимает ножки к животу</strong>, живот вздут</li>
+                    <li>😖 <strong>Краснеет</strong>, выгибается</li>
+                    <li>🤲 <strong>Сжимает кулачки</strong>, напряжён</li>
+                    <li>⏰ <strong>Плач в одно и то же время</strong> — часто вечером (правило 3 часов)</li>
+                    <li>🍼 <strong>Не успокаивается после кормления</strong> — иногда, наоборот, плач усиливается</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Важно отличать колики от других причин плача:</strong> голод, мокрый подгузник, усталость, температура. При коликах малыш здоров, хорошо прибавляет в весе, но много плачет.
+            </div>
+        </div>
+    </div>
+
+    <!-- Причины колик -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-microscope"></i></div>
+            <div class="section-title">Почему возникают колики?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>🧬 <strong>Незрелость пищеварительной системы</strong> — не хватает ферментов</li>
+                    <li>💨 <strong>Газы</strong> — скапливаются в кишечнике, вызывая боль</li>
+                    <li>🦠 <strong>Формирование микрофлоры</strong> — кишечник заселяется бактериями</li>
+                    <li>😰 <strong>Незрелость нервной системы</strong> — малыш не умеет расслабляться</li>
+                    <li>🍼 <strong>Заглатывание воздуха</strong> при кормлении</li>
+                    <li>🥛 <strong>Аллергия на белок коровьего молока</strong> (при ИВ или если мама пьёт много молока)</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> колики <strong>не связаны</strong> с характером мамы, её тревожностью или «неправильным» воспитанием.
+            </div>
+        </div>
+    </div>
+
+    <!-- Как помочь при коликах -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-peace"></i></div>
+            <div class="section-title">Как облегчить состояние</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="colic-checklist">
+                <div class="checklist-item" data-id="colic1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🖐️ <strong>Массаж живота</strong> — круговые движения по часовой стрелке (5–10 минут)</div>
+                </div>
+                <div class="checklist-item" data-id="colic2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🚴 <strong>«Велосипед» ножками</strong> — попеременно прижимайте колени к животу</div>
+                </div>
+                <div class="checklist-item" data-id="colic3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧺 <strong>Выкладывание на живот</strong> — перед кормлением на 5–10 минут</div>
+                </div>
+                <div class="checklist-item" data-id="colic4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🔥 <strong>Тёплая пелёнка</strong> — погладьте утюгом и приложите к животу (не горячую!)</div>
+                </div>
+                <div class="checklist-item" data-id="colic5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🤱 <strong>Ношение на руках</strong> — вертикально, животом к животу</div>
+                </div>
+                <div class="checklist-item" data-id="colic6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🌿 <strong>Укропная вода или чай с фенхелем</strong> — с 2–3 недель (по назначению врача)</div>
+                </div>
+                <div class="checklist-item" data-id="colic7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">💊 <strong>Симетикон (Эспумизан L, Саб-Симплекс, Боботик)</strong> — уменьшает газообразование</div>
+                </div>
+                <div class="checklist-item" data-id="colic8">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🛁 <strong>Тёплая ванна</strong> — расслабляет мышцы</div>
+                </div>
+                <div class="checklist-item" data-id="colic9">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🔊 <strong>Белый шум</strong> — шум фена, пылесоса, специальные записи</div>
+                </div>
+                <div class="checklist-item" data-id="colic10">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">👶 <strong>Контакт «кожа к коже»</strong> — выложите малыша на голый живот</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Срыгивание -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-tint"></i></div>
+            <div class="section-title">Срыгивание — норма и патология</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Нормальное срыгивание (85% детей):</strong></p>
+                <ul>
+                    <li>✅ Небольшой объём (чайная ложка — ложка)</li>
+                    <li>✅ Происходит сразу после кормления или в течение часа</li>
+                    <li>✅ Малыш при этом не беспокоится, хорошо прибавляет в весе</li>
+                    <li>✅ Прекращается к 6–12 месяцам</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Патологическое срыгивание (повод к врачу):</strong>
+                <ul>
+                    <li>Срыгивание <strong>фонтаном</strong> (на 20–30 см)</li>
+                    <li>Большой объём (половина съеденного и больше)</li>
+                    <li>С примесью <strong>желчи</strong> (зелёное) или <strong>крови</strong></li>
+                    <li>Беспокойство, плач после срыгивания</li>
+                    <li>Плохая прибавка веса</li>
+                    <li>Срыгивание сохраняется после года</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Как уменьшить срыгивание -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="section-title">Как уменьшить срыгивание</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>🪑 <strong>Держите малыша «столбиком»</strong> 10–20 минут после кормления</li>
+                    <li>🍼 <strong>Не перекармливайте</strong> — кормите чаще, но меньшими порциями</li>
+                    <li>🛏️ <strong>Приподнимите головной конец кроватки</strong> на 30° (специальная подушка или подложка под матрас)</li>
+                    <li>🤱 <strong>При ГВ проверьте захват груди</strong> — не должен заглатывать воздух</li>
+                    <li>🍼 <strong>При ИВ проверьте соску</strong> — отверстие не должно быть слишком большим</li>
+                    <li>🍽️ <strong>Не кладите малыша сразу после кормления на живот</strong></li>
+                    <li>🥛 <strong>При сильном срыгивании</strong> — посоветуйтесь с врачом о густой смеси (антирефлюксной)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Что делать родителям -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-heart"></i></div>
+            <div class="section-title">Как сохранить спокойствие родителям</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>😮‍💨 <strong>Дышите</strong> — если чувствуете, что злитесь, сделайте глубокий вдох-выдох</li>
+                    <li>🔄 <strong>Передайте малыша партнёру</strong> — отдохните 15 минут</li>
+                    <li>👂 <strong>Шумоподавляющие наушники</strong> — снижают остроту восприятия плача</li>
+                    <li>🤱 <strong>Помните: это пройдёт</strong> — к 3–4 месяцам колики заканчиваются</li>
+                    <li>📞 <strong>Позвоните подруге/маме</strong> — выговоритесь</li>
+                    <li>👶 <strong>Положите малыша в безопасное место и выйдите из комнаты</strong> на 5–10 минут, если чувствуете, что не справляетесь</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Важно:</strong> никогда не трясите малыша! Синдром сотрясения может привести к инвалидности и смерти. Лучше оставить плакать на 5 минут, чем сорваться.
+            </div>
+        </div>
+    </div>
+
+    <!-- Чего НЕ делать -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего НЕ нужно делать</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ <strong>Не давайте лекарства без назначения врача</strong></li>
+                <li>❌ <strong>Не используйте газоотводную трубку без консультации с врачом</strong> — можно травмировать прямую кишку</li>
+                <li>❌ <strong>Не поить укропной водой в больших дозах</strong></li>
+                <li>❌ <strong>Не игнорируйте плач</strong> — он не «тренировка лёгких»</li>
+                <li>❌ <strong>Не вините себя</strong> — колики бывают у всех</li>
+                <li>❌ <strong>Не меняйте смесь без назначения педиатра</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Мифы -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Разрушаем мифы</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Колики из-за того, что мама неправильно питается.<br>
+            <strong>Правда:</strong> Диета мамы влияет редко. Исключите только явные аллергены (молоко, орехи, яйца) по назначению врача.</p>
+            
+            <p><strong>Миф:</strong> Колики проходят, если перейти на смесь.<br>
+            <strong>Правда:</strong> У некоторых детей на искусственном вскармливании колики даже сильнее.</p>
+            
+            <p><strong>Миф:</strong> Если много носить на руках, привыкнет.<br>
+            <strong>Правда:</strong> Носить на руках нужно! Это успокаивает и формирует привязанность.</p>
+        </div>
+    </div>
+
+    <!-- Когда к врачу -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ambulance"></i></div>
+            <div class="section-title">Когда срочно к врачу</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❗ Немедленно к врачу, если:</strong>
+                <ul>
+                    <li>🌡️ <strong>Температура выше 38°C</strong></li>
+                    <li>🤮 <strong>Рвота фонтаном</strong> (особенно зелёная или с кровью)</li>
+                    <li>🩸 <strong>Кровь в стуле</strong></li>
+                    <li>😫 <strong>Отказ от еды</strong>, вялость</li>
+                    <li>⚡ <strong>Судороги</strong></li>
+                    <li>📉 <strong>Плохая прибавка веса</strong> или потеря веса</li>
+                    <li>😭 <strong>Необычный крик</strong> (монотонный, пронзительный)</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> если вы чувствуете, что «что-то не так», даже без явных симптомов — покажите малыша педиатру.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    function initChecklist() {
+        const items = document.querySelectorAll('.checklist-item');
+        items.forEach(item => {
+            const id = item.getAttribute('data-id');
+            if (!id) return;
+            const stored = localStorage.getItem(`colic_${id}`);
+            const checkDiv = item.querySelector('.checklist-check');
+            if (stored === 'true') {
+                checkDiv.classList.add('completed');
+                checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+            } else {
+                checkDiv.classList.remove('completed');
+                checkDiv.innerHTML = '';
+            }
+            
+            item.addEventListener('click', () => {
+                const isCompleted = checkDiv.classList.contains('completed');
+                if (isCompleted) {
+                    checkDiv.classList.remove('completed');
+                    checkDiv.innerHTML = '';
+                    localStorage.setItem(`colic_${id}`, 'false');
+                } else {
+                    checkDiv.classList.add('completed');
+                    checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+                    localStorage.setItem(`colic_${id}`, 'true');
+                }
+            });
+        });
+    }
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    initChecklist();
+</script>
+</body>
+</html>

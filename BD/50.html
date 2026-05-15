@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Кесарево сечение — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .method-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .pros-cons {
+            display: flex;
+            gap: 12px;
+            margin: 12px 0;
+            flex-wrap: wrap;
+        }
+
+        .pros {
+            flex: 1;
+            background: #e8f5e9;
+            border-radius: 16px;
+            padding: 12px;
+        }
+
+        .cons {
+            flex: 1;
+            background: #ffebee;
+            border-radius: 16px;
+            padding: 12px;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+            .pros-cons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-procedures"></i> 
+            Кесарево сечение
+        </h1>
+        <p>Всё, что нужно знать об операции</p>
+        <div class="badge"><i class="fas fa-clinic-medical"></i> Безопасный способ родоразрешения при наличии показаний</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Что такое кесарево сечение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Что такое кесарево сечение?</div>
+        </div>
+        <div class="section-content">
+            <p>Кесарево сечение — это <strong>хирургическая операция</strong>, при которой малыша извлекают через разрез на матке. Это не «простой путь», а серьёзное вмешательство, которое проводится только по медицинским показаниям.</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> кесарево сечение — это не «страшно» и не «стыдно». Это способ сохранить здоровье мамы и малыша, когда естественные роды опасны.
+            </div>
+            <div class="warning-box">
+                <strong>Статистика в России:</strong> около 30% родов заканчиваются кесаревым сечением. В мире этот показатель варьируется от 15% до 40%.
+            </div>
+        </div>
+    </div>
+
+    <!-- Показания к КС -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-stethoscope"></i></div>
+            <div class="section-title">Показания к кесареву сечению</div>
+        </div>
+        <div class="section-content">
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">📋 Абсолютные показания</div>
+                <ul>
+                    <li><strong>Анатомически узкий таз</strong> (3–4 степени сужения)</li>
+                    <li><strong>Полное предлежание плаценты</strong> (плацента перекрывает выход)</li>
+                    <li><strong>Преждевременная отслойка плаценты</strong></li>
+                    <li><strong>Поперечное положение плода</strong></li>
+                    <li><strong>Выпадение петель пуповины</strong></li>
+                    <li><strong>Рубец на матке после кесарева сечения + несостоятельность рубца</strong></li>
+                </ul>
+            </div>
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">📋 Относительные показания</div>
+                <ul>
+                    <li><strong>Тазовое предлежание плода</strong> (часто)</li>
+                    <li><strong>Крупный плод</strong> (более 4,5 кг)</li>
+                    <li><strong>Гипоксия плода</strong> (страдает малыш)</li>
+                    <li><strong>Преэклампсия тяжёлой степени</strong></li>
+                    <li><strong>Болезни мамы</strong> (миопия высокой степени, пороки сердца, диабет)</li>
+                    <li><strong>Возраст мамы старше 35 лет + другие факторы</strong></li>
+                    <li><strong>Бесплодие в анамнезе, ЭКО</strong> (не всегда)</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Решение о кесаревом сечении принимает врач совместно с пациенткой. При желании женщины без показаний операция не проводится (кроме частных клиник).
+            </div>
+        </div>
+    </div>
+
+    <!-- Плановое и экстренное КС -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clock"></i></div>
+            <div class="section-title">Плановое vs экстренное кесарево сечение</div>
+        </div>
+        <div class="section-content">
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">📅 Плановое КС</div>
+                <ul>
+                    <li>Проводится на сроке <strong>38–39 недель</strong> (до начала схваток)</li>
+                    <li>Есть время подготовиться, сдать анализы</li>
+                    <li>Меньше рисков, чем при экстренном</li>
+                    <li>Вы заранее знаете дату операции</li>
+                </ul>
+            </div>
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">🚨 Экстренное КС</div>
+                <ul>
+                    <li>Проводится <strong>в родах</strong> при осложнениях (гипоксия плода, слабость родовой деятельности и т.д.)</li>
+                    <li>Решение принимается в течение 15–30 минут</li>
+                    <li>Риски выше, чем при плановом, но оно спасает жизнь малышу и маме</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Как проходит операция -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-procedures"></i></div>
+            <div class="section-title">Как проходит операция</div>
+        </div>
+        <div class="section-content">
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">🩺 Этапы</div>
+                <ol style="margin-left: 20px;">
+                    <li><strong>Анестезия</strong> — чаще спинальная (ставится укол в спину, сознание ясное) или эпидуральная. Общий наркоз — редко.</li>
+                    <li><strong>Разрез кожи</strong> — горизонтальный над лобком (поперечный), реже вертикальный (от пупка).</li>
+                    <li><strong>Разрез матки</strong> — обычно поперечный (в нижнем сегменте), заживает лучше.</li>
+                    <li><strong>Извлечение малыша</strong> — врач выводит головку, плечики, туловище. Малыш рождается на 2–5 минуте операции.</li>
+                    <li><strong>Перерезание пуповины</strong> — сразу или через 60 секунд (отсроченное пережатие рекомендуется).</li>
+                    <li><strong>Удаление плаценты</strong> — ручное отделение.</li>
+                    <li><strong>Зашивание матки</strong> — двухрядный шов (рассасывающиеся нити).</li>
+                    <li><strong>Зашивание кожи</strong> — внутрикожный шов (косметический).</li>
+                </ol>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Длительность:</strong> 30–60 минут. Малыша показывают маме сразу после извлечения.
+            </div>
+        </div>
+    </div>
+
+    <!-- Анестезия -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-syringe"></i></div>
+            <div class="section-title">Анестезия при кесаревом сечении</div>
+        </div>
+        <div class="section-content">
+            <div class="pros-cons">
+                <div class="pros">
+                    <strong>✅ Спинальная анестезия (95% случаев)</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Сознание ясное, видите малыша сразу</li>
+                        <li>Можно приложить к груди в родзале</li>
+                        <li>Меньше рисков для малыша</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <strong>⚠️ Общий наркоз (редко)</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Используется при экстренном КС</li>
+                        <li>Вы не видите рождение малыша</li>
+                        <li>Может потребоваться больше времени на восстановление</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> При спинальной анестезии вы не чувствуете боли, но можете ощущать прикосновения и «тянущие» ощущения — это нормально.
+            </div>
+        </div>
+    </div>
+
+    <!-- Восстановление после КС -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-leaf"></i></div>
+            <div class="section-title">Восстановление после операции</div>
+        </div>
+        <div class="section-content">
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">🩹 Первые часы и дни</div>
+                <ul>
+                    <li><strong>Первые 6 часов:</strong> лёжа на спине, нельзя поворачиваться, есть, пить (только лёд).</li>
+                    <li><strong>Через 6 часов:</strong> можно поворачиваться на бок, пить воду, через 8–12 часов — бульон.</li>
+                    <li><strong>Через 24 часа:</strong> разрешают вставать с помощью медсестры (обязательно в бандаже).</li>
+                    <li><strong>Обезболивание:</strong> в первые 2–3 дня — по требованию.</li>
+                    <li><strong>Вставать нужно:</strong> это ускоряет восстановление и профилактирует тромбы.</li>
+                </ul>
+            </div>
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">💊 Выписка</div>
+                <ul>
+                    <li>Обычно на <strong>5–7 день</strong> после операции.</li>
+                    <li>Дома: принимать душ, не мочить шов 7–10 дней, носить бандаж, не поднимать тяжести (более 3–4 кг) 2–3 месяца.</li>
+                    <li>Шов обрабатывать зелёнкой или хлоргексидином (по назначению).</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> физическую активность можно начинать через 6–8 недель после консультации с врачом.
+            </div>
+        </div>
+    </div>
+
+    <!-- Грудное вскармливание -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="section-title">Грудное вскармливание после КС</div>
+        </div>
+        <div class="section-content">
+            <div class="tip-box">
+                <p><strong>✅ Грудное вскармливание возможно!</strong> Молоко приходит на 3–5 день (как и после естественных родов).</p>
+                <ul>
+                    <li>Первое прикладывание — в родзале (если спинальная анестезия).</li>
+                    <li>В первые дни кормите лёжа на боку или сидя с подушкой на животе.</li>
+                    <li>Обезболивающие, которые дают после КС, совместимы с ГВ.</li>
+                    <li>Если малыш в реанимации — сцеживайтесь молокоотсосом.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> трудности с прикладыванием могут быть, но консультант по ГВ поможет. Не стесняйтесь просить помощи.
+            </div>
+        </div>
+    </div>
+
+    <!-- Риски и осложнения -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">Риски и осложнения</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>⚠️ Возможные осложнения (редко):</strong>
+                <ul>
+                    <li><strong>Кровотечение</strong> — риск выше, чем при естественных родах</li>
+                    <li><strong>Инфекция</strong> — эндометрит, нагноение шва (1–5%)</li>
+                    <li><strong>Тромбоз</strong> — тромбоэмболия лёгочной артерии (очень редко)</li>
+                    <li><strong>Повреждение соседних органов</strong> (мочевой пузырь, кишечник) — менее 1%</li>
+                    <li><strong>Несостоятельность рубца</strong> в следующих беременностях</li>
+                    <li><strong>Респираторные проблемы у новорождённого</strong> (редко)</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Современная медицина минимизирует риски. Плановое КС безопаснее экстренного.
+            </div>
+        </div>
+    </div>
+
+    <!-- Плюсы и минусы -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="section-title">Плюсы и минусы кесарева сечения</div>
+        </div>
+        <div class="section-content">
+            <div class="pros-cons">
+                <div class="pros">
+                    <strong>✅ Плюсы</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Нет боли в родах</li>
+                        <li>Можно запланировать дату</li>
+                        <li>Нет риска разрывов промежности</li>
+                        <li>Безопасно при тазовом предлежании, крупном плоде</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <strong>❌ Минусы</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Полостная операция, более долгое восстановление</li>
+                        <li>Ограничения по весу (до 3 кг) 2–3 месяца</li>
+                        <li>Риск осложнений выше, чем при естественных родах</li>
+                        <li>Рубец на матке — ограничения в следующих беременностях</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ЕКС (естественные роды после кесарева) -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-baby-carriage"></i></div>
+            <div class="section-title">Можно ли рожать естественно после кесарева?</div>
+        </div>
+        <div class="section-content">
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">🤰 ЕКС — естественные роды после кесарева сечения</div>
+                <p>В большинстве случаев возможны <strong>естественные роды</strong> после одного кесарева сечения, если:</p>
+                <ul>
+                    <li>Рубец на матке состоятельный (по УЗИ)</li>
+                    <li>Нет других противопоказаний</li>
+                    <li>Роддом имеет возможность экстренного КС</li>
+                </ul>
+                <p>Риск разрыва матки — <strong>0,5–1%</strong>.</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> решение о ЕКС принимается индивидуально. После двух и более КС обычно рекомендуют плановое кесарево.
+            </div>
+        </div>
+    </div>
+
+    <!-- Мифы о КС -->
+    <div class="section-card" style="animation-delay: 0.3s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Разрушаем мифы</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Кесарево сечение — это «лёгкий путь», который выбирают ленивые мамы.<br>
+            <strong>Правда:</strong> Это серьёзная операция с долгим восстановлением. Никто не выбирает её «просто так».</p>
+            
+            <p><strong>Миф:</strong> После кесарева нельзя кормить грудью.<br>
+            <strong>Правда:</strong> Можно и нужно. Молоко приходит, как и после естественных родов.</p>
+            
+            <p><strong>Миф:</strong> Если было кесарево, следующие роды только кесарево.<br>
+            <strong>Правда:</strong> Во многих случаях возможны естественные роды (ЕКС).</p>
+            
+            <p><strong>Миф:</strong> Кесарево сечение безопаснее естественных родов.<br>
+            <strong>Правда:</strong> У каждого способа свои риски. Кесарево — операция, и у неё есть свои осложнения.</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

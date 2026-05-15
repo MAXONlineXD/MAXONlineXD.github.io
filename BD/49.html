@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Медицинские пособия в родах — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .method-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-stethoscope"></i> 
+            Медицинские пособия в родах
+        </h1>
+        <p>Как врачи помогают малышу появиться на свет</p>
+        <div class="badge"><i class="fas fa-clinic-medical"></i> Безопасные манипуляции для профилактики осложнений</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Что такое акушерские пособия?</div>
+        </div>
+        <div class="section-content">
+            <p>Акушерские пособия — это <strong>специальные манипуляции</strong>, которые врачи и акушерки выполняют во время родов, чтобы помочь малышу родиться, защитить его от травм и предотвратить разрывы у мамы.</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> пособия применяются только по показаниям. Если роды идут нормально, врач может вообще не вмешиваться.
+            </div>
+        </div>
+    </div>
+
+    <!-- Пособие при головном предлежании -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-baby-carriage"></i></div>
+            <div class="section-title">Пособие при головном предлежании</div>
+        </div>
+        <div class="section-content">
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">👶 Защита промежности</div>
+                <p>Акушерка пальцами поддерживает промежность, чтобы растяжение тканей было плавным, а головка не выходила слишком быстро. Это профилактика разрывов.</p>
+            </div>
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">🔄 Регулирование выведения головки</div>
+                <p>В момент рождения головки акушерка просит <strong>НЕ тужиться</strong> и дышать часто («собачка»). А сама контролирует скорость выхода головки.</p>
+            </div>
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">📐 Выведение плечиков</div>
+                <p>После рождения головки акушерка помогает малышу повернуться и вывести сначала одно плечико, затем второе. Это самый ответственный момент.</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> если вы чувствуете сильное жжение («огненный обруч») — это нормально, так растягиваются ткани. Потерпите, скоро малыш родится.
+            </div>
+        </div>
+    </div>
+
+    <!-- Пособие при тазовом предлежании -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-child"></i></div>
+            <div class="section-title">Пособие при тазовом предлежании</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>⚠️ Тазовое предлежание — сложные роды, требующие особого мастерства врача.</strong>
+            </div>
+            <ul>
+                <li><strong>Классическое ручное пособие:</strong> акушер помогает вывести сначала ножки, затем туловище, руки и головку.</li>
+                <li><strong>Пособие Цовьянова:</strong> при чисто ягодичном предлежании — более щадящее.</li>
+                <li><strong>При невозможности естественных родов — кесарево сечение.</strong></li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> В современных условиях при тазовом предлежании чаще рекомендуют плановое кесарево сечение, чтобы избежать риска травмы малыша.
+            </div>
+        </div>
+    </div>
+
+    <!-- Амниотомия -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-tint"></i></div>
+            <div class="section-title">Амниотомия (прокол плодного пузыря)</div>
+        </div>
+        <div class="section-content">
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">💧 Что это и зачем?</div>
+                <p>Амниотомия — это искусственное вскрытие плодного пузыря. Проводится специальным крючком через влагалище. Процедура безболезненная.</p>
+                <p><strong>Показания:</strong></p>
+                <ul>
+                    <li>Слабость родовой деятельности (для стимуляции)</li>
+                    <li>Плоский плодный пузырь (не помогает раскрытию)</li>
+                    <li>Многоводие (риск отслойки плаценты)</li>
+                    <li>Преэклампсия (для ускорения родов)</li>
+                    <li>Переношенная беременность</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> После амниотомии схватки обычно усиливаются. Воды отходят тёплой струёй — это не больно.
+            </div>
+        </div>
+    </div>
+
+    <!-- Эпизиотомия и перинеотомия -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-cut"></i></div>
+            <div class="section-title">Эпизиотомия и перинеотомия</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>✂️ Рассечение промежности — крайняя мера, не рутинная процедура!</strong>
+            </div>
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">🔪 Когда применяют</div>
+                <ul>
+                    <li>Угроза разрыва промежности (кожа истончается, белеет)</li>
+                    <li>Крупный плод</li>
+                    <li>Преждевременные роды (чтобы не травмировать нежную кожу малыша)</li>
+                    <li>Гипоксия плода (нужно ускорить рождение)</li>
+                    <li>Тазовое предлежание</li>
+                </ul>
+            </div>
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">🩹 Как заживает</div>
+                <p>Разрез зашивается сразу после родов (местная анестезия). Заживает 2–3 недели. Уход: антисептики, сидячие ванны, не сидеть на твёрдом 10–14 дней.</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> эпизиотомию делают, чтобы <strong>избежать рваной раны</strong>, которая заживает хуже. Контролируемый разрез лучше, чем разрыв.
+            </div>
+        </div>
+    </div>
+
+    <!-- Поворот плода на ножку -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-redo-alt"></i></div>
+            <div class="section-title">Поворот плода на ножку</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>⚠️ Редкая процедура, проводится в экстренных случаях под наркозом.</strong>
+            </div>
+            <p>Применяется при <strong>поперечном положении плода</strong> или <strong>выпадении пуповины</strong>. Врач вводит руку в матку и поворачивает малыша, чтобы извлечь за ножку.</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Сегодня при поперечном положении чаще делают <strong>кесарево сечение</strong>, чтобы избежать риска для малыша.
+            </div>
+        </div>
+    </div>
+
+    <!-- Наложение акушерских щипцов -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-peace"></i></div>
+            <div class="section-title">Акушерские щипцы</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>⚠️ Применяются редко, только при серьёзных показаниях.</strong>
+            </div>
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">🩺 Показания</div>
+                <ul>
+                    <li>Гипоксия плода (нужно быстро извлечь)</li>
+                    <li>Слабость потуг (мама не может тужиться)</li>
+                    <li>Преэклампсия (нужно ускорить роды)</li>
+                    <li>Болезни сердца у мамы (противопоказаны потуги)</li>
+                </ul>
+            </div>
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">🔧 Как проводится</div>
+                <p>Врач накладывает щипцы на головку плода и осторожно извлекает малыша. Процедура проводится под эпидуральной анестезией или наркозом.</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Современные щипцы спроектированы так, чтобы минимизировать риск травмы. Следы на лице малыша проходят через несколько дней.
+            </div>
+        </div>
+    </div>
+
+    <!-- Вакуум-экстракция -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-suction"></i></div>
+            <div class="section-title">Вакуум-экстракция</div>
+        </div>
+        <div class="section-content">
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">🔵 Альтернатива щипцам</div>
+                <p>На головку малыша крепится чашечка, через которую создаётся вакуум. Врач тянет, а мама тужится.</p>
+                <p><strong>Показания:</strong> те же, что и для щипцов, но чаще при менее выраженной гипоксии.</p>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Осложнения:</strong> на головке малыша остаётся гематома (кефалогематома), которая проходит через 2–3 недели. Риск травмы ниже, чем при щипцах.
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Вакуум-экстракция применяется реже щипцов, так как требует активного участия мамы (потуги).
+            </div>
+        </div>
+    </div>
+
+    <!-- Ручное отделение плаценты -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="section-title">Ручное отделение плаценты</div>
+        </div>
+        <div class="section-content">
+            <div class="method-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">🩸 Когда применяется</div>
+                <p>Если плацента не отделяется самостоятельно в течение 30 минут, врач вводит руку в матку под наркозом и отделяет её.</p>
+                <p><strong>Причины:</strong> плотное прикрепление плаценты, слабость матки.</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Процедура безболезненная (под наркозом). После неё обязательно назначают антибиотики для профилактики инфекции.
+            </div>
+        </div>
+    </div>
+
+    <!-- Реанимация новорождённого -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-heartbeat"></i></div>
+            <div class="section-title">Реанимация новорождённого</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>⚠️ Проводится, если малыш не закричал сразу или его состояние оценивается низко по шкале Апгар.</strong>
+            </div>
+            <ul>
+                <li><strong>Отсасывание слизи</strong> из дыхательных путей (грушей или катетером)</li>
+                <li><strong>Тактильная стимуляция</strong> — растирание спинки, подошв ног</li>
+                <li><strong>Искусственная вентиляция лёгких</strong> (через маску) — при отсутствии дыхания</li>
+                <li><strong>Непрямой массаж сердца</strong> — при редком сердцебиении</li>
+                <li><strong>Введение лекарств</strong> (адреналин) — при отсутствии эффекта</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> реанимацию проводят прямо в родзале, не разлучая с мамой, если состояние позволяет. Большинство малышей быстро приходят в норму.
+            </div>
+        </div>
+    </div>
+
+    <!-- Частые вопросы -->
+    <div class="section-card" style="animation-delay: 0.3s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Частые вопросы</div>
+        </div>
+        <div class="section-content">
+            <p><strong>❓ Всегда ли делают эпизиотомию?</strong><br>➡️ Нет. По современным протоколам, эпизиотомию проводят только по строгим показаниям. Рутинное рассечение больше не практикуется.</p>
+            
+            <p><strong>❓ Больно ли во время амниотомии?</strong><br>➡️ Нет, в плодном пузыре нет нервных окончаний. Вы чувствуете только отхождение тёплой воды.</p>
+            
+            <p><strong>❓ Оставляют ли следы акушерские щипцы?</strong><br>➡️ Могут остаться покраснения, ссадины, которые проходят за 2–3 дня. Серьёзные травмы сейчас крайне редки.</p>
+            
+            <p><strong>❓ Нужно ли зашивать эпизиотомию?</strong><br>➡️ Да, сразу после родов. Швы рассасываются сами через 2–3 недели.</p>
+            
+            <p><strong>❓ Можно ли родить без разрезов и пособий?</strong><br>➡️ Да, если роды проходят физиологично, а промежность эластична. Этому помогают: перинеальный массаж с 34 недель, правильные потуги, позы на четвереньках.</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Отрыжка у грудничков — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .checklist-group {
+            margin: 16px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: #fffaf5;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #fef0ea;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #cd7c9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .checklist-check.completed {
+            background: #cd7c9b;
+            color: white;
+        }
+
+        .checklist-text {
+            flex: 1;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-stomach"></i> 
+            Отрыжка у грудничков
+        </h1>
+        <p>Как правильно помочь малышу отрыгнуть и когда это нормально</p>
+        <div class="badge"><i class="fas fa-heart"></i> Отрыжка — важная часть кормления</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Что такое отрыжка -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Что такое отрыжка?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Отрыжка — это естественное выделение воздуха, который малыш заглатывает во время кормления. Воздух скапливается в желудке и, если его не выпустить, вызывает дискомфорт, боль и срыгивание.</p>
+                <p><strong>Почему это важно:</strong> выпустить воздух помогает:</p>
+                <ul>
+                    <li>Предотвратить колики и вздутие</li>
+                    <li>Снизить риск срыгивания</li>
+                    <li>Улучшить самочувствие малыша</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Почему заглатывается воздух -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-microscope"></i></div>
+            <div class="section-title">Почему малыши заглатывают воздух?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>При грудном вскармливании:</strong>
+                        <ul>
+                            <li>Неправильный захват груди</li>
+                            <li>Сильное молокоотделение (молоко бьёт струёй)</li>
+                            <li>Беспокойство малыша у груди</li>
+                        </ul>
+                    </li>
+                    <li><strong>При кормлении из бутылочки:</strong>
+                        <ul>
+                            <li>Соска с большим отверстием</li>
+                            <li>Бутылочка наклонена неправильно</li>
+                            <li>Соска не заполнена смесью</li>
+                        </ul>
+                    </li>
+                    <li><strong>Общие причины:</strong>
+                        <ul>
+                            <li>Слишком быстрое сосание</li>
+                            <li>Плач перед кормлением</li>
+                            <li>Нервное возбуждение</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда нужно помогать отрыгнуть -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clock"></i></div>
+            <div class="section-title">Когда и как часто?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>После каждого кормления</strong> — обязательно, особенно в первые 4–6 месяцев.</li>
+                    <li><strong>В середине кормления</strong> — если малыш беспокоен, вертится, плачет у груди или бутылочки.</li>
+                    <li><strong>При смене груди</strong> — перед тем как дать вторую грудь.</li>
+                    <li><strong>Если малыш быстро сосёт</strong> — чаще делайте паузы.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> не все дети отрыгивают после каждого кормления. Если малыш спокоен и не срыгивает — можно не настаивать.
+            </div>
+        </div>
+    </div>
+
+    <!-- Способы вызвать отрыжку -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-peace"></i></div>
+            <div class="section-title">Позы для отрыжки</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>1. Поза «столбиком» (на плече)</strong> — самая распространённая</p>
+                <ul>
+                    <li>Придерживая голову и спину, поднимите малыша вертикально, положив его головку себе на плечо.</li>
+                    <li>Другой рукой аккуратно поглаживайте или похлопывайте по спинке (движения снизу вверх).</li>
+                    <li>Держите 5–15 минут.</li>
+                </ul>
+            </div>
+            <div class="phase-card">
+                <p><strong>2. Сидя на коленях</strong></p>
+                <ul>
+                    <li>Посадите малыша к себе на колени лицом в сторону.</li>
+                    <li>Придерживайте грудку и головку одной рукой, другой похлопывайте по спинке.</li>
+                </ul>
+            </div>
+            <div class="phase-card">
+                <p><strong>3. Лёжа на животе</strong> (для новорождённых)</p>
+                <ul>
+                    <li>Положите малыша себе на колени или на живот животом вниз.</li>
+                    <li>Головка должна быть немного выше тела.</li>
+                    <li>Поглаживайте спинку.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> через плечо положите полотенце или пелёнку — на случай срыгивания.
+            </div>
+        </div>
+    </div>
+
+    <!-- Срыгивание: норма и патология -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-tint"></i></div>
+            <div class="section-title">Срыгивание — когда норма, а когда нет</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Нормальное срыгивание (физиологическое):</strong></p>
+                <ul>
+                    <li>✅ Небольшой объём (чайная ложка — ложка)</li>
+                    <li>✅ Происходит сразу после кормления или в течение часа</li>
+                    <li>✅ Малыш при этом не беспокоится, хорошо прибавляет в весе</li>
+                    <li>✅ Прекращается к 6–12 месяцам</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Патологическое срыгивание (повод к врачу):</strong>
+                <ul>
+                    <li>Срыгивание <strong>фонтаном</strong> (на расстояние 20–30 см)</li>
+                    <li>Большой объём (половина съеденного и больше)</li>
+                    <li>Срыгивание с примесью <strong>желчи</strong> (зелёное) или <strong>крови</strong></li>
+                    <li>Беспокойство, плач после срыгивания</li>
+                    <li>Плохая прибавка веса</li>
+                    <li>Срыгивание сохраняется после года</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Как уменьшить срыгивание -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="section-title">Как уменьшить срыгивание</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="reflux-checklist">
+                <div class="checklist-item" data-id="reflux1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Держите малыша «столбиком» 10–20 минут после кормления</div>
+                </div>
+                <div class="checklist-item" data-id="reflux2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Не перекармливайте (кормите чаще, но меньшими порциями)</div>
+                </div>
+                <div class="checklist-item" data-id="reflux3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Не кладите малыша сразу после кормления на живот</div>
+                </div>
+                <div class="checklist-item" data-id="reflux4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Приподнимите головной конец кроватки на 30° (специальная подушка или подложка под матрас)</div>
+                </div>
+                <div class="checklist-item" data-id="reflux5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">При ГВ проверьте захват груди</div>
+                </div>
+                <div class="checklist-item" data-id="reflux6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">При ИВ проверьте соску (отверстие не должно быть слишком большим)</div>
+                </div>
+                <div class="checklist-item" data-id="reflux7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">Не перетягивайте подгузник на животе</div>
+                </div>
+                <div class="checklist-item" data-id="reflux8">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">При сильном срыгивании — посоветуйтесь с врачом о густой смеси (антирефлюксной)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Помощь партнёра -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="section-title">Как папа может помочь</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>✅ Взять малыша после кормления и подержать «столбиком» — мама отдохнёт</li>
+                    <li>✅ Если малыш часто срыгивает, вместе найти причину (захват, соска)</li>
+                    <li>✅ Помочь с уборкой после срыгивания (сменить пелёнку, прополоскать одежду)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Чего НЕ делать -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего НЕ нужно делать</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ <strong>Не трясите малыша</strong> — это опасно (синдром сотрясения).</li>
+                <li>❌ <strong>Не бросайте резко</strong> — плавные движения.</li>
+                <li>❌ <strong>Не переворачивайте вверх ногами</strong>.</li>
+                <li>❌ <strong>Не кладите малыша спать на живот</strong> после кормления (риск СВДС).</li>
+                <li>❌ <strong>Не давайте лекарства от срыгивания без назначения врача</strong>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Мифы -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Мифы об отрыжке</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Если малыш не отрыгнул, значит, он не наелся.<br>
+            <strong>Правда:</strong> Некоторые дети не заглатывают воздух или выпускают его медленно, без отрыжки.</p>
+            
+            <p><strong>Миф:</strong> Нужно держать «столбиком» до тех пор, пока не отрыгнет.<br>
+            <strong>Правда:</strong> Если через 15–20 минут отрыжки нет, а малыш спокоен — кладите спать.</p>
+            
+            <p><strong>Миф:</strong> Срыгивание всегда означает болезнь.<br>
+            <strong>Правда:</strong> Физиологическое срыгивание — вариант нормы до года.</p>
+        </div>
+    </div>
+
+    <!-- Когда к врачу -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ambulance"></i></div>
+            <div class="section-title">Когда срочно к врачу</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❗ Немедленно к врачу, если срыгивание:</strong>
+                <ul>
+                    <li>Фонтаном (на 20–30 см)</li>
+                    <li>С примесью желчи (зелёное) или крови</li>
+                    <li>Сопровождается отказом от еды, вялостью</li>
+                    <li>Малыш не набирает вес или худеет</li>
+                    <li>Срыгивание после каждого кормления в большом объёме</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Диагнозы, которые может поставить врач при сильном срыгивании:</strong> ГЭРБ (гастроэзофагеальный рефлюкс), пилоростеноз (сужение привратника желудка), аллергия на белок коровьего молока.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    function initChecklist() {
+        const items = document.querySelectorAll('.checklist-item');
+        items.forEach(item => {
+            const id = item.getAttribute('data-id');
+            if (!id) return;
+            const stored = localStorage.getItem(`burp_${id}`);
+            const checkDiv = item.querySelector('.checklist-check');
+            if (stored === 'true') {
+                checkDiv.classList.add('completed');
+                checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+            } else {
+                checkDiv.classList.remove('completed');
+                checkDiv.innerHTML = '';
+            }
+            
+            item.addEventListener('click', () => {
+                const isCompleted = checkDiv.classList.contains('completed');
+                if (isCompleted) {
+                    checkDiv.classList.remove('completed');
+                    checkDiv.innerHTML = '';
+                    localStorage.setItem(`burp_${id}`, 'false');
+                } else {
+                    checkDiv.classList.add('completed');
+                    checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+                    localStorage.setItem(`burp_${id}`, 'true');
+                }
+            });
+        });
+    }
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    initChecklist();
+</script>
+</body>
+</html>

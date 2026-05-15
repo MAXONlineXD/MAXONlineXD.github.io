@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Потуги и отделение последа — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 12px;
+            margin: 16px 0;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background: #fbeae8;
+            border-radius: 30px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #b35d7c;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-fist-raised"></i> 
+            Потуги и отделение последа
+        </h1>
+        <p>Второй и третий периоды родов — рождение малыша и плаценты</p>
+        <div class="badge"><i class="fas fa-baby-carriage"></i> Финальный этап — совсем скоро вы увидите малыша!</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- II период: Потуги -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-fist-raised"></i></div>
+            <div class="section-title">II период родов — потуги</div>
+        </div>
+        <div class="section-content">
+            <p>Потуги — это <strong>рефлекторные сокращения мышц брюшного пресса и диафрагмы</strong>, которые помогают продвигать малыша по родовым путям. Этот период начинается после полного раскрытия шейки матки (10 см).</p>
+            <div class="phase-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">📊 Характеристики второго периода</div>
+                <ul style="margin-top: 12px;">
+                    <li><strong>Продолжительность:</strong> у первородящих — 30–60 минут, у повторнородящих — 15–30 минут</li>
+                    <li><strong>Потуги:</strong> возникают рефлекторно, каждые 2–3 минуты, длятся 10–15 секунд</li>
+                    <li><strong>Между потугами</strong> — паузы для отдыха</li>
+                    <li><strong>Ощущения:</strong> сильное давление в прямую кишку, желание «сходить в туалет по-большому»</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Важно:</strong> тужиться можно ТОЛЬКО по команде врача! Если потуги начались раньше полного раскрытия — это опасно (отёк шейки матки, разрывы).
+            </div>
+        </div>
+    </div>
+
+    <!-- Техника правильных потуг -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="section-title">Техника правильных потуг</div>
+        </div>
+        <div class="section-content">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <div><strong>Слушайте команду врача или акушерки</strong> — «Тужимся!», «Отдыхаем!».</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <div><strong>Сделайте глубокий вдох</strong> перед началом потуги.</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <div><strong>Задержите дыхание</strong> и натуживайтесь вниз, как при запоре (не в лицо!).</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">4</div>
+                <div><strong>Направляйте усилие в промежность</strong>, а не в голову (иначе лопнут сосуды в глазах).</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">5</div>
+                <div><strong>Одна потуга = 10–15 секунд</strong> усилия → затем резкий выдох.</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">6</div>
+                <div><strong>За одну схватку — 3–4 потуги</strong> (10–15 сек усилия, 5 сек отдыха).</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">7</div>
+                <div><strong>Между схватками отдыхайте</strong> — расслабляйтесь, восстанавливайте дыхание.</div>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> представьте, что вы с силой задуваете свечи на торте — так вы поймёте, как тужиться, не напрягая лицо.
+            </div>
+        </div>
+    </div>
+
+    <!-- Что чувствует мама -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-brain"></i></div>
+            <div class="section-title">Что вы чувствуете в этот момент</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Сильное давление в прямую кишку</strong> — как будто очень хочется в туалет по-большому</li>
+                <li><strong>Жжение в промежности</strong> («огненный обруч») — когда головка растягивает ткани</li>
+                <li><strong>Желание тужиться</strong> — это рефлекс, который трудно контролировать</li>
+                <li><strong>Усталость</strong> — к концу потуг может быть сильная усталость, но и прилив сил от близости встречи с малышом</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> <strong>Важно:</strong> в момент рождения головки акушерка попросит <strong>НЕ тужиться</strong>, а дышать часто и поверхностно («собачка»), чтобы избежать разрывов.
+            </div>
+        </div>
+    </div>
+
+    <!-- Рождение головки и плечиков -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-baby"></i></div>
+            <div class="section-title">Рождение малыша</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">👶 Появление малыша</div>
+                <ul>
+                    <li><strong>Сначала рождается головка</strong> — самое крупное и сложное.</li>
+                    <li>Акушерка помогает малышу повернуться и вывести плечики.</li>
+                    <li><strong>После плечиков тело рождается очень легко</strong> — почти мгновенно.</li>
+                    <li>Малыша выкладывают вам на живот для <strong>контакта «кожа к коже»</strong>.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> в момент рождения вы можете не почувствовать боль из-за выброса эндорфинов. Многие описывают это чувство как «облегчение» и «эйфорию».
+            </div>
+        </div>
+    </div>
+
+    <!-- III период: Рождение плаценты -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="section-title">III период родов — рождение плаценты</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <div class="section-title" style="border-bottom: none; margin-bottom: 0;">🩸 От рождения малыша до выхода последа</div>
+                <ul style="margin-top: 12px;">
+                    <li><strong>Продолжительность:</strong> 5–30 минут</li>
+                    <li><strong>Ощущения:</strong> лёгкие схватки (матки сокращается)</li>
+                    <li><strong>Врач может попросить слегка потужиться</strong> — плацента выходит быстро</li>
+                    <li><strong>После выхода плаценты проверяют её целостность</strong> (чтобы не осталось кусочков в матке)</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Важно:</strong> иногда плацента не отделяется самостоятельно. Врач может провести <strong>ручное отделение плаценты</strong> (под наркозом) — эта процедура безболезненна.
+            </div>
+        </div>
+    </div>
+
+    <!-- Что делают с малышом после родов -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clock"></i></div>
+            <div class="section-title">Первый час после родов («Золотой час»)</div>
+        </div>
+        <div class="section-content">
+            <div class="tip-box">
+                <p><strong>👩‍🍼 Что происходит в первый час:</strong></p>
+                <ul>
+                    <li>Малыша выкладывают на ваш живот для <strong>контакта «кожа к коже»</strong> (60–90 минут)</li>
+                    <li>Стабилизируется сердцебиение и дыхание малыша</li>
+                    <li><strong>Первое прикладывание к груди</strong> — запускает лактацию</li>
+                    <li>Врачи осматривают малыша прямо на вас (взвешивание, измерение, оценка по Апгар)</li>
+                    <li>Маме на живот кладут холодный компресс для сокращения матки</li>
+                    <li>При необходимости ставят капельницу с окситоцином (профилактика кровотечения)</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> <strong>Важно:</strong> в этот час малыша не забирают без крайней необходимости. Это критически важно для адаптации и запуска грудного вскармливания.
+            </div>
+        </div>
+    </div>
+
+    <!-- Кровотечение после родов -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-tint"></i></div>
+            <div class="section-title">Кровотечение после родов</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>Нормальное послеродовое кровотечение:</strong>
+                <ul>
+                    <li>Первые 2 часа — до 500 мл крови (это норма)</li>
+                    <li>Выделения похожи на обильные месячные, со сгустками</li>
+                    <li>Постепенно кровотечение уменьшается</li>
+                </ul>
+                <strong>Признаки патологического кровотечения (срочно зовите врача):</strong>
+                <ul>
+                    <li>Кровь алая, вытекает струёй, не сворачивается</li>
+                    <li>Крупные сгустки (размером с кулак)</li>
+                    <li>Головокружение, слабость, бледность</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Что делать после родов -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="section-title">Сразу после родов</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>✅ Отдыхайте, набирайтесь сил — вы это заслужили</li>
+                <li>✅ Пейте воду, чай, компот (восстанавливайте водный баланс)</li>
+                <li>✅ Прикладывайте малыша к груди по требованию — это стимулирует сокращение матки</li>
+                <li>✅ Следите за кровотечением — если что-то настораживает, зовите врача</li>
+                <li>✅ Лёд на живот (по назначению врача) помогает сокращению матки</li>
+                <li>✅ Не вставайте резко — возможна ортостатическая гипотензия (головокружение)</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> первый раз вставать с кровати нужно в присутствии медсестры или партнёра — может закружиться голова.
+            </div>
+        </div>
+    </div>
+
+    <!-- Чего НЕ делать -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего НЕ делать во время потуг</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ <strong>Кричать</strong> — отнимает силы, которые нужны для потуг</li>
+                <li>❌ <strong>Тужиться в лицо</strong> — лопнут сосуды в глазах, давление на голову</li>
+                <li>❌ <strong>Сжимать ноги</strong> — мешает продвижению малыша</li>
+                <li>❌ <strong>Тужиться, когда врач говорит «НЕ тужиться»</strong> — опасно для разрывов</li>
+                <li>❌ <strong>Паниковать</strong> — вы справитесь, вы уже почти у цели</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Мифы -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Мифы о потугах и плаценте</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Если тужиться изо всех сил, малыш родится быстрее.<br>
+            <strong>Правда:</strong> Важнее не сила, а техника. Слишком сильное натуживание может вызвать разрывы.</p>
+            
+            <p><strong>Миф:</strong> Если не чувствуете потуг, значит, вы плохо стараетесь.<br>
+            <strong>Правда:</strong> Чувствительность у всех разная. Если не чувствуете потуг (например, из-за эпидуральной анестезии), врач подскажет, когда тужиться.</p>
+            
+            <p><strong>Миф:</strong> Плацента рождается очень больно.<br>
+            <strong>Правда:</strong> Обычно женщины не чувствуют этого или чувствуют лёгкие схватки. Это не больно.</p>
+            
+            <p><strong>Миф:</strong> Если плацента не выходит, делают выскабливание.<br>
+            <strong>Правда:</strong> Сначала врач пробует выделить плаценту лёгким надавливанием на живот. Ручное отделение — крайний случай.</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

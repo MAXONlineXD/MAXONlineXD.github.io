@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Молодым папам: забота о маме и малыше — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .checklist-group {
+            margin: 16px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: #fffaf5;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #fef0ea;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #cd7c9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .checklist-check.completed {
+            background: #cd7c9b;
+            color: white;
+        }
+
+        .checklist-text {
+            flex: 1;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-hand-holding-heart"></i> 
+            Молодым папам
+        </h1>
+        <p>Забота о маме и малыше — ваша роль бесценна</p>
+        <div class="badge"><i class="fas fa-users"></i> Вы — команда, и ваша поддержка важнее любых советов</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Главная мысль -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-quote-left"></i></div>
+            <div class="section-title">Вы нужны им больше, чем вы думаете</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Присутствие любящего партнёра в первые недели после родов снижает риск послеродовой депрессии, улучшает лактацию и помогает маме восстановиться быстрее. Ваша роль — не быть «идеальным отцом», а быть <strong>рядом</strong>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Забота о маме -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-heart"></i></div>
+            <div class="section-title">Как заботиться о маме</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="mom-checklist">
+                <div class="checklist-item" data-id="mom1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🍽 <strong>Готовьте еду</strong> — даже простые блюда. Голодная мама — несчастная мама.</div>
+                </div>
+                <div class="checklist-item" data-id="mom2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">💧 <strong>Приносите воду</strong> — кормление вызывает жажду. Ставьте бутылку с водой рядом с местом кормления.</div>
+                </div>
+                <div class="checklist-item" data-id="mom3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">😴 <strong>Берите ночные смены</strong> — поменять подгузник, принести малыша на кормление, покачать.</div>
+                </div>
+                <div class="checklist-item" data-id="mom4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧹 <strong>Убирайте дом</strong> — хотя бы минимально. Чистота снижает тревогу.</div>
+                </div>
+                <div class="checklist-item" data-id="mom5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🤱 <strong>Хвалите и благодарите</strong> — «ты замечательная мама», «я горжусь тобой».</div>
+                </div>
+                <div class="checklist-item" data-id="mom6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🛌 <strong>Заставляйте отдыхать</strong> — «иди поспи, я побуду с малышом».</div>
+                </div>
+                <div class="checklist-item" data-id="mom7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🚿 <strong>Давайте время на себя</strong> — примите душ, выпейте чай спокойно, позвоните подруге.</div>
+                </div>
+                <div class="checklist-item" data-id="mom8">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🩸 <strong>Следите за её здоровьем</strong> — если она жалуется на боль, усталость, следит за выделениями, помогите обратиться к врачу.</div>
+                </div>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Признаки послеродовой депрессии (срочно к врачу):</strong>
+                <ul>
+                    <li>Постоянная грусть, апатия, слёзы без причины (более 2 недель)</li>
+                    <li>Нарушение сна (не может уснуть, даже когда малыш спит)</li>
+                    <li>Мысли о вреде себе или малышу</li>
+                    <li>Потеря аппетита</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Забота о малыше -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-baby"></i></div>
+            <div class="section-title">Как ухаживать за малышом</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="baby-checklist">
+                <div class="checklist-item" data-id="baby1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🩲 <strong>Менять подгузник</strong> — каждые 2–3 часа и после стула.</div>
+                </div>
+                <div class="checklist-item" data-id="baby2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🛀 <strong>Купать</strong> — особенно если мама устала или после кесарева.</div>
+                </div>
+                <div class="checklist-item" data-id="baby3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🕳 <strong>Обрабатывать пупок</strong> — перекись + зелёнка, пока не заживёт.</div>
+                </div>
+                <div class="checklist-item" data-id="baby4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🤱 <strong>Носить «столбиком»</strong> после кормления, чтобы отошёл воздух.</div>
+                </div>
+                <div class="checklist-item" data-id="baby5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🚶 <strong>Гулять</strong> — ежедневно 1–2 часа на свежем воздухе.</div>
+                </div>
+                <div class="checklist-item" data-id="baby6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">😴 <strong>Укладывать спать</strong> — белый шум, покачивание, пеленание.</div>
+                </div>
+                <div class="checklist-item" data-id="baby7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">✂️ <strong>Стричь ногти</strong> — пока мама кормит, можно аккуратно подстричь.</div>
+                </div>
+                <div class="checklist-item" data-id="baby8">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧴 <strong>Обрабатывать складочки</strong> — маслом или кремом после купания.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Чего НЕ делать -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего НЕ нужно делать</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ <strong>Не говорите «не ной», «все через это проходят»</strong> — обесценивание чувств только ухудшает состояние.</li>
+                <li>❌ <strong>Не критикуйте</strong> — «ты неправильно держишь», «ты плохо кормишь». Предложите помощь вместо критики.</li>
+                <li>❌ <strong>Не сравнивайте с другими мамами</strong> — «а вот моя мама справлялась и без помощи».</li>
+                <li>❌ <strong>Не игнорируйте просьбы о помощи</strong> — если не можете, объясните почему.</li>
+                <li>❌ <strong>Не трясите малыша</strong> — даже если он долго плачет. Оставьте в кроватке на 5 минут и выйдите.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Как говорить с мамой -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comments"></i></div>
+            <div class="section-title">Правильные слова поддержки</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>✅ Что говорить:</strong></p>
+                <ul>
+                    <li>«Ты замечательная мама»</li>
+                    <li>«Я горжусь тобой»</li>
+                    <li>«Давай я помогу» (а не «скажи, что сделать»)</li>
+                    <li>«Отдохни, я побуду с малышом»</li>
+                    <li>«Мы справимся, я с тобой»</li>
+                </ul>
+            </div>
+            <div class="phase-card">
+                <p><strong>❌ Чего не говорить:</strong></p>
+                <ul>
+                    <li>«Успокойся, всё нормально»</li>
+                    <li>«Не ной, все через это проходят»</li>
+                    <li>«А вот моя мама...»</li>
+                    <li>«Ты сама виновата»</li>
+                    <li>«Ты плохая мать»</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Как сохранить отношения -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-heart"></i></div>
+            <div class="section-title">Как сохранить отношения после родов</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>💬 <strong>Разговаривайте</strong> — о чувствах, страхах, усталости. Не копите обиды.</li>
+                    <li>🤝 <strong>Будьте командой</strong> — не «я vs ты», а «мы vs проблема».</li>
+                    <li>🧘 <strong>Дайте друг другу время на себя</strong> — 15 минут в день на отдых каждому.</li>
+                    <li>😴 <strong>Не требуйте секса, пока она не готова</strong> — обычно 4–6 недель, иногда дольше.</li>
+                    <li>🎁 <strong>Делайте маленькие сюрпризы</strong> — принесите любимый чай, купите её любимое печенье.</li>
+                    <li>👨‍👩‍👦 <strong>Помните, что вы — пара, а не только родители</strong> — смотрите фильм, когда малыш спит.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ваше эмоциональное состояние -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-brain"></i></div>
+            <div class="section-title">Ваши чувства тоже важны</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Отцовство — это тоже стресс. Вы можете чувствовать:</p>
+                <ul>
+                    <li>😰 Тревогу за здоровье жены и малыша</li>
+                    <li>😔 Ревность к ребёнку (внимание жены переключилось)</li>
+                    <li>😫 Усталость от недосыпа</li>
+                    <li>🫤 Неуверенность — «а правильно ли я делаю?»</li>
+                </ul>
+                <p><strong>Что делать?</strong></p>
+                <ul>
+                    <li>✅ Говорите о своих чувствах с женой или другом</li>
+                    <li>✅ Найдите время для себя (спорт, хобби, встреча с друзьями)</li>
+                    <li>✅ Обратитесь к психологу, если тревога не проходит</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Послеродовая депрессия бывает и у пап!</strong> Если вы чувствуете апатию, гнев, безнадёжность — обратитесь к врачу.
+            </div>
+        </div>
+    </div>
+
+    <!-- Что взять на вооружение -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clipboard-list"></i></div>
+            <div class="section-title">Быстрый чек-лист для папы</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="dad-checklist">
+                <div class="checklist-item" data-id="dad1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🍽 Готовить еду</div>
+                </div>
+                <div class="checklist-item" data-id="dad2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🩲 Менять подгузники</div>
+                </div>
+                <div class="checklist-item" data-id="dad3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🛀 Купать малыша</div>
+                </div>
+                <div class="checklist-item" data-id="dad4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🚶 Гулять</div>
+                </div>
+                <div class="checklist-item" data-id="dad5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🤱 Носить «столбиком»</div>
+                </div>
+                <div class="checklist-item" data-id="dad6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">💬 Хвалить и благодарить</div>
+                </div>
+                <div class="checklist-item" data-id="dad7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">😴 Брать ночные смены</div>
+                </div>
+                <div class="checklist-item" data-id="dad8">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">💧 Приносить воду и еду к месту кормления</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    function initChecklist() {
+        const items = document.querySelectorAll('.checklist-item');
+        items.forEach(item => {
+            const id = item.getAttribute('data-id');
+            if (!id) return;
+            const stored = localStorage.getItem(`dad_${id}`);
+            const checkDiv = item.querySelector('.checklist-check');
+            if (stored === 'true') {
+                checkDiv.classList.add('completed');
+                checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+            } else {
+                checkDiv.classList.remove('completed');
+                checkDiv.innerHTML = '';
+            }
+            
+            item.addEventListener('click', () => {
+                const isCompleted = checkDiv.classList.contains('completed');
+                if (isCompleted) {
+                    checkDiv.classList.remove('completed');
+                    checkDiv.innerHTML = '';
+                    localStorage.setItem(`dad_${id}`, 'false');
+                } else {
+                    checkDiv.classList.add('completed');
+                    checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+                    localStorage.setItem(`dad_${id}`, 'true');
+                }
+            });
+        });
+    }
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    initChecklist();
+</script>
+</body>
+</html>

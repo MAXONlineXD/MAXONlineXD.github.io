@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Восстановление после родов — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .checklist-group {
+            margin: 16px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: #fffaf5;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #fef0ea;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #cd7c9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .checklist-check.completed {
+            background: #cd7c9b;
+            color: white;
+        }
+
+        .checklist-text {
+            flex: 1;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-heartbeat"></i> 
+            Восстановление после родов
+        </h1>
+        <p>Первые дни, недели и месяцы — забота о себе</p>
+        <div class="badge"><i class="fas fa-leaf"></i> Ваше тело проделало огромную работу — дайте ему время</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Главное правило -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-lightbulb"></i></div>
+            <div class="section-title">Главное: не торопитесь</div>
+        </div>
+        <div class="section-content">
+            <p>Полное восстановление организма после беременности и родов занимает <strong>6–12 месяцев</strong>. В первые 6–8 недель («период последа») особенно важно беречь себя. Не требуйте от себя идеальной формы, идеальной уборки, идеальной бытовой жизни. Сейчас ваш главный приоритет — вы и малыш.</p>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> <strong>Помните:</strong> вы не «ленивая» и не «слабая». Вы восстанавливаетесь после огромной работы.
+            </div>
+        </div>
+    </div>
+
+    <!-- Первые часы и дни -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clock"></i></div>
+            <div class="section-title">Первые 2 часа после родов</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Золотой час</strong> — контакт «кожа к коже», первое прикладывание к груди.</li>
+                    <li><strong>Наблюдение за кровотечением</strong> — врачи следят, чтобы матка хорошо сокращалась.</li>
+                    <li><strong>Холод на живот</strong> — для профилактики кровотечения.</li>
+                    <li><strong>Первое вставание</strong> — с помощью медсестры (может закружиться голова).</li>
+                    <li><strong>Послеродовые выделения (лохии)</strong> — обильные, со сгустками, как первые дни месячных.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Первые дни в роддоме -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hospital"></i></div>
+            <div class="section-title">Первые дни в роддоме</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Послеродовые выделения</strong> — постепенно уменьшаются, меняют цвет от ярко-красных до бурых и светлых.</li>
+                    <li><strong>Сокращение матки</strong> — возможны схваткообразные боли (особенно при кормлении).</li>
+                    <li><strong>Промежность</strong> — если были разрывы или эпизиотомия, нужен особый уход (обработка, лёд, подмывание).</li>
+                    <li><strong>Мочеиспускание</strong> — первые разы может быть трудным (пейте больше воды, если не получается — попросите катетер).</li>
+                    <li><strong>Стул</strong> — может задержаться на 2–3 дня (это нормально).</li>
+                    <li><strong>Приход молока</strong> — на 3–5 день грудь может налиться, стать твёрдой, горячей.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- После выписки домой -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-home"></i></div>
+            <div class="section-title">Первые недели дома</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="recovery-checklist">
+                <div class="checklist-item" data-id="rec1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🩸 Следить за выделениями — если резко усилились, стали алыми или появился неприятный запах — к врачу.</div>
+                </div>
+                <div class="checklist-item" data-id="rec2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🛌 Отдыхать — спать, когда спит малыш (хотя бы 15–20 минут).</div>
+                </div>
+                <div class="checklist-item" data-id="rec3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">💧 Пить много воды — 2–2,5 литра в день (поддерживает лактацию и помогает восстановиться).</div>
+                </div>
+                <div class="checklist-item" data-id="rec4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🍽 Питаться — простой, здоровой пищей (можно замороженные полуфабрикаты, главное — регулярно).</div>
+                </div>
+                <div class="checklist-item" data-id="rec5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧼 Подмываться после каждого туалета (спереди назад) — для профилактики инфекции.</div>
+                </div>
+                <div class="checklist-item" data-id="rec6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🤱 Кормить по требованию — это помогает матке сокращаться быстрее.</div>
+                </div>
+                <div class="checklist-item" data-id="rec7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🏋️‍♀️ Не поднимать тяжести больше веса малыша (3–4 кг) — первые 6–8 недель.</div>
+                </div>
+                <div class="checklist-item" data-id="rec8">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🚶 Гулять — свежий воздух полезен и маме, и малышу.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Уход за швами -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-cut"></i></div>
+            <div class="section-title">Уход за швами (эпизиотомия, разрывы, кесарево)</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Швы на промежности:</strong></p>
+                <ul>
+                    <li>Подмываться тёплой водой после каждого туалета (спереди назад)</li>
+                    <li>Обрабатывать антисептиком (хлоргексидин, мирамистин) — по назначению</li>
+                    <li>Сидеть на подушке-бублике или на боку (первые 2 недели)</li>
+                    <li>Мазь с декспантенолом (Бепантен) — ускоряет заживление</li>
+                </ul>
+            </div>
+            <div class="phase-card">
+                <p><strong>Шов после кесарева сечения:</strong></p>
+                <ul>
+                    <li>Обрабатывать зелёнкой/хлоргексидином (по назначению)</li>
+                    <li>Не мочить шов 7–10 дней (душ разрешён, но промокать полотенцем)</li>
+                    <li>Носить бандаж (по рекомендации)</li>
+                    <li>Не поднимать тяжести более 3 кг 2–3 месяца</li>
+                    <li>Лёжа поворачиваться на бок через положение «бревно» (не скручивая корпус)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Эмоциональное восстановление -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-brain"></i></div>
+            <div class="section-title">Эмоциональное восстановление</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Бэби-блюз (3–5 день после родов):</strong></p>
+                <ul>
+                    <li>Плаксивость, раздражительность, тревога</li>
+                    <li>Проходит через 1–2 недели самостоятельно</li>
+                    <li>Помогают: сон, помощь близких, разговоры о чувствах</li>
+                </ul>
+            </div>
+            <div class="phase-card">
+                <p><strong>Послеродовая депрессия (симптомы, длящиеся более 2 недель):</strong></p>
+                <ul>
+                    <li>Постоянная грусть, апатия, «ничего не хочется»</li>
+                    <li>Нарушение сна (даже когда малыш спит)</li>
+                    <li>Нарушение аппетита (не едите или переедаете)</li>
+                    <li>Чувство вины, беспомощности</li>
+                    <li>Мысли о вреде себе или малышу</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <strong>❗ Если симптомы длятся больше 2 недель — обратитесь к психологу или психиатру.</strong> Послеродовая депрессия лечится, и это не ваша вина.
+            </div>
+        </div>
+    </div>
+
+    <!-- Физические упражнения -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-dumbbell"></i></div>
+            <div class="section-title">Возвращение к физической активности</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Первые дни:</strong> только ходьба по дому, лёгкие упражнения Кегеля.</li>
+                    <li><strong>2–6 недель:</strong> ходьба на улице (от 15 минут до часа), дыхательная гимнастика.</li>
+                    <li><strong>6–8 недель:</strong> после осмотра врача — плавание, йога, пилатес (без прыжков и скручиваний).</li>
+                    <li><strong>3–6 месяцев:</strong> лёгкий бег, силовые упражнения с собственным весом.</li>
+                    <li><strong>6–12 месяцев:</strong> возвращение к привычным нагрузкам (если нет диастаза, пролапса).</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> при упражнениях Кегеля не напрягайте ягодицы и пресс. Если есть боль или тяжесть внизу живота — прекратите и обратитесь к врачу.
+            </div>
+        </div>
+    </div>
+
+    <!-- Питание и водный баланс -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-apple-alt"></i></div>
+            <div class="section-title">Питание и водный режим</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>💧 <strong>Вода:</strong> 2–2,5 литра в день — для лактации и восстановления.</li>
+                    <li>🥩 <strong>Белок:</strong> мясо, рыба, яйца, творог — для заживления тканей.</li>
+                    <li>🥦 <strong>Клетчатка:</strong> овощи, фрукты, цельнозерновые — для профилактики запоров.</li>
+                    <li>🦷 <strong>Кальций:</strong> творог, сыр, кунжут — для костей (беременность «вымывает» кальций).</li>
+                    <li>🩸 <strong>Железо:</strong> красное мясо, печень, гречка — при анемии.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> замороженные полуфабрикаты (супы, котлеты, пельмени) — ваши друзья. Главное — регулярно есть.
+            </div>
+        </div>
+    </div>
+
+    <!-- Контрацепция и возвращение секса -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-heart"></i></div>
+            <div class="section-title">Сексуальная жизнь после родов</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Когда можно?</strong> Когда прекратятся выделения (лохии), обычно через 4–6 недель, и после осмотра врача.</li>
+                    <li><strong>Сначала может быть больно</strong> — из-за сухости, швов, гормонов. Используйте лубрикант, больше прелюдии.</li>
+                    <li><strong>Беременность возможна даже без месячных!</strong> Используйте контрацепцию (презервативы, мини-пили, ВМС).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда обращаться к врачу -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ambulance"></i></div>
+            <div class="section-title">Когда срочно к врачу</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❗ Немедленно к врачу, если:</strong>
+                <ul>
+                    <li>🩸 <strong>Кровотечение усилилось</strong> (прокладки хватает на час или меньше)</li>
+                    <li>🩸 <strong>Выделения изменили цвет на алый</strong> (особенно после того, как стали коричневыми/светлыми)</li>
+                    <li>🩸 <strong>Крупные сгустки</strong> (размером с кулак)</li>
+                    <li>🔥 <strong>Температура выше 38°C</strong></li>
+                    <li>👃 <strong>Неприятный запах выделений</strong></li>
+                    <li>😖 <strong>Сильная боль внизу живота</strong> (не похожая на схватки при кормлении)</li>
+                    <li>🧠 <strong>Головная боль, нарушение зрения, отёки</strong> (признаки позднего гестоза)</li>
+                    <li>😭 <strong>Мысли о вреде себе или малышу</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Послеродовой осмотр -->
+    <div class="section-card" style="animation-delay: 0.3s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-stethoscope"></i></div>
+            <div class="section-title">Когда идти к гинекологу после родов</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Через 6–8 недель после родов</strong> (плановый осмотр).</li>
+                    <li><strong>Что проверяют:</strong> сокращение матки, заживление швов, состояние молочных желёз.</li>
+                    <li><strong>С собой:</strong> паспорт, полис, выписной эпикриз из роддома.</li>
+                    <li><strong>Обязательно спросите:</strong> можно ли заниматься спортом, когда можно планировать следующую беременность.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    function initChecklist() {
+        const items = document.querySelectorAll('.checklist-item');
+        items.forEach(item => {
+            const id = item.getAttribute('data-id');
+            if (!id) return;
+            const stored = localStorage.getItem(`recovery_${id}`);
+            const checkDiv = item.querySelector('.checklist-check');
+            if (stored === 'true') {
+                checkDiv.classList.add('completed');
+                checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+            } else {
+                checkDiv.classList.remove('completed');
+                checkDiv.innerHTML = '';
+            }
+            
+            item.addEventListener('click', () => {
+                const isCompleted = checkDiv.classList.contains('completed');
+                if (isCompleted) {
+                    checkDiv.classList.remove('completed');
+                    checkDiv.innerHTML = '';
+                    localStorage.setItem(`recovery_${id}`, 'false');
+                } else {
+                    checkDiv.classList.add('completed');
+                    checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+                    localStorage.setItem(`recovery_${id}`, 'true');
+                }
+            });
+        });
+    }
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    initChecklist();
+</script>
+</body>
+</html>

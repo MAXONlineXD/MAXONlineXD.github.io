@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Первый год жизни — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .month-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .month-tab {
+            background: white;
+            border: 1px solid #ffe0d6;
+            padding: 10px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: inherit;
+        }
+
+        .month-tab.active {
+            background: #fbeae8;
+            border-color: #cd7c9b;
+            color: #b35d7c;
+        }
+
+        .month-tab:active {
+            transform: scale(0.96);
+        }
+
+        .month-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .month-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .month-number {
+            background: #fbeae8;
+            border-radius: 60px;
+            padding: 6px 16px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #b35d7c;
+        }
+
+        .month-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .subsection-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #b35d7c;
+            margin: 16px 0 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .subsection-title i {
+            font-size: 1rem;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .month-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+            .month-tabs {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-calendar-alt"></i> 
+            Первый год жизни
+        </h1>
+        <p>Как растёт и развивается малыш от 0 до 12 месяцев</p>
+        <div class="badge"><i class="fas fa-baby-carriage"></i> Каждый месяц — новое открытие</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <div class="month-tabs" id="monthTabs">
+        <button class="month-tab active" data-month="1">1 месяц</button>
+        <button class="month-tab" data-month="2">2 месяца</button>
+        <button class="month-tab" data-month="3">3 месяца</button>
+        <button class="month-tab" data-month="4">4 месяца</button>
+        <button class="month-tab" data-month="5">5 месяцев</button>
+        <button class="month-tab" data-month="6">6 месяцев</button>
+        <button class="month-tab" data-month="7">7 месяцев</button>
+        <button class="month-tab" data-month="8">8 месяцев</button>
+        <button class="month-tab" data-month="9">9 месяцев</button>
+        <button class="month-tab" data-month="10">10 месяцев</button>
+        <button class="month-tab" data-month="11">11 месяцев</button>
+        <button class="month-tab" data-month="12">12 месяцев</button>
+    </div>
+
+    <div id="monthContent"></div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const monthsData = {
+        1: {
+            title: "Первый месяц жизни",
+            weight: "3–4,5 кг (набор 500–800 г от веса при рождении)",
+            height: "50–55 см (прибавка 3–4 см)",
+            sleep: "16–20 часов в сутки, просыпается каждые 2–3 часа для кормления",
+            feeding: "Кормление по требованию (8–12 раз в сутки и чаще), только грудное молоко или смесь",
+            skills: [
+                "✅ Лежа на животе — пытается поднять голову на секунду",
+                "✅ Реагирует на яркий свет и громкие звуки (вздрагивает)",
+                "✅ Следит взглядом за движущимся предметом на расстоянии 20–30 см",
+                "✅ Узнаёт голос мамы, поворачивает голову на звук",
+                "✅ Легко пугается, успокаивается от прикосновений"
+            ],
+            health: "Осмотр педиатра, неонатолога, УЗИ тазобедренных суставов, УЗИ головного мозга (нейросонография)",
+            vaccinations: "Вакцинация: Гепатит B (2-я доза — в 1 месяц, если не сделали в роддоме)",
+            tip: "Чаще выкладывайте на живот (на 1–2 минуты после смены подгузника) — это укрепляет мышцы шеи и спины."
+        },
+        2: {
+            title: "Второй месяц жизни",
+            weight: "4,5–5,5 кг (набор 700–900 г)",
+            height: "54–58 см (прибавка 3–4 см)",
+            sleep: "15–17 часов в сутки",
+            feeding: "Грудное молоко или смесь по требованию, интервалы могут увеличиваться до 2,5–3 часов",
+            skills: [
+                "✅ Держит голову лёжа на животе до 10–15 секунд",
+                "✅ Улыбается в ответ на улыбку",
+                "✅ Гулит, произносит гласные звуки («а-а», «у-у», «э-э»)",
+                "✅ Следит взглядом за предметом, поворачивает голову",
+                "✅ Начинает различать цвета"
+            ],
+            health: "Осмотр педиатра, невролога",
+            vaccinations: "Вакцинация: Пневмококк (1-я доза), АКДС+Хиб+Полио (1-я доза)",
+            tip: "Разговаривайте с малышом, пойте песенки, делайте лёгкий массаж и гимнастику — это стимулирует развитие."
+        },
+        3: {
+            title: "Третий месяц жизни",
+            weight: "5,5–6,5 кг (набор 600–800 г)",
+            height: "58–62 см (прибавка 2–3 см)",
+            sleep: "14–16 часов в сутки, ночью может спать 4–6 часов подряд",
+            feeding: "Грудное молоко или смесь, интервалы 3–3,5 часа",
+            skills: [
+                "✅ Уверенно держит голову (до 1 минуты)",
+                "✅ Тянет ручки ко рту, сосёт кулачок",
+                "✅ Поворачивает голову на знакомый голос",
+                "✅ Рассматривает свои руки",
+                "✅ Лежа на животе, приподнимается на предплечьях",
+                "✅ Гулит активно, смеётся в ответ"
+            ],
+            health: "Осмотр педиатра",
+            vaccinations: "Вакцинация: Пневмококк (2-я доза)",
+            tip: "Играйте с погремушкой — водите перед глазами, давайте трогать. Это развивает координацию."
+        },
+        4: {
+            title: "Четвёртый месяц жизни",
+            weight: "6,5–7,5 кг (набор 600–700 г)",
+            height: "61–65 см (прибавка 2–2,5 см)",
+            sleep: "14–15 часов в сутки",
+            feeding: "Грудное молоко или смесь, возможно введение прикорма (по назначению педиатра)",
+            skills: [
+                "✅ Переворачивается со спины на живот",
+                "✅ Тянется за игрушкой, хватает её",
+                "✅ Поворачивается на звук",
+                "✅ Смеётся в голос, гулит с разными интонациями",
+                "✅ Хорошо фиксирует взгляд"
+            ],
+            health: "Осмотр педиатра",
+            vaccinations: "Вакцинация: АКДС+Хиб+Полио (2-я доза)",
+            tip: "Купите развивающий коврик — малышу интересно трогать подвесные игрушки."
+        },
+        5: {
+            title: "Пятый месяц жизни",
+            weight: "7–8 кг (набор 500–600 г)",
+            height: "63–67 см (прибавка 1,5–2 см)",
+            sleep: "14 часов в сутки",
+            feeding: "Грудное молоко или смесь + возможно введение овощного пюре (по назначению педиатра)",
+            skills: [
+                "✅ Переворачивается с живота на спину",
+                "✅ Тянется к игрушке, перекладывает из руки в руку",
+                "✅ Стоит с поддержкой под мышки",
+                "✅ Различает знакомых и незнакомых",
+                "✅ Лепет (повторяет слоги «ба-ба», «ма-ма»)"
+            ],
+            health: "Осмотр педиатра",
+            vaccinations: "Вакцинация: нет в этом месяце",
+            tip: "Если малыш не переворачивается — не паникуйте, все дети разные. Помогайте лёгкими упражнениями."
+        },
+        6: {
+            title: "Шестой месяц жизни",
+            weight: "7,5–8,5 кг (набор 400–500 г)",
+            height: "65–69 см (прибавка 1,5 см)",
+            sleep: "13–14 часов в сутки",
+            feeding: "Грудное молоко/смесь + введение прикорма (овощное пюре, каши)",
+            skills: [
+                "✅ Сидит с поддержкой, может сидеть несколько секунд",
+                "✅ Встаёт на четвереньки, пытается ползти",
+                "✅ Перекладывает игрушки из руки в руку",
+                "✅ Поворачивается на имя",
+                "✅ Говорит слоги «ма», «па», «ба»"
+            ],
+            health: "Осмотр педиатра, невролога, ортопеда",
+            vaccinations: "Вакцинация: АКДС+Хиб+Полио (3-я доза), Гепатит B (3-я доза)",
+            tip: "Начинайте прикорм с однокомпонентных пюре (кабачок, брокколи, цветная капуста). Не форсируйте."
+        },
+        7: {
+            title: "Седьмой месяц жизни",
+            weight: "8–9 кг (набор 400–500 г)",
+            height: "66–71 см (прибавка 1,5 см)",
+            sleep: "13–14 часов в сутки",
+            feeding: "Грудное молоко/смесь + 2 прикорма (овощи, каши, фруктовое пюре)",
+            skills: [
+                "✅ Уверенно сидит без поддержки",
+                "✅ Ползает (некоторые дети)",
+                "✅ Стучит игрушками, перекладывает",
+                "✅ Играет в «ладушки»",
+                "✅ Хорошо различает эмоции"
+            ],
+            health: "Осмотр педиатра",
+            vaccinations: "Вакцинация: нет в этом месяце",
+            tip: "Обеспечьте безопасное пространство для ползания — уберите мелкие предметы, розетки, углы."
+        },
+        8: {
+            title: "Восьмой месяц жизни",
+            weight: "8,5–9,5 кг (набор 400–500 г)",
+            height: "68–73 см (прибавка 1,5 см)",
+            sleep: "13–14 часов в сутки",
+            feeding: "Грудное молоко/смесь + 3 прикорма (добавляем мясное пюре)",
+            skills: [
+                "✅ Встаёт у опоры",
+                "✅ Ползает активно",
+                "✅ Пьёт из чашки с помощью взрослого",
+                "✅ Машет рукой «пока-пока»",
+                "✅ Понимает слово «нет»"
+            ],
+            health: "Осмотр педиатра",
+            vaccinations: "Вакцинация: нет в этом месяце",
+            tip: "Читайте книжки с крупными картинками, показывайте пальцем на предметы, называйте их."
+        },
+        9: {
+            title: "Девятый месяц жизни",
+            weight: "9–10 кг (набор 400–500 г)",
+            height: "69–75 см (прибавка 1,5 см)",
+            sleep: "13–14 часов в сутки",
+            feeding: "Грудное молоко/смесь + 3 прикорма (рыбное пюре, желток)",
+            skills: [
+                "✅ Стоит у опоры, делает шаги",
+                "✅ Ходит за руку",
+                "✅ Выполняет простые просьбы («дай ручку»)",
+                "✅ Подражает звукам",
+                "✅ Открывает коробки"
+            ],
+            health: "Осмотр педиатра",
+            vaccinations: "Вакцинация: нет в этом месяце",
+            tip: "Играйте в «сороку-ворону», «ладушки», стройте башни из кубиков."
+        },
+        10: {
+            title: "Десятый месяц жизни",
+            weight: "9,5–10,5 кг (набор 300–400 г)",
+            height: "70–77 см (прибавка 1 см)",
+            sleep: "13–14 часов в сутки",
+            feeding: "Грудное молоко/смесь + 4 прикорма (творог, кефир)",
+            skills: [
+                "✅ Ходит с поддержкой за одну руку",
+                "✅ Может отпускать опору и стоять секунды",
+                "✅ Показывает части тела",
+                "✅ Произносит осмысленные слова («мама», «папа»)",
+                "✅ Находит спрятанную игрушку"
+            ],
+            health: "Осмотр педиатра",
+            vaccinations: "Вакцинация: нет в этом месяце",
+            tip: "Поощряйте самостоятельную ходьбу — создавайте безопасное пространство, убирайте острые углы."
+        },
+        11: {
+            title: "Одиннадцатый месяц жизни",
+            weight: "10–11 кг (набор 300–400 г)",
+            height: "71–79 см (прибавка 1 см)",
+            sleep: "13–14 часов в сутки",
+            feeding: "Грудное молоко/смесь + разнообразное питание (почти как у взрослых, но в пюреобразном виде)",
+            skills: [
+                "✅ Делает первые самостоятельные шаги",
+                "✅ Ковыляет, держась за руку",
+                "✅ Произносит несколько осмысленных слов",
+                "✅ Имитирует действия взрослых (расчёсывается)",
+                "✅ Кидает мяч"
+            ],
+            health: "Осмотр педиатра",
+            vaccinations: "Вакцинация: нет в этом месяце",
+            tip: "Хвалите за любые успехи, даже маленькие. Не ругайте за падения."
+        },
+        12: {
+            title: "Двенадцатый месяц — ПЕРВЫЙ ДЕНЬ РОЖДЕНИЯ! 🎂",
+            weight: "10–11,5 кг (набор 200–300 г)",
+            height: "72–80 см (прибавка 1 см)",
+            sleep: "12–13 часов в сутки (1–2 дневных сна)",
+            feeding: "Общий стол (всё, кроме жареного, солёного, острого, сладкого и аллергенов)",
+            skills: [
+                "✅ Ходит самостоятельно",
+                "✅ Говорит 5–10 простых слов",
+                "✅ Понимает и выполняет просьбы",
+                "✅ Ест ложкой, пьёт из чашки",
+                "✅ Играет в простые игры («кати мяч», «найди игрушку»)"
+            ],
+            health: "Осмотр педиатра, невролога, ортопеда, стоматолога",
+            vaccinations: "Вакцинация: Пневмококк (ревакцинация), Корь-Краснуха-Паротит (1-я доза)",
+            tip: "С днём рождения! 🎉 Поздравьте себя — вы прошли невероятный путь. Помните: все дети разные, не сравнивайте своего малыша с другими."
+        }
+    };
+
+    let currentMonth = "1";
+
+    function renderMonth(month) {
+        const container = document.getElementById("monthContent");
+        if (!container) return;
+
+        const data = monthsData[month];
+        if (!data) return;
+
+        let skillsHtml = "";
+        if (data.skills && data.skills.length) {
+            skillsHtml = `<div class="subsection-title"><i class="fas fa-star"></i> Что умеет малыш</div><ul>` + data.skills.map(s => `<li>${s}</li>`).join('') + `</ul>`;
+        }
+
+        const html = `
+            <div class="month-card">
+                <div class="month-header">
+                    <span class="month-number">${month} месяц</span>
+                    <span class="month-title">${data.title}</span>
+                </div>
+                <div class="subsection-title"><i class="fas fa-weight-scale"></i> Вес и рост</div>
+                <p>${data.weight}</p>
+                <p>${data.height}</p>
+                
+                <div class="subsection-title"><i class="fas fa-bed"></i> Сон</div>
+                <p>${data.sleep}</p>
+                
+                <div class="subsection-title"><i class="fas fa-hand-holding-heart"></i> Питание</div>
+                <p>${data.feeding}</p>
+                
+                ${skillsHtml}
+                
+                <div class="subsection-title"><i class="fas fa-stethoscope"></i> Осмотры и прививки</div>
+                <p><strong>Осмотры:</strong> ${data.health}</p>
+                <p><strong>Вакцинация:</strong> ${data.vaccinations}</p>
+                
+                <div class="tip-box"><i class="fas fa-lightbulb"></i> <strong>Совет месяца:</strong> ${data.tip}</div>
+            </div>
+        `;
+        container.innerHTML = html;
+    }
+
+    const monthTabs = document.querySelectorAll(".month-tab");
+    monthTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            const month = tab.getAttribute("data-month");
+            if (!month) return;
+            monthTabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+            currentMonth = month;
+            renderMonth(currentMonth);
+            const contentDiv = document.getElementById("monthContent");
+            if (contentDiv) contentDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    renderMonth("1");
+</script>
+</body>
+</html>

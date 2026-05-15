@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Почему малыш плачет — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-face-frown"></i> 
+            Почему малыш плачет
+        </h1>
+        <p>Как понять причины плача и успокоить ребёнка</p>
+        <div class="badge"><i class="fas fa-heart"></i> Плач — единственный способ общения малыша</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Главная мысль -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-quote-left"></i></div>
+            <div class="section-title">Плач — это язык малыша</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Новорождённый не умеет говорить, поэтому <strong>плач — его единственный способ что-то сказать</strong>. Это не «капризы» и не «манипуляции» (малыш ещё не способен на них). Плач всегда означает, что ему нужна помощь.</p>
+                <p><strong>Ваше спокойствие — лучшее лекарство.</strong> Если вы злитесь или паникуете, малыш это чувствует и плачет ещё сильнее.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основные причины плача -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-list"></i></div>
+            <div class="section-title">Топ-10 причин плача</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ol style="margin-left: 20px;">
+                    <li><strong>🍼 Голод</strong> — самая частая причина</li>
+                    <li><strong>🩲 Мокрый или грязный подгузник</strong></li>
+                    <li><strong>😴 Усталость / перевозбуждение</strong> — хочет спать, но не может заснуть</li>
+                    <li><strong>🤗 Желание на ручки</strong> — нуждается в контакте с мамой</li>
+                    <li><strong>🌡️ Дискомфорт от температуры</strong> — жарко или холодно</li>
+                    <li><strong>🤢 Колики / газы</strong> — боль в животе</li>
+                    <li><strong>😷 Болезнь</strong> — температура, боль в ухе, простуда</li>
+                    <li><strong>🦷 Прорезывание зубов</strong> (после 3–4 месяцев)</li>
+                    <li><strong>😖 Скука</strong> — хочет новых впечатлений</li>
+                    <li><strong>😰 Переизбыток впечатлений</strong> — слишком много стимулов</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Как отличить голодный плач -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-baby"></i></div>
+            <div class="section-title">Голодный плач</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Характер плача:</strong> нарастающий, требовательный, часто с паузами</li>
+                    <li><strong>Сопутствующие признаки:</strong> поисковый рефлекс (поворачивает голову), причмокивание, сосание кулачка, тянет ручки ко рту</li>
+                    <li><strong>Что делать:</strong> предложите грудь или бутылочку. Если проголодался — успокоится, как только начнёт есть.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> не ждите, пока малыш начнёт плакать от голода. Признаки голода появляются раньше — кормите по требованию.
+            </div>
+        </div>
+    </div>
+
+    <!-- Плач от усталости -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bed"></i></div>
+            <div class="section-title">Плач от усталости</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Характер плача:</strong> нытьё, хныканье, может быть монотонным</li>
+                    <li><strong>Сопутствующие признаки:</strong> трёт глазки, зевает, отводит взгляд, становится капризным</li>
+                    <li><strong>Что делать:</strong> уложите спать. Иногда помогает покачивание, белый шум, соска.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> переутомлённый малыш засыпает хуже. Следите за «окнами бодрствования» (время, которое ребёнок может бодрствовать без усталости).
+            </div>
+        </div>
+    </div>
+
+    <!-- Колики и газы -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-stomach"></i></div>
+            <div class="section-title">Плач при коликах</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Характер плача:</strong> пронзительный, громкий, с «надрывом»</li>
+                    <li><strong>Сопутствующие признаки:</strong> поджимает ножки к животу, краснеет, не успокаивается даже на руках, плач усиливается вечером</li>
+                    <li><strong>Что делать:</strong> массаж живота по часовой стрелке, «велосипед» ножками, выкладывание на живот, тёплая пелёнка, укропная вода, симетикон (Эспумизан L, Саб-Симплекс).</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Колики обычно проходят к 3–4 месяцам.</strong> Держитесь!
+            </div>
+        </div>
+    </div>
+
+    <!-- Дискомфорт от температуры -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-temperature-high"></i></div>
+            <div class="section-title">Жарко или холодно</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Если жарко:</strong> кожа горячая, красная, влажная, может быть потница</li>
+                    <li><strong>Если холодно:</strong> ручки-ножки прохладные, кожа бледная, малыш вздрагивает</li>
+                    <li><strong>Что делать:</strong> проверьте температуру затылка (он должен быть тёплым и сухим). Переоденьте по погоде.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> перегрев опаснее переохлаждения. Правило «как себя + один слой».
+            </div>
+        </div>
+    </div>
+
+    <!-- Желание на ручки -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="section-title">Хочу на ручки</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Характер плача:</strong> успокаивается, как только берут на руки</li>
+                    <li><strong>Причина:</strong> потребность в безопасности, тепле, контакте с мамой</li>
+                    <li><strong>Что делать:</strong> возьмите на руки! Невозможно «избаловать» новорождённого ношением на руках.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Универсальный алгоритм успокоения -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="section-title">Алгоритм «Проверь всё по порядку»</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ol style="margin-left: 20px;">
+                    <li><strong>🍼 Голод?</strong> — предложите грудь или бутылочку</li>
+                    <li><strong>🩲 Подгузник?</strong> — проверьте, не мокрый/грязный</li>
+                    <li><strong>🌡️ Температура?</strong> — не жарко/не холодно</li>
+                    <li><strong>😴 Усталость?</strong> — не пора ли спать</li>
+                    <li><strong>🤗 Желание на ручки?</strong> — возьмите и покачайте</li>
+                    <li><strong>🤢 Колики?</strong> — массаж живота, выкладывание на живот</li>
+                    <li><strong>😷 Болезнь?</strong> — измерьте температуру, осмотрите на предмет сыпи, насморка</li>
+                    <li><strong>😖 Скука?</strong> — смените обстановку, погуляйте, покажите игрушку</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Методы успокоения -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-peace"></i></div>
+            <div class="section-title">Проверенные способы успокоить малыша</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>🔄 Укачивание</strong> — плавные покачивания на руках или в коляске</li>
+                    <li><strong>🔊 Белый шум</strong> — шум фена, пылесоса, специальные записи (громкость как душ)</li>
+                    <li><strong>👶 Слинг или эргорюкзак</strong> — тесный контакт успокаивает</li>
+                    <li><strong>🚶 Прогулка</strong> — свежий воздух и движение часто усыпляют</li>
+                    <li><strong>🛁 Тёплая ванна</strong> — расслабляет мышцы</li>
+                    <li><strong>🤱 Кормление</strong> — лучший успокоитель для новорождённого</li>
+                    <li><strong>🌙 Приглушённый свет</strong> — снижает перевозбуждение</li>
+                    <li><strong>🗣 Нежный голос</strong> — пойте, шепчите, говорите ласковые слова</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Чего НЕ делать -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего НЕ нужно делать</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ <strong>Не трясите малыша</strong> — синдром сотрясения опасен для жизни!</li>
+                <li>❌ <strong>Не игнорируйте плач</strong> — он не «тренировка лёгких», а сигнал о помощи</li>
+                <li>❌ <strong>Не кричите на малыша</strong> — он не понимает, только пугается</li>
+                <li>❌ <strong>Не оставляйте одного в комнате в надежде, что «прокричится»</strong></li>
+                <li>❌ <strong>Не давайте лекарства без назначения врача</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Если ничего не помогает -->
+    <div class="section-card" style="animation-delay: 0.3s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ambulance"></i></div>
+            <div class="section-title">Если ничего не помогает — отдохните</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <p><strong>Бывают моменты, когда малыш плачет, а вы не знаете почему.</strong> И это нормально!</p>
+                <ul>
+                    <li>✅ Положите малыша в безопасное место (кроватку) и выйдите из комнаты на 5–10 минут</li>
+                    <li>✅ Позвоните подруге, маме, психологу — выговоритесь</li>
+                    <li>✅ Попросите партнёра сменить вас</li>
+                    <li>✅ Помните: лучше оставить малыша плакать на 5 минут, чем сорваться и накричать или трясти</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-phone-alt"></i> <strong>Горячая линия поддержки для родителей:</strong> 8 800 555 35 35 (круглосуточно).
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда срочно к врачу -->
+    <div class="section-card" style="animation-delay: 0.33s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ambulance"></i></div>
+            <div class="section-title">Когда срочно к врачу</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❗ Немедленно к врачу, если:</strong>
+                <ul>
+                    <li>Температура выше 38°C</li>
+                    <li>Плач монотонный, пронзительный, не похожий на обычный</li>
+                    <li>Малыш отказывается от еды, вялый</li>
+                    <li>Срыгивание фонтаном</li>
+                    <li>Кровь в стуле</li>
+                    <li>Судороги</li>
+                    <li>Синяя кожа, затруднённое дыхание</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>
