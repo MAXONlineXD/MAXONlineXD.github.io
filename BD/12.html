@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Занятия спортом во время беременности — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .sport-badge {
+            display: inline-block;
+            background: #fbeae8;
+            border-radius: 40px;
+            padding: 4px 12px;
+            margin: 4px;
+            font-size: 0.8rem;
+            color: #b35d7c;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-dumbbell"></i> 
+            Спорт во время беременности
+        </h1>
+        <p>Движение — жизнь. Даже в ожидании чуда</p>
+        <div class="badge"><i class="fas fa-heartbeat"></i> Умеренные нагрузки полезны маме и малышу</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Можно ли заниматься спортом?</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Да, можно и нужно!</strong> Умеренные физические нагрузки при неосложнённой беременности не только безопасны, но и полезны.</p>
+            <div class="warning-box">
+                <i class="fas fa-check-circle"></i> <strong>Польза спорта для беременных:</strong>
+                <ul>
+                    <li>Укрепляет мышцы спины и таза, снижая боли</li>
+                    <li>Улучшает кровообращение, профилактика варикоза и отёков</li>
+                    <li>Снижает риск гестационного диабета и избыточного набора веса</li>
+                    <li>Улучшает настроение и сон</li>
+                    <li>Облегчает течение родов и ускоряет восстановление после них</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Главные правила: регулярность, умеренность, контроль самочувствия и обязательная консультация с врачом перед началом.
+            </div>
+        </div>
+    </div>
+
+    <!-- Разрешённые виды спорта -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="section-title">✅ Разрешённые виды спорта</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Наиболее безопасны для беременных:</strong></p>
+            <div>
+                <span class="sport-badge"><i class="fas fa-walking"></i> Ходьба</span>
+                <span class="sport-badge"><i class="fas fa-swimmer"></i> Плавание</span>
+                <span class="sport-badge"><i class="fas fa-water"></i> Аквааэробика</span>
+                <span class="sport-badge"><i class="fas fa-yin-yang"></i> Йога для беременных</span>
+                <span class="sport-badge"><i class="fas fa-heartbeat"></i> Пилатес</span>
+                <span class="sport-badge"><i class="fas fa-bicycle"></i> Велотренажёр</span>
+                <span class="sport-badge"><i class="fas fa-dumbbell"></i> Легкая силовая (свободные веса малого веса)</span>
+                <span class="sport-badge"><i class="fas fa-running"></i> Бег трусцой (для тех, кто бегал до беременности)</span>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> <strong>Идеальный выбор:</strong> плавание и аквааэробика. Вода разгружает позвоночник, снижает отёки, тренирует дыхание.
+            </div>
+        </div>
+    </div>
+
+    <!-- Запрещённые виды спорта -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">❌ Что категорически нельзя</div>
+        </div>
+        <div class="section-content">
+            <div>
+                <span class="sport-badge" style="background:#ffe0d6;"><i class="fas fa-futbol"></i> Контактные виды</span>
+                <span class="sport-badge" style="background:#ffe0d6;"><i class="fas fa-mountain"></i> Альпинизм</span>
+                <span class="sport-badge" style="background:#ffe0d6;"><i class="fas fa-horse"></i> Верховая езда</span>
+                <span class="sport-badge" style="background:#ffe0d6;"><i class="fas fa-skiing"></i> Горные лыжи</span>
+                <span class="sport-badge" style="background:#ffe0d6;"><i class="fas fa-water"></i> Дайвинг</span>
+                <span class="sport-badge" style="background:#ffe0d6;"><i class="fas fa-basketball"></i> Баскетбол, волейбол</span>
+                <span class="sport-badge" style="background:#ffe0d6;"><i class="fas fa-heart"></i> Тренировки на выносливость</span>
+                <span class="sport-badge" style="background:#ffe0d6;"><i class="fas fa-arrow-up"></i> Упражнения на пресс лёжа на спине после 16 недель</span>
+            </div>
+            <p><strong>Почему нельзя:</strong> риск падений, ударов в живот, перегрева, обезвоживания, избыточной нагрузки на суставы.</p>
+        </div>
+    </div>
+
+    <!-- Противопоказания -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">Когда спорт противопоказан</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>Абсолютные противопоказания:</strong>
+                <ul>
+                    <li>Угроза прерывания беременности (кровотечение, боли)</li>
+                    <li>Предлежание плаценты после 26 недель</li>
+                    <li>Истмико-цервикальная недостаточность</li>
+                    <li>Преэклампсия, тяжёлая гипертония</li>
+                    <li>Многоплодная беременность с риском преждевременных родов</li>
+                    <li>Тяжёлые заболевания сердца, лёгких, почек</li>
+                </ul>
+            </div>
+            <p><strong>Относительные противопоказания</strong> (нужна консультация врача): анемия, сахарный диабет, ожирение, маловодие, тазовое предлежание после 36 недель.</p>
+            <div class="tip-box">
+                <i class="fas fa-stethoscope"></i> Обязательно посоветуйтесь с врачом перед началом занятий, особенно если вы не тренировались до беременности.
+            </div>
+        </div>
+    </div>
+
+    <!-- Правила безопасных тренировок -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="section-title">Правила безопасных тренировок</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>🔹 <strong>Разминка и заминка</strong> — обязательны (по 5–10 минут)</li>
+                <li>🔹 <strong>Питьевой режим</strong> — пейте воду до, во время и после тренировки</li>
+                <li>🔹 <strong>Избегайте перегрева</strong> — не занимайтесь в душных помещениях, выбирайте утро или вечер</li>
+                <li>🔹 <strong>Не допускайте одышки</strong> — говорите во время упражнений, если не можете — снизьте темп</li>
+                <li>🔹 <strong>Слушайте тело</strong> — при головокружении, болях, одышке — остановитесь</li>
+                <li>🔹 <strong>После 16 недель</strong> — не лежите на спине (маска может сдавливать полую вену)</li>
+                <li>🔹 <strong>Избегайте прыжков, резких движений, глубоких наклонов</strong></li>
+                <li>🔹 <strong>Пульс</strong> — не выше 140–150 ударов в минуту</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Рекомендации по триместрам -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-calendar-week"></i></div>
+            <div class="section-title">Спорт по триместрам</div>
+        </div>
+        <div class="section-content">
+            <p><strong>I триместр (1–13 недель):</strong> самый рискованный для выкидыша. Снизьте интенсивность, исключите прыжки, поднятие тяжестей. Избегайте перегрева (сауны, горячие ванны после тренировки).</p>
+            <p><strong>II триместр (14–27 недель):</strong> лучшее время для спорта! Живот уже заметен, но ещё не мешает. Исключите упражнения лёжа на спине. Носите бандаж при длительной ходьбе.</p>
+            <p><strong>III триместр (28–40 недель):</strong> снизьте нагрузку, больше внимания дыхательным упражнениям и растяжке. Хороши: плавание, ходьба, упражнения на фитболе. Слушайте малыша — если он резко зашевелился, сделайте паузу.</p>
+        </div>
+    </div>
+
+    <!-- Рекомендации для начинающих -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-seedling"></i></div>
+            <div class="section-title">Если вы не занимались спортом до беременности</div>
+        </div>
+        <div class="section-content">
+            <p>Начинать можно, но очень осторожно:</p>
+            <ul>
+                <li>Начните с <strong>ходьбы</strong> — 20–30 минут в день в комфортном темпе</li>
+                <li>Постепенно добавляйте <strong>плавание или лёгкую йогу</strong></li>
+                <li>Избегайте интенсивных кардиотренировок и силовых</li>
+                <li>Прислушивайтесь к себе — если больно или тяжело, снизьте нагрузку</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Лучше заниматься <strong>с инструктором по адаптивной физкультуре</strong> для беременных — он подберёт безопасную программу.
+            </div>
+        </div>
+    </div>
+
+    <!-- Упражнения Кегеля -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-female"></i></div>
+            <div class="section-title">Упражнения для мышц тазового дна (Кегеля)</div>
+        </div>
+        <div class="section-content">
+            <p>Это важно для профилактики недержания мочи после родов и облегчения самих родов.</p>
+            <p><strong>Как делать:</strong> напрягите мышцы, как будто хотите остановить мочеиспускание, задержите на 5–10 секунд, расслабьте. Повторите 10–15 раз. Делайте несколько раз в день.</p>
+            <div class="tip-box">
+                <i class="fas fa-check-circle"></i> Эти упражнения можно выполнять где угодно — за рулём, за компьютером, в очереди. Главное — регулярность.
+            </div>
+        </div>
+    </div>
+
+    <!-- Упражнения для спины -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-spine"></i></div>
+            <div class="section-title">Упражнения для облегчения болей в спине</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>«Кошечка»</strong> — на четвереньках выгибайте и прогибайте спину</li>
+                <li><strong>Наклоны таза</strong> — стоя, руки на пояснице, наклоняйте таз вперёд и назад</li>
+                <li><strong>Висение на перекладине</strong> (или за дверной косяк) — расслабляет позвоночник</li>
+                <li><strong>Плавание на спине</strong> — отлично разгружает позвоночник</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Когда прекратить тренировку -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-stop-circle"></i></div>
+            <div class="section-title">Красные флаги — прекратите тренировку</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle"></i> <strong>Немедленно остановитесь и обратитесь к врачу, если появилось:</strong>
+                <ul>
+                    <li>Кровянистые выделения из влагалища</li>
+                    <li>Головокружение, слабость, предобморочное состояние</li>
+                    <li>Одышка, боль в груди</li>
+                    <li>Сильная головная боль</li>
+                    <li>Мышечная слабость, трудности при ходьбе</li>
+                    <li>Боль в животе, схваткообразные ощущения</li>
+                    <li>Отхождение околоплодных вод</li>
+                    <li>Отсутствие шевелений плода (после 28 недель)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>
