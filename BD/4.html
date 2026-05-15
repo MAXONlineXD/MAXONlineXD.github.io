@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>Вы узнали, что ждете ребенка — Перинатальный центр</title>
+    <title>Вы и ваш малыш: первый месяц (недели 1–4) — Перинатальный центр</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -102,8 +102,39 @@
             transform: scale(0.97);
         }
 
-        /* Карточка шага */
-        .step-card {
+        /* Инфо-панель с неделями */
+        .week-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .week-tab {
+            background: white;
+            border: 1px solid #ffe0d6;
+            padding: 10px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: inherit;
+        }
+
+        .week-tab.active {
+            background: #fbeae8;
+            border-color: #cd7c9b;
+            color: #b35d7c;
+        }
+
+        .week-tab:active {
+            transform: scale(0.96);
+        }
+
+        /* Карточка недели */
+        .week-card {
             background: white;
             border-radius: 28px;
             padding: 20px;
@@ -114,51 +145,74 @@
             animation: fadeInUp 0.3s ease backwards;
         }
 
-        .step-header {
+        .week-header {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             flex-wrap: wrap;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
         }
 
-        .step-number {
+        .week-number-badge {
             background: #fbeae8;
             border-radius: 60px;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
+            padding: 6px 16px;
             font-weight: 700;
+            font-size: 1.1rem;
             color: #b35d7c;
         }
 
-        .step-title {
+        .week-title {
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #4a2c3a;
-            flex: 1;
         }
 
-        .step-content {
+        .section-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #b35d7c;
+            margin: 16px 0 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title i {
+            font-size: 1rem;
+        }
+
+        .week-content {
             color: #4a4a55;
             font-size: 0.95rem;
-            padding-left: 8px;
         }
 
-        .step-content p {
+        .week-content p {
             margin-bottom: 10px;
         }
 
-        .step-content ul {
+        .week-content ul {
             padding-left: 20px;
             margin: 8px 0;
         }
 
-        .step-content li {
+        .week-content li {
             margin: 6px 0;
+        }
+
+        .baby-size {
+            background: #fffaf5;
+            border-radius: 16px;
+            padding: 10px 14px;
+            margin: 12px 0;
+            font-size: 0.85rem;
+            color: #b45f7f;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
         .tip-box {
@@ -237,13 +291,16 @@
             .hero h1 {
                 font-size: 1.6rem;
             }
-            .step-title {
+            .week-title {
                 font-size: 1rem;
             }
             .nav-buttons {
                 flex-direction: column;
             }
             .nav-btn {
+                justify-content: center;
+            }
+            .week-tabs {
                 justify-content: center;
             }
         }
@@ -254,11 +311,11 @@
 <div class="hero">
     <div class="container" style="padding: 0;">
         <h1>
-            <i class="fas fa-heart"></i> 
-            Вы узнали, что ждете ребенка
+            <i class="fas fa-baby-carriage"></i> 
+            Вы и ваш малыш
         </h1>
-        <p>Первые шаги на пути к материнству — спокойствие и знания</p>
-        <div class="badge"><i class="fas fa-star-of-life"></i> Ваш чек-лист первых дел</div>
+        <p>Первый месяц беременности: недели 1–4</p>
+        <div class="badge"><i class="fas fa-calendar-week"></i> От зачатия до 4-й недели — самое начало пути</div>
     </div>
 </div>
 
@@ -270,11 +327,19 @@
         </button>
     </div>
 
-    <!-- Контейнер для шагов -->
-    <div id="stepsContainer"></div>
+    <!-- Навигация по неделям -->
+    <div class="week-tabs">
+        <button class="week-tab active" data-week="1">1-я неделя</button>
+        <button class="week-tab" data-week="2">2-я неделя</button>
+        <button class="week-tab" data-week="3">3-я неделя</button>
+        <button class="week-tab" data-week="4">4-я неделя</button>
+    </div>
+
+    <!-- Контейнер для контента недели -->
+    <div id="weekContent"></div>
 
     <footer>
-        <i class="fas fa-seedling"></i> Перинатальный центр «Мама+Центр» — забота на каждом этапе
+        <i class="fas fa-seedling"></i> «Сургутский клинический перинатальный центр» — забота на каждом этапе
     </footer>
 </main>
 
@@ -284,140 +349,107 @@
 </button>
 
 <script>
-    // Данные о шагах
-    const stepsData = [
-        {
-            number: 1,
-            title: "Подтвердите беременность",
-            content: `
-                <p>Положительный тест — это только первый шаг. Для официального подтверждения необходимо:</p>
-                <ul>
-                    <li><strong>Сдать анализ крови на ХГЧ</strong> — самый точный метод на ранних сроках.</li>
-                    <li><strong>Посетить врача-гинеколога</strong> для осмотра и постановки на учет.</li>
-                    <li><strong>Сделать УЗИ</strong> на 5–7 неделе, чтобы убедиться, что плодное яйцо находится в матке (исключить внематочную беременность).</li>
-                </ul>
-            `,
-            tip: "Не паникуйте, если тест слабоположительный — повторите его через 2–3 дня. Уровень ХГЧ удваивается каждые 48–72 часа."
+    // Данные по неделям первого месяца
+    const weeksData = {
+        1: {
+            title: "Первая неделя беременности (акушерская)",
+            baby: "Фактически зачатие еще не произошло. Акушерский срок считают от первого дня последней менструации. В эту неделю организм готовится к овуляции.",
+            mom: "Идет менструация. Эндометрий (внутренний слой матки) обновляется. Это время, когда вы еще не беременны, но цикл начинает отсчет новой потенциальной жизни.",
+            development: "В яичниках созревает фолликул, который в середине цикла выпустит яйцеклетку. Важно: реальный возраст эмбриона примерно на 2 недели меньше акушерского срока.",
+            size: "Беременности еще нет, яйцеклетка созревает",
+            tip: "Если вы планируете беременность, уже сейчас начните принимать фолиевую кислоту (400–800 мкг в день) и откажитесь от алкоголя."
         },
-        {
-            number: 2,
-            title: "Выберите врача и женскую консультацию",
-            content: `
-                <p>Лучше встать на учет до 12 недель — это даст право на единовременное пособие и позволит вовремя пройти все скрининги.</p>
-                <ul>
-                    <li>Вы можете наблюдаться в государственной ЖК (бесплатно) или в частном медицинском центре.</li>
-                    <li>Важно найти врача, которому вы доверяете. Не бойтесь сменить специалиста, если чувствуете дискомфорт.</li>
-                    <li>Запишите все вопросы, которые хотите задать на первом приеме.</li>
-                </ul>
-            `,
-            tip: "Возьмите с собой на первый приём: паспорт, полис ОМС, СНИЛС, результаты анализов и УЗИ (если есть)."
+        2: {
+            title: "Вторая неделя беременности",
+            baby: "Зачатия пока нет. Яйцеклетка созревает в фолликуле и готовится к выходу. Овуляция происходит в конце этой недели — начале следующей.",
+            mom: "Уровень эстрогена растет, слизистая шейки матки становится более жидкой (благоприятная среда для сперматозоидов). Некоторые женщины чувствуют легкое покалывание внизу живота в момент овуляции.",
+            development: "Это лучшее время для зачатия. Яйцеклетка живет 12–24 часа после овуляции. Сперматозоиды могут сохранять активность до 5 дней.",
+            size: "Яйцеклетка невооруженным глазом не видна (около 0,1 мм)",
+            tip: "Овуляцию можно отследить по тестам, измерению базальной температуры или специальным приложениям."
         },
-        {
-            number: 3,
-            title: "Начните принимать фолиевую кислоту",
-            content: `
-                <p>Фолиевая кислота (витамин B9) критически важна для формирования нервной трубки плода. Это помогает предотвратить дефекты развития мозга и позвоночника.</p>
-                <ul>
-                    <li><strong>Рекомендуемая доза:</strong> 400–800 мкг в день (по назначению врача).</li>
-                    <li>Начинать приём лучше ещё на этапе планирования, но если вы узнали о беременности — начните прямо сейчас.</li>
-                    <li>Продолжать приём рекомендуется весь первый триместр.</li>
-                </ul>
-            `,
-            tip: "Многие витаминные комплексы для беременных уже содержат фолиевую кислоту. Проконсультируйтесь с врачом о выборе препарата."
+        3: {
+            title: "Третья неделя — ЗАЧАТИЕ!",
+            baby: "Происходит оплодотворение! Сперматозоид проникает в яйцеклетку — образуется зигота. Начинается деление клеток. Зигота движется по маточной трубе в полость матки.",
+            mom: "Вы пока не чувствуете беременность. Возможны очень легкие имплантационные выделения (розоватые или коричневатые) на 6–12 день после зачатия — когда эмбрион прикрепляется к стенке матки.",
+            development: "Клетки активно делятся. Формируется морула, затем бластоциста. Уже заложен генетический пол и цвет глаз малыша. Начинает вырабатываться ХГЧ — гормон беременности.",
+            size: "0,1–0,2 мм (как маковое зернышко)",
+            tip: "В это время особенно важно избегать вредных факторов: алкоголя, курения, лекарств без назначения врача."
         },
-        {
-            number: 4,
-            title: "Пересмотрите питание и образ жизни",
-            content: `
-                <p>То, что вы едите и пьете, влияет на развитие малыша. Важно:</p>
-                <ul>
-                    <li><strong>Исключить алкоголь и курение</strong> (в том числе электронные сигареты и вейпы).</li>
-                    <li><strong>Ограничить кофеин</strong> — не более 200 мг в день (1 небольшая чашка кофе).</li>
-                    <li><strong>Избегать сырых продуктов</strong> — суши, непастеризованное молоко, сырое мясо и рыба.</li>
-                    <li><strong>Добавить в рацион</strong> больше овощей, фруктов, белка, цельнозерновых продуктов.</li>
-                </ul>
-            `,
-            tip: "Пейте достаточно воды — около 1,5–2 литров в день, если нет противопоказаний от врача."
-        },
-        {
-            number: 5,
-            title: "Запишитесь на первый скрининг",
-            content: `
-                <p>Первый пренатальный скрининг проводится на сроке 11–13 недель + 6 дней. Он включает:</p>
-                <ul>
-                    <li><strong>УЗИ</strong> — оценка ТВП (толщины воротникового пространства), визуализация органов плода.</li>
-                    <li><strong>Анализ крови</strong> (РАРР-А и свободный бета-ХГЧ) — для оценки риска хромосомных аномалий.</li>
-                </ul>
-                <p>Это исследование помогает оценить риск синдрома Дауна, Эдвардса и других патологий.</p>
-            `,
-            tip: "Не волнуйтесь, если результат покажет «повышенный риск» — это не диагноз, а лишь повод для дополнительной диагностики (НИПТ или амниоцентез)."
-        },
-        {
-            number: 6,
-            title: "Позаботьтесь об эмоциональном состоянии",
-            content: `
-                <p>Гормональная перестройка может вызывать перепады настроения, тревожность и раздражительность. Это нормально!</p>
-                <ul>
-                    <li>Разговаривайте с партнером о своих чувствах — не держите эмоции в себе.</li>
-                    <li>Не стесняйтесь обращаться к перинатальному психологу, если тревога мешает жить.</li>
-                    <li>Практикуйте релаксацию: дыхательные упражнения, прогулки на свежем воздухе, легкую йогу.</li>
-                    <li>Уделяйте время хобби и отдыху — вы имеете на это право.</li>
-                </ul>
-            `,
-            tip: "Послеродовая депрессия может начинаться ещё во время беременности. Если вы чувствуете апатию, постоянную грусть — обратитесь к специалисту."
-        },
-        {
-            number: 7,
-            title: "Сообщите новость близким в удобное для вас время",
-            content: `
-                <p>Нет правильного или неправильного времени, чтобы делиться новостью. Главное — ваши чувства.</p>
-                <ul>
-                    <li>Некоторые женщины рассказывают сразу после положительного теста.</li>
-                    <li>Другие предпочитают дождаться первого скрининга (12–13 недель).</li>
-                    <li>На работе официально сообщать о беременности лучше после 12 недель (если нет потребности раньше).</li>
-                </ul>
-            `,
-            tip: "Если вы переживаете о реакции окружающих — начните с самых близких и поддерживающих людей. Это снизит стресс."
-        },
-        {
-            number: 8,
-            title: "Начните вести дневник беременности",
-            content: `
-                <p>Записывайте свои ощущения, вопросы к врачу, изменения в самочувствии. Это поможет:</p>
-                <ul>
-                    <li>Отслеживать динамику симптомов (тошнота, усталость, боли).</li>
-                    <li>Не забыть спросить врача о важных моментах.</li>
-                    <li>Сохранить тёплые воспоминания о беременности.</li>
-                </ul>
-                <p>Используйте приложение на телефоне, обычный блокнот или специальные дневники для будущих мам.</p>
-            `,
-            tip: "Отмечайте не только медицинские моменты, но и радостные события — первые шевеления, удачные фото живота, приятные покупки."
+        4: {
+            title: "Четвертая неделя беременности",
+            baby: "Бластоциста имплантируется (прикрепляется) к стенке матки. Начинают формироваться три зародышевых листка: эктодерма (нервная система, кожа), мезодерма (мышцы, скелет, сердце), эндодерма (легкие, кишечник).",
+            mom: "Происходит задержка менструации — самый явный признак! Может появиться легкая тошнота, набухание груди, усталость. Тест на беременность уже покажет положительный результат.",
+            development: "Закладывается нервная трубка (будущий головной и спинной мозг). Начинают формироваться плацента и пуповина. Эмбрион получает питание из желточного мешка.",
+            size: "1 мм (как маковое зёрнышко). Сердечко еще не бьется, но уже закладываются его клетки.",
+            tip: "Сделайте тест на беременность и запишитесь к врачу для подтверждения. Начинайте вести дневник самочувствия."
         }
-    ];
+    };
 
-    // Рендер шагов с анимацией
-    function renderSteps() {
-        const container = document.getElementById("stepsContainer");
+    let currentWeek = "1";
+
+    function renderWeek(week) {
+        const container = document.getElementById("weekContent");
         if (!container) return;
 
-        let html = "";
-        stepsData.forEach((step, index) => {
-            const delay = index * 0.03;
-            html += `
-                <div class="step-card" style="animation-delay: ${delay}s">
-                    <div class="step-header">
-                        <div class="step-number">${step.number}</div>
-                        <div class="step-title">${step.title}</div>
-                    </div>
-                    <div class="step-content">
-                        ${step.content}
-                    </div>
-                    ${step.tip ? `<div class="tip-box"><i class="fas fa-lightbulb"></i> ${step.tip}</div>` : ''}
+        const data = weeksData[week];
+        if (!data) return;
+
+        const html = `
+            <div class="week-card" style="animation-delay: 0s">
+                <div class="week-header">
+                    <span class="week-number-badge">Неделя ${week}</span>
+                    <span class="week-title">${data.title}</span>
                 </div>
-            `;
-        });
+                
+                <div class="week-content">
+                    <div class="section-title">
+                        <i class="fas fa-baby"></i> Развитие малыша
+                    </div>
+                    <p>${data.baby}</p>
+                    
+                    <div class="baby-size">
+                        <i class="fas fa-ruler"></i> Размер: ${data.size}
+                    </div>
+                    
+                    <div class="section-title">
+                        <i class="fas fa-female"></i> Что происходит с мамой
+                    </div>
+                    <p>${data.mom}</p>
+                    
+                    <div class="section-title">
+                        <i class="fas fa-chart-line"></i> Важные процессы
+                    </div>
+                    <p>${data.development}</p>
+                    
+                    <div class="tip-box">
+                        <i class="fas fa-lightbulb"></i> <strong>Совет недели:</strong> ${data.tip}
+                    </div>
+                </div>
+            </div>
+        `;
         container.innerHTML = html;
     }
+
+    // Переключение недель
+    const weekTabs = document.querySelectorAll(".week-tab");
+    weekTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            const week = tab.getAttribute("data-week");
+            if (!week) return;
+            
+            weekTabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+            
+            currentWeek = week;
+            renderWeek(currentWeek);
+            
+            // Плавный скролл к контенту
+            const contentDiv = document.getElementById("weekContent");
+            if (contentDiv) {
+                contentDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        });
+    });
 
     // Кнопка возврата в Базу знаний
     const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
@@ -435,8 +467,8 @@
         });
     }
 
-    // Инициализация
-    renderSteps();
+    // Инициализация — показываем 1-ю неделю
+    renderWeek("1");
 </script>
 </body>
 </html>
