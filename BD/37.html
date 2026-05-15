@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Вы и ваш малыш: девятый месяц (недели 36–40) — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .week-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .week-tab {
+            background: white;
+            border: 1px solid #ffe0d6;
+            padding: 10px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: inherit;
+        }
+
+        .week-tab.active {
+            background: #fbeae8;
+            border-color: #cd7c9b;
+            color: #b35d7c;
+        }
+
+        .week-tab:active {
+            transform: scale(0.96);
+        }
+
+        .week-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .week-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .week-number-badge {
+            background: #fbeae8;
+            border-radius: 60px;
+            padding: 6px 16px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #b35d7c;
+        }
+
+        .week-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #b35d7c;
+            margin: 16px 0 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title i {
+            font-size: 1rem;
+        }
+
+        .week-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .baby-size {
+            background: #fffaf5;
+            border-radius: 16px;
+            padding: 10px 14px;
+            margin: 12px 0;
+            font-size: 0.85rem;
+            color: #b45f7f;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .week-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+            .week-tabs {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-baby-carriage"></i> 
+            Вы и ваш малыш
+        </h1>
+        <p>Девятый месяц беременности: недели 36–40</p>
+        <div class="badge"><i class="fas fa-calendar-week"></i> Финишная прямая — совсем скоро встреча!</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <div class="week-tabs">
+        <button class="week-tab active" data-week="36">36-я неделя</button>
+        <button class="week-tab" data-week="37">37-я неделя</button>
+        <button class="week-tab" data-week="38">38-я неделя</button>
+        <button class="week-tab" data-week="39">39-я неделя</button>
+        <button class="week-tab" data-week="40">40-я неделя</button>
+    </div>
+
+    <div id="weekContent"></div>
+
+    <div class="week-card" style="animation-delay: 0.28s">
+        <div class="week-header">
+            <span class="week-number-badge">Важно знать</span>
+            <span class="week-title">О девятом месяце беременности</span>
+        </div>
+        <div class="week-content">
+            <p>Девятый месяц (36–40 недель) — финал беременности. Вы на пороге встречи с малышом!</p>
+            <ul>
+                <li>С этого срока беременность считается доношенной (с 37 недель)</li>
+                <li>Малыш весит около 2,5–3,5 кг и полностью готов к рождению</li>
+                <li>Живот опускается — дышать становится легче</li>
+                <li>Появляются предвестники родов: ложные схватки, отхождение слизистой пробки</li>
+                <li>Сумка в роддом должна быть полностью собрана, документы — наготове</li>
+            </ul>
+            <div class="warning-box">
+                <i class="fas fa-stethoscope"></i> <strong>Ключевые события:</strong> с 36 недель проводят третий скрининг (УЗИ + допплер), на 37–38 неделях берут мазок на стрептококк группы B.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const weeksData = {
+        36: {
+            title: "Тридцать шестая неделя беременности",
+            baby: "Размер плода 2600–2800 г, около 45–46 см (как дыня-канталупа). Малыш опускается ниже (у некоторых). Становится теснее, шевеления ощущаются иначе — больше толчки, меньше кувырканий.",
+            mom: "Живот опускается, дышать становится легче! Но чаще хочется в туалет. Отёки могут усилиться. Тренировочные схватки становятся заметнее.",
+            development: "Лёгкие почти полностью созрели. Продолжается набор жировой массы. Малыш активно сосёт палец, тренируя сосательный рефлекс.",
+            size: "2600–2800 г, около 45–46 см (как дыня-канталупа)",
+            tip: "Сумка в роддом должна быть полностью собрана! Документы носите с собой. Запишитесь на третье УЗИ (30–34 недели, но можно до 36)."
+        },
+        37: {
+            title: "Тридцать седьмая неделя — ДОНОШЕННАЯ!",
+            baby: "Размер плода 2900–3100 г, около 47–48 см (как небольшая тыква). С этого срока беременность считается доношенной. Малыш полностью готов к появлению на свет.",
+            mom: "Живот ещё ниже. Возможно отхождение слизистой пробки (розоватые или коричневатые выделения). Походка становится «утиной».",
+            development: "Сыровидная смазка покрывает кожу для облегчения прохождения по родовым путям. Продолжается накопление железа в печени.",
+            size: "2900–3100 г, около 47–48 см (как небольшая тыква)",
+            tip: "Вы можете родить в любую минуту! Проверьте сумку, зарядите телефон, договоритесь, кто отвезёт в роддом. Отдыхайте и набирайтесь сил."
+        },
+        38: {
+            title: "Тридцать восьмая неделя беременности",
+            baby: "Размер плода 3100–3300 г, около 48–49 см (как арбузик). Малыш ждёт своего часа. Сыровидная смазка всё ещё покрывает кожу, лануго (пушковые волосы) почти исчезли.",
+            mom: "Могут появиться отёки. Бессонница — частая спутница последних недель. Тренировочные схватки могут становиться регулярнее.",
+            development: "Поджелудочная железа вырабатывает инсулин. Продолжается созревание лёгких. Малыш активно глотает околоплодные воды.",
+            size: "3100–3300 г, около 48–49 см (как арбузик)",
+            tip: "Если живот тянет — делайте дыхательные упражнения. Спите на левом боку с подушкой между ног. Не перегружайте себя."
+        },
+        39: {
+            title: "Тридцать девятая неделя беременности",
+            baby: "Размер плода 3300–3500 г, около 49–50 см (как спелый арбуз). Плацента постепенно стареет. Малыш реже шевелится — копит силы для родов.",
+            mom: "Нетерпение растёт! Хочется, чтобы роды начались скорее. Появляется инстинкт «гнездования» — желание обустраивать дом.",
+            development: "Продолжается набор веса. Малыш опускается в полость малого таза, готовясь к родам. Его головка прижимается к выходу.",
+            size: "3300–3500 г, около 49–50 см (как спелый арбуз)",
+            tip: "Занимайтесь приятными делами: вяжите, читайте, смотрите добрые фильмы. Гуляйте (но недалеко от дома). Секс после 37 недель может стимулировать роды."
+        },
+        40: {
+            title: "Сороковая неделя — ПДР!",
+            baby: "Размер плода 3200–3800 г, 50–53 см (как маленький арбуз). Малыш полностью готов встретить мир. Он редко шевелится, но толчки сильные.",
+            mom: "Предполагаемая дата родов. Прислушивайтесь к предвестникам: схваткам, отхождению пробки, подтеканию вод. Если роды не начались — не паникуйте, отклонение до 42 недель считается нормой.",
+            development: "Плацента начинает стареть, околоплодных вод становится меньше. Малышу становится тесно, он копит силы.",
+            size: "3200–3800 г, 50–53 см (как маленький арбуз)",
+            tip: "Если срок перевалил за 40 недель — не волнуйтесь, но обязательно сообщите врачу. Вам назначат КТГ и УЗИ, чтобы убедиться, что всё в порядке. При перенашивании могут стимулировать роды."
+        }
+    };
+
+    let currentWeek = "36";
+
+    function renderWeek(week) {
+        const container = document.getElementById("weekContent");
+        if (!container) return;
+
+        const data = weeksData[week];
+        if (!data) return;
+
+        const html = `
+            <div class="week-card" style="animation-delay: 0s">
+                <div class="week-header">
+                    <span class="week-number-badge">Неделя ${week}</span>
+                    <span class="week-title">${data.title}</span>
+                </div>
+                <div class="week-content">
+                    <div class="section-title"><i class="fas fa-baby"></i> Развитие малыша</div>
+                    <p>${data.baby}</p>
+                    <div class="baby-size"><i class="fas fa-ruler"></i> Размер: ${data.size}</div>
+                    <div class="section-title"><i class="fas fa-female"></i> Что происходит с мамой</div>
+                    <p>${data.mom}</p>
+                    <div class="section-title"><i class="fas fa-chart-line"></i> Важные процессы</div>
+                    <p>${data.development}</p>
+                    <div class="tip-box"><i class="fas fa-lightbulb"></i> <strong>Совет недели:</strong> ${data.tip}</div>
+                </div>
+            </div>
+        `;
+        container.innerHTML = html;
+    }
+
+    const weekTabs = document.querySelectorAll(".week-tab");
+    weekTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            const week = tab.getAttribute("data-week");
+            if (!week) return;
+            weekTabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+            currentWeek = week;
+            renderWeek(currentWeek);
+            const contentDiv = document.getElementById("weekContent");
+            if (contentDiv) contentDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    renderWeek("36");
+</script>
+</body>
+</html>

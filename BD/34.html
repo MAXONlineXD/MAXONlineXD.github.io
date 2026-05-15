@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Набор новорожденного — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .checklist-group {
+            margin: 16px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 12px 0;
+            padding: 8px 12px;
+            background: #fffaf5;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #fef0ea;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #cd7c9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+        }
+
+        .checklist-check.completed {
+            background: #cd7c9b;
+            color: white;
+        }
+
+        .checklist-text {
+            flex: 1;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-baby"></i> 
+            Набор новорожденного
+        </h1>
+        <p>Что нужно купить для встречи с малышом</p>
+        <div class="badge"><i class="fas fa-clipboard-list"></i> Полный чек-лист для будущих родителей</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Когда начинать собирать?</div>
+        </div>
+        <div class="section-content">
+            <p>Оптимальное время для покупки вещей — <strong>30–34 недели</strong>. Живот уже большой, но вы ещё достаточно активны. Не откладывайте на последние недели — малыш может родиться раньше срока.</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Золотое правило:</strong> покупайте самое необходимое — остальное докупите после рождения, когда поймёте, что действительно нужно.
+            </div>
+        </div>
+    </div>
+
+    <!-- Одежда -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-tshirt"></i></div>
+            <div class="section-title">Одежда для новорожденного</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="clothing-checklist">
+                <div class="checklist-item" data-id="cloth1">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Боди с длинным рукавом — 3–5 шт. (размер 56–62)</div>
+                </div>
+                <div class="checklist-item" data-id="cloth2">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Боди с коротким рукавом — 2–3 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="cloth3">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Распашонки — 3–5 шт. (хлопок)</div>
+                </div>
+                <div class="checklist-item" data-id="cloth4">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Ползунки или слипы — 4–6 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="cloth5">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Пинетки — 1–2 пары</div>
+                </div>
+                <div class="checklist-item" data-id="cloth6">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Шапочки тонкие — 2–3 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="cloth7">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Шапочка тёплая (флисовая/шерстяная) — 1 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="cloth8">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Царапки-антицарапки — 2–3 пары</div>
+                </div>
+                <div class="checklist-item" data-id="cloth9">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Носочки — 3–5 пар</div>
+                </div>
+                <div class="checklist-item" data-id="cloth10">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Комбинезон на выписку (по сезону) — 1 шт.</div>
+                </div>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> выбирайте одежду с закруглёнными швами наружу, без пуговиц на спине, из натуральных тканей (хлопок, бамбук). Размер 56 подходит для новорожденных весом 3–4 кг.
+            </div>
+        </div>
+    </div>
+
+    <!-- Пеленание и постельное -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bed"></i></div>
+            <div class="section-title">Пеленки и постельное бельё</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="linen-checklist">
+                <div class="checklist-item" data-id="linen1">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Пеленки тонкие хлопковые — 10–15 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="linen2">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Пеленки фланелевые (тёплые) — 5–8 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="linen3">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Простынки на резинке в кроватку — 2–3 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="linen4">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Клеёнка (непродуваемая) — 1–2 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="linen5">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Одеяло тонкое (байковое/флисовое) — 1 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="linen6">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Одеяло тёплое (шерстяное/пуховое) — 1 шт.</div>
+                </div>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Альтернатива пелёнкам:</strong> слипы-трансформеры и спальные мешки. Они удобнее и безопаснее (риск СВДС ниже).
+            </div>
+        </div>
+    </div>
+
+    <!-- Гигиена и уход -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-sparkles"></i></div>
+            <div class="section-title">Гигиена и уход</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="hygiene-checklist">
+                <div class="checklist-item" data-id="hyg1">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Подгузники (размер 0 или 1, 1–2 упаковки)</div>
+                </div>
+                <div class="checklist-item" data-id="hyg2">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Влажные салфетки (без спирта, 5–10 упаковок)</div>
+                </div>
+                <div class="checklist-item" data-id="hyg3">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Детское мыло (жидкое или твёрдое)</div>
+                </div>
+                <div class="checklist-item" data-id="hyg4">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Шампунь «без слёз»</div>
+                </div>
+                <div class="checklist-item" data-id="hyg5">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Крем под подгузник (цинковый)</div>
+                </div>
+                <div class="checklist-item" data-id="hyg6">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Присыпка или крем от опрелостей</div>
+                </div>
+                <div class="checklist-item" data-id="hyg7">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Детское масло</div>
+                </div>
+                <div class="checklist-item" data-id="hyg8">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Вата, ватные диски, ватные палочки с ограничителем</div>
+                </div>
+                <div class="checklist-item" data-id="hyg9">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Ножницы для стрижки ногтей (с закруглёнными концами)</div>
+                </div>
+                <div class="checklist-item" data-id="hyg10">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Детская зубная щётка (для массажа дёсен)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Купание -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bath"></i></div>
+            <div class="section-title">Для купания</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="bath-checklist">
+                <div class="checklist-item" data-id="bath1">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Детская ванночка (или накладка на большую ванну)</div>
+                </div>
+                <div class="checklist-item" data-id="bath2">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Термометр для воды</div>
+                </div>
+                <div class="checklist-item" data-id="bath3">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Махровое полотенце с уголком (капюшоном) — 2 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="bath4">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Махровые рукавички для купания</div>
+                </div>
+                <div class="checklist-item" data-id="bath5">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Горка или гамак для купания (по желанию)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Прогулка -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-walking"></i></div>
+            <div class="section-title">Для прогулок</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="walk-checklist">
+                <div class="checklist-item" data-id="walk1">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Коляска (люлька для новорожденного)</div>
+                </div>
+                <div class="checklist-item" data-id="walk2">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Конверт на выписку (по сезону)</div>
+                </div>
+                <div class="checklist-item" data-id="walk3">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Тёплый комбинезон для прогулок (на синтепоне/пухе)</div>
+                </div>
+                <div class="checklist-item" data-id="walk4">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Москитная сетка на коляску</div>
+                </div>
+                <div class="checklist-item" data-id="walk5">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Дождевик на коляску</div>
+                </div>
+                <div class="checklist-item" data-id="walk6">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Сумка-органайзер на коляску</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Мебель и крупные вещи -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-couch"></i></div>
+            <div class="section-title">Крупные вещи и мебель</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="furniture-checklist">
+                <div class="checklist-item" data-id="fur1">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Кроватка детская</div>
+                </div>
+                <div class="checklist-item" data-id="fur2">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Матрас (жёсткий, ортопедический)</div>
+                </div>
+                <div class="checklist-item" data-id="fur3">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Комод для пеленания</div>
+                </div>
+                <div class="checklist-item" data-id="fur4">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Пеленальный матрасик</div>
+                </div>
+                <div class="checklist-item" data-id="fur5">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Автокресло 0+ (до 13 кг)</div>
+                </div>
+                <div class="checklist-item" data-id="fur6">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Слинг или эргорюкзак (для ношения на себе)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Аптечка новорожденного -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-notes-medical"></i></div>
+            <div class="section-title">Детская аптечка (минимум)</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="medicine-checklist">
+                <div class="checklist-item" data-id="med1">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Перекись водорода (3% для пупка)</div>
+                </div>
+                <div class="checklist-item" data-id="med2">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Зеленка или хлорофиллипт</div>
+                </div>
+                <div class="checklist-item" data-id="med3">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Пипетка</div>
+                </div>
+                <div class="checklist-item" data-id="med4">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Аспиратор (соплеотсос) — груша или назальный аспиратор</div>
+                </div>
+                <div class="checklist-item" data-id="med5">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Солевой раствор для носа (Аквамарис, физраствор)</div>
+                </div>
+                <div class="checklist-item" data-id="med6">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Детский крем (для тела, для лица)</div>
+                </div>
+                <div class="checklist-item" data-id="med7">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Средство от колик (Саб-Симплекс, Эспумизан L — после консультации с педиатром)</div>
+                </div>
+                <div class="checklist-item" data-id="med8">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Градусник (электронный или бесконтактный)</div>
+                </div>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> не покупайте лекарства заранее — срок годности истечёт. Достаточно базовых средств, остальное — по назначению педиатра.
+            </div>
+        </div>
+    </div>
+
+    <!-- Сумка в роддом для малыша -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-suitcase"></i></div>
+            <div class="section-title">Что взять в роддом для малыша</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="hospital-checklist">
+                <div class="checklist-item" data-id="hosp1">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Боди/распашонки — 3–4 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="hosp2">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Ползунки/слипы — 3–4 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="hosp3">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Пеленки тонкие — 3–5 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="hosp4">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Шапочки — 2 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="hosp5">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Носочки — 2 пары</div>
+                </div>
+                <div class="checklist-item" data-id="hosp6">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Подгузники (размер 1) — пачка</div>
+                </div>
+                <div class="checklist-item" data-id="hosp7">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Влажные салфетки — 1 упаковка</div>
+                </div>
+                <div class="checklist-item" data-id="hosp8">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Детское мыло (жидкое) — флакон</div>
+                </div>
+                <div class="checklist-item" data-id="hosp9">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Крем под подгузник — тюбик</div>
+                </div>
+                <div class="checklist-item" data-id="hosp10">
+                    <div class="checklist-check"><i class="fas fa-check"></i></div>
+                    <div class="checklist-text">Одеяло/конверт на выписку (по сезону)</div>
+                </div>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Уточните список в роддоме — требования могут отличаться. Часто выдают казённое бельё, можно не везти своё.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    // Сохранение состояния чек-листов в localStorage
+    function initChecklist() {
+        const items = document.querySelectorAll('.checklist-item');
+        items.forEach(item => {
+            const id = item.getAttribute('data-id');
+            const stored = localStorage.getItem(`checklist_${id}`);
+            const checkDiv = item.querySelector('.checklist-check');
+            if (stored === 'true') {
+                checkDiv.classList.add('completed');
+                checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+            } else {
+                checkDiv.classList.remove('completed');
+                checkDiv.innerHTML = '';
+            }
+            
+            item.addEventListener('click', () => {
+                const isCompleted = checkDiv.classList.contains('completed');
+                if (isCompleted) {
+                    checkDiv.classList.remove('completed');
+                    checkDiv.innerHTML = '';
+                    localStorage.setItem(`checklist_${id}`, 'false');
+                } else {
+                    checkDiv.classList.add('completed');
+                    checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+                    localStorage.setItem(`checklist_${id}`, 'true');
+                }
+            });
+        });
+    }
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    initChecklist();
+</script>
+</body>
+</html>
