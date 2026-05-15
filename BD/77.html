@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Вакцинация — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .vaccine-table {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            overflow-x: auto;
+        }
+
+        .vaccine-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .vaccine-table th, .vaccine-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ffe0d6;
+        }
+
+        .vaccine-table th {
+            background: #fbeae8;
+            color: #b35d7c;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+            .vaccine-table {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-syringe"></i> 
+            Вакцинация
+        </h1>
+        <p>Национальный календарь прививок — защита от опасных инфекций</p>
+        <div class="badge"><i class="fas fa-shield-alt"></i> Вакцинация спасает миллионы жизней каждый год</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Зачем нужны прививки -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Зачем нужны прививки?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Вакцинация — единственный надёжный способ защитить ребёнка от тяжёлых инфекций, которые могут привести к инвалидности и смерти. Благодаря прививкам удалось победить оспу, полиомиелит, корь, краснуху и другие болезни.</p>
+                <p><strong>Коллективный иммунитет:</strong> когда привито большинство детей, болезнь не может распространяться, защищая тех, кто не может быть привит по медицинским причинам.</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> решение о вакцинации принимают родители, но оно должно быть осознанным. Консультируйтесь с педиатром.
+            </div>
+        </div>
+    </div>
+
+    <!-- Национальный календарь -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-calendar-alt"></i></div>
+            <div class="section-title">Национальный календарь прививок (Россия)</div>
+        </div>
+        <div class="section-content">
+            <div class="vaccine-table">
+                <table>
+                    <thead>
+                        <tr><th>Возраст</th><th>Вакцинация</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Первые 24 часа</strong></td><td>Гепатит B (1-я доза)</td></tr>
+                        <tr><td><strong>3–7 день</strong></td><td>БЦЖ (туберкулёз)</td></tr>
+                        <tr><td><strong>1 месяц</strong></td><td>Гепатит B (2-я доза, если не в роддоме)</td></tr>
+                        <tr><td><strong>2 месяца</strong></td><td>Пневмококк (1-я доза)</td></tr>
+                        <tr><td><strong>3 месяца</strong></td><td>АКДС+Хиб+Полио (1-я доза)</td></tr>
+                        <tr><td><strong>4,5 месяца</strong></td><td>АКДС+Хиб+Полио (2-я доза), Пневмококк (2-я доза)</td></tr>
+                        <tr><td><strong>6 месяцев</strong></td><td>АКДС+Хиб+Полио (3-я доза), Гепатит B (3-я доза)</td></tr>
+                        <tr><td><strong>12 месяцев</strong></td><td>Корь-Краснуха-Паротит (1-я доза)</td></tr>
+                        <tr><td><strong>15 месяцев</strong></td><td>Пневмококк (ревакцинация)</td></tr>
+                        <tr><td><strong>18 месяцев</strong></td><td>АКДС+Хиб+Полио (1-я ревакцинация)</td></tr>
+                        <tr><td><strong>20 месяцев</strong></td><td>Полиомиелит (2-я ревакцинация, оральная)</td></tr>
+                        <tr><td><strong>6 лет</strong></td><td>Корь-Краснуха-Паротит (2-я доза)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Расшифровка вакцин -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-microscope"></i></div>
+            <div class="section-title">Расшифровка: от чего защищают</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>БЦЖ</strong> — туберкулёз (опасен поражением лёгких, костей, мозговых оболочек).</li>
+                    <li><strong>Гепатит B</strong> — вирусное поражение печени, может перейти в цирроз и рак.</li>
+                    <li><strong>АКДС</strong> — коклюш (опасен удушьем у младенцев), дифтерия (отёк гортани), столбняк (судороги, смерть).</li>
+                    <li><strong>Полиомиелит</strong> — паралич, инвалидность.</li>
+                    <li><strong>Хиб-инфекция</strong> — гемофильная инфекция (менингит, пневмония, сепсис).</li>
+                    <li><strong>Пневмококк</strong> — пневмония, менингит, сепсис.</li>
+                    <li><strong>Корь-Краснуха-Паротит</strong> — корь (смертельно опасна пневмонией), краснуха (опасна для беременных), паротит (свинка, бесплодие у мальчиков).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подготовка к прививке -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clipboard-list"></i></div>
+            <div class="section-title">Подготовка к вакцинации</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>✅ <strong>Ребёнок должен быть здоров</strong> — без температуры, насморка, сыпи, расстройства стула.</li>
+                    <li>✅ <strong>Осмотр педиатра перед прививкой</strong> — обязателен.</li>
+                    <li>✅ <strong>За 2–3 дня не вводить новые продукты прикорма</strong> (если прикорм уже начат).</li>
+                    <li>✅ <strong>За 30 минут до укола можно дать жаропонижающее</strong> (по назначению врача) — профилактика температуры.</li>
+                    <li>✅ <strong>После прививки оставаться в поликлинике 20–30 минут</strong> — на случай аллергической реакции.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> если ребёнок болен, прививку переносят до полного выздоровления + 2 недели.
+            </div>
+        </div>
+    </div>
+
+    <!-- Реакция на прививку -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-thermometer-half"></i></div>
+            <div class="section-title">Нормальные реакции на вакцинацию</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>🌡️ <strong>Температура до 38,5°C</strong> — норма, может держаться 1–2 дня.</li>
+                    <li>🩸 <strong>Покраснение, уплотнение в месте укола</strong> — проходит за 3–5 дней.</li>
+                    <li>😴 <strong>Вялость, сонливость, капризы</strong> — реакция на вакцину.</li>
+                    <li>🍼 <strong>Снижение аппетита</strong> — временно.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Что делать:</strong> сбивать температуру, если выше 38,5°C (парацетамол, ибупрофен по возрасту), много поить, не купать 1–2 дня.
+            </div>
+        </div>
+    </div>
+
+    <!-- Осложнения -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">Когда срочно к врачу</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❗ Немедленно к врачу, если:</strong>
+                <ul>
+                    <li>Температура <strong>выше 39°C</strong> или не сбивается более 3 дней.</li>
+                    <li>Отек в месте укола <strong>более 8 см</strong>.</li>
+                    <li>Сыпь по всему телу, отёк лица, губ, затруднённое дыхание — признаки аллергии (анафилаксия).</li>
+                    <li>Судороги, потеря сознания.</li>
+                    <li>Плач, не прекращающийся более 3 часов.</li>
+                    <li>Гной в месте укола, температура + покраснение.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Противопоказания -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Противопоказания к вакцинации</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Абсолютные (постоянные):</strong></p>
+                <ul>
+                    <li>Тяжёлая аллергическая реакция на предыдущую дозу вакцины.</li>
+                    <li>Иммунодефицит (живые вакцины).</li>
+                    <li>Злокачественные новообразования.</li>
+                </ul>
+                <p><strong>Относительные (временные):</strong></p>
+                <ul>
+                    <li>Острое заболевание (температура, насморк, кашель).</li>
+                    <li>Хроническое заболевание в стадии обострения.</li>
+                    <li>Недоношенность (обычно прививают по достижении 2 кг).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Мифы о прививках -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Разрушаем мифы</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Прививки вызывают аутизм.<br>
+            <strong>Правда:</strong> Многочисленные исследования (включая анализ 1,2 млн детей) не выявили связи между вакцинацией и аутизмом. Миф разоблачён и признан мошенничеством.</p>
+            
+            <p><strong>Миф:</strong> Иммунитет после болезни лучше, чем после прививки.<br>
+            <strong>Правда:</strong> Цена естественного иммунитета — риск смерти или инвалидности. Прививка даёт иммунитет без опасных осложнений.</p>
+            
+            <p><strong>Миф:</strong> От прививок можно заразиться.<br>
+            <strong>Правда:</strong> Инактивированные (убитые) вакцины не вызывают болезнь. Живые вакцины (КПК, БЦЖ) дают лёгкую форму без осложнений.</p>
+            
+            <p><strong>Миф:</strong> Если вокруг все привиты, можно не прививаться.<br>
+            <strong>Правда:</strong> Коллективный иммунитет работает, только когда привито >95% населения. Отказ нескольких человек ставит под угрозу всех.</p>
+        </div>
+    </div>
+
+    <!-- Частые вопросы -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Частые вопросы родителей</div>
+        </div>
+        <div class="section-content">
+            <p><strong>❓ Можно ли купать после прививки?</strong><br>➡️ Желательно не купать 1–2 дня, особенно если есть температура. Можно обтираться влажным полотенцем.</p>
+            
+            <p><strong>❓ Можно ли гулять после прививки?</strong><br>➡️ Если нет температуры — можно и нужно (короткие прогулки, не в людных местах). Свежий воздух полезен.</p>
+            
+            <p><strong>❓ Если пропустили прививку, всё начинать заново?</strong><br>➡️ Нет, просто делают следующую по графику. Ничего не «начинают заново».</p>
+            
+            <p><strong>❓ Делать ли прививку, если у ребёнка насморк?</strong><br>➡️ Только после осмотра педиатра. Лёгкий насморк без температуры — не противопоказание, но врач решает индивидуально.</p>
+            
+            <p><strong>❓ Прививки платные или бесплатные?</strong><br>➡️ По полису ОМС все прививки из национального календаря бесплатные. Платные — это импортные аналоги.</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

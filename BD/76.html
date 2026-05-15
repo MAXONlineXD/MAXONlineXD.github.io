@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Тревожные звоночки в первый месяц жизни малыша — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-exclamation-triangle"></i> 
+            «Тревожные звоночки»
+        </h1>
+        <p>Когда нужно срочно показать малыша врачу</p>
+        <div class="badge"><i class="fas fa-heart"></i> Лучше провериться лишний раз, чем пропустить проблему</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Главная мысль -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-quote-left"></i></div>
+            <div class="section-title">Доверяйте своей интуиции</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Эта информация — не для того, чтобы вас пугать. Она для того, чтобы вы знали, когда нужно действовать быстро. <strong>Если вы чувствуете, что «что-то не так» — покажите малыша врачу.</strong> Даже если симптомов нет. Ваша интуиция — важный диагностический инструмент.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Срочно к врачу -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ambulance"></i></div>
+            <div class="section-title">СРОЧНО к врачу (вызвать скорую)</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❗ Вызывайте скорую или срочно езжайте в больницу при любом из этих признаков:</strong>
+                <ul>
+                    <li>🌡️ <strong>Температура выше 38°C</strong> (у малыша до 3 месяцев) — вызывайте скорую немедленно!</li>
+                    <li>💙 <strong>Синюшность губ, языка, лица</strong> — нехватка кислорода.</li>
+                    <li>😤 <strong>Затруднённое дыхание</strong> — втяжение межреберий, раздувание крыльев носа, стонущее дыхание.</li>
+                    <li>🤮 <strong>Рвота фонтаном</strong> (после каждого кормления, особенно зелёная или с кровью).</li>
+                    <li>😫 <strong>Отказ от еды</strong> — не берёт грудь или бутылочку более 6–8 часов.</li>
+                    <li>😴 <strong>Вялость, не просыпается на кормление</strong> — спит более 4–5 часов подряд (в первые 2 недели).</li>
+                    <li>⚡ <strong>Судороги</strong> (подергивания, запрокидывание головы, закатывание глаз).</li>
+                    <li>🩸 <strong>Кровь в стуле</strong> или рвотных массах.</li>
+                    <li>🏥 <strong>Выбухание родничка</strong> (передний родничок становится тугим, выпирает).</li>
+                    <li>🚑 <strong>Травма</strong> — падение, удар головой, ДТП.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- К врачу в ближайшее время -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-stethoscope"></i></div>
+            <div class="section-title">К врачу в ближайшее время (в этот же день)</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>🟡 <strong>Желтуха распространяется на ноги и руки</strong> (после 2 недель жизни).</li>
+                    <li>💩 <strong>Стул белый, серый или чёрный</strong> (меконий только в первые дни).</li>
+                    <li>🤢 <strong>Срыгивание фонтаном</strong> более 1–2 раз в день.</li>
+                    <li>😭 <strong>Необычный крик</strong> (монотонный, пронзительный, «мозговой»).</li>
+                    <li>🩲 <strong>Меньше 6 мокрых подгузников в сутки</strong> (после прихода молока, на 5–7 день).</li>
+                    <li>🩸 <strong>Кровь в пупке, гнойные выделения, покраснение вокруг пупка.</strong></li>
+                    <li>😴 <strong>Не просыпается для кормления</strong> (спит более 4 часов подряд в первые 2 недели).</li>
+                    <li>😖 <strong>Беспокойство, которое не проходит даже после смены позы и кормления.</strong></li>
+                    <li>👁️ <strong>Красные глаза, гнойные выделения.</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Что НОРМАЛЬНО (не пугайтесь!) -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="section-title">Что НОРМАЛЬНО в первый месяц</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>🟡 <strong>Физиологическая желтуха</strong> — пожелтение кожи на 2–4 день, проходит к 10–14 дню.</li>
+                    <li>🩸 <strong>Кровянистые выделения у девочек</strong> — гормональный криз (1–2 дня).</li>
+                    <li>🍼 <strong>Набухание молочных желёз</strong> (у мальчиков и девочек) — гормональный криз, проходит без лечения.</li>
+                    <li>😴 <strong>Тремор подбородка или ручек при плаче</strong> — незрелость нервной системы.</li>
+                    <li>🤧 <strong>Чихание, икота, срыгивание небольшим объёмом</strong> — норма.</li>
+                    <li>💤 <strong>Периодическое дыхание (апноэ до 10 секунд)</strong> — незрелость дыхательного центра.</li>
+                    <li>🩲 <strong>Стул зелёный, с комочками</strong> в первые дни — переходный стул.</li>
+                    <li>😳 <strong>Пугание (рефлекс Моро)</strong> — при резком звуке разводит ручки.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> если вы сомневаетесь — покажите малыша врачу. Лучше перестраховаться.
+            </div>
+        </div>
+    </div>
+
+    <!-- Потеря веса -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-weight-scale"></i></div>
+            <div class="section-title">Потеря веса и её восстановление</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Физиологическая потеря веса:</strong> в первые 3–4 дня малыш теряет 5–10% от веса при рождении. Это норма!</p>
+                <p><strong>Восстанавливается вес к 10–14 дню жизни.</strong></p>
+                <p><strong>❗ Повод для беспокойства:</strong> если потеря веса более 10% или вес не восстановился к 2 неделям.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ложка дёгтя vs норма -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-simple"></i></div>
+            <div class="section-title">Сравнительная таблица: норма и патология</div>
+        </div>
+        <div class="section-content">
+            <div class="stool-table">
+                <table>
+                    <thead>
+                        <tr><th>Признак</th><th>Норма</th><th>Патология (к врачу)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Температура</td><td>36,5–37,2°C</td><td>Выше 38°C (срочно!)</td></tr>
+                        <tr><td>Дыхание</td><td>30–60 в минуту</td><td>Затруднённое, втяжение, синюшность</td></tr>
+                        <tr><td>Стул (1-й день)</td><td>Меконий (чёрный)</td><td>Белый/серый</td></tr>
+                        <tr><td>Стул (после)</td><td>Жёлтый, кашицеобразный</td><td>Кровь, белый, чёрный</td></tr>
+                        <tr><td>Мочеиспускание</td><td>6–8 раз в сутки</td><td>Менее 6 раз</td></tr>
+                        <tr><td>Родничок</td><td>Мягкий, не пульсирует</td><td>Выбухает, напряжён</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Что должно насторожить -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-eye"></i></div>
+            <div class="section-title">Дополнительные настораживающие признаки</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>🤢 <strong>Постоянное срыгивание</strong> — если ребёнок срыгивает после каждого кормления большим объёмом.</li>
+                    <li>🍼 <strong>Сосание губы, щёк, пальцев</strong> между кормлениями (может быть признаком голода, даже если вы кормите часто).</li>
+                    <li>😴 <strong>Сонливость, которую сложно прервать</strong> — не просыпается на кормление.</li>
+                    <li>👀 <strong>Косоглазие, которое не проходит к 2 месяцам</strong> — может быть признаком проблем.</li>
+                    <li>🦵 <strong>Асимметрия ножных складок</strong> — возможен вывих бедра.</li>
+                    <li>😖 <strong>Громкий, пронзительный, «мозговой» крик</strong> — не успокаивается привычными методами.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Синдром внезапной детской смерти -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="section-title">Профилактика СВДС</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>✅ <strong>Спать на спине</strong> (не на животе, не на боку).</li>
+                    <li>✅ <strong>Жёсткий матрас, без подушек, одеял, мягких игрушек, бортиков.</strong></li>
+                    <li>✅ <strong>Температура в комнате 18–22°C, влажность 50–70%.</strong></li>
+                    <li>✅ <strong>Совместная комната, но не общая кровать.</strong></li>
+                    <li>✅ <strong>Не перегревать малыша.</strong></li>
+                    <li>✅ <strong>Не курить рядом с ребёнком.</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда вызывать скорую (шпаргалка) -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="section-title">Шпаргалка: когда вызывать скорую</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>Позвоните по номеру 112 или 103, если:</strong>
+                <ol style="margin-left: 20px;">
+                    <li><strong>Температура выше 38°C</strong> у малыша до 3 месяцев.</li>
+                    <li><strong>Синюшность губ, лица, языка.</strong></li>
+                    <li><strong>Затруднённое дыхание</strong> (хрипы, втяжение, стоны).</li>
+                    <li><strong>Рвота фонтаном.</strong></li>
+                    <li><strong>Отказ от еды более 6 часов.</strong></li>
+                    <li><strong>Вялость, не просыпается на кормление.</strong></li>
+                    <li><strong>Судороги.</strong></li>
+                    <li><strong>Кровь в стуле или рвоте.</strong></li>
+                </ol>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> если вы сомневаетесь — звоните. Оператор скорой подскажет, нужно ли приезжать.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>
