@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Позаботьтесь о себе — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .self-care-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .self-care-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #fffaf5;
+            padding: 12px;
+            border-radius: 20px;
+        }
+
+        .self-care-item i {
+            font-size: 1.4rem;
+            color: #b35d7c;
+            width: 32px;
+            text-align: center;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-spa"></i> 
+            Позаботьтесь о себе
+        </h1>
+        <p>Забота о себе — лучший подарок вашему малышу</p>
+        <div class="badge"><i class="fas fa-heart"></i> Ваше благополучие — приоритет №1</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Главный посыл -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-quote-left"></i></div>
+            <div class="section-title">Вы — на первом месте</div>
+        </div>
+        <div class="section-content">
+            <p>Когда вы заботитесь о себе, вы заботитесь и о малыше. Ваше физическое и эмоциональное состояние напрямую влияет на развитие беременности.</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Запомните:</strong> эгоизм и забота о себе — это не одно и то же. Отдыхать, просить помощи, говорить «нет» лишним нагрузкам — это нормально и важно.
+            </div>
+        </div>
+    </div>
+
+    <!-- Отдых и сон -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bed"></i></div>
+            <div class="section-title">Сон и отдых</div>
+        </div>
+        <div class="section-content">
+            <div class="self-care-list">
+                <div class="self-care-item"><i class="fas fa-moon"></i><span>Спите 8–9 часов ночью + дневной сон 30–60 минут</span></div>
+                <div class="self-care-item"><i class="fas fa-pillow"></i><span>Используйте подушку для беременных (под живот и между ног)</span></div>
+                <div class="self-care-item"><i class="fas fa-bed"></i><span>После 28 недель спите на левом боку — это лучше для кровотока</span></div>
+                <div class="self-care-item"><i class="fas fa-coffee"></i><span>Избегайте кофеина после 16:00 — он мешает засыпанию</span></div>
+                <div class="self-care-item"><i class="fas fa-soundcloud"></i><span>Включите белый шум или спокойную музыку перед сном</span></div>
+            </div>
+            <div class="warning-box">
+                Если не можете уснуть из-за тревог — попробуйте дыхательные техники: вдох на 4 счета, выдох на 6. Если бессонница длительная — скажите врачу.
+            </div>
+        </div>
+    </div>
+
+    <!-- Питание и водный баланс -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-apple-alt"></i></div>
+            <div class="section-title">Здоровое питание</div>
+        </div>
+        <div class="section-content">
+            <div class="self-care-list">
+                <div class="self-care-item"><i class="fas fa-utensils"></i><span>Ешьте небольшими порциями 5–6 раз в день</span></div>
+                <div class="self-care-item"><i class="fas fa-tint"></i><span>Пейте 1,5–2 литра воды (если нет отёков)</span></div>
+                <div class="self-care-item"><i class="fas fa-bread-slice"></i><span>Отдавайте предпочтение цельнозерновым продуктам</span></div>
+                <div class="self-care-item"><i class="fas fa-fish"></i><span>Включите в рацион белковые продукты (рыба, курица, творог)</span></div>
+                <div class="self-care-item"><i class="fas fa-candy"></i><span>Сократите сахар и фастфуд — они дают пустые калории</span></div>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Держите при себе полезные снеки: яблоко, орехи, йогурт, сухофрукты, морковные палочки.
+            </div>
+        </div>
+    </div>
+
+    <!-- Физическая активность -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-walking"></i></div>
+            <div class="section-title">Умеренная активность</div>
+        </div>
+        <div class="section-content">
+            <div class="self-care-list">
+                <div class="self-care-item"><i class="fas fa-walking"></i><span>Ежедневные прогулки на свежем воздухе — 30–60 минут</span></div>
+                <div class="self-care-item"><i class="fas fa-swimmer"></i><span>Плавание и аквааэробика — идеальная нагрузка для беременных</span></div>
+                <div class="self-care-item"><i class="fas fa-yin-yang"></i><span>Йога для беременных (избегайте перевёрнутых поз)</span></div>
+                <div class="self-care-item"><i class="fas fa-female"></i><span>Упражнения Кегеля — каждый день</span></div>
+            </div>
+            <div class="warning-box">
+                <strong>Правило 3-х «не»:</strong> не перегреваться, не задыхаться, не допускать боли. Если вы не можете говорить во время упражнений — снизьте темп.
+            </div>
+        </div>
+    </div>
+
+    <!-- Эмоциональное здоровье -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-face-smile"></i></div>
+            <div class="section-title">Эмоциональное благополучие</div>
+        </div>
+        <div class="section-content">
+            <div class="self-care-list">
+                <div class="self-care-item"><i class="fas fa-comments"></i><span>Делитесь чувствами с партнёром или близкими</span></div>
+                <div class="self-care-item"><i class="fas fa-brain"></i><span>Практикуйте осознанность и дыхательные техники</span></div>
+                <div class="self-care-item"><i class="fas fa-book"></i><span>Ведите дневник беременности — записывайте эмоции и события</span></div>
+                <div class="self-care-item"><i class="fas fa-users"></i><span>Посещайте группы поддержки для будущих мам</span></div>
+                <div class="self-care-item"><i class="fas fa-hand-holding-heart"></i><span>Обратитесь к психологу, если тревога или грусть не проходят</span></div>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> <strong>Гормоны + стресс = норма.</strong> Но если вам кажется, что вы «сходите с ума» или нет сил вставать с кровати — это может быть депрессия, и она лечится безопасными для беременности методами.
+            </div>
+        </div>
+    </div>
+
+    <!-- Уход за телом -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-spa"></i></div>
+            <div class="section-title">Уход за кожей и телом</div>
+        </div>
+        <div class="section-content">
+            <div class="self-care-list">
+                <div class="self-care-item"><i class="fas fa-oil-can"></i><span>Увлажняйте кожу живота, груди и бёдер — профилактика растяжек</span></div>
+                <div class="self-care-item"><i class="fas fa-sun"></i><span>Используйте солнцезащитный крем SPF 30+ — пигментация усиливается</span></div>
+                <div class="self-care-item"><i class="fas fa-tshirt"></i><span>Носите удобное бельё (без косточек) и бандаж с 20–24 недель</span></div>
+                <div class="self-care-item"><i class="fas fa-shoe-prints"></i><span>Выбирайте удобную обувь без каблуков (максимум 2–3 см)</span></div>
+                <div class="self-care-item"><i class="fas fa-cut"></i><span>Стрижка волос и маникюр безопасны — не верьте мифам</span></div>
+            </div>
+            <div class="warning-box">
+                Избегайте: горячих ванн (выше 38°C), саун, бань, химических пилингов, ретинола в косметике.
+            </div>
+        </div>
+    </div>
+
+    <!-- Социальная жизнь и работа -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-briefcase"></i></div>
+            <div class="section-title">Работа и общение</div>
+        </div>
+        <div class="section-content">
+            <div class="self-care-list">
+                <div class="self-care-item"><i class="fas fa-gavel"></i><span>Знайте свои права: сокращённый день, декрет с 30 недель</span></div>
+                <div class="self-care-item"><i class="fas fa-hand-peace"></i><span>Не бойтесь просить о помощи на работе — вы имеете право</span></div>
+                <div class="self-care-item"><i class="fas fa-glass-cheers"></i><span>Встречайтесь с подругами, даже если чувствуете усталость — это поднимает настроение</span></div>
+                <div class="self-care-item"><i class="fas fa-comment-slash"></i><span>Ограничьте общение с токсичными людьми</span></div>
+                <div class="self-care-item"><i class="fas fa-filter"></i><span>Попросите близких оградить вас от негативных новостей</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Маленькие радости -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-gift"></i></div>
+            <div class="section-title">Радуйте себя каждый день</div>
+        </div>
+        <div class="section-content">
+            <div class="self-care-list">
+                <div class="self-care-item"><i class="fas fa-chocolate-bar"></i><span>Разрешите себе маленькую слабость (кусочек торта, мороженое)</span></div>
+                <div class="self-care-item"><i class="fas fa-fish"></i><span>Примите тёплую ванну с пеной и солью (не горячую)</span></div>
+                <div class="self-care-item"><i class="fas fa-photo-video"></i><span>Сходите в кино на добрый фильм или комедию</span></div>
+                <div class="self-care-item"><i class="fas fa-book"></i><span>Почитайте книгу или послушайте аудиосказку для малыша</span></div>
+                <div class="self-care-item"><i class="fas fa-hand-sparkles"></i><span>Сделайте лёгкий массаж стоп — мужу в помощь</span></div>
+                <div class="self-care-item"><i class="fas fa-crown"></i><span>Купите новую вещь (для себя или малыша)</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда просить помощи -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ambulance"></i></div>
+            <div class="section-title">Когда срочно нужна помощь</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle"></i> <strong>Немедленно обратитесь к врачу или психологу, если:</strong>
+                <ul>
+                    <li>Вы постоянно плачете без причины</li>
+                    <li>Нет сил вставать с кровати</li>
+                    <li>Мысли о том, что вы не справитесь, не отпускают</li>
+                    <li>Появились мысли о причинении вреда себе или ребёнку</li>
+                    <li>Вы перестали испытывать радость от того, что радовало раньше</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> Послеродовая депрессия часто начинается ещё во время беременности. Не ждите, что «само пройдёт» — обратитесь за помощью.
+            </div>
+        </div>
+    </div>
+
+    <!-- Ваша поддержка -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="section-title">Вы не одна</div>
+        </div>
+        <div class="section-content">
+            <p>В Сургутском клиническом перинатальном центре работают психологи, которые специализируются на поддержке беременных и молодых мам.</p>
+            <div class="tip-box">
+                <i class="fas fa-phone-alt"></i> <strong>Горячая линия психологической поддержки:</strong> 8 800 555 35 35 (бесплатно, круглосуточно).
+            </div>
+            <p>Вы можете записаться на очную консультацию или позвонить по телефону доверия. Вы имеете право на помощь — не стесняйтесь её просить.</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>
