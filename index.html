@@ -398,7 +398,7 @@
                 <h2>Быстрая помощь</h2>
             </div>
             <div class="btn-group">
-                <button class="btn-help" data-action="feeding"><i class="fas fa-baby-carriage"></i> Что нужно знать о радах</button>
+                <button class="btn-help" data-action="feeding"><i class="fas fa-baby-carriage"></i> Грудное вскармливание</button>
                 <button class="btn-help" data-action="postpartum"><i class="fas fa-heartbeat"></i> После родов</button>
                 <button class="btn-help" data-action="babycare"><i class="fas fa-baby"></i> Уход за малышом</button>
                 <button class="btn-help" data-action="emotional"><i class="fas fa-brain"></i> Эмоции мамы</button>
@@ -536,21 +536,14 @@
             if (e.target === modal) closeModal();
         });
 
-        // 3. Обработчики для кнопок быстрой помощи       
-        const feedingButton = document.querySelector(".btn-help[data-action='feeding']");
-        if (feedingButton) {
-            feedingButton.addEventListener("click", (e) => {
-                e.preventDefault();
-                window.location.href = "https://maxonlinexd.github.io/rodi.html";
-            });
-        }
-
-        // Остальные кнопки показывают модальные окна
-        const otherHelpButtons = document.querySelectorAll(".btn-help:not([data-action='feeding'])");
-        otherHelpButtons.forEach(btn => {
+        // 3. Обработчики для кнопок быстрой помощи (data-action)
+        const helpButtons = document.querySelectorAll(".btn-help");
+        helpButtons.forEach(btn => {
             btn.addEventListener("click", (e) => {
                 const action = btn.getAttribute("data-action");
-                if (action === "postpartum") {
+                if (action === "feeding") {
+                    showModal("Грудное вскармливание", "✔️ Прикладывание по требованию, правильный захват, консультация с лактологом в нашем центре ежедневно. Пейте тёплое питьё за 20 минут до кормления.", "fas fa-baby-carriage");
+                } else if (action === "postpartum") {
                     showModal("После родов", "🩹 Восстановление: больше отдыхайте, носите послеродовой бандаж по показаниям. Не стесняйтесь делиться эмоциями — наша психологическая поддержка 24/7.", "fas fa-heartbeat");
                 } else if (action === "babycare") {
                     showModal("Уход за малышом", "🧸 Ежедневное купание, обработка пупочной ранки, контроль температуры тела. При беспокойстве — метод кенгуру (кожа к коже). Звоните при тревожных симптомах.", "fas fa-baby");
