@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Упражнения для мышц тазового дна — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .exercise-step {
+            background: #fef0e8;
+            border-radius: 20px;
+            padding: 14px;
+            margin: 12px 0;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-female"></i> 
+            Упражнения для тазового дна
+        </h1>
+        <p>Крепкие мышцы — лёгкие роды и быстрое восстановление</p>
+        <div class="badge"><i class="fas fa-heartbeat"></i> Упражнения Кегеля — ваша страховка от проблем после родов</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Что такое мышцы тазового дна -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Что такое мышцы тазового дна?</div>
+        </div>
+        <div class="section-content">
+            <p>Мышцы тазового дна — это своеобразный «гамак», который поддерживает мочевой пузырь, матку и прямую кишку. Во время беременности и родов они испытывают колоссальную нагрузку.</p>
+            <div class="warning-box">
+                <i class="fas fa-info-circle"></i> <strong>Почему это важно:</strong>
+                <ul>
+                    <li>Поддерживают органы малого таза в правильном положении</li>
+                    <li>Контролируют мочеиспускание и дефекацию</li>
+                    <li>Участвуют в половых ощущениях</li>
+                    <li>Помогают во время потуг и облегчают роды</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Зачем тренировать при беременности -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-heart"></i></div>
+            <div class="section-title">Зачем тренировать при беременности?</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>✅ <strong>Профилактика недержания мочи</strong> — до 40% женщин сталкиваются с этой проблемой после родов</li>
+                <li>✅ <strong>Облегчение родов</strong> — тренированные мышцы лучше расслабляются в нужный момент</li>
+                <li>✅ <strong>Снижение риска разрывов</strong> — эластичные мышцы растягиваются, а не рвутся</li>
+                <li>✅ <strong>Быстрое восстановление после родов</strong></li>
+                <li>✅ <strong>Профилактика опущения органов малого таза</strong></li>
+                <li>✅ <strong>Улучшение кровообращения в малом тазу</strong></li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Начинать можно с любого срока беременности, но лучше — с первого триместра.
+            </div>
+        </div>
+    </div>
+
+    <!-- Как найти нужные мышцы -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-search"></i></div>
+            <div class="section-title">Как найти мышцы тазового дна</div>
+        </div>
+        <div class="section-content">
+            <div class="exercise-step">
+                <p><strong>Метод 1. «Остановка струи»</strong><br>
+                Во время мочеиспускания попробуйте остановить струю, не напрягая ягодицы и бёдра. Запомнили ощущения? Это и есть мышцы тазового дна. <strong>Важно:</strong> не делайте это постоянно — только 1 раз для понимания.</p>
+            </div>
+            <div class="exercise-step">
+                <p><strong>Метод 2. «Лифт»</strong><br>
+                Представьте, что ваши мышцы — это лифт, который поднимается вверх и опускается вниз. Сожмите их, поднимаясь на 3–5 этажей, затем постепенно расслабляйте.</p>
+            </div>
+            <div class="exercise-step">
+                <p><strong>Метод 3. «Зеркало»</strong><br>
+                Введите чистый палец во влагалище и сожмите мышцы — вы должны почувствовать давление.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Базовое упражнение Кегеля -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="section-title">Базовое упражнение Кегеля</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Техника выполнения:</strong></p>
+            <ol style="padding-left: 20px;">
+                <li>Сядьте удобно, расслабьте ноги, ягодицы и живот</li>
+                <li>Сожмите мышцы тазового дна, как будто хотите остановить мочеиспускание</li>
+                <li>Задержите в сжатом положении на <strong>5–10 секунд</strong></li>
+                <li>Медленно расслабьте на <strong>10 секунд</strong></li>
+                <li>Повторите <strong>10–15 раз</strong></li>
+                <li>Делайте <strong>3–5 подходов в день</strong></li>
+            </ol>
+            <div class="tip-box">
+                <i class="fas fa-check-circle"></i> <strong>Важно:</strong> дышите ровно, не задерживайте дыхание! Не напрягайте пресс, ягодицы и бёдра — работают только мышцы таза.
+            </div>
+        </div>
+    </div>
+
+    <!-- Продвинутые упражнения -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="section-title">Продвинутые упражнения</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Быстрые сокращения</strong><br>
+            Сжимайте и расслабляйте мышцы максимально быстро в течение 10 секунд. Отдых 10 секунд. Повторите 5–10 раз. Развивает реакцию мышц.</p>
+            
+            <p><strong>«Лифт»</strong><br>
+            Напрягайте мышцы «по этажам»: немного — сильнее — ещё сильнее — максимально. Затем спускайтесь так же постепенно. Тренирует контроль.</p>
+            
+            <p><strong>Удержание</strong><br>
+            Сожмите мышцы на 5 секунд, не отпуская, добавьте ещё 5 секунд напряжения, затем ещё. Удерживайте до 60 секунд. Повторите 3–5 раз.</p>
+            
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle"></i> Начинайте с базового уровня, переходите к продвинутым только когда освоите технику.
+            </div>
+        </div>
+    </div>
+
+    <!-- Упражнения с фитболом и в разных позах -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chair"></i></div>
+            <div class="section-title">Упражнения в разных позах</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Сидя на фитболе:</strong> мягкие покачивания тазом + упражнения Кегеля</li>
+                <li><strong>Стоя на четвереньках:</strong> идеальная поза для беременных, снимает нагрузку с позвоночника</li>
+                <li><strong>Лёжа на боку:</strong> согните колени, выполняйте сокращения</li>
+                <li><strong>Стоя у стены:</strong> можно выполнять в любой очереди незаметно для окружающих</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Лайфхак:</strong> упражнения Кегеля можно делать незаметно где угодно — в транспорте, на работе, за рулём. Главное — регулярность.
+            </div>
+        </div>
+    </div>
+
+    <!-- Чего нельзя делать -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Типичные ошибки</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ Напрягать ягодицы, бёдра или пресс — работают только мышцы таза</li>
+                <li>❌ Задерживать дыхание — дышите ровно</li>
+                <li>❌ Выполнять упражнение Кегеля во время мочеиспускания постоянно — это вредно</li>
+                <li>❌ Заниматься при обострении геморроя или инфекциях мочевыводящих путей</li>
+                <li>❌ Делать упражнение «мостик» (подъём таза) после 20 недель — нагрузка на пресс</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Когда нельзя заниматься -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-stop-circle"></i></div>
+            <div class="section-title">Противопоказания</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>НЕ занимайтесь упражнениями для тазового дна, если:</strong>
+                <ul>
+                    <li>Угроза прерывания беременности (кровотечение, боли)</li>
+                    <li>Истмико-цервикальная недостаточность (слабость шейки матки)</li>
+                    <li>Предлежание плаценты</li>
+                    <li>Воспалительные заболевания органов малого таза</li>
+                    <li>Маточные кровотечения</li>
+                    <li>Тонус матки (гипертонус)</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-stethoscope"></i> Перед началом любых упражнений обязательно проконсультируйтесь с врачом!
+            </div>
+        </div>
+    </div>
+
+    <!-- Польза после родов -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-baby-carriage"></i></div>
+            <div class="section-title">Упражнения после родов</div>
+        </div>
+        <div class="section-content">
+            <p>Возобновлять тренировки можно уже через <strong>1–2 дня</strong> после естественных родов (при отсутствии разрывов и осложнений). После кесарева сечения — через <strong>4–6 недель</strong>, после консультации с врачом.</p>
+            <ul>
+                <li>Начинайте с 5–10 повторений, увеличивая постепенно</li>
+                <li>Лучше выполнять лёжа на боку или сидя на фитболе</li>
+                <li>Особенно актуально при недержании мочи, которое часто проходит после родов</li>
+                <li>Укрепление мышц тазового дна помогает вернуть тонус и сексуальное здоровье</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> Регулярные упражнения Кегеля — лучшая профилактика опущения органов малого таза в пожилом возрасте.
+            </div>
+        </div>
+    </div>
+
+    <!-- Чек-лист -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clipboard-list"></i></div>
+            <div class="section-title">Чек-лист для правильных занятий</div>
+        </div>
+        <div class="section-content">
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div><i class="fas fa-check-circle" style="color: #2d6a4f;"></i> Нашла нужные мышцы (метод остановки мочи)</div>
+                <div><i class="fas fa-check-circle" style="color: #2d6a4f;"></i> Не напрягаю ягодицы и пресс</div>
+                <div><i class="fas fa-check-circle" style="color: #2d6a4f;"></i> Дышу ровно, не задерживаю</div>
+                <div><i class="fas fa-check-circle" style="color: #2d6a4f;"></i> Делаю медленные и быстрые сокращения</div>
+                <div><i class="fas fa-check-circle" style="color: #2d6a4f;"></i> Тренируюсь 3–5 раз в день</div>
+                <div><i class="fas fa-check-circle" style="color: #2d6a4f;"></i> Получила одобрение врача</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>
