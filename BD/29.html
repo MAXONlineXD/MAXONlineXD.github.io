@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Эмоциональное состояние во время беременности — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .emotion-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 14px;
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .emotion-icon {
+            font-size: 2rem;
+            width: 50px;
+            text-align: center;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-face-smile"></i> 
+            Эмоциональное состояние
+        </h1>
+        <p>Как справляться с перепадами настроения и тревогой</p>
+        <div class="badge"><i class="fas fa-heart"></i> Ваши эмоции важны и нормальны</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Почему эмоции такие сильные?</div>
+        </div>
+        <div class="section-content">
+            <p>Беременность — время колоссальных гормональных изменений. Уровень эстрогена и прогестерона повышается в десятки раз, что напрямую влияет на настроение, тревожность и чувствительность.</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Это нормально!</strong> Плакать над рекламой, смеяться без причины, злиться на любимого — всё это не «вы сходите с ума», а работа гормонов.
+            </div>
+        </div>
+    </div>
+
+    <!-- Эмоции по триместрам -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-calendar-week"></i></div>
+            <div class="section-title">Эмоции по триместрам</div>
+        </div>
+        <div class="section-content">
+            <div class="emotion-card">
+                <div class="emotion-icon">🌪️</div>
+                <div><strong>Первый триместр:</strong> перепады настроения, плаксивость, тревога, раздражительность. Организм привыкает к гормонам.</div>
+            </div>
+            <div class="emotion-card">
+                <div class="emotion-icon">☀️</div>
+                <div><strong>Второй триместр:</strong> «золотой период» — эмоции стабилизируются, энергия возвращается, настроение улучшается.</div>
+            </div>
+            <div class="emotion-card">
+                <div class="emotion-icon">🤰</div>
+                <div><strong>Третий триместр:</strong> усталость, тревога перед родами, нетерпение, «гнездование» (желание обустраивать дом).</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Частые эмоциональные состояния -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="section-title">Что вы можете чувствовать</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Тревога</strong> — за здоровье малыша, за роды, за свои силы. Это нормально, но важно не давать ей управлять вами.</li>
+                <li><strong>Раздражительность</strong> — даже любимые люди могут бесить. Гормоны виноваты.</li>
+                <li><strong>Плаксивость</strong> — слёзы без причины, умиление до слёз, грусть от рекламы.</li>
+                <li><strong>Чувство вины</strong> — «что я делаю не так?», «я плохая мама». Не верьте этим мыслям!</li>
+                <li><strong>Страх</strong> — перед болью, перед неизвестностью, перед ответственностью.</li>
+                <li><strong>Эйфория</strong> — радость от шевелений, от ожидания чуда.</li>
+                <li><strong>Апатия</strong> — ничего не хочется, сил нет. Прислушивайтесь к себе: возможно, нужен отдых.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Как помочь себе -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="section-title">Как помочь себе</div>
+        </div>
+        <div class="section-content">
+            <div class="emotion-card">
+                <div class="emotion-icon">🧘</div>
+                <div><strong>Дыхательные техники</strong> — вдох на 4 счета, выдох на 6. Успокаивает нервную систему.</div>
+            </div>
+            <div class="emotion-card">
+                <div class="emotion-icon">🚶</div>
+                <div><strong>Прогулки на свежем воздухе</strong> — каждый день хотя бы 30 минут.</div>
+            </div>
+            <div class="emotion-card">
+                <div class="emotion-icon">💬</div>
+                <div><strong>Разговаривайте</strong> — с партнёром, подругой, психологом. Не держите эмоции в себе.</div>
+            </div>
+            <div class="emotion-card">
+                <div class="emotion-icon">📝</div>
+                <div><strong>Ведите дневник</strong> — записывайте чувства, страхи, радости. Это снижает тревогу.</div>
+            </div>
+            <div class="emotion-card">
+                <div class="emotion-icon">💤</div>
+                <div><strong>Спите достаточно</strong> — усталость усиливает эмоциональные качели.</div>
+            </div>
+            <div class="emotion-card">
+                <div class="emotion-icon">🎨</div>
+                <div><strong>Хобби</strong> — рисование, вязание, рукоделие отвлекают от тревожных мыслей.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Что НЕ стоит делать -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего лучше избегать</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ Читать форумы с негативными историями (искусственно повышают тревогу)</li>
+                <li>❌ Смотреть тяжёлые новости, триллеры, ужасы</li>
+                <li>❌ Общаться с людьми, которые обесценивают ваши чувства («не ной», «все так проходят»)</li>
+                <li>❌ Перегружать себя работой и делами (усталость = больше эмоциональных качелей)</li>
+                <li>❌ Копить тревогу в себе — делитесь!</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Страхи перед родами -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-fear"></i></div>
+            <div class="section-title">Страх перед родами</div>
+        </div>
+        <div class="section-content">
+            <p>Токофобия (страх родов) встречается у 10–20% женщин. Это нормально, но важно с ним работать.</p>
+            <ul>
+                <li><strong>Изучите процесс</strong> — посетите курсы для беременных, почитайте книги. Незнание пугает больше, чем знание.</li>
+                <li><strong>Составьте план родов</strong> — обсудите с врачом желаемые позы, обезболивание, присутствие партнёра.</li>
+                <li><strong>Договоритесь с партнёром</strong> — кто будет поддерживать, что делать.</li>
+                <li><strong>Практикуйте дыхание</strong> — оно поможет в схватках.</li>
+                <li><strong>Посетите перинатального психолога</strong> — если страх мешает жить.</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Помните: врачи делают всё, чтобы роды прошли безопасно. Вы не одна.
+            </div>
+        </div>
+    </div>
+
+    <!-- Партнёр и поддержка -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hands-helping"></i></div>
+            <div class="section-title">Как партнёр может помочь</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Слушать без советов</strong> — просто быть рядом и говорить «Я с тобой».</li>
+                <li><strong>Не обесценивать</strong> — «Не ной, ты же беременная» — запрещённая фраза.</li>
+                <li><strong>Взять часть домашних дел</strong> — усталость усиливает эмоции.</li>
+                <li><strong>Ходить с вами к врачу</strong> — показывает вовлечённость.</li>
+                <li><strong>Обнимать</strong> — объятия снижают уровень кортизола (гормона стресса).</li>
+            </ul>
+            <div class="warning-box">
+                <strong>Важно:</strong> партнёр тоже может тревожиться. Разговаривайте друг с другом — вы команда.
+            </div>
+        </div>
+    </div>
+
+    <!-- Тревожные звоночки -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">Когда нужна помощь специалиста</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <i class="fas fa-ambulance"></i> <strong>Обратитесь к психологу или психиатру, если:</strong>
+                <ul>
+                    <li>Вы постоянно плачете, не можете успокоиться</li>
+                    <li>Чувство тревоги не проходит неделями</li>
+                    <li>Вы перестали испытывать радость от того, что радовало раньше</li>
+                    <li>Вам кажется, что вы не справитесь или «сходите с ума»</li>
+                    <li>Мысли о смерти, вреде себе или ребёнку</li>
+                    <li>Вы не можете спать, есть, даже когда устали</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-phone-alt"></i> <strong>Горячая линия психологической поддержки:</strong> 8 800 555 35 35 (бесплатно, круглосуточно).
+            </div>
+        </div>
+    </div>
+
+    <!-- Дневник благодарности -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-book"></i></div>
+            <div class="section-title">Практика «Дневник благодарности»</div>
+        </div>
+        <div class="section-content">
+            <p>Каждый вечер записывайте 3 вещи, за которые вы благодарны сегодня. Это могут быть большие или крошечные радости:</p>
+            <ul>
+                <li>☀️ «Сегодня светило солнце»</li>
+                <li>👶 «Малыш сильно толкнулся — значит, он активный»</li>
+                <li>🍫 «Съела любимую шоколадку»</li>
+                <li>💬 «Поговорила с мамой/подругой»</li>
+                <li>🛁 «Приняла тёплую ванну»</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> Эта практика снижает тревожность и учит замечать хорошее даже в трудные дни.
+            </div>
+        </div>
+    </div>
+
+    <!-- Мифы об эмоциях -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Разрушаем мифы</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Если беременная плачет, ребёнок будет нервным.<br>
+            <strong>Правда:</strong> Кратковременный стресс не влияет на развитие нервной системы. Хронический стресс может, но это не о ежедневных перепадах настроения.</p>
+            
+            <p><strong>Миф:</strong> Беременным нельзя волноваться.<br>
+            <strong>Правда:</strong> Волноваться запретить нельзя. Важно — не держать тревогу в себе, а проговаривать её и при необходимости обращаться за помощью.</p>
+            
+            <p><strong>Миф:</strong> Если беременная злится — она плохая мать.<br>
+            <strong>Правда:</strong> Злость — нормальная эмоция. Важно не срываться на близких, а учиться выражать её экологично («я злюсь, потому что…»).</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

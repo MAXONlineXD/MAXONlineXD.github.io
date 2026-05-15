@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Сексуальная жизнь во время беременности — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .safe-card {
+            background: #e8f5e9;
+            border-radius: 20px;
+            padding: 14px;
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .safe-icon {
+            font-size: 1.8rem;
+            width: 50px;
+            text-align: center;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-heart"></i> 
+            Сексуальная жизнь при беременности
+        </h1>
+        <p>Безопасность, близость и важные нюансы</p>
+        <div class="badge"><i class="fas fa-check-circle"></i> Секс при нормально протекающей беременности — безопасен</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Можно ли заниматься сексом?</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Да, можно!</strong> При нормально протекающей беременности секс безопасен на любом сроке. Ребёнок защищён амниотической жидкостью, мышечным слоем матки и слизистой пробкой. Оргазм вызывает сокращения матки, похожие на тренировочные схватки, но они не опасны.</p>
+            <div class="safe-card">
+                <div class="safe-icon">👶</div>
+                <div><strong>Малыш не пострадает!</strong> Пенис не достигает плода, а сокращения матки при оргазме не вызывают преждевременных родов при здоровой беременности.</div>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Более того, секс полезен: улучшает кровообращение в малом тазу, снимает стресс, укрепляет эмоциональную связь с партнёром.
+            </div>
+        </div>
+    </div>
+
+    <!-- Противопоказания -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">Когда секс противопоказан</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❌ Секс запрещён при:</strong>
+                <ul>
+                    <li>Угрозе прерывания беременности (кровотечение, боли)</li>
+                    <li>Предлежании плаценты (низкое расположение)</li>
+                    <li>Истмико-цервикальной недостаточности (слабость шейки матки)</li>
+                    <li>Подтекании околоплодных вод</li>
+                    <li>Многоплодной беременности с риском преждевременных родов</li>
+                    <li>Инфекциях половых путей (до лечения)</li>
+                    <li>Кровянистых выделениях</li>
+                    <li>Если врач сказал «нет»</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-stethoscope"></i> Если у вас есть сомнения — спросите у врача. Каждый случай индивидуален.
+            </div>
+        </div>
+    </div>
+
+    <!-- Изменение либидо -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="section-title">Как меняется желание</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Первый триместр:</strong> У многих либидо падает из-за усталости, тошноты, сонливости. Это нормально!</p>
+            <p><strong>Второй триместр:</strong> Часто наступает «сексуальный расцвет» — улучшается кровоснабжение органов малого таза, повышается чувствительность, уходит токсикоз.</p>
+            <p><strong>Третий триместр:</strong> Желание может снизиться из-за дискомфорта, большого живота, страха навредить. Но у некоторых секс становится даже приятнее из-за усиления кровотока.</p>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> любое изменение либидо — норма. Не корите себя за снижение желания и не удивляйтесь, если оно выросло.
+            </div>
+        </div>
+    </div>
+
+    <!-- Безопасные позы -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bed"></i></div>
+            <div class="section-title">Безопасные позы</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Боком («ложечки»)</strong> — идеально для любого срока. Нет давления на живот.</li>
+                <li><strong>Женщина сверху</strong> — позволяет контролировать глубину и темп.</li>
+                <li><strong>Сидя (женщина на коленях партнёра)</strong> — удобно, нет нагрузки.</li>
+                <li><strong>Стоя, опираясь на стену</strong> — хороший вариант для поздних сроков.</li>
+                <li><strong>На четвереньках</strong> — снимает нагрузку со спины.</li>
+            </ul>
+            <div class="warning-box">
+                <strong>❌ Не рекомендовано:</strong> позы, где мужчина сверху (давление на живот), глубокое проникновение, резкие движения.
+            </div>
+        </div>
+    </div>
+
+    <!-- Опасные мифы -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Разрушаем мифы</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Секс может вызвать выкидыш.<br>
+            <strong>Правда:</strong> Выкидыш почти всегда вызван генетическими аномалиями, а не сексом. При нормальной беременности секс безопасен.</p>
+            
+            <p><strong>Миф:</strong> Оргазм провоцирует преждевременные роды.<br>
+            <strong>Правда:</strong> Оргазм вызывает сокращения матки, но они не опасны до срока доношенности (после 37 недель могут даже помочь).</p>
+            
+            <p><strong>Миф:</strong> Сперма может «размягчить» шейку матки и вызвать роды.<br>
+            <strong>Правда:</strong> В сперме есть простагландины, которые теоретически могут влиять на шейку, но для реального эффекта нужно очень много спермы. Ближе к ПДР это даже полезно — естественная подготовка.</p>
+            
+            <p><strong>Миф:</strong> Секс травмирует малыша.<br>
+            <strong>Правда:</strong> Плод надёжно защищён околоплодными водами, мышечным слоем матки и слизистой пробкой. Пенис до него не достаёт.</p>
+        </div>
+    </div>
+
+    <!-- Если нет желания -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-peace"></i></div>
+            <div class="section-title">Если секс не хочется</div>
+        </div>
+        <div class="section-content">
+            <p>Снижение либидо — абсолютно нормально. Не заставляйте себя, не чувствуйте вину. Близость — это не только проникновение.</p>
+            <ul>
+                <li><strong>Обнимайтесь</strong> — тактильный контакт важен.</li>
+                <li><strong>Массаж</strong> — расслабляет и сближает.</li>
+                <li><strong>Поцелуи, ласки</strong> — без обязательства переходить к сексу.</li>
+                <li><strong>Разговаривайте</strong> — объясните партнёру, что вы чувствуете. «Я тебя люблю, но сейчас я слишком устала» — нормальное объяснение.</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> Если снижение желания беспокоит вас или партнёра — обсудите с перинатальным психологом.
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда особенно хорошо -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-spa"></i></div>
+            <div class="section-title">Почему секс может быть лучше</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>✅ Усиление кровотока в малом тазу делает оргазм ярче</li>
+                <li>✅ Более чувствительные эрогенные зоны</li>
+                <li>✅ Нет страха беременности — это расслабляет</li>
+                <li>✅ Можно не использовать контрацепцию</li>
+                <li>✅ Укрепляет отношения в важный период</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Многие женщины говорят, что секс во втором триместре был самым приятным в их жизни!
+            </div>
+        </div>
+    </div>
+
+    <!-- Как говорить с партнёром -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comments"></i></div>
+            <div class="section-title">Разговор с партнёром</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Обсуждайте страхи</strong> — многие мужчины боятся навредить малышу. Покажите ему эту статью или спросите у врача вместе.</li>
+                <li><strong>Говорите о своём состоянии</strong> — «сегодня я устала», «мне некомфортно в этой позе».</li>
+                <li><strong>Не вините друг друга</strong> — снижение либидо — не чья-то вина, а физиология.</li>
+                <li><strong>Ищите альтернативы</strong> — когда проникновение невозможно, остаётся много других форм близости.</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> Помните: вы команда. Беременность — временное состояние, а ваши отношения — навсегда.
+            </div>
+        </div>
+    </div>
+
+    <!-- По триместрам -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-calendar-week"></i></div>
+            <div class="section-title">Советы по триместрам</div>
+        </div>
+        <div class="section-content">
+            <p><strong>I триместр:</strong> Будьте нежны, если женщина устала — отложите. Токсикоз и сонливость могут мешать. Ищите позы без глубокого проникновения.</p>
+            <p><strong>II триместр:</strong> Лучшее время! Энергии много, токсикоз прошёл. Экспериментируйте с позами, наслаждайтесь.</p>
+            <p><strong>III триместр:</strong> Большой живот требует поз «ложечки» или сидя. Не стесняйтесь использовать подушки. Ближе к ПДР (после 37 недель) секс может даже стимулировать роды (естественная подготовка).</p>
+        </div>
+    </div>
+
+    <!-- Когда срочно к врачу -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ambulance"></i></div>
+            <div class="section-title">Когда срочно к врачу после секса</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle"></i> <strong>Немедленно обратитесь к врачу, если:</strong>
+                <ul>
+                    <li>Кровотечение (кровянистые выделения)</li>
+                    <li>Сильная боль в животе, не проходящая после отдыха</li>
+                    <li>Схваткообразные боли, которые становятся регулярными</li>
+                    <li>Подтекание жидкости (возможно, околоплодные воды)</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Но помните: небольшое количество крови после секса (например, если была эрозия шейки матки) — не опасно, но сообщите врачу.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>

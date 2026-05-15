@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Сон во время беременности — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .sleep-card {
+            background: #e8f0fe;
+            border-radius: 20px;
+            padding: 14px;
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sleep-icon {
+            font-size: 1.8rem;
+            width: 50px;
+            text-align: center;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-bed"></i> 
+            Сон во время беременности
+        </h1>
+        <p>Как наладить отдых и высыпаться в ожидании чуда</p>
+        <div class="badge"><i class="fas fa-moon"></i> Качественный сон важен для мамы и малыша</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Введение -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Почему сон нарушается?</div>
+        </div>
+        <div class="section-content">
+            <p>Беременность — время огромных изменений, и сон часто страдает одним из первых. Гормональная перестройка, растущий живот, тревоги — всё это влияет на качество отдыха.</p>
+            <div class="sleep-card">
+                <div class="sleep-icon">😴</div>
+                <div><strong>До 80% беременных</strong> жалуются на нарушения сна. Это нормально, но с этим можно и нужно работать.</div>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Хорошая новость: после родов организм восстановится, а пока есть способы улучшить сон.
+            </div>
+        </div>
+    </div>
+
+    <!-- Почему нарушается сон по триместрам -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-calendar-week"></i></div>
+            <div class="section-title">Как меняется сон по триместрам</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Первый триместр:</strong> сонливость днём и бессонница ночью — классика. Виной всему прогестерон. Тошнота, частое мочеиспускание, тревога тоже мешают.</p>
+            <p><strong>Второй триместр:</strong> лучшее время для сна! Тошнота проходит, живот ещё не сильно мешает. Но изжога и шевеления малыша могут беспокоить.</p>
+            <p><strong>Третий триместр:</strong> самый сложный период. Большой живот, боли в спине, одышка, изжога, судороги в ногах, частые позывы в туалет — список длинный.</p>
+        </div>
+    </div>
+
+    <!-- Лучшие позы для сна -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-bed"></i></div>
+            <div class="section-title">Безопасные позы для сна</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Лучшая поза — на левом боку</strong> — обеспечивает максимальный кровоток к матке, плаценте и почкам. Снижает отёки и изжогу.</li>
+                <li><strong>На правом боку</strong> — допустимо, но чуть хуже кровоток.</li>
+                <li><strong>На спине</strong> — после 20 недель <strong>не рекомендуется</strong>. Матка может сдавливать нижнюю полую вену, вызывая головокружение, падение давления, одышку. Если просыпаетесь на спине — просто перевернитесь.</li>
+                <li><strong>На животе</strong> — после первого триместра невозможно и неудобно.</li>
+            </ul>
+            <div class="warning-box">
+                <strong>Важно:</strong> если вы проснулись на спине — не паникуйте. Просто перевернитесь на бок. Кратковременное положение на спине не опасно.
+            </div>
+        </div>
+    </div>
+
+    <!-- Подушка для беременных -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-pillow"></i></div>
+            <div class="section-title">Подушка для беременных</div>
+        </div>
+        <div class="section-content">
+            <p>Специальная подушка — лучший помощник для сна в третьем триместре. Она:</p>
+            <ul>
+                <li>Поддерживает живот, снимая нагрузку</li>
+                <li>Удерживает позу на боку</li>
+                <li>Снимает давление с поясницы</li>
+                <li>Можно положить между ног — выравнивает тазобедренные суставы</li>
+                <li>Помогает при болях в спине и отёках</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Если специальной подушки нет — используйте обычные подушки: одну под живот, вторую между коленями, третью под голову.
+            </div>
+        </div>
+    </div>
+
+    <!-- Что мешает спать и как помочь -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">Помехи сну и их решение</div>
+        </div>
+        <div class="section-content">
+            <div class="sleep-card">
+                <div class="sleep-icon">🔥</div>
+                <div><strong>Изжога:</strong> не ешьте за 2–3 часа до сна, спите на левом боку, поднимите изголовье кровати. При сильной изжоге — проконсультируйтесь с врачом о безопасных антацидах.</div>
+            </div>
+            <div class="sleep-card">
+                <div class="sleep-icon">🦵</div>
+                <div><strong>Судороги в ногах:</strong> чаще ночью. Вытяните ногу и потяните носок на себя, помассируйте икру. Добавьте в рацион магний (бананы, орехи, зелень).</div>
+            </div>
+            <div class="sleep-card">
+                <div class="sleep-icon">💧</div>
+                <div><strong>Частое мочеиспускание:</strong> ограничьте питьё за 2–3 часа до сна. Не пейте кофеин после 16:00. Наклоняйтесь вперёд при мочеиспускании — лучше опорожняет мочевой пузырь.</div>
+            </div>
+            <div class="sleep-card">
+                <div class="sleep-icon">👶</div>
+                <div><strong>Активные шевеления малыша:</strong> часто малыши активны ночью. Поговорите с ним, погладьте живот. Успокаивающая музыка, тёплая ванна перед сном помогают.</div>
+            </div>
+            <div class="sleep-card">
+                <div class="sleep-icon">💨</div>
+                <div><strong>Одышка и храп:</strong> спите с приподнятым изголовьем. Лёгкая физическая активность днём улучшает дыхание. При сильном храпе — сообщите врачу (может быть признаком гестоза).</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Полезные привычки -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="section-title">Полезные привычки для хорошего сна</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Режим:</strong> ложитесь и вставайте в одно время, даже в выходные.</li>
+                <li><strong>Проветривание:</strong> перед сном обязательно проветрите комнату. Прохлада (18–22°C) помогает заснуть.</li>
+                <li><strong>Тёплая ванна</strong> за 1–2 часа до сна расслабляет мышцы.</li>
+                <li><strong>Лёгкий ужин</strong> за 2–3 часа до сна (не жирный, не сладкий).</li>
+                <li><strong>Отказ от гаджетов</strong> за час до сна — синий свет экранов подавляет выработку мелатонина.</li>
+                <li><strong>Расслабляющая рутина:</strong> чай с ромашкой/мелиссой (без кофеина), спокойная музыка, чтение книги, дыхательные упражнения.</li>
+                <li><strong>Дневная активность:</strong> прогулки, лёгкая гимнастика улучшают ночной сон.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Дневной сон -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-sun"></i></div>
+            <div class="section-title">Дневной сон</div>
+        </div>
+        <div class="section-content">
+            <p>Дневной сон — не роскошь, а необходимость для беременной. Он:</p>
+            <ul>
+                <li>Компенсирует недосып ночью</li>
+                <li>Восстанавливает силы</li>
+                <li>Снижает уровень стресса</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Идеальная продолжительность:</strong> 20–90 минут. Не спите днём слишком долго и не слишком поздно (после 16:00), иначе не заснёте ночью.
+            </div>
+        </div>
+    </div>
+
+    <!-- Чего избегать -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Что мешает спать (избегайте)</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ Кофеин после 16:00 (кофе, чай, кола, шоколад)</li>
+                <li>❌ Тяжёлая, жирная, острая пища на ужин — усиливает изжогу</li>
+                <li>❌ Алкоголь — даже маленькие дозы нарушают структуру сна</li>
+                <li>❌ Физическая активность за 2–3 часа до сна</li>
+                <li>❌ Смартфон, планшет, телевизор в постели</li>
+                <li>❌ Переживания и тревоги — если не можете выключить голову, запишите мысли в блокнот</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Бессонница -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-brain"></i></div>
+            <div class="section-title">Бессонница: что делать?</div>
+        </div>
+        <div class="section-content">
+            <p>Если вы лежите без сна больше 20–30 минут:</p>
+            <ul>
+                <li>Встаньте, выйдите в другую комнату</li>
+                <li>Займитесь спокойным делом (почитайте книгу, послушайте подкаст, выпейте тёплого молока)</li>
+                <li>Вернитесь в постель, когда почувствуете сонливость</li>
+                <li><strong>Не лежите и не мучайтесь</strong> — это только усиливает тревогу и бессонницу</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Дыхательная техника:</strong> вдох на 4 счета, задержка на 7, выдох на 8. Повторите 5–10 раз. Снижает тревогу и замедляет сердцебиение.
+            </div>
+            <div class="warning-box">
+                <strong>Когда обратиться к врачу:</strong> если бессонница длится неделями, вы не высыпаетесь, чувствуете сильную усталость, раздражительность — возможно, нужна помощь психолога или безопасные препараты (только по назначению врача!).
+            </div>
+        </div>
+    </div>
+
+    <!-- Синдром беспокойных ног -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-leg"></i></div>
+            <div class="section-title">Синдром беспокойных ног</div>
+        </div>
+        <div class="section-content">
+            <p>Непреодолимое желание двигать ногами в покое, особенно вечером и ночью. Часто связано с дефицитом железа или магния.</p>
+            <p><strong>Что помогает:</strong></p>
+            <ul>
+                <li>Проверьте ферритин (запас железа) — возможно, нужны препараты</li>
+                <li>Добавьте магний в рацион (бананы, орехи, зелень)</li>
+                <li>Тёплая ванна, массаж ног перед сном</li>
+                <li>Лёгкая растяжка</li>
+                <li>Прогулка перед сном</li>
+            </ul>
+            <div class="tip-box">
+                <i class="fas fa-stethoscope"></i> Если синдром мешает спать — сообщите врачу. Есть безопасные при беременности препараты.
+            </div>
+        </div>
+    </div>
+
+    <!-- Мифы о сне -->
+    <div class="section-card" style="animation-delay: 0.3s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Мифы о сне беременных</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Спать на спине во втором и третьем триместре смертельно опасно для малыша.<br>
+            <strong>Правда:</strong> Длительный сон на спине (всю ночь) может вызвать головокружение у мамы, но ребёнок не страдает. Если вы проснулись на спине — просто перевернитесь.</p>
+            
+            <p><strong>Миф:</strong> Беременным нужно спать минимум 9 часов.<br>
+            <strong>Правда:</strong> Потребности индивидуальны. Главное — качество и восстановление. Кто-то высыпается за 7 часов, кому-то нужно 10.</p>
+            
+            <p><strong>Миф:</strong> Снотворное строго запрещено.<br>
+            <strong>Правда:</strong> Некоторые препараты безопасны и назначаются врачом при тяжёлой бессоннице. Не занимайтесь самолечением!</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>
