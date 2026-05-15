@@ -17,10 +17,10 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #fef7f2;  /* Теплый нежный фон */
+            background: #fef7f2; /* Теплый нежный фон */
             color: #2d2a2e;
             line-height: 1.4;
-            padding-bottom: 80px;  /* Отступ под нижнюю навигацию */
+            padding-bottom: 80px; /* Отступ под нижнюю навигацию */
         }
 
         /* Основные стили для мобильной версии (до 640px) */
@@ -39,33 +39,33 @@
             margin-bottom: 20px;
         }
 
-        .hero h1 {
-            font-size: 1.85rem;
-            font-weight: 700;
-            letter-spacing: -0.3px;
-            color: #4a2c3a;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
+            .hero h1 {
+                font-size: 1.85rem;
+                font-weight: 700;
+                letter-spacing: -0.3px;
+                color: #4a2c3a;
+                margin-bottom: 8px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
 
-        .hero h1 i {
-            background: #ffffffcc;
-            padding: 8px;
-            border-radius: 60px;
-            font-size: 1.4rem;
-            color: #b35d7c;
-        }
+                .hero h1 i {
+                    background: #ffffffcc;
+                    padding: 8px;
+                    border-radius: 60px;
+                    font-size: 1.4rem;
+                    color: #b35d7c;
+                }
 
-        .hero p {
-            font-size: 1rem;
-            font-weight: 500;
-            color: #5e3e4b;
-            margin-top: 6px;
-            opacity: 0.9;
-        }
+            .hero p {
+                font-size: 1rem;
+                font-weight: 500;
+                color: #5e3e4b;
+                margin-top: 6px;
+                opacity: 0.9;
+            }
 
         .badge {
             background: #fff0e8;
@@ -98,19 +98,19 @@
             padding-bottom: 12px;
         }
 
-        .card-header i {
-            font-size: 1.8rem;
-            color: #cd7c9b;
-            background: #fff2ec;
-            padding: 10px;
-            border-radius: 24px;
-        }
+            .card-header i {
+                font-size: 1.8rem;
+                color: #cd7c9b;
+                background: #fff2ec;
+                padding: 10px;
+                border-radius: 24px;
+            }
 
-        .card-header h2 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #4a2c3a;
-        }
+            .card-header h2 {
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: #4a2c3a;
+            }
 
         /* Список услуг и преимуществ */
         .service-list, .tip-list {
@@ -129,17 +129,17 @@
             border-bottom: 1px solid #faf0ea;
         }
 
-        .service-item i, .tip-item i {
-            width: 28px;
-            color: #cd7c9b;
-            font-size: 1.2rem;
-            text-align: center;
-        }
+            .service-item i, .tip-item i {
+                width: 28px;
+                color: #cd7c9b;
+                font-size: 1.2rem;
+                text-align: center;
+            }
 
-        .service-item span, .tip-item span {
-            flex: 1;
-            color: #2d2a2e;
-        }
+            .service-item span, .tip-item span {
+                flex: 1;
+                color: #2d2a2e;
+            }
 
         /* Кнопки быстрой помощи */
         .btn-group {
@@ -168,14 +168,14 @@
             justify-content: center;
         }
 
-        .btn-help i {
-            font-size: 1.1rem;
-        }
+            .btn-help i {
+                font-size: 1.1rem;
+            }
 
-        .btn-help:active {
-            background: #f0dbd6;
-            transform: scale(0.97);
-        }
+            .btn-help:active {
+                background: #f0dbd6;
+                transform: scale(0.97);
+            }
 
         /* Экстренный контакт */
         .emergency {
@@ -184,10 +184,10 @@
             border-radius: 24px;
         }
 
-        .emergency .card-header i {
-            background: #ffe4db;
-            color: #d4597c;
-        }
+            .emergency .card-header i {
+                background: #ffe4db;
+                color: #d4597c;
+            }
 
         .contact-row {
             display: flex;
@@ -222,10 +222,10 @@
             transition: 0.2s;
         }
 
-        .call-btn:active {
-            background: #c95778;
-            transform: scale(0.96);
-        }
+            .call-btn:active {
+                background: #c95778;
+                transform: scale(0.96);
+            }
 
         /* нижняя навигация (tab bar) */
         .bottom-nav {
@@ -259,31 +259,34 @@
             font-family: inherit;
         }
 
-        .nav-item i {
-            font-size: 1.5rem;
-        }
+            .nav-item i {
+                font-size: 1.5rem;
+            }
 
-        .nav-item.active {
-            color: #cd7c9b;
-            font-weight: 600;
-        }
+            .nav-item.active {
+                color: #cd7c9b;
+                font-weight: 600;
+            }
 
-        .nav-item:active {
-            opacity: 0.7;
-        }
+            .nav-item:active {
+                opacity: 0.7;
+            }
 
         /* модальное окно */
         .modal {
             display: none;
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(0,0,0,0.5);
             align-items: center;
             justify-content: center;
             z-index: 2000;
             backdrop-filter: blur(3px);
         }
+
         .modal-content {
             background: white;
             width: 85%;
@@ -293,20 +296,24 @@
             text-align: center;
             animation: fadeUp 0.2s ease;
         }
-        .modal-content i {
-            font-size: 3rem;
-            color: #cd7c9b;
-            margin-bottom: 12px;
-        }
-        .modal-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
-            color: #4a2c3a;
-        }
-        .modal-content p {
-            margin-bottom: 24px;
-            color: #56505a;
-        }
+
+            .modal-content i {
+                font-size: 3rem;
+                color: #cd7c9b;
+                margin-bottom: 12px;
+            }
+
+            .modal-content h3 {
+                font-size: 1.5rem;
+                margin-bottom: 12px;
+                color: #4a2c3a;
+            }
+
+            .modal-content p {
+                margin-bottom: 24px;
+                color: #56505a;
+            }
+
         .close-modal {
             background: #f1dfda;
             border: none;
@@ -318,9 +325,17 @@
             cursor: pointer;
             color: #9f5879;
         }
+
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px);}
-            to { opacity: 1; transform: translateY(0);}
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* простой скролл для контактов */
@@ -339,7 +354,7 @@
             margin-top: 8px;
             font-size: 0.9rem;
         }
-        
+
         footer {
             text-align: center;
             font-size: 0.7rem;
@@ -351,9 +366,11 @@
             .container {
                 padding: 12px 16px;
             }
+
             .hero h1 {
                 font-size: 1.6rem;
             }
+
             .phone-number {
                 font-size: 1.3rem;
             }
@@ -362,293 +379,300 @@
 </head>
 <body>
 
-<div class="hero">
-    <div class="container" style="padding: 0;">
-        <h1>
-            <i class="fas fa-hand-holding-heart"></i> 
-            Мама+Центр
-        </h1>
-        <p>Ваш надежный перинатальный помощник</p>
-        <div class="badge"><i class="fas fa-clock"></i> Поддержка 24/7</div>
-    </div>
-</div>
-
-<main class="container">
-    <!-- Быстрая помощь: частые запросы -->
-    <div class="card">
-        <div class="card-header">
-            <i class="fas fa-life-ring"></i>
-            <h2>Быстрая помощь</h2>
-        </div>
-        <div class="btn-group">
-            <button class="btn-help" data-action="feeding"><i class="fas fa-baby-carriage"></i> Грудное вскармливание</button>
-            <button class="btn-help" data-action="postpartum"><i class="fas fa-heartbeat"></i> После родов</button>
-            <button class="btn-help" data-action="babycare"><i class="fas fa-baby"></i> Уход за малышом</button>
-            <button class="btn-help" data-action="emotional"><i class="fas fa-brain"></i> Эмоции мамы</button>
+    <div class="hero">
+        <div class="container" style="padding: 0;">
+            <h1>
+                <i class="fas fa-hand-holding-heart"></i>
+                Мама+Центр
+            </h1>
+            <p>Ваш надежный перинатальный помощник</p>
+            <div class="badge"><i class="fas fa-clock"></i> Поддержка 24/7</div>
         </div>
     </div>
 
-    <!-- Услуги центра -->
-    <div class="card">
-        <div class="card-header">
-            <i class="fas fa-stethoscope"></i>
-            <h2>Услуги центра</h2>
+    <main class="container">
+        <!-- Быстрая помощь: частые запросы -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-life-ring"></i>
+                <h2>Быстрая помощь</h2>
+            </div>
+            <div class="btn-group">
+                <button class="btn-help" data-action="feeding"><i class="fas fa-baby-carriage"></i> Грудное вскармливание</button>
+                <button class="btn-help" data-action="postpartum"><i class="fas fa-heartbeat"></i> После родов</button>
+                <button class="btn-help" data-action="babycare"><i class="fas fa-baby"></i> Уход за малышом</button>
+                <button class="btn-help" data-action="emotional"><i class="fas fa-brain"></i> Эмоции мамы</button>
+            </div>
         </div>
-        <div class="service-list">
-            <div class="service-item"><i class="fas fa-fetal-monitor"></i><span>Ведение беременности (скрининги, УЗИ, КТГ)</span></div>
-            <div class="service-item"><i class="fas fa-hand-holding-heart"></i><span>Партнерские роды & поддержка доулы</span></div>
-            <div class="service-item"><i class="fas fa-chalkboard-user"></i><span>Школа материнства (онлайн/офлайн)</span></div>
-            <div class="service-item"><i class="fas fa-person-breastfeeding"></i><span>Консультации по лактации</span></div>
-            <div class="service-item"><i class="fas fa-dove"></i><span>Послеродовая реабилитация (мама и малыш)</span></div>
+
+        <!-- Услуги центра -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-stethoscope"></i>
+                <h2>Услуги центра</h2>
+            </div>
+            <div class="service-list">
+                <div class="service-item"><i class="fas fa-fetal-monitor"></i><span>Ведение беременности (скрининги, УЗИ, КТГ)</span></div>
+                <div class="service-item"><i class="fas fa-hand-holding-heart"></i><span>Партнерские роды & поддержка доулы</span></div>
+                <div class="service-item"><i class="fas fa-chalkboard-user"></i><span>Школа материнства (онлайн/офлайн)</span></div>
+                <div class="service-item"><i class="fas fa-person-breastfeeding"></i><span>Консультации по лактации</span></div>
+                <div class="service-item"><i class="fas fa-dove"></i><span>Послеродовая реабилитация (мама и малыш)</span></div>
+            </div>
+        </div>
+
+        <!-- Ежедневные советы для мамочек -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-lightbulb"></i>
+                <h2>Совет дня 🌸</h2>
+            </div>
+            <div class="daily-tip" id="dailyTip">
+                Загрузка...
+            </div>
+            <p style="font-size: 0.7rem; margin-top: 12px; color:#b88f9b;"><i class="fas fa-sync-alt"></i> Нажмите на совет для смены</p>
+        </div>
+
+        <!-- Полезные чек-листы/памятки -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-clipboard-list"></i>
+                <h2>Памятки маме</h2>
+            </div>
+            <div class="tip-list">
+                <div class="tip-item" data-checklist="checklist1"><i class="fas fa-tasks"></i><span>🚼 Список в роддом: что взять?</span></div>
+                <div class="tip-item" data-checklist="checklist2"><i class="fas fa-heart"></i><span>💆‍♀️ 5 способов снять тревогу</span></div>
+                <div class="tip-item" data-checklist="checklist3"><i class="fas fa-apple-alt"></i><span>🥗 Питание кормящей мамы</span></div>
+            </div>
+        </div>
+
+        <!-- Экстренный контакт + горячая линия -->
+        <div class="card emergency">
+            <div class="card-header">
+                <i class="fas fa-phone-alt"></i>
+                <h2>Горячая линия</h2>
+            </div>
+            <div class="contact-row">
+                <span class="phone-number"><i class="fas fa-phone"></i> 8 800 555 35 35</span>
+                <button class="call-btn" id="emergencyCallBtn"><i class="fas fa-phone-volume"></i> Позвонить</button>
+            </div>
+            <p style="margin-top: 14px; font-size: 0.8rem;"><i class="fas fa-clock"></i> Бесплатно, круглосуточно. Психологическая и медицинская поддержка.</p>
+        </div>
+
+        <footer>
+            <i class="fas fa-seedling"></i> Перинатальный центр «Мама+Центр» — забота на каждом этапе
+        </footer>
+    </main>
+
+    <!-- Нижняя навигация (быстрые якоря) -->
+    <div class="bottom-nav">
+        <button class="nav-item active" data-nav="home"><i class="fas fa-home"></i><span>Главная</span></button>
+        <button class="nav-item" data-nav="services"><i class="fas fa-notes-medical"></i><span>Услуги</span></button>
+        <button class="nav-item" data-nav="tips"><i class="fas fa-message"></i><span>Советы</span></button>
+        <button class="nav-item" data-nav="contacts"><i class="fas fa-headset"></i><span>Помощь</span></button>
+    </div>
+
+    <!-- Модальное окно для всплывающих советов и контента -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <i class="fas fa-info-circle" id="modalIcon"></i>
+            <h3 id="modalTitle">Информация</h3>
+            <p id="modalText">Здесь будет полезный совет для вас.</p>
+            <button class="close-modal" id="closeModalBtn">Понятно, спасибо</button>
         </div>
     </div>
 
-    <!-- Ежедневные советы для мамочек -->
-    <div class="card">
-        <div class="card-header">
-            <i class="fas fa-lightbulb"></i>
-            <h2>Совет дня 🌸</h2>
-        </div>
-        <div class="daily-tip" id="dailyTip">
-            Загрузка...
-        </div>
-        <p style="font-size: 0.7rem; margin-top: 12px; color:#b88f9b;"><i class="fas fa-sync-alt"></i> Нажмите на совет для смены</p>
-    </div>
+    <script>
+        // 1. Массив ежедневных советов (переключение)
+        const tipsArray = [
+            "🍼 Прикладывайте малыша по требованию — это стимулирует лактацию и дарит спокойствие.",
+            "💤 Спите, когда спит ребенок. Даже 20 минут дневного сна восстанавливают силы.",
+            "🧘‍♀️ Практикуйте глубокое дыхание: вдох на 4 счета, выдох на 6 — снижает тревожность.",
+            "💧 Пейте достаточно воды (1.5-2л в день) для хорошей лактации и самочувствия.",
+            "🤗 Не стесняйтесь просить помощи у близких. Вы не обязаны всё делать одна.",
+            "📖 Записывайте 3 маленькие радости за день — это тренирует позитивное мышление.",
+            "🧴 Массаж стоп и контрастный душ помогут снять усталость после бессонной ночи."
+        ];
 
-    <!-- Полезные чек-листы/памятки -->
-    <div class="card">
-        <div class="card-header">
-            <i class="fas fa-clipboard-list"></i>
-            <h2>Памятки маме</h2>
-        </div>
-        <div class="tip-list">
-            <div class="tip-item" data-checklist="checklist1"><i class="fas fa-tasks"></i><span>🚼 Список в роддом: что взять?</span></div>
-            <div class="tip-item" data-checklist="checklist2"><i class="fas fa-heart"></i><span>💆‍♀️ 5 способов снять тревогу</span></div>
-            <div class="tip-item" data-checklist="checklist3"><i class="fas fa-apple-alt"></i><span>🥗 Питание кормящей мамы</span></div>
-        </div>
-    </div>
+        let currentTipIndex = 0;
 
-    <!-- Экстренный контакт + горячая линия -->
-    <div class="card emergency">
-        <div class="card-header">
-            <i class="fas fa-phone-alt"></i>
-            <h2>Горячая линия</h2>
-        </div>
-        <div class="contact-row">
-            <span class="phone-number"><i class="fas fa-phone"></i> 8 800 555 35 35</span>
-            <button class="call-btn" id="emergencyCallBtn"><i class="fas fa-phone-volume"></i> Позвонить</button>
-        </div>
-        <p style="margin-top: 14px; font-size: 0.8rem;"><i class="fas fa-clock"></i> Бесплатно, круглосуточно. Психологическая и медицинская поддержка.</p>
-    </div>
-
-    <footer>
-        <i class="fas fa-seedling"></i> Перинатальный центр «Мама+Центр» — забота на каждом этапе
-    </footer>
-</main>
-
-<!-- Нижняя навигация (быстрые якоря) -->
-<div class="bottom-nav">
-    <button class="nav-item active" data-nav="home"><i class="fas fa-home"></i><span>Главная</span></button>
-    <button class="nav-item" data-nav="services"><i class="fas fa-notes-medical"></i><span>Услуги</span></button>
-    <button class="nav-item" data-nav="tips"><i class="fas fa-message"></i><span>Советы</span></button>
-    <button class="nav-item" data-nav="contacts"><i class="fas fa-headset"></i><span>Помощь</span></button>
-</div>
-
-<!-- Модальное окно для всплывающих советов и контента -->
-<div id="infoModal" class="modal">
-    <div class="modal-content">
-        <i class="fas fa-info-circle" id="modalIcon"></i>
-        <h3 id="modalTitle">Информация</h3>
-        <p id="modalText">Здесь будет полезный совет для вас.</p>
-        <button class="close-modal" id="closeModalBtn">Понятно, спасибо</button>
-    </div>
-</div>
-
-<script>
-    // 1. Массив ежедневных советов (переключение)
-    const tipsArray = [
-        "🍼 Прикладывайте малыша по требованию — это стимулирует лактацию и дарит спокойствие.",
-        "💤 Спите, когда спит ребенок. Даже 20 минут дневного сна восстанавливают силы.",
-        "🧘‍♀️ Практикуйте глубокое дыхание: вдох на 4 счета, выдох на 6 — снижает тревожность.",
-        "💧 Пейте достаточно воды (1.5-2л в день) для хорошей лактации и самочувствия.",
-        "🤗 Не стесняйтесь просить помощи у близких. Вы не обязаны всё делать одна.",
-        "📖 Записывайте 3 маленькие радости за день — это тренирует позитивное мышление.",
-        "🧴 Массаж стоп и контрастный душ помогут снять усталость после бессонной ночи."
-    ];
-    
-    let currentTipIndex = 0;
-
-    function updateDailyTip() {
-        const tipDiv = document.getElementById("dailyTip");
-        if (tipDiv) {
-            tipDiv.innerHTML = `<i class="fas fa-hand-peace"></i> ${tipsArray[currentTipIndex]}`;
+        function updateDailyTip() {
+            const tipDiv = document.getElementById("dailyTip");
+            if (tipDiv) {
+                tipDiv.innerHTML = `<i class="fas fa-hand-peace"></i> ${tipsArray[currentTipIndex]}`;
+            }
         }
-    }
-    
-    function nextTip() {
-        currentTipIndex = (currentTipIndex + 1) % tipsArray.length;
+
+        function nextTip() {
+            currentTipIndex = (currentTipIndex + 1) % tipsArray.length;
+            updateDailyTip();
+        }
+
+        // клик по совету дня — смена совета
+        const dailyTipDiv = document.getElementById("dailyTip");
+        if (dailyTipDiv) {
+            dailyTipDiv.addEventListener("click", nextTip);
+        }
         updateDailyTip();
-    }
-    
-    // клик по совету дня — смена совета
-    const dailyTipDiv = document.getElementById("dailyTip");
-    if (dailyTipDiv) {
-        dailyTipDiv.addEventListener("click", nextTip);
-    }
-    updateDailyTip();
 
-    // 2. Модальное окно для быстрых помощников и чек-листов
-    const modal = document.getElementById("infoModal");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalText = document.getElementById("modalText");
-    const modalIcon = document.getElementById("modalIcon");
-    
-    function showModal(title, message, iconClass = "fas fa-heart") {
-        modalTitle.innerText = title;
-        modalText.innerText = message;
-        modalIcon.className = iconClass + " fa-3x";
-        modal.style.display = "flex";
-    }
-    
-    function closeModal() {
-        modal.style.display = "none";
-    }
-    
-    document.getElementById("closeModalBtn").addEventListener("click", closeModal);
-    modal.addEventListener("click", (e) => {
-        if (e.target === modal) closeModal();
-    });
-    
-    // 3. Обработчики для кнопок быстрой помощи (data-action)
-    const helpButtons = document.querySelectorAll(".btn-help");
-    helpButtons.forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            const action = btn.getAttribute("data-action");
-            if (action === "feeding") {
-                showModal("Грудное вскармливание", "✔️ Прикладывание по требованию, правильный захват, консультация с лактологом в нашем центре ежедневно. Пейте тёплое питьё за 20 минут до кормления.", "fas fa-baby-carriage");
-            } else if (action === "postpartum") {
-                showModal("После родов", "🩹 Восстановление: больше отдыхайте, носите послеродовой бандаж по показаниям. Не стесняйтесь делиться эмоциями — наша психологическая поддержка 24/7.", "fas fa-heartbeat");
-            } else if (action === "babycare") {
-                showModal("Уход за малышом", "🧸 Ежедневное купание, обработка пупочной ранки, контроль температуры тела. При беспокойстве — метод кенгуру (кожа к коже). Звоните при тревожных симптомах.", "fas fa-baby");
-            } else if (action === "emotional") {
-                showModal("Эмоции мамы", "✨ Послеродовая хандра — норма. Делайте маленькие паузы для себя, говорите о чувствах. В центре работает психолог и группы поддержки для мам. Вы не одна!", "fas fa-brain");
-            }
-        });
-    });
-    
-    // 4. Чек-листы (памятки) — клик по элементам
-    const checklistItems = document.querySelectorAll("[data-checklist]");
-    checklistItems.forEach(item => {
-        item.addEventListener("click", () => {
-            const type = item.getAttribute("data-checklist");
-            if (type === "checklist1") {
-                showModal("Список в роддом", "📋 Документы (паспорт, обменная карта, полис), гигиенические принадлежности, пеленки, удобная одежда, бутылочка для воды, зарядка для телефона. Дышите — вы всё сможете!", "fas fa-clinic-medical");
-            } else if (type === "checklist2") {
-                showModal("5 способов снять тревогу", "1. Дыхание квадратом. 2. Разговор с подругой. 3. Теплый душ. 4. Легкая прогулка. 5. Повторение аффирмаций: «я справлюсь». Важно: если тревога сильная — звоните психологу центра.", "fas fa-hand-sparkles");
-            } else if (type === "checklist3") {
-                showModal("Питание кормящей мамы", "🥦 Больше белка (курица, рыба, творог), цельнозерновые продукты, овощи на пару. Исключить алкоголь, кофеин с осторожностью. Помните: разнообразное меню = полезное молоко.", "fas fa-apple-alt");
-            }
-        });
-    });
-    
-    // 5. Обработчик экстренного вызова (эмуляция звонка)
-    const emergencyBtn = document.getElementById("emergencyCallBtn");
-    if (emergencyBtn) {
-        emergencyBtn.addEventListener("click", () => {
-            const phoneNumber = "88005553535";
-            // На мобильных устройствах откроется набор номера
-            window.location.href = `tel:${phoneNumber}`;
-            // Также показываем модальное подтверждение
-            showModal("Соединение с перинатальным центром", `Вы звоните на горячую линию ${phoneNumber}. Оператор поможет вам в ближайшее время. Оставайтесь на линии.`, "fas fa-phone-alt");
-        });
-    }
-    
-    // 6. Нижняя навигация с плавной прокруткой
-    const navHome = document.querySelector("[data-nav='home']");
-    const navServices = document.querySelector("[data-nav='services']");
-    const navTips = document.querySelector("[data-nav='tips']");
-    const navContacts = document.querySelector("[data-nav='contacts']");
-    const navItems = [navHome, navServices, navTips, navContacts];
-    
-    function scrollToElement(selector, offset = 20) {
-        const element = document.querySelector(selector);
-        if (element) {
-            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-            window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
+        // 2. Модальное окно для быстрых помощников и чек-листов
+        const modal = document.getElementById("infoModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalText = document.getElementById("modalText");
+        const modalIcon = document.getElementById("modalIcon");
+
+        function showModal(title, message, iconClass = "fas fa-heart") {
+            modalTitle.innerText = title;
+            modalText.innerText = message;
+            modalIcon.className = iconClass + " fa-3x";
+            modal.style.display = "flex";
         }
-    }
-    
-    function setActiveNav(activeNav) {
-        navItems.forEach(item => {
-            if (item) item.classList.remove("active");
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        document.getElementById("closeModalBtn").addEventListener("click", closeModal);
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) closeModal();
         });
-        if (activeNav) activeNav.classList.add("active");
-    }
-    
-    if (navHome) {
-        navHome.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-            setActiveNav(navHome);
+
+        // 3. Обработчики для кнопок быстрой помощи       
+        const feedingButton = document.querySelector(".btn-help[data-action='feeding']");
+        if (feedingButton) {
+            feedingButton.addEventListener("click", (e) => {
+                e.preventDefault();
+                window.location.href = "https://maxonlinexd.github.io/rodi.html";
+            });
+        }
+
+        // Остальные кнопки показывают модальные окна
+        const otherHelpButtons = document.querySelectorAll(".btn-help:not([data-action='feeding'])");
+        otherHelpButtons.forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                const action = btn.getAttribute("data-action");
+                if (action === "postpartum") {
+                    showModal("После родов", "🩹 Восстановление: больше отдыхайте, носите послеродовой бандаж по показаниям. Не стесняйтесь делиться эмоциями — наша психологическая поддержка 24/7.", "fas fa-heartbeat");
+                } else if (action === "babycare") {
+                    showModal("Уход за малышом", "🧸 Ежедневное купание, обработка пупочной ранки, контроль температуры тела. При беспокойстве — метод кенгуру (кожа к коже). Звоните при тревожных симптомах.", "fas fa-baby");
+                } else if (action === "emotional") {
+                    showModal("Эмоции мамы", "✨ Послеродовая хандра — норма. Делайте маленькие паузы для себя, говорите о чувствах. В центре работает психолог и группы поддержки для мам. Вы не одна!", "fas fa-brain");
+                }
+            });
         });
-    }
-    if (navServices) {
-        navServices.addEventListener("click", () => {
-            // услуги - второй карточке (услуги центра)
+
+        // 4. Чек-листы (памятки) — клик по элементам
+        const checklistItems = document.querySelectorAll("[data-checklist]");
+        checklistItems.forEach(item => {
+            item.addEventListener("click", () => {
+                const type = item.getAttribute("data-checklist");
+                if (type === "checklist1") {
+                    showModal("Список в роддом", "📋 Документы (паспорт, обменная карта, полис), гигиенические принадлежности, пеленки, удобная одежда, бутылочка для воды, зарядка для телефона. Дышите — вы всё сможете!", "fas fa-clinic-medical");
+                } else if (type === "checklist2") {
+                    showModal("5 способов снять тревогу", "1. Дыхание квадратом. 2. Разговор с подругой. 3. Теплый душ. 4. Легкая прогулка. 5. Повторение аффирмаций: «я справлюсь». Важно: если тревога сильная — звоните психологу центра.", "fas fa-hand-sparkles");
+                } else if (type === "checklist3") {
+                    showModal("Питание кормящей мамы", "🥦 Больше белка (курица, рыба, творог), цельнозерновые продукты, овощи на пару. Исключить алкоголь, кофеин с осторожностью. Помните: разнообразное меню = полезное молоко.", "fas fa-apple-alt");
+                }
+            });
+        });
+
+        // 5. Обработчик экстренного вызова (эмуляция звонка)
+        const emergencyBtn = document.getElementById("emergencyCallBtn");
+        if (emergencyBtn) {
+            emergencyBtn.addEventListener("click", () => {
+                const phoneNumber = "88005553535";
+                // На мобильных устройствах откроется набор номера
+                window.location.href = `tel:${phoneNumber}`;
+                // Также показываем модальное подтверждение
+                showModal("Соединение с перинатальным центром", `Вы звоните на горячую линию ${phoneNumber}. Оператор поможет вам в ближайшее время. Оставайтесь на линии.`, "fas fa-phone-alt");
+            });
+        }
+
+        // 6. Нижняя навигация с плавной прокруткой
+        const navHome = document.querySelector("[data-nav='home']");
+        const navServices = document.querySelector("[data-nav='services']");
+        const navTips = document.querySelector("[data-nav='tips']");
+        const navContacts = document.querySelector("[data-nav='contacts']");
+        const navItems = [navHome, navServices, navTips, navContacts];
+
+        function scrollToElement(selector, offset = 20) {
+            const element = document.querySelector(selector);
+            if (element) {
+                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
+            }
+        }
+
+        function setActiveNav(activeNav) {
+            navItems.forEach(item => {
+                if (item) item.classList.remove("active");
+            });
+            if (activeNav) activeNav.classList.add("active");
+        }
+
+        if (navHome) {
+            navHome.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setActiveNav(navHome);
+            });
+        }
+        if (navServices) {
+            navServices.addEventListener("click", () => {
+                // услуги - второй карточке (услуги центра)
+                const serviceCard = document.querySelector(".card .service-list")?.closest(".card");
+                if (serviceCard) serviceCard.scrollIntoView({ behavior: "smooth", block: "start" });
+                setActiveNav(navServices);
+            });
+        }
+        if (navTips) {
+            navTips.addEventListener("click", () => {
+                const tipCard = document.getElementById("dailyTip")?.closest(".card");
+                if (tipCard) tipCard.scrollIntoView({ behavior: "smooth", block: "start" });
+                setActiveNav(navTips);
+            });
+        }
+        if (navContacts) {
+            navContacts.addEventListener("click", () => {
+                const emergencyCard = document.querySelector(".emergency");
+                if (emergencyCard) emergencyCard.scrollIntoView({ behavior: "smooth", block: "center" });
+                setActiveNav(navContacts);
+            });
+        }
+
+        // Дополнительно: отслеживаем скролл, чтобы менять активную вкладку (упрощенно по позициям)
+        window.addEventListener("scroll", () => {
+            const scrollPos = window.scrollY;
             const serviceCard = document.querySelector(".card .service-list")?.closest(".card");
-            if (serviceCard) serviceCard.scrollIntoView({ behavior: "smooth", block: "start" });
-            setActiveNav(navServices);
-        });
-    }
-    if (navTips) {
-        navTips.addEventListener("click", () => {
             const tipCard = document.getElementById("dailyTip")?.closest(".card");
-            if (tipCard) tipCard.scrollIntoView({ behavior: "smooth", block: "start" });
-            setActiveNav(navTips);
-        });
-    }
-    if (navContacts) {
-        navContacts.addEventListener("click", () => {
             const emergencyCard = document.querySelector(".emergency");
-            if (emergencyCard) emergencyCard.scrollIntoView({ behavior: "smooth", block: "center" });
-            setActiveNav(navContacts);
+
+            const serviceTop = serviceCard ? serviceCard.offsetTop - 100 : 9999;
+            const tipTop = tipCard ? tipCard.offsetTop - 100 : 9999;
+            const emergencyTop = emergencyCard ? emergencyCard.offsetTop - 100 : 9999;
+
+            if (scrollPos < serviceTop && scrollPos < tipTop) {
+                setActiveNav(navHome);
+            } else if (scrollPos >= serviceTop && scrollPos < tipTop) {
+                setActiveNav(navServices);
+            } else if (scrollPos >= tipTop && scrollPos < emergencyTop) {
+                setActiveNav(navTips);
+            } else if (scrollPos >= emergencyTop) {
+                setActiveNav(navContacts);
+            }
         });
-    }
-    
-    // Дополнительно: отслеживаем скролл, чтобы менять активную вкладку (упрощенно по позициям)
-    window.addEventListener("scroll", () => {
-        const scrollPos = window.scrollY;
-        const serviceCard = document.querySelector(".card .service-list")?.closest(".card");
-        const tipCard = document.getElementById("dailyTip")?.closest(".card");
-        const emergencyCard = document.querySelector(".emergency");
-        
-        const serviceTop = serviceCard ? serviceCard.offsetTop - 100 : 9999;
-        const tipTop = tipCard ? tipCard.offsetTop - 100 : 9999;
-        const emergencyTop = emergencyCard ? emergencyCard.offsetTop - 100 : 9999;
-        
-        if (scrollPos < serviceTop && scrollPos < tipTop) {
-            setActiveNav(navHome);
-        } else if (scrollPos >= serviceTop && scrollPos < tipTop) {
-            setActiveNav(navServices);
-        } else if (scrollPos >= tipTop && scrollPos < emergencyTop) {
-            setActiveNav(navTips);
-        } else if (scrollPos >= emergencyTop) {
-            setActiveNav(navContacts);
+
+        // 7. Дополнительная функция для сохранения поддержки при клике на телефон (если нужно)
+        // Адаптив под любые устройства: всё готово
+
+        // Чтобы показать дружелюбное приветствие при загрузке (опционально)
+        setTimeout(() => {
+            console.log("Перинатальный центр активен: помощь мамам всегда рядом 🌷");
+        }, 100);
+
+        // Для уверенности, что контент не ломается, задаём стартовые состояния
+        // Также добавим возможность обновлять совет дня при первом показе
+        if ('serviceWorker' in navigator) {
+            // Можно добавить pwa позже, но для мобильного сайта достаточно
         }
-    });
-    
-    // 7. Дополнительная функция для сохранения поддержки при клике на телефон (если нужно)
-    // Адаптив под любые устройства: всё готово
-    
-    // Чтобы показать дружелюбное приветствие при загрузке (опционально)
-    setTimeout(() => {
-        console.log("Перинатальный центр активен: помощь мамам всегда рядом 🌷");
-    }, 100);
-    
-    // Для уверенности, что контент не ломается, задаём стартовые состояния
-    // Также добавим возможность обновлять совет дня при первом показе
-    if ('serviceWorker' in navigator) {
-        // Можно добавить pwa позже, но для мобильного сайта достаточно
-    }
-</script>
+    </script>
 </body>
 </html>

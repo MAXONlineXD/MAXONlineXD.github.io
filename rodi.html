@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Перинатальный центр — Всё о родах</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.4;
+            padding-bottom: 80px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.03);
+            border: 1px solid #ffefe8;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .card-header i {
+            font-size: 1.8rem;
+            color: #cd7c9b;
+            background: #fff2ec;
+            padding: 10px;
+            border-radius: 24px;
+        }
+
+        .card-header h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #4a2c3a;
+        }
+
+        .card-header h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #4a2c3a;
+        }
+
+        .service-list, .tip-list, .birth-stage-list, .breathing-list, .pose-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .service-item, .tip-item, .stage-item, .breathing-item, .pose-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 6px 0;
+            border-bottom: 1px solid #faf0ea;
+        }
+
+        .service-item i, .tip-item i, .stage-item i, .breathing-item i, .pose-item i {
+            width: 28px;
+            color: #cd7c9b;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .btn-help {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            flex: 1 0 auto;
+            justify-content: center;
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .btn-help:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .emergency {
+            background: #ffefea;
+            border-left: 8px solid #e06c8c;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .phone-number {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #b9496f;
+        }
+
+        .call-btn {
+            background: #e06c8c;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 60px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 12px 20px 22px;
+            border-top: 1px solid #ffe0d6;
+            z-index: 1000;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #ab8a96;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+        }
+
+        .nav-item i {
+            font-size: 1.5rem;
+        }
+
+        .nav-item.active {
+            color: #cd7c9b;
+            font-weight: 600;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            backdrop-filter: blur(3px);
+        }
+        .modal-content {
+            background: white;
+            width: 85%;
+            max-width: 320px;
+            border-radius: 48px;
+            padding: 28px 20px 32px;
+            text-align: center;
+            animation: fadeUp 0.2s ease;
+        }
+        .modal-content i {
+            font-size: 3rem;
+            color: #cd7c9b;
+            margin-bottom: 12px;
+        }
+        .modal-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: #4a2c3a;
+        }
+        .modal-content p {
+            margin-bottom: 24px;
+            color: #56505a;
+        }
+        .close-modal {
+            background: #f1dfda;
+            border: none;
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #9f5879;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        .daily-tip {
+            background: #fffaf5;
+            border-radius: 24px;
+            padding: 14px 18px;
+            font-style: italic;
+            font-weight: 500;
+            border-left: 6px solid #f3bfcf;
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .care-badge {
+            background: #fef0e8;
+            border-radius: 20px;
+            padding: 8px 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .phone-number {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-hand-holding-heart"></i> 
+            Мама+Центр
+        </h1>
+        <p>Ваш надёжный перинатальный помощник</p>
+        <div class="badge"><i class="fas fa-clock"></i> Поддержка 24/7</div>
+    </div>
+</div>
+
+<main class="container">
+    <!-- Быстрая помощь -->
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-life-ring"></i>
+            <h2>Быстрая помощь</h2>
+        </div>
+        <div class="btn-group">
+            <button class="btn-help" data-action="feeding"><i class="fas fa-baby-carriage"></i> Грудное вскармливание</button>
+            <button class="btn-help" data-action="postpartum"><i class="fas fa-heartbeat"></i> После родов</button>
+            <button class="btn-help" data-action="babycare"><i class="fas fa-baby"></i> Уход за малышом</button>
+            <button class="btn-help" data-action="emotional"><i class="fas fa-brain"></i> Эмоции мамы</button>
+        </div>
+    </div>
+
+    <!-- ★★★ МАКСИМАЛЬНО БОЛЬШОЙ РАЗДЕЛ: ВСЁ О РОДАХ ★★★ -->
+    <div class="card" id="birthSection">
+        <div class="card-header">
+            <i class="fas fa-baby-carriage"></i>
+            <h2>🤱 Всё о родах: полный гид</h2>
+        </div>
+        
+        <!-- 1. Предвестники родов -->
+        <div style="margin-bottom: 28px;">
+            <div class="card-header" style="border-bottom: none; padding-bottom: 0; margin-bottom: 12px;">
+                <i class="fas fa-bell"></i>
+                <h3>Предвестники: как понять, что скоро рожать</h3>
+            </div>
+            <div class="service-list">
+                <div class="service-item"><i class="fas fa-arrow-down"></i><span><strong>Опущение живота</strong> — становится легче дышать, но чаще хочется в туалет.</span></div>
+                <div class="service-item"><i class="fas fa-hand-peace"></i><span><strong>Отхождение слизистой пробки</strong> — прозрачные или розоватые выделения за несколько дней до родов.</span></div>
+                <div class="service-item"><i class="fas fa-weight-hanging"></i><span><strong>Снижение веса</strong> на 1–2 кг из-за гормональной перестройки.</span></div>
+                <div class="service-item"><i class="fas fa-baby"></i><span><strong>«Гнездование»</strong> — внезапный прилив энергии, желание обустраивать дом.</span></div>
+                <div class="service-item"><i class="fas fa-waveform"></i><span><strong>Тренировочные схватки Брекстона-Хикса</strong> — нерегулярные, безболезненные, проходят при смене позы.</span></div>
+            </div>
+            <div class="care-badge"><i class="fas fa-hourglass-start"></i> Предвестники могут появиться за 2–4 недели до родов. Не паникуйте, дышите ровно.</div>
+        </div>
+
+        <!-- 2. Этапы родов: подробно -->
+        <div style="margin-bottom: 28px;">
+            <div class="card-header" style="border-bottom: none; padding-bottom: 0; margin-bottom: 12px;">
+                <i class="fas fa-chart-line"></i>
+                <h3>Этапы родов: от первой схватки до встречи с малышом</h3>
+            </div>
+            <div class="birth-stage-list">
+                <div class="stage-item"><i class="fas fa-hourglass-start"></i><span><strong>Латентная фаза (0–3 см раскрытия):</strong> схватки каждые 15–20 мин, длятся до 30 сек. Можно заниматься делами, принимать душ, дышать спокойно.</span></div>
+                <div class="stage-item"><i class="fas fa-hourglass-half"></i><span><strong>Активная фаза (4–7 см):</strong> схватки каждые 3–5 мин по 45–60 сек. Дыхание «свечка» или «собачка». Помогает мяч, поза на корточках.</span></div>
+                <div class="stage-item"><i class="fas fa-hourglass-end"></i><span><strong>Переходная фаза (8–10 см):</strong> самые сильные схватки, промежуток 1–2 мин. Главное — не тужиться до команды врача, дышать часто и поверхностно.</span></div>
+                <div class="stage-item"><i class="fas fa-fist-raised"></i><span><strong>Потуги (полное раскрытие):</strong> желание тужиться. Слушайте акушерку, набирайте воздух и направляйте усилие вниз, не в лицо.</span></div>
+                <div class="stage-item"><i class="fas fa-star-of-life"></i><span><strong>Рождение головки и плечиков:</strong> акушер помогает малышу мягко выйти. Вы почувствуете жжение — это нормально.</span></div>
+                <div class="stage-item"><i class="fas fa-hand-holding-heart"></i><span><strong>Рождение плаценты:</strong> легкие схватки, выход последа (до 30 мин). Затем уютный «золотой час»: малыш на груди, первый контакт кожа к коже.</span></div>
+            </div>
+        </div>
+
+        <!-- 3. Техники дыхания при родах (максимально подробно) -->
+        <div style="margin-bottom: 28px;">
+            <div class="card-header" style="border-bottom: none; padding-bottom: 0; margin-bottom: 12px;">
+                <i class="fas fa-lungs"></i>
+                <h3>Дыхание — твой главный помощник</h3>
+            </div>
+            <div class="breathing-list">
+                <div class="breathing-item"><i class="fas fa-leaf"></i><span><strong>Медленное глубокое дыхание:</strong> вдох на 4 счета, выдох на 6 — расслабляет в начале схватки.</span></div>
+                <div class="breathing-item"><i class="fas fa-candle"></i><span><strong>«Свечка»:</strong> частые поверхностные вдохи и выдохи ртом (как задуваем свечу) — во время пика схватки.</span></div>
+                <div class="breathing-item"><i class="fas fa-wind"></i><span><strong>«Собачка»</strong> — открытый рот, быстрое поверхностное дыхание, помогает в переходной фазе, когда хочется тужиться.</span></div>
+                <div class="breathing-item"><i class="fas fa-rocket"></i><span><strong>Потуговое дыхание:</strong> глубокий вдох, задержка на 10–15 сек и плавный выдох с направлением усилия вниз. За одну потугу так делают 3 раза.</span></div>
+                <div class="breathing-item"><i class="fas fa-heartbeat"></i><span><strong>Очищающее дыхание:</strong> полный вдох и медленный выдох с расслаблением всех мышц — между схватками.</span></div>
+            </div>
+            <div class="care-badge"><i class="fas fa-play-circle"></i> Тренируйте дыхание с 36 недели — на родах оно сработает на автомате.</div>
+        </div>
+
+        <!-- 4. Позы для облегчения схваток (визуальные описания) -->
+        <div style="margin-bottom: 28px;">
+            <div class="card-header" style="border-bottom: none; padding-bottom: 0; margin-bottom: 12px;">
+                <i class="fas fa-person-walking"></i>
+                <h3>Позы для схваток: меньше боли — больше комфорта</h3>
+            </div>
+            <div class="pose-list">
+                <div class="pose-item"><i class="fas fa-hands"></i><span><strong>Поза на четвереньках:</strong> снимает давление с поясницы, помогает малышу повернуться.</span></div>
+                <div class="pose-item"><i class="fas fa-skiing"></i><span><strong>Поза «на корточках»:</strong> увеличивает тазовое кольцо, ускоряет раскрытие. Нужна опора (партнер, кровать).</span></div>
+                <div class="pose-item"><i class="fas fa-chair"></i><span><strong>Сидя на фитболе:</strong> мягкие покачивания тазом расслабляют мышцы, улучшают кровоток.</span></div>
+                <div class="pose-item"><i class="fas fa-hand-holding-heart"></i><span><strong>Поза «медвежья» с опорой на партнера:</strong> вис на плечах, покачивания — уменьшает боль в спине.</span></div>
+                <div class="pose-item"><i class="fas fa-water"></i><span><strong>Вертикальные позы стоя:</strong> используют силу гравитации, схватки переносятся легче, раскрытие эффективнее.</span></div>
+                <div class="pose-item"><i class="fas fa-bed"></i><span><strong>Поза на боку с подушкой между ног:</strong> для отдыха между схватками и при усталости.</span></div>
+            </div>
+        </div>
+
+        <!-- 5. Что делать партнеру / доуле -->
+        <div style="margin-bottom: 28px;">
+            <div class="card-header" style="border-bottom: none; padding-bottom: 0; margin-bottom: 12px;">
+                <i class="fas fa-users"></i>
+                <h3>Партнеру: как помочь в родах</h3>
+            </div>
+            <div class="tip-list">
+                <div class="tip-item"><i class="fas fa-comment-dots"></i><span><strong>Подбадривайте словами:</strong> «Ты справляешься», «Мы рядом» — короткие фразы.</span></div>
+                <div class="tip-item"><i class="fas fa-hand-peace"></i><span><strong>Массаж поясницы:</strong> круговые движения кулаками во время схватки снижают боль.</span></div>
+                <div class="tip-item"><i class="fas fa-tint"></i><span><strong>Предлагайте воду, лед, смоченное полотенце для лба.</strong></span></div>
+                <div class="tip-item"><i class="fas fa-music"></i><span><strong>Включайте любимую расслабляющую музыку, помогайте менять позы.</strong></span></div>
+                <div class="tip-item"><i class="fas fa-heart"></i><span><strong>Будьте спокойны — ваше состояние передается роженице.</strong></span></div>
+            </div>
+        </div>
+
+        <!-- 6. Обезболивание: немедикаментозное и медикаментозное -->
+        <div style="margin-bottom: 28px;">
+            <div class="card-header" style="border-bottom: none; padding-bottom: 0; margin-bottom: 12px;">
+                <i class="fas fa-syringe"></i>
+                <h3>Способы обезболивания в родах</h3>
+            </div>
+            <div class="service-list">
+                <div class="service-item"><i class="fas fa-water"></i><span><strong>Теплая ванна/душ</strong> — снижает напряжение мышц, расслабляет (при целом пузыре).</span></div>
+                <div class="service-item"><i class="fas fa-hand-sparkles"></i><span><strong>Акупрессура и массаж</strong> — активные точки на крестце и руках.</span></div>
+                <div class="service-item"><i class="fas fa-smile"></i><span><strong>Ароматерапия</strong> (лаванда, роза) — через аромалампу.</span></div>
+                <div class="service-item"><i class="fas fa-thermometer-half"></i><span><strong>Эпидуральная анестезия</strong> — вводится в поясничный отдел, полностью снимает боль в схватках, сохраняя сознание. Проводится при 4–5 см раскрытия.</span></div>
+                <div class="service-item"><i class="fas fa-gas-pump"></i><span><strong>Закись азота</strong> — ингаляционная аналгезия, помогает в активной фазе.</span></div>
+            </div>
+            <div class="care-badge"><i class="fas fa-check-double"></i> Выбор метода обезболивания обсуждается с врачом заранее, всё зависит от ваших пожеланий и состояния.</div>
+        </div>
+
+        <!-- 7. Что делать после родов: первые часы и дни -->
+        <div style="margin-bottom: 8px;">
+            <div class="card-header" style="border-bottom: none; padding-bottom: 0; margin-bottom: 12px;">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h3>Первые часы после родов: золотой час и восстановление</h3>
+            </div>
+            <div class="tip-list">
+                <div class="tip-item"><i class="fas fa-child"></i><span><strong>Контакт кожа к коже:</strong> малыш выкладывается на живот мамы на 60–90 минут — это запускает лактацию, стабилизирует его сердцебиение и температуру.</span></div>
+                <div class="tip-item"><i class="fas fa-baby-carriage"></i><span><strong>Первое прикладывание к груди</strong> — в идеале в первый час жизни. Молозиво — мощная защита для новорожденного.</span></div>
+                <div class="tip-item"><i class="fas fa-couch"></i><span><strong>Холод на промежность, отдых в позе полулежа.</strong></span></div>
+                <div class="tip-item"><i class="fas fa-hand-holding-usd"></i><span><strong>Обильное питье, прием пищи через 2 часа после родов (бульон, йогурт).</strong></span></div>
+                <div class="tip-item"><i class="fas fa-heartbeat"></i><span><strong>Контроль кровотечения: первый час — самый важный, медперсонал рядом.</strong></span></div>
+            </div>
+            <div class="daily-tip" style="margin-top: 20px;">
+                <i class="fas fa-chalkboard-user"></i> <strong>В нашем центре «Нежные роды»</strong> — вертикальные роды, свободные позы, индивидуальная акушерка, присутствие партнёра и эпидуральная анестезия по желанию.  Мы гарантируем безопасность и психологический комфорт.
+            </div>
+        </div>
+    </div>
+
+    <!-- Горячая линия и контакты -->
+    <div class="card emergency">
+        <div class="card-header">
+            <i class="fas fa-phone-alt"></i>
+            <h2>Горячая линия</h2>
+        </div>
+        <div class="contact-row">
+            <span class="phone-number"><i class="fas fa-phone"></i> 8 800 555 35 35</span>
+            <button class="call-btn" id="emergencyCallBtn"><i class="fas fa-phone-volume"></i> Позвонить</button>
+        </div>
+        <p style="margin-top: 14px; font-size: 0.8rem;"><i class="fas fa-clock"></i> Бесплатно, круглосуточно. Психологическая и медицинская поддержка.</p>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Перинатальный центр «Мама+Центр» — забота на каждом этапе материнства
+    </footer>
+</main>
+
+<!-- Нижняя навигация -->
+<div class="bottom-nav">
+    <button class="nav-item active" data-nav="home"><i class="fas fa-home"></i><span>Главная</span></button>
+    <button class="nav-item" data-nav="birth"><i class="fas fa-baby-carriage"></i><span>Роды</span></button>
+    <button class="nav-item" data-nav="contacts"><i class="fas fa-headset"></i><span>Помощь</span></button>
+</div>
+
+<!-- Модальное окно -->
+<div id="infoModal" class="modal">
+    <div class="modal-content">
+        <i class="fas fa-info-circle" id="modalIcon"></i>
+        <h3 id="modalTitle">Информация</h3>
+        <p id="modalText"></p>
+        <button class="close-modal" id="closeModalBtn">Понятно, спасибо</button>
+    </div>
+</div>
+
+<script>
+    // Модальное окно (универсальное)
+    const modal = document.getElementById("infoModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalText = document.getElementById("modalText");
+    const modalIcon = document.getElementById("modalIcon");
+    function showModal(title, message, iconClass = "fas fa-heart") {
+        modalTitle.innerText = title;
+        modalText.innerText = message;
+        modalIcon.className = iconClass + " fa-3x";
+        modal.style.display = "flex";
+    }
+    function closeModal() { modal.style.display = "none"; }
+    document.getElementById("closeModalBtn").addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+
+    // Обработчики для кнопок быстрой помощи
+    // Кнопка "Грудное вскармливание" теперь открывает ссылку http://text.ru
+    const feedingBtn = document.querySelector(".btn-help[data-action='feeding']");
+    if (feedingBtn) {
+        feedingBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "http://text.ru";
+        });
+    }
+
+    // Остальные кнопки показывают модальные окна
+    const helpActions = {
+        postpartum: ["После родов", "🩹 Восстановление: отдых, послеродовые прокладки, упражнения Кегеля. Не стесняйтесь просить поддержку.", "fas fa-heartbeat"],
+        babycare: ["Уход за малышом", "🧸 Обработка пупка, купание в кипяченой воде, контроль температуры. При любых сомнениях звоните педиатру.", "fas fa-baby"],
+        emotional: ["Эмоции мамы", "✨ Послеродовая хандра — это нормально. Делайте паузы, разговаривайте с психологом. Вы не одна!", "fas fa-brain"]
+    };
+    document.querySelectorAll(".btn-help:not([data-action='feeding'])").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const act = btn.getAttribute("data-action");
+            if (helpActions[act]) showModal(helpActions[act][0], helpActions[act][1], helpActions[act][2]);
+        });
+    });
+
+    // Экстренный вызов
+    document.getElementById("emergencyCallBtn").addEventListener("click", () => {
+        window.location.href = "tel:88005553535";
+        showModal("Соединение с перинатальным центром", "Вы звоните на горячую линию 8 800 555 35 35. Оператор поможет вам в ближайшее время.", "fas fa-phone-alt");
+    });
+
+    // Навигация (скролл к разделам)
+    const navHome = document.querySelector("[data-nav='home']");
+    const navBirth = document.querySelector("[data-nav='birth']");
+    const navContacts = document.querySelector("[data-nav='contacts']");
+    const birthSection = document.getElementById("birthSection");
+    const emergencyCard = document.querySelector(".emergency");
+    function setActive(active) {
+        [navHome, navBirth, navContacts].forEach(n => n?.classList.remove("active"));
+        if (active) active.classList.add("active");
+    }
+    if (navHome) navHome.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); setActive(navHome); });
+    if (navBirth) navBirth.addEventListener("click", () => { birthSection.scrollIntoView({ behavior: "smooth", block: "start" }); setActive(navBirth); });
+    if (navContacts) navContacts.addEventListener("click", () => { emergencyCard.scrollIntoView({ behavior: "smooth", block: "center" }); setActive(navContacts); });
+    
+    window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        const birthTop = birthSection.offsetTop - 150;
+        const emergencyTop = emergencyCard.offsetTop - 150;
+        if (scrollY < birthTop) setActive(navHome);
+        else if (scrollY >= birthTop && scrollY < emergencyTop) setActive(navBirth);
+        else setActive(navContacts);
+    });
+</script>
+</body>
+</html>
