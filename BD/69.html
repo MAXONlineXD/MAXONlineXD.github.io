@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Первая прогулка с малышом — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .checklist-group {
+            margin: 16px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: #fffaf5;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #fef0ea;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #cd7c9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .checklist-check.completed {
+            background: #cd7c9b;
+            color: white;
+        }
+
+        .checklist-text {
+            flex: 1;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-walking"></i> 
+            Первая прогулка с малышом
+        </h1>
+        <p>Когда, как и сколько гулять с новорождённым</p>
+        <div class="badge"><i class="fas fa-sun"></i> Свежий воздух полезен маме и малышу</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Когда начинать гулять -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+            <div class="section-title">Когда можно начинать гулять?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Если малыш родился здоровым</strong> и доношенным — можно гулять с <strong>7–10 дня</strong> жизни (после осмотра педиатра и при хорошей погоде).</li>
+                    <li><strong>Если недоношенный</strong> или есть проблемы со здоровьем — сроки определяет педиатр.</li>
+                    <li>Первая прогулка — короткая (15–20 минут).</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> до первой прогулки можно выносить малыша на балкон на 5–10 минут (укутанным) — это подготовка к свежему воздуху.
+            </div>
+        </div>
+    </div>
+
+    <!-- Сколько гулять -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clock"></i></div>
+            <div class="section-title">Как увеличивать время прогулки</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Первая прогулка:</strong> 15–20 минут</li>
+                    <li><strong>Через 2–3 дня:</strong> 30–40 минут</li>
+                    <li><strong>Через неделю:</strong> 1–1,5 часа</li>
+                    <li><strong>К концу первого месяца:</strong> 2–3 часа в день (можно разделить на 2 прогулки)</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> ориентируйтесь на погоду и самочувствие малыша. Если он плачет или замерзает — сократите прогулку.
+            </div>
+        </div>
+    </div>
+
+    <!-- Как одевать по погоде -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-tshirt"></i></div>
+            <div class="section-title">Как одевать малыша на прогулку</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Правило «как себя + один слой»</strong> — одевайте малыша так же, как себя, плюс один дополнительный слой (например, тонкая кофта или пелёнка).</p>
+                <p><strong>Как проверить, не замёрз ли малыш?</strong> — пощупайте <strong>шею сзади или затылок</strong>. Если тёплые и сухие — всё в порядке. Холодные руки и ноги — не показатель (у новорождённых плохая терморегуляция).</p>
+                <p><strong>Перегрев опаснее переохлаждения!</strong> Если малыш красный, потный, беспокойный — снимите один слой.</p>
+            </div>
+            <div class="stool-table">
+                <p><strong>Примерная схема одежды по сезонам:</strong></p>
+                <p><strong>Лето (+20...+30°C):</strong> хлопковый боди, тонкий комбинезон или распашонка + ползунки, панамка.</p>
+                <p><strong>Весна/осень (+5...+15°C):</strong> боди, флисовая кофта, демисезонный комбинезон, шапочка.</p>
+                <p><strong>Зима (-5...0°C):</strong> боди, тёплый комбинезон (на синтепоне/пухе), зимняя шапочка, носочки, конверт или меховой комбинезон.</p>
+                <p><strong>Мороз (-10...-5°C):</strong> добавляем флисовый слой, меховой конверт, тёплую шапку.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Что взять с собой -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-suitcase"></i></div>
+            <div class="section-title">Что взять с собой на прогулку</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="walk-checklist">
+                <div class="checklist-item" data-id="walk1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">👶 <strong>Коляска</strong> (люлька для новорождённого) или слинг/эргорюкзак</div>
+                </div>
+                <div class="checklist-item" data-id="walk2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧥 <strong>Запасная одежда</strong> (на случай срыгивания или «аварии»)</div>
+                </div>
+                <div class="checklist-item" data-id="walk3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🩲 <strong>Подгузники</strong> (2–3 штуки)</div>
+                </div>
+                <div class="checklist-item" data-id="walk4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧴 <strong>Влажные салфетки</strong></div>
+                </div>
+                <div class="checklist-item" data-id="walk5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🍼 <strong>Бутылочка со смесью или сцеженным молоком</strong> (если кормите не грудью)</div>
+                </div>
+                <div class="checklist-item" data-id="walk6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧥 <strong>Плед или дополнительное одеяло</strong> (на случай ветра/похолодания)</div>
+                </div>
+                <div class="checklist-item" data-id="walk7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧴 <strong>Крем от ветра и солнца</strong> (для мамы и малыша в летнее время)</div>
+                </div>
+                <div class="checklist-item" data-id="walk8">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">💧 <strong>Вода для мамы</strong></div>
+                </div>
+                <div class="checklist-item" data-id="walk9">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🦟 <strong>Москитная сетка</strong> (летом)</div>
+                </div>
+                <div class="checklist-item" data-id="walk10">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">☔ <strong>Дождевик на коляску</strong> (на случай дождя)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Выбор транспорта -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-baby-carriage"></i></div>
+            <div class="section-title">Коляска, слинг или эргорюкзак?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Коляска-люлька:</strong> подходит для первых месяцев (идеально для долгих прогулок и сна на улице).</p>
+                <p><strong>Слинг (Май-слинг, слинг с кольцами):</strong> даёт тесный контакт с мамой, успокаивает малыша, удобен для коротких прогулок.</p>
+                <p><strong>Эргорюкзак:</strong> подходит с 4–5 месяцев (когда малыш держит голову). Для новорождённых нужен специальный вкладыш.</p>
+                <p><strong>Что выбрать для первой прогулки?</strong> Лучше коляску — в ней удобно менять подгузник, укутать, если холодно.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Погода и ограничения -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-cloud-sun"></i></div>
+            <div class="section-title">При какой погоде можно гулять</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Температура воздуха:</strong> от -10°C до +30°C (для доношенного здорового малыша).</li>
+                    <li><strong>Ниже -10°C:</strong> лучше сократить прогулку или гулять на балконе (10–15 минут).</li>
+                    <li><strong>Выше +30°C:</strong> гулять утром/вечером, избегать прямых солнечных лучей, использовать панамку и крем от загара.</li>
+                    <li><strong>Сильный ветер, дождь, снегопад:</strong> лучше отложить прогулку или сократить до 10–15 минут.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> в плохую погоду можно вынести малыша на балкон на 10–15 минут — это лучше, чем не гулять совсем.
+            </div>
+        </div>
+    </div>
+
+    <!-- Польза прогулок -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-heart"></i></div>
+            <div class="section-title">Почему прогулки важны</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>💨 <strong>Свежий воздух</strong> — обогащает кровь кислородом, улучшает сон</li>
+                    <li>☀️ <strong>Солнце</strong> — синтез витамина D (профилактика рахита)</li>
+                    <li>👶 <strong>Закаливание</strong> — укрепляет иммунитет (постепенное привыкание к перепадам температур)</li>
+                    <li>😴 <strong>Крепкий сон</strong> — на свежем воздухе малыши спят дольше и крепче</li>
+                    <li>🤱 <strong>Польза для мамы</strong> — физическая активность, свежий воздух улучшает настроение</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Если малыш плачет на прогулке -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-face-frown"></i></div>
+            <div class="section-title">Что делать, если малыш плачет на прогулке</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ol style="margin-left: 20px;">
+                    <li><strong>Проверьте, не замёрз/не перегрелся</strong> — пощупайте шею сзади</li>
+                    <li><strong>Проверьте подгузник</strong> — возможно, мокрый</li>
+                    <li><strong>Предложите грудь или бутылочку</strong> — возможно, проголодался</li>
+                    <li><strong>Возьмите на руки</strong> — покачайте, успокойте</li>
+                    <li><strong>Если ничего не помогает</strong> — сократите прогулку и идите домой</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Мифы -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Мифы о прогулках</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> С новорождённым можно гулять только на 3-й неделе.<br>
+            <strong>Правда:</strong> Можно с 7–10 дня, если педиатр не против.</p>
+            
+            <p><strong>Миф:</strong> Гулять можно только в безветренную погоду.<br>
+            <strong>Правда:</strong> Можно, если малыш правильно одет (закрыть лицо от ветра капюшоном).</p>
+            
+            <p><strong>Миф:</strong> Гулять нужно каждый день, даже в дождь.<br>
+            <strong>Правда:</strong> Если ливень или сильный ветер — лучше остаться дома.</p>
+            
+            <p><strong>Миф:</strong> Если малыш спит на улице, его нельзя трогать, даже если холодно.<br>
+            <strong>Правда:</strong> Проверяйте температуру шеи — если она холодная, пора домой.</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    function initChecklist() {
+        const items = document.querySelectorAll('.checklist-item');
+        items.forEach(item => {
+            const id = item.getAttribute('data-id');
+            if (!id) return;
+            const stored = localStorage.getItem(`walk_${id}`);
+            const checkDiv = item.querySelector('.checklist-check');
+            if (stored === 'true') {
+                checkDiv.classList.add('completed');
+                checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+            } else {
+                checkDiv.classList.remove('completed');
+                checkDiv.innerHTML = '';
+            }
+            
+            item.addEventListener('click', () => {
+                const isCompleted = checkDiv.classList.contains('completed');
+                if (isCompleted) {
+                    checkDiv.classList.remove('completed');
+                    checkDiv.innerHTML = '';
+                    localStorage.setItem(`walk_${id}`, 'false');
+                } else {
+                    checkDiv.classList.add('completed');
+                    checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+                    localStorage.setItem(`walk_${id}`, 'true');
+                }
+            });
+        });
+    }
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    initChecklist();
+</script>
+</body>
+</html>

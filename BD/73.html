@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Сон молодой мамы — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .checklist-group {
+            margin: 16px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: #fffaf5;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #fef0ea;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #cd7c9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .checklist-check.completed {
+            background: #cd7c9b;
+            color: white;
+        }
+
+        .checklist-text {
+            flex: 1;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-moon"></i> 
+            Сон молодой мамы
+        </h1>
+        <p>Как высыпаться с новорождённым и не сойти с ума</p>
+        <div class="badge"><i class="fas fa-heart"></i> Ваш сон так же важен, как сон малыша</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Главная мысль -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-quote-left"></i></div>
+            <div class="section-title">Вы не обязана быть «супермамой»</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Первые месяцы с малышом — это марафон недосыпа. Вы не станете плохой мамой, если будете спать днём, когда спит малыш, или попросите помощи. <strong>Ваше восстановление — залог здоровья всей семьи.</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Сколько нужно спать маме -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clock"></i></div>
+            <div class="section-title">Сколько сна нужно маме?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Взрослому человеку для нормального функционирования нужно <strong>7–9 часов сна в сутки</strong>. Но с новорождённым это практически невозможно. Поэтому задача — набирать эти часы <strong>суммарно</strong> за счёт дневного сна.</p>
+                <p>Даже <strong>15–20 минут</strong> дневного сна восстанавливают силы лучше, чем час ночного бодрствования.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Почему мама не высыпается -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="section-title">Почему мама не высыпается</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>🍼 <strong>Ночные кормления</strong> — каждые 2–3 часа, особенно в первые месяцы.</li>
+                <li>😭 <strong>Плач малыша</strong> — любой шум заставляет просыпаться.</li>
+                <li>🧠 <strong>Гормональные изменения</strong> — уровень мелатонина может быть снижен.</li>
+                <li>😰 <strong>Тревога</strong> — «а вдруг с малышом что-то случится?»</li>
+                <li>🔄 <strong>Сбитый режим</strong> — день и ночь перепутаны.</li>
+                <li>🤱 <strong>Боли после родов</strong> — швы, лактостаз, боли в спине.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Как высыпаться -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="section-title">Стратегии выживания: как высыпаться</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="sleep-mom-checklist">
+                <div class="checklist-item" data-id="mom1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">😴 <strong>Спите, когда спит малыш</strong> — даже 20 минут дневного сна восстанавливают силы.</div>
+                </div>
+                <div class="checklist-item" data-id="mom2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🤝 <strong>Делегируйте</strong> — просите партнёра, бабушек, друзей взять малыша хотя бы на час.</div>
+                </div>
+                <div class="checklist-item" data-id="mom3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🌙 <strong>Кормите в темноте</strong> — не включайте яркий свет ночью (он бодрит).</div>
+                </div>
+                <div class="checklist-item" data-id="mom4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">👶 <strong>Совместная комната</strong> — кроватка малыша рядом с вашей, чтобы не бегать далеко.</div>
+                </div>
+                <div class="checklist-item" data-id="mom5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🔄 <strong>Дежурства с партнёром</strong> — например, папа берёт малыша с 21:00 до 00:00, мама спит.</div>
+                </div>
+                <div class="checklist-item" data-id="mom6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🍼 <strong>Сцеживание</strong> — если вы кормите грудью, сцедите немного молока, чтобы папа мог покормить ночью.</div>
+                </div>
+                <div class="checklist-item" data-id="mom7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">😴 <strong>Режим «сон засыпает»</strong> — укладывайтесь спать вместе с малышом вечером (например, в 21:00).</div>
+                </div>
+                <div class="checklist-item" data-id="mom8">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">📱 <strong>Телефон подальше</strong> — не листайте соцсети, пока малыш спит. Это крадёт драгоценные минуты отдыха.</div>
+                </div>
+                <div class="checklist-item" data-id="mom9">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🛌 <strong>Удобная поза для сна</strong> — подушки для беременных пригодятся и после родов.</div>
+                </div>
+                <div class="checklist-item" data-id="mom10">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧘 <strong>Расслабление перед сном</strong> — тёплая ванна, дыхательные упражнения, медитация.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Что НЕ делать -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего НЕ нужно делать</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ <strong>Не пренебрегайте сном в пользу бытовых дел</strong> — уборка подождёт, а ваше здоровье — нет.</li>
+                <li>❌ <strong>Не пытайтесь «догнать» сон выходными</strong> — хронический недосып не компенсируется одним выходным.</li>
+                <li>❌ <strong>Не пить кофе и энергетики</strong> — они дают ложную энергию, а потом наступает спад.</li>
+                <li>❌ <strong>Не вините себя за дневной сон</strong> — это не лень, а необходимость.</li>
+                <li>❌ <strong>Не отказывайтесь от помощи</strong> — гордость сейчас не лучший советчик.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Признаки недосыпа -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-symptoms"></i></div>
+            <div class="section-title">Когда недосып становится опасным</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❗ Симптомы хронического недосыпа:</strong>
+                <ul>
+                    <li>😵 <strong>Постоянная усталость</strong>, не проходящая после ночного сна</li>
+                    <li>😤 <strong>Раздражительность</strong>, вспышки гнева</li>
+                    <li>😰 <strong>Тревога</strong>, панические атаки</li>
+                    <li>😞 <strong>Апатия</strong>, ничего не хочется</li>
+                    <li>🧠 <strong>Проблемы с концентрацией</strong>, забывчивость</li>
+                    <li>🍽 <strong>Переедание или отсутствие аппетита</strong></li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Если вы заметили эти симптомы — возможно, вам нужна помощь психолога. Не стесняйтесь обращаться.
+            </div>
+        </div>
+    </div>
+
+    <!-- Как помочь партнёру -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="section-title">Как папа может помочь маме выспаться</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>😴 <strong>Брать ночные смены</strong> — хотя бы 1 раз в неделю, чтобы мама поспала 4–5 часов подряд.</li>
+                    <li>🍼 <strong>Кормить сцеженным молоком или смесью</strong> ночью, чтобы мама не просыпалась.</li>
+                    <li>🛌 <strong>Укладывать малыша</strong> — покачивать, петь колыбельные.</li>
+                    <li>🧹 <strong>Взять на себя быт</strong> — готовка, уборка, покупки.</li>
+                    <li>👶 <strong>Забирать малыша на пару часов днём</strong>, чтобы мама поспала.</li>
+                    <li>💆 <strong>Делать массаж</strong> — расслабляет и помогает уснуть.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Дневной сон -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-sun"></i></div>
+            <div class="section-title">Дневной сон: как, сколько и когда</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Лучшее время:</strong> когда спит малыш (обычно 1–2 раза в день по 1–2 часа).</li>
+                    <li><strong>Идеальная продолжительность:</strong> 20–30 минут (восстанавливает силы) или 90 минут (полный цикл сна).</li>
+                    <li><strong>Как организовать:</strong> положите телефон подальше, приглушите свет, скажите домашним, чтобы не беспокоили.</li>
+                    <li><strong>Что делать, если не можете заснуть днём:</strong> просто полежите с закрытыми глазами 15–20 минут — это тоже отдых.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Мифы о сне мамы -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Разрушаем мифы</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> «Надо спать, пока спит малыш, даже если не хочется».<br>
+            <strong>Правда:</strong> Если вы не можете заснуть — полежите с закрытыми глазами. Это отдых. Но если бодры и полны сил — займитесь делами.</p>
+            
+            <p><strong>Миф:</strong> «Спать днём — это для ленивых».<br>
+            <strong>Правда:</strong> Дневной сон — необходимость для кормящей мамы. Это не лень, а забота о здоровье.</p>
+            
+            <p><strong>Миф:</strong> «Когда малыш подрастёт, высплюсь».<br>
+            <strong>Правда:</strong> Да, со временем станет легче, но нельзя накапливать усталость годами. Отдыхайте сейчас.</p>
+        </div>
+    </div>
+
+    <!-- Когда обращаться к врачу -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ambulance"></i></div>
+            <div class="section-title">Когда нужна помощь специалиста</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❗ Обратитесь к врачу, если:</strong>
+                <ul>
+                    <li>Бессонница длится более 2 недель, несмотря на возможность спать.</li>
+                    <li>Вы просыпаетесь в панике от кошмаров.</li>
+                    <li>Сильная усталость мешает ухаживать за малышом.</li>
+                    <li>Мысли о вреде себе или малышу.</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-phone-alt"></i> <strong>Горячая линия психологической поддержки:</strong> 8 800 555 35 35 (круглосуточно).
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    function initChecklist() {
+        const items = document.querySelectorAll('.checklist-item');
+        items.forEach(item => {
+            const id = item.getAttribute('data-id');
+            if (!id) return;
+            const stored = localStorage.getItem(`mom_sleep_${id}`);
+            const checkDiv = item.querySelector('.checklist-check');
+            if (stored === 'true') {
+                checkDiv.classList.add('completed');
+                checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+            } else {
+                checkDiv.classList.remove('completed');
+                checkDiv.innerHTML = '';
+            }
+            
+            item.addEventListener('click', () => {
+                const isCompleted = checkDiv.classList.contains('completed');
+                if (isCompleted) {
+                    checkDiv.classList.remove('completed');
+                    checkDiv.innerHTML = '';
+                    localStorage.setItem(`mom_sleep_${id}`, 'false');
+                } else {
+                    checkDiv.classList.add('completed');
+                    checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+                    localStorage.setItem(`mom_sleep_${id}`, 'true');
+                }
+            });
+        });
+    }
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    initChecklist();
+</script>
+</body>
+</html>

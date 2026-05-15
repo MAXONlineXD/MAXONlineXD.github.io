@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Одежда для малыша — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .checklist-group {
+            margin: 16px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: #fffaf5;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #fef0ea;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #cd7c9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .checklist-check.completed {
+            background: #cd7c9b;
+            color: white;
+        }
+
+        .checklist-text {
+            flex: 1;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-tshirt"></i> 
+            Одежда для малыша
+        </h1>
+        <p>Как выбрать удобную, безопасную и красивую одежду для новорождённого</p>
+        <div class="badge"><i class="fas fa-heart"></i> Комфорт малыша — главный критерий</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Главные правила -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-star-of-life"></i></div>
+            <div class="section-title">Главные правила выбора</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>👕 <strong>Только натуральные ткани</strong> — хлопок, бамбук, лён, шерсть (для тепла). Синтетика не пропускает воздух и вызывает потницу.</li>
+                    <li>🪡 <strong>Швы наружу</strong> — у новорождённых очень нежная кожа, внутренние швы натирают.</li>
+                    <li>🚫 <strong>Никаких пуговиц, заклёпок, молний</strong> на лицевой части — можно пораниться.</li>
+                    <li>🔗 <strong>Кнопки или завязки</strong> — удобнее и безопаснее пуговиц.</li>
+                    <li>📏 <strong>Свободный крой</strong> — не стесняет движения.</li>
+                    <li>🌡️ <strong>Не перегревать</strong> — правило «как себя + один слой».</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Размеры -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ruler"></i></div>
+            <div class="section-title">Размеры: как не ошибиться</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Размер новорождённого обычно соответствует росту:</strong></p>
+                <ul>
+                    <li><strong>50–56 см</strong> — для малышей от 2,5 до 3,5 кг (первые 1–2 недели)</li>
+                    <li><strong>56–62 см</strong> — для малышей 3–4 кг (1–2 месяца)</li>
+                    <li><strong>62–68 см</strong> — 3–6 месяцев</li>
+                    <li><strong>68–74 см</strong> — 6–9 месяцев</li>
+                    <li><strong>74–80 см</strong> — 9–12 месяцев</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> не покупайте одежду «на вырост» слишком большого размера — это неудобно и может сбиваться. Лучше взять 56–62 на первый месяц и докупать по мере роста.
+            </div>
+        </div>
+    </div>
+
+    <!-- Что нужно купить -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-shopping-bag"></i></div>
+            <div class="section-title">Базовый гардероб новорождённого</div>
+        </div>
+        <div class="section-content">
+            <div class="checklist-group" id="clothes-checklist">
+                <div class="checklist-item" data-id="cloth1">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">👕 <strong>Боди с длинным рукавом</strong> — 3–5 шт. (размер 56–62)</div>
+                </div>
+                <div class="checklist-item" data-id="cloth2">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">👕 <strong>Боди с коротким рукавом</strong> — 2–3 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="cloth3">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">👖 <strong>Ползунки или слипы</strong> — 4–6 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="cloth4">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧦 <strong>Носочки</strong> — 3–5 пар (тонкие и тёплые)</div>
+                </div>
+                <div class="checklist-item" data-id="cloth5">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧢 <strong>Шапочки тонкие</strong> — 2–3 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="cloth6">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧤 <strong>Царапки-антицарапки</strong> — 2–3 пары</div>
+                </div>
+                <div class="checklist-item" data-id="cloth7">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧣 <strong>Тёплый комбинезон или конверт на выписку</strong> (по сезону) — 1 шт.</div>
+                </div>
+                <div class="checklist-item" data-id="cloth8">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🧥 <strong>Флисовая кофта</strong> — 1–2 шт. (для слоёв)</div>
+                </div>
+                <div class="checklist-item" data-id="cloth9">
+                    <div class="checklist-check"></div>
+                    <div class="checklist-text">🩲 <strong>Подгузники</strong> — не одежда, но основа комфорта</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- По сезонам -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-cloud-sun"></i></div>
+            <div class="section-title">Одежда по сезонам</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Лето (+20…+30°C):</strong> боди с коротким рукавом, тонкие ползунки, панамка, носочки (если холодные ноги). Можно без шапки дома.</p>
+                <p><strong>Весна/осень (+5…+15°C):</strong> боди с длинным рукавом, флисовая кофта, демисезонный комбинезон, шапочка, носочки.</p>
+                <p><strong>Зима (-5…0°C):</strong> боди, флисовая кофта, тёплый комбинезон (на синтепоне/пухе), зимняя шапочка, тёплые носочки, варежки, конверт или меховой комбинезон.</p>
+                <p><strong>Мороз (-10…-5°C):</strong> добавляем дополнительный флисовый слой, меховой конверт, тёплую шапку, варежки. Гулять 20–30 минут.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Что лучше: боди или распашонка -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="section-title">Боди vs распашонка — что выбрать?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Боди:</strong> застёгивается между ножек, не задирается, удобно под ползунки. Лучший выбор для повседневной носки.</p>
+                <p><strong>Распашонка:</strong> запахивается спереди, удобно для новорождённых, но часто задирается. Хорошо подходит для сна.</p>
+                <p><strong>Слипы (комбинезончики):</strong> удобно, быстро одевать, не задираются. Отличный вариант для новорождённых.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ткани -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-leaf"></i></div>
+            <div class="section-title">Какие ткани лучше</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Хлопок (100%)</strong> — дышит, гипоаллергенен, легко стирать. Идеален для лета и дома.</li>
+                    <li><strong>Бамбук</strong> — мягче хлопка, антибактериальный, хорошо отводит влагу. Дороже.</li>
+                    <li><strong>Флис</strong> — тёплый, лёгкий, быстро сохнет. Для среднего слоя зимой.</li>
+                    <li><strong>Шерсть мериноса</strong> — тёплая, не колется, гипоаллергенна. Для термобелья.</li>
+                    <li><strong>Синтетика (полиэстер, акрил)</strong> — только в верхнем слое (комбинезон). Не для контакта с кожей!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Как одевать по погоде -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-thermometer-half"></i></div>
+            <div class="section-title">Как понять, не жарко/не холодно?</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Проверяйте шею сзади или затылок!</strong> Там должно быть тепло и сухо.</p>
+                <p>❌ Холодные руки/ноги — не показатель (у новорождённых плохая терморегуляция, они часто холодные).</p>
+                <p>✅ Если шея влажная и горячая — малышу жарко, снимите слой.</p>
+                <p>✅ Если шея холодная — утеплите.</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Правило:</strong> одевайте малыша как себя + один слой (тонкая кофта или пелёнка). В коляске можно на слой меньше, если укутан.
+            </div>
+        </div>
+    </div>
+
+    <!-- Чего НЕ надо покупать -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Что не стоит покупать для новорождённого</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ <strong>Одежду с внутренними швами</strong> — натирают кожу.</li>
+                <li>❌ <strong>Вязаные вещи с крупными дырами</strong> — пальчики застревают.</li>
+                <li>❌ <strong>Пуговицы, заклёпки, молнии на лицевой части</strong> — можно пораниться.</li>
+                <li>❌ <strong>Слишком маленькую одежду</strong> — ребёнок быстро растёт.</li>
+                <li>❌ <strong>Шерстяные вещи из грубой шерсти</strong> — колются и вызывают раздражение.</li>
+                <li>❌ <strong>Головные уборы с завязками на шее</strong> — опасны удушением.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Как стирать детскую одежду -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-soap"></i></div>
+            <div class="section-title">Стирка и уход</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>🧴 <strong>Специальный детский порошок или мыло</strong> — гипоаллергенные, без фосфатов и отдушек.</li>
+                    <li>🌡️ <strong>Стирка при 40–60°C</strong> — для уничтожения бактерий.</li>
+                    <li>🚫 <strong>Не использовать кондиционер для белья</strong> — аллергия.</li>
+                    <li>✨ <strong>Гладить с двух сторон</strong> — для дезинфекции (особенно в первые 1–2 месяца).</li>
+                    <li>🆕 <strong>Новые вещи стирать перед первой ноской</strong> — они могут быть обработаны химией.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Сколько одежды нужно -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clipboard-list"></i></div>
+            <div class="section-title">Сколько покупать? (размер 56–62)</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>Боди — 5–7 шт.</li>
+                    <li>Ползунки/слипы — 5–7 шт.</li>
+                    <li>Флисовая кофта — 2 шт.</li>
+                    <li>Тёплый комбинезон — 1 шт.</li>
+                    <li>Шапочки — 3 шт. (2 тонкие + 1 тёплая)</li>
+                    <li>Носочки — 5 пар</li>
+                    <li>Царапки — 3 пары</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> не покупайте много вещей одного размера — дети растут очень быстро. Лучше берите 5–7 позиций и докупайте по мере необходимости.
+            </div>
+        </div>
+    </div>
+
+    <!-- Мифы -->
+    <div class="section-card" style="animation-delay: 0.3s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Мифы о детской одежде</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Нужно покупать одежду на несколько размеров больше, чтобы «на вырост».<br>
+            <strong>Правда:</strong> Ребёнок растёт быстро, но слишком большая одежда неудобна — она сбивается, мешает двигаться.</p>
+            
+            <p><strong>Миф:</strong> Чем больше слоёв, тем теплее.<br>
+            <strong>Правда:</strong> Важнее качество и материал, а не количество слоёв. Перегрев опаснее переохлаждения.</p>
+            
+            <p><strong>Миф:</strong> Одежда из синтетики дешевле и практичнее.<br>
+            <strong>Правда:</strong> Синтетика не дышит, вызывает потницу и аллергию. Для новорождённых — только натуральные ткани.</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    function initChecklist() {
+        const items = document.querySelectorAll('.checklist-item');
+        items.forEach(item => {
+            const id = item.getAttribute('data-id');
+            if (!id) return;
+            const stored = localStorage.getItem(`clothes_${id}`);
+            const checkDiv = item.querySelector('.checklist-check');
+            if (stored === 'true') {
+                checkDiv.classList.add('completed');
+                checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+            } else {
+                checkDiv.classList.remove('completed');
+                checkDiv.innerHTML = '';
+            }
+            
+            item.addEventListener('click', () => {
+                const isCompleted = checkDiv.classList.contains('completed');
+                if (isCompleted) {
+                    checkDiv.classList.remove('completed');
+                    checkDiv.innerHTML = '';
+                    localStorage.setItem(`clothes_${id}`, 'false');
+                } else {
+                    checkDiv.classList.add('completed');
+                    checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+                    localStorage.setItem(`clothes_${id}`, 'true');
+                }
+            });
+        });
+    }
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    initChecklist();
+</script>
+</body>
+</html>

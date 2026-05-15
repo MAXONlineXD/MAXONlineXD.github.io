@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Физические упражнения после родов — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .section-content li {
+            margin: 6px 0;
+        }
+
+        .phase-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+            border-left: 6px solid #cd7c9b;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .checklist-group {
+            margin: 16px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: #fffaf5;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #fef0ea;
+        }
+
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #cd7c9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .checklist-check.completed {
+            background: #cd7c9b;
+            color: white;
+        }
+
+        .checklist-text {
+            flex: 1;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-dumbbell"></i> 
+            Физические упражнения после родов
+        </h1>
+        <p>Как вернуть форму безопасно и без вреда для здоровья</p>
+        <div class="badge"><i class="fas fa-heart"></i> Ваше тело проделало огромную работу — дайте ему время</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Главная мысль -->
+    <div class="section-card" style="animation-delay: 0s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-quote-left"></i></div>
+            <div class="section-title">Не торопитесь</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Полное восстановление после беременности и родов занимает <strong>6–12 месяцев</strong>. Не требуйте от себя идеальной формы через месяц после родов. Главное — <strong>постепенность</strong> и <strong>безопасность</strong>. Всегда консультируйтесь с врачом перед началом любых упражнений!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Когда можно начинать -->
+    <div class="section-card" style="animation-delay: 0.03s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clock"></i></div>
+            <div class="section-title">Когда можно начинать упражнения</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Естественные роды без осложнений:</strong></p>
+                <ul>
+                    <li>Лёгкие упражнения Кегеля — <strong>со 2–3 дня</strong> после родов.</li>
+                    <li>Ходьба — <strong>с первой недели</strong> (по самочувствию).</li>
+                    <li>Более активные упражнения (пилатес, йога) — <strong>через 6–8 недель</strong> после осмотра врача.</li>
+                    <li>Бег, силовые тренировки — <strong>через 3–4 месяца</strong>.</li>
+                </ul>
+                <p><strong>Кесарево сечение или разрывы:</strong></p>
+                <ul>
+                    <li>Упражнения Кегеля — <strong>с 1–2 недели</strong> (осторожно).</li>
+                    <li>Лёгкая ходьба — <strong>через 3–4 недели</strong> после консультации с врачом.</li>
+                    <li>Остальные упражнения — <strong>через 6–8 недель</strong> после осмотра врача.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Противопоказания -->
+    <div class="section-card" style="animation-delay: 0.06s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Когда НЕЛЬЗЯ заниматься</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <strong>❌ Отложите тренировки, если:</strong>
+                <ul>
+                    <li>У вас температура выше 37,5°C.</li>
+                    <li>Усилилось кровотечение (лохии стали обильнее).</li>
+                    <li>Боль внизу живота, промежности или в области шва.</li>
+                    <li>Сильная усталость, головокружение.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Упражнения Кегеля -->
+    <div class="section-card" style="animation-delay: 0.09s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-female"></i></div>
+            <div class="section-title">Упражнения Кегеля (для мышц тазового дна)</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Зачем:</strong> профилактика недержания мочи, опущения органов, улучшение чувствительности.</p>
+                <p><strong>Как делать:</strong></p>
+                <ol style="margin-left: 20px;">
+                    <li>Напрягите мышцы, как будто хотите остановить мочеиспускание.</li>
+                    <li>Задержите на 5–10 секунд, затем расслабьте.</li>
+                    <li>Повторите 10–15 раз, 3–5 подходов в день.</li>
+                </ol>
+                <p><strong>Важно:</strong> не напрягайте ягодицы, бёдра и пресс! Дышите ровно.</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> Делать можно где угодно — в очереди, за рулём, перед сном.
+            </div>
+        </div>
+    </div>
+
+    <!-- Дыхательные упражнения -->
+    <div class="section-card" style="animation-delay: 0.12s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-lungs"></i></div>
+            <div class="section-title">Дыхательная гимнастика (можно с первых дней)</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>Диафрагмальное дыхание:</strong> лёжа на спине, положите руки на живот. Вдох носом — живот надувается, выдох ртом — живот втягивается. Повторить 5–10 раз.</li>
+                    <li><strong>Релаксация:</strong> вдох на 4 счета, задержка на 2 счета, выдох на 6 счетов. Повторить 5–10 раз. Снимает тревогу.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Упражнения для спины и осанки -->
+    <div class="section-card" style="animation-delay: 0.15s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-spine"></i></div>
+            <div class="section-title">Упражнения для спины</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li><strong>«Кошечка»:</strong> на четвереньках, на вдохе прогнуть спину вниз, на выдохе выгнуть дугой (как злая кошка). Повторить 5–10 раз.</li>
+                    <li><strong>Наклоны таза:</strong> лёжа на спине, согните колени. На выдохе прижмите поясницу к полу, напрягая ягодицы. На вдохе расслабьтесь.</li>
+                    <li><strong>Мостик:</strong> лёжа на спине, согните колени. Поднимите таз вверх, задержитесь на 5–10 секунд. Повторить 5–10 раз.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Упражнения для пресса (осторожно!) -->
+    <div class="section-card" style="animation-delay: 0.18s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-heartbeat"></i></div>
+            <div class="section-title">Упражнения для пресса и диастаз</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>Диастаз — расхождение прямых мышц живота (бывает у 60% родивших женщин).</strong></p>
+                <p><strong>Как проверить:</strong> лёжа на спине, согните колени. Приподнимите голову и плечи. Если между мышцами появилась впадина (шире 2 пальцев) — у вас диастаз.</p>
+                <p><strong>При диастазе НЕЛЬЗЯ:</strong> скручивания, планка, подъём ног лёжа.</p>
+                <p><strong>МОЖНО:</strong> вакуум, упражнения с нейтральным положением спины (например, подъём таза, «кошечка»).</p>
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i> <strong>Важно:</strong> перед началом любых упражнений на пресс проверьте диастаз. Если он есть — сначала работайте с ним у специалиста.
+            </div>
+        </div>
+    </div>
+
+    <!-- Ходьба -->
+    <div class="section-card" style="animation-delay: 0.21s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-walking"></i></div>
+            <div class="section-title">Ходьба — ваше всё</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Ходьба с коляской — лучшее послеродовое упражнение:</p>
+                <ul>
+                    <li>Безопасна для суставов</li>
+                    <li>Улучшает настроение</li>
+                    <li>Помогает вернуть тонус</li>
+                    <li>Полезна для малыша</li>
+                </ul>
+                <p><strong>Как ходить:</strong> начните с 15–20 минут в день, постепенно увеличивая до 1–1,5 часов.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Плавание -->
+    <div class="section-card" style="animation-delay: 0.24s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-swimmer"></i></div>
+            <div class="section-title">Плавание и аквааэробика</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p>Плавание — идеальный вид активности после родов:</p>
+                <ul>
+                    <li>Разгружает позвоночник</li>
+                    <li>Тренирует все группы мышц</li>
+                    <li>Снимает отёки</li>
+                    <li>Безопасно для суставов</li>
+                </ul>
+                <p><strong>Когда можно:</strong> после полного прекращения выделений (лохий) и осмотра врача (обычно через 6–8 недель).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Чего НЕ делать -->
+    <div class="section-card" style="animation-delay: 0.27s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-ban"></i></div>
+            <div class="section-title">Чего НЕ нужно делать</div>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li>❌ <strong>Бег и прыжки</strong> — до 3–4 месяцев (высокая нагрузка на тазовое дно).</li>
+                <li>❌ <strong>Скручивания при диастазе</strong> — ухудшают расхождение мышц.</li>
+                <li>❌ <strong>Поднятие тяжестей</strong> — больше 3–4 кг в первые 6–8 недель.</li>
+                <li>❌ <strong>Интенсивные кардио</strong> — пока не пройдёт кровотечение.</li>
+                <li>❌ <strong>Сидеть на строгих диетах</strong> — кормящей маме нужно полноценное питание.</li>
+                <li>❌ <strong>Занятия при боли или дискомфорте</strong> — слушайте тело.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Примерная программа по неделям -->
+    <div class="section-card" style="animation-delay: 0.3s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-clipboard-list"></i></div>
+            <div class="section-title">Примерный график восстановления</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <p><strong>1–2 недели:</strong> упражнения Кегеля, дыхательная гимнастика, ходьба по дому.</p>
+                <p><strong>2–6 недель:</strong> ходьба на улице (от 15 минут до часа), лёгкая гимнастика (повороты головы, наклоны).</p>
+                <p><strong>6–8 недель:</strong> после осмотра врача — плавание, йога, пилатес, упражнения для спины и пресса (без скручиваний).</p>
+                <p><strong>3–6 месяцев:</strong> лёгкий бег, силовые упражнения с собственным весом, гантели 1–2 кг.</p>
+                <p><strong>6–12 месяцев:</strong> возвращение к привычным нагрузкам.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Помощь партнёра -->
+    <div class="section-card" style="animation-delay: 0.33s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="section-title">Как папа может помочь</div>
+        </div>
+        <div class="section-content">
+            <div class="phase-card">
+                <ul>
+                    <li>✅ Взять малыша на время тренировки.</li>
+                    <li>✅ Гулять с коляской, пока мама занимается.</li>
+                    <li>✅ Подбадривать и хвалить за каждый шаг.</li>
+                    <li>✅ Помочь с бытом, чтобы у мамы было время на себя.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Мифы -->
+    <div class="section-card" style="animation-delay: 0.36s">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="section-title">Мифы о послеродовых упражнениях</div>
+        </div>
+        <div class="section-content">
+            <p><strong>Миф:</strong> Чтобы вернуть форму, нужно заниматься каждый день до изнеможения.<br>
+            <strong>Правда:</strong> Переутомление замедляет восстановление. Лучше 3–4 раза в неделю по 30–40 минут.</p>
+            
+            <p><strong>Миф:</strong> При грудном вскармливании нельзя заниматься спортом.<br>
+            <strong>Правда:</strong> Можно и нужно! Умеренные нагрузки не влияют на количество молока.</p>
+            
+            <p><strong>Миф:</strong> Качать пресс нужно сразу после родов.<br>
+            <strong>Правда:</strong> Начинать можно только после укрепления мышц тазового дна и диагностики диастаза.</p>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    function initChecklist() {
+        const items = document.querySelectorAll('.checklist-item');
+        items.forEach(item => {
+            const id = item.getAttribute('data-id');
+            if (!id) return;
+            const stored = localStorage.getItem(`postpartum_fitness_${id}`);
+            const checkDiv = item.querySelector('.checklist-check');
+            if (stored === 'true') {
+                checkDiv.classList.add('completed');
+                checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+            } else {
+                checkDiv.classList.remove('completed');
+                checkDiv.innerHTML = '';
+            }
+            
+            item.addEventListener('click', () => {
+                const isCompleted = checkDiv.classList.contains('completed');
+                if (isCompleted) {
+                    checkDiv.classList.remove('completed');
+                    checkDiv.innerHTML = '';
+                    localStorage.setItem(`postpartum_fitness_${id}`, 'false');
+                } else {
+                    checkDiv.classList.add('completed');
+                    checkDiv.innerHTML = '<i class="fas fa-check"></i>';
+                    localStorage.setItem(`postpartum_fitness_${id}`, 'true');
+                }
+            });
+        });
+    }
+
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    initChecklist();
+</script>
+</body>
+</html>
