@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Вы и ваш малыш: второй месяц (недели 5–8) — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        /* Хедер */
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        /* Блок с кнопками */
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        /* Инфо-панель с неделями */
+        .week-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .week-tab {
+            background: white;
+            border: 1px solid #ffe0d6;
+            padding: 10px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: inherit;
+        }
+
+        .week-tab.active {
+            background: #fbeae8;
+            border-color: #cd7c9b;
+            color: #b35d7c;
+        }
+
+        .week-tab:active {
+            transform: scale(0.96);
+        }
+
+        /* Карточка недели */
+        .week-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .week-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .week-number-badge {
+            background: #fbeae8;
+            border-radius: 60px;
+            padding: 6px 16px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #b35d7c;
+        }
+
+        .week-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #b35d7c;
+            margin: 16px 0 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title i {
+            font-size: 1rem;
+        }
+
+        .week-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .week-content p {
+            margin-bottom: 10px;
+        }
+
+        .week-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .week-content li {
+            margin: 6px 0;
+        }
+
+        .baby-size {
+            background: #fffaf5;
+            border-radius: 16px;
+            padding: 10px 14px;
+            margin: 12px 0;
+            font-size: 0.85rem;
+            color: #b45f7f;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: #b45f7f;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        /* Плавающая кнопка */
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        @media (max-width: 600px) {
+            .floating-home-btn {
+                bottom: 100px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .week-title {
+                font-size: 1rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .nav-btn {
+                justify-content: center;
+            }
+            .week-tabs {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-baby-carriage"></i> 
+            Вы и ваш малыш
+        </h1>
+        <p>Второй месяц беременности: недели 5–8</p>
+        <div class="badge"><i class="fas fa-calendar-week"></i> Активное формирование всех органов и систем</div>
+    </div>
+</div>
+
+<main class="container">
+    <!-- Блок кнопок навигации -->
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <!-- Навигация по неделям -->
+    <div class="week-tabs">
+        <button class="week-tab active" data-week="5">5-я неделя</button>
+        <button class="week-tab" data-week="6">6-я неделя</button>
+        <button class="week-tab" data-week="7">7-я неделя</button>
+        <button class="week-tab" data-week="8">8-я неделя</button>
+    </div>
+
+    <!-- Контейнер для контента недели -->
+    <div id="weekContent"></div>
+
+    <!-- Общая информация о втором месяце -->
+    <div class="week-card" style="animation-delay: 0.25s">
+        <div class="week-header">
+            <span class="week-number-badge">Важно знать</span>
+            <span class="week-title">О втором месяце беременности</span>
+        </div>
+        <div class="week-content">
+            <p>Второй месяц беременности (5–8 недели) — один из самых важных и ответственных периодов. В это время:</p>
+            <ul>
+                <li>Формируются все основные органы и системы малыша</li>
+                <li>Начинает биться сердечко (на 6-й неделе!)</li>
+                <li>Появляются первые признаки токсикоза</li>
+                <li>Эмбрион превращается в плод (к концу 8-й недели)</li>
+            </ul>
+            <div class="warning-box">
+                <i class="fas fa-shield-alt"></i> <strong>Важно:</strong> в этот период любые вредные факторы (алкоголь, курение, лекарства, инфекции) могут серьёзно повлиять на развитие малыша. Будьте особенно внимательны к своему здоровью.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<!-- Плавающая кнопка "На главную" -->
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    // Данные по неделям второго месяца (5-8)
+    const weeksData = {
+        5: {
+            title: "Пятая неделя беременности",
+            baby: "Эмбрион размером с кунжутное семя (2–3 мм). Формируется нервная трубка — будущий головной и спинной мозг. Закладывается сердце, которое вскоре начнёт биться. Начинают формироваться зачатки рук и ног.",
+            mom: "Появляется задержка менструации — самый явный признак. Может начаться токсикоз: тошнота, особенно по утрам, повышенная чувствительность к запахам, усталость. Грудь становится более чувствительной и набухает.",
+            development: "Закладывается нервная система, сердце, лёгкие, кишечник. Формируются плацента и пуповина. Эмбрион получает питание через желточный мешок.",
+            size: "2–3 мм (как кунжутное семя)",
+            tip: "Сделайте тест на беременность или сдайте кровь на ХГЧ. Начните приём фолиевой кислоты (400–800 мкг/день), если ещё не начали. Запишитесь к врачу для постановки на учет."
+        },
+        6: {
+            title: "Шестая неделя беременности",
+            baby: "Размер эмбриона 4–6 мм (как горошина). Начинает биться сердечко — это можно увидеть на УЗИ! Формируются зачатки глаз, ушей, носа. Появляются зачатки рук и ног в виде маленьких бугорков.",
+            mom: "Токсикоз может усилиться. Тянет в сон, быстро устаёте. Грудь продолжает увеличиваться. Может участиться мочеиспускание. Эмоциональное состояние нестабильно — частая смена настроения.",
+            development: "Формируются основные отделы головного мозга. Закладываются внутренние органы. Сердце начинает перекачивать кровь. Начинают формироваться пальчики.",
+            size: "4–6 мм (как горошина)",
+            tip: "Если тошнота сильная — ешьте маленькими порциями, пейте имбирный чай, носите с собой крекеры или сухарики. При частой рвоте (более 5 раз в день) обратитесь к врачу."
+        },
+        7: {
+            title: "Седьмая неделя беременности",
+            baby: "Размер эмбриона 7–9 мм (как черника). Формируются глаза (появляются пигментные пятна), уши, нос. Пальчики начинают разделяться, но пока соединены перепонками. Появляются зачатки зубов. Развиваются внутренние органы.",
+            mom: "Токсикоз может достигать пика. Появляется изжога, вздутие. Могут возникать головные боли и головокружения. Аппетит может снижаться или меняться — появляются странные пищевые пристрастия.",
+            development: "Активно развивается головной мозг (формируются полушария). Закладывается костная ткань. Появляются бронхи и трахея. Начинают работать внутренние органы.",
+            size: "7–9 мм (как черника)",
+            tip: "Пейте достаточно воды (1,5–2 л в день, если нет отёков). Избегайте резких запахов. Отдыхайте при первых признаках усталости — сейчас это нормально."
+        },
+        8: {
+            title: "Восьмая неделя беременности",
+            baby: "Размер эмбриона 14–16 мм (как фасолина). Пальчики рук и ног становятся различимы, появляются локти и колени. Лицо приобретает человеческие черты — видны веки, нос, верхняя губа. Исчезает хвостик. Начинают формироваться половые органы.",
+            mom: "Токсикоз может сохраняться, но у многих начинает уменьшаться. Матка увеличивается до размеров апельсина. Возможны тянущие боли внизу живота (не сильные!). Появляются небольшие выделения из влагалища (белые или прозрачные).",
+            development: "Все основные органы уже сформированы, теперь они будут расти и созревать. Эмбрион начинает двигаться, но вы пока этого не чувствуете. Начинает работать кишечник. Формируются голосовые связки.",
+            size: "14–16 мм (как фасолина)",
+            tip: "Если вы ещё не встали на учёт — сделайте это сейчас. На 8–9 неделях можно сделать первое УЗИ, чтобы убедиться, что беременность развивается нормально. Продолжайте принимать фолиевую кислоту."
+        }
+    };
+
+    let currentWeek = "5";
+
+    function renderWeek(week) {
+        const container = document.getElementById("weekContent");
+        if (!container) return;
+
+        const data = weeksData[week];
+        if (!data) return;
+
+        const html = `
+            <div class="week-card" style="animation-delay: 0s">
+                <div class="week-header">
+                    <span class="week-number-badge">Неделя ${week}</span>
+                    <span class="week-title">${data.title}</span>
+                </div>
+                
+                <div class="week-content">
+                    <div class="section-title">
+                        <i class="fas fa-baby"></i> Развитие малыша
+                    </div>
+                    <p>${data.baby}</p>
+                    
+                    <div class="baby-size">
+                        <i class="fas fa-ruler"></i> Размер: ${data.size}
+                    </div>
+                    
+                    <div class="section-title">
+                        <i class="fas fa-female"></i> Что происходит с мамой
+                    </div>
+                    <p>${data.mom}</p>
+                    
+                    <div class="section-title">
+                        <i class="fas fa-chart-line"></i> Важные процессы
+                    </div>
+                    <p>${data.development}</p>
+                    
+                    <div class="tip-box">
+                        <i class="fas fa-lightbulb"></i> <strong>Совет недели:</strong> ${data.tip}
+                    </div>
+                </div>
+            </div>
+        `;
+        container.innerHTML = html;
+    }
+
+    // Переключение недель
+    const weekTabs = document.querySelectorAll(".week-tab");
+    weekTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            const week = tab.getAttribute("data-week");
+            if (!week) return;
+            
+            weekTabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+            
+            currentWeek = week;
+            renderWeek(currentWeek);
+            
+            // Плавный скролл к контенту
+            const contentDiv = document.getElementById("weekContent");
+            if (contentDiv) {
+                contentDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        });
+    });
+
+    // Кнопка возврата в Базу знаний
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    // Плавающая кнопка "На главную"
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+
+    // Инициализация — показываем 5-ю неделю
+    renderWeek("5");
+</script>
+</body>
+</html>
