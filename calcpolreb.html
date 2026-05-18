@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Калькулятор пола будущего ребёнка — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .calculator-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #b35d7c;
+            margin-bottom: 6px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ffe0d6;
+            border-radius: 60px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: white;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: #cd7c9b;
+        }
+
+        .result-box {
+            background: #fef0e8;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        .result-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .result-boy {
+            color: #4a90e2;
+        }
+
+        .result-girl {
+            color: #e85d8e;
+        }
+
+        .calc-btn {
+            background: #e06c8c;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            font-family: inherit;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.2s;
+            margin-top: 10px;
+        }
+
+        .calc-btn:active {
+            background: #c95778;
+            transform: scale(0.97);
+        }
+
+        .method-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .method-tab {
+            background: white;
+            border: 1px solid #ffe0d6;
+            padding: 10px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: inherit;
+        }
+
+        .method-tab.active {
+            background: #fbeae8;
+            border-color: #cd7c9b;
+            color: #b35d7c;
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .result-text {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-venus-mars"></i> 
+            Калькулятор пола ребёнка
+        </h1>
+        <p>Узнайте, кого вы ждёте — мальчика или девочку</p>
+        <div class="badge"><i class="fas fa-heart"></i> Интересно и увлекательно, но с научной точки зрения — не точно</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="nav-buttons">
+        <button class="nav-btn" id="backToKnowledgeBtn">
+            <i class="fas fa-database"></i> Вернуться в Базу знаний
+        </button>
+    </div>
+
+    <div class="method-tabs">
+        <button class="method-tab active" data-method="chinese">Китайская таблица</button>
+        <button class="method-tab" data-method="japanese">Японский метод</button>
+        <button class="method-tab" data-method="blood">Обновление крови</button>
+    </div>
+
+    <!-- Китайская таблица -->
+    <div id="chinese-method" class="method-content">
+        <div class="section-card">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="section-title">Китайская таблица определения пола</div>
+            </div>
+            <div class="section-content">
+                <p>Древний метод, основанный на возрасте матери и месяце зачатия. Точность около 50% (как подбрасывание монетки).</p>
+                <div class="calculator-card">
+                    <div class="form-group">
+                        <label><i class="fas fa-female"></i> Возраст матери (полных лет на момент зачатия)</label>
+                        <input type="number" id="motherAge" placeholder="Например: 28" min="15" max="55">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-calendar-week"></i> Месяц зачатия</label>
+                        <select id="conceptionMonth">
+                            <option value="1">Январь</option>
+                            <option value="2">Февраль</option>
+                            <option value="3">Март</option>
+                            <option value="4">Апрель</option>
+                            <option value="5">Май</option>
+                            <option value="6">Июнь</option>
+                            <option value="7">Июль</option>
+                            <option value="8">Август</option>
+                            <option value="9">Сентябрь</option>
+                            <option value="10">Октябрь</option>
+                            <option value="11">Ноябрь</option>
+                            <option value="12">Декабрь</option>
+                        </select>
+                    </div>
+                    <button class="calc-btn" id="calcChinese">Узнать пол</button>
+                    <div id="chineseResult" class="result-box" style="display: none;">
+                        <i class="fas fa-baby-carriage" style="font-size: 2rem;"></i>
+                        <div id="chineseResultText" class="result-text"></div>
+                        <p>🎉 Поздравляем с ожиданием чуда!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Японский метод -->
+    <div id="japanese-method" class="method-content" style="display: none;">
+        <div class="section-card">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="section-title">Японский метод</div>
+            </div>
+            <div class="section-content">
+                <p>Основан на месяцах рождения родителей и месяце зачатия.</p>
+                <div class="calculator-card">
+                    <div class="form-group">
+                        <label><i class="fas fa-female"></i> Месяц рождения мамы</label>
+                        <select id="momBirthMonth">
+                            <option value="1">Январь</option>
+                            <option value="2">Февраль</option>
+                            <option value="3">Март</option>
+                            <option value="4">Апрель</option>
+                            <option value="5">Май</option>
+                            <option value="6">Июнь</option>
+                            <option value="7">Июль</option>
+                            <option value="8">Август</option>
+                            <option value="9">Сентябрь</option>
+                            <option value="10">Октябрь</option>
+                            <option value="11">Ноябрь</option>
+                            <option value="12">Декабрь</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-male"></i> Месяц рождения папы</label>
+                        <select id="dadBirthMonth">
+                            <option value="1">Январь</option>
+                            <option value="2">Февраль</option>
+                            <option value="3">Март</option>
+                            <option value="4">Апрель</option>
+                            <option value="5">Май</option>
+                            <option value="6">Июнь</option>
+                            <option value="7">Июль</option>
+                            <option value="8">Август</option>
+                            <option value="9">Сентябрь</option>
+                            <option value="10">Октябрь</option>
+                            <option value="11">Ноябрь</option>
+                            <option value="12">Декабрь</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-calendar-week"></i> Месяц зачатия</label>
+                        <select id="japConceptionMonth">
+                            <option value="1">Январь</option>
+                            <option value="2">Февраль</option>
+                            <option value="3">Март</option>
+                            <option value="4">Апрель</option>
+                            <option value="5">Май</option>
+                            <option value="6">Июнь</option>
+                            <option value="7">Июль</option>
+                            <option value="8">Август</option>
+                            <option value="9">Сентябрь</option>
+                            <option value="10">Октябрь</option>
+                            <option value="11">Ноябрь</option>
+                            <option value="12">Декабрь</option>
+                        </select>
+                    </div>
+                    <button class="calc-btn" id="calcJapanese">Узнать пол</button>
+                    <div id="japaneseResult" class="result-box" style="display: none;">
+                        <i class="fas fa-baby-carriage" style="font-size: 2rem;"></i>
+                        <div id="japaneseResultText" class="result-text"></div>
+                        <p>🎉 Поздравляем с ожиданием чуда!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Обновление крови -->
+    <div id="blood-method" class="method-content" style="display: none;">
+        <div class="section-card">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-tint"></i></div>
+                <div class="section-title">Метод обновления крови</div>
+            </div>
+            <div class="section-content">
+                <p>Согласно теории, кровь обновляется каждые 3 года у женщин и 4 года у мужчин. Чья кровь «моложе», того пол и будет.</p>
+                <div class="calculator-card">
+                    <div class="form-group">
+                        <label><i class="fas fa-female"></i> Возраст мамы (полных лет)</label>
+                        <input type="number" id="bloodMomAge" placeholder="Например: 28" min="15" max="55">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-male"></i> Возраст папы (полных лет)</label>
+                        <input type="number" id="bloodDadAge" placeholder="Например: 30" min="15" max="65">
+                    </div>
+                    <button class="calc-btn" id="calcBlood">Узнать пол</button>
+                    <div id="bloodResult" class="result-box" style="display: none;">
+                        <i class="fas fa-baby-carriage" style="font-size: 2rem;"></i>
+                        <div id="bloodResultText" class="result-text"></div>
+                        <p>🎉 Поздравляем с ожиданием чуда!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Важное предупреждение -->
+    <div class="section-card">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-info-circle"></i></div>
+            <div class="section-title">Важно знать</div>
+        </div>
+        <div class="section-content">
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle"></i> 
+                <strong>Эти методы не являются научно обоснованными!</strong> Их точность составляет около 50% (как подбрасывание монетки). Единственный достоверный способ узнать пол ребёнка — УЗИ на 18–20 неделе беременности (точность около 95%) или НИПТ-тест (неинвазивный пренатальный тест) с 10 недель (точность 99%).
+            </div>
+            <div class="tip-box">
+                <i class="fas fa-heart"></i> 
+                <strong>Самое главное:</strong> какой бы ни был пол малыша, главное — чтобы он родился здоровым и любимым. Наслаждайтесь ожиданием!
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    // Переключение методов
+    const methodTabs = document.querySelectorAll('.method-tab');
+    const chineseDiv = document.getElementById('chinese-method');
+    const japaneseDiv = document.getElementById('japanese-method');
+    const bloodDiv = document.getElementById('blood-method');
+
+    methodTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            methodTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            
+            const method = tab.getAttribute('data-method');
+            chineseDiv.style.display = 'none';
+            japaneseDiv.style.display = 'none';
+            bloodDiv.style.display = 'none';
+            
+            if (method === 'chinese') chineseDiv.style.display = 'block';
+            if (method === 'japanese') japaneseDiv.style.display = 'block';
+            if (method === 'blood') bloodDiv.style.display = 'block';
+        });
+    });
+
+    // Китайская таблица
+    function getChineseGender(age, month) {
+        const sum = age + month;
+        return sum % 2 === 0 ? 'Девочка 👧' : 'Мальчик 👦';
+    }
+
+    document.getElementById('calcChinese').addEventListener('click', () => {
+        const age = parseInt(document.getElementById('motherAge').value);
+        const month = parseInt(document.getElementById('conceptionMonth').value);
+        const resultDiv = document.getElementById('chineseResult');
+        const resultText = document.getElementById('chineseResultText');
+        
+        if (!age || age < 15 || age > 55) {
+            alert('Пожалуйста, введите корректный возраст мамы (15–55 лет)');
+            return;
+        }
+        
+        const gender = getChineseGender(age, month);
+        const isBoy = gender.includes('Мальчик');
+        resultText.innerHTML = `<i class="fas ${isBoy ? 'fa-mars' : 'fa-venus'}" style="margin-right: 8px;"></i> ${gender}`;
+        resultText.className = `result-text ${isBoy ? 'result-boy' : 'result-girl'}`;
+        resultDiv.style.display = 'block';
+    });
+
+    // Японский метод
+    function getJapaneseGender(momMonth, dadMonth, conceptionMonth) {
+        // Таблица 1: определение числа пары
+        let sum = momMonth + dadMonth;
+        let pairNumber;
+        if (sum <= 12) {
+            pairNumber = sum;
+        } else {
+            pairNumber = sum - 12;
+        }
+        
+        // Таблица 2: определение пола по числу пары и месяцу зачатия
+        // По японской таблице: чётное + месяц = девочка/мальчик (упрощённая логика)
+        if ((pairNumber + conceptionMonth) % 2 === 0) {
+            return 'Девочка 👧';
+        } else {
+            return 'Мальчик 👦';
+        }
+    }
+
+    document.getElementById('calcJapanese').addEventListener('click', () => {
+        const momMonth = parseInt(document.getElementById('momBirthMonth').value);
+        const dadMonth = parseInt(document.getElementById('dadBirthMonth').value);
+        const conceptionMonth = parseInt(document.getElementById('japConceptionMonth').value);
+        const resultDiv = document.getElementById('japaneseResult');
+        const resultText = document.getElementById('japaneseResultText');
+        
+        if (!momMonth || !dadMonth || !conceptionMonth) {
+            alert('Пожалуйста, выберите все месяцы');
+            return;
+        }
+        
+        const gender = getJapaneseGender(momMonth, dadMonth, conceptionMonth);
+        const isBoy = gender.includes('Мальчик');
+        resultText.innerHTML = `<i class="fas ${isBoy ? 'fa-mars' : 'fa-venus'}" style="margin-right: 8px;"></i> ${gender}`;
+        resultText.className = `result-text ${isBoy ? 'result-boy' : 'result-girl'}`;
+        resultDiv.style.display = 'block';
+    });
+
+    // Метод обновления крови
+    function getBloodGender(momAge, dadAge) {
+        const momCycle = 3;
+        const dadCycle = 4;
+        
+        let momLastUpdate = momAge % momCycle;
+        let dadLastUpdate = dadAge % dadCycle;
+        
+        if (momLastUpdate === 0) momLastUpdate = momCycle;
+        if (dadLastUpdate === 0) dadLastUpdate = dadCycle;
+        
+        if (momLastUpdate < dadLastUpdate) {
+            return 'Девочка 👧';
+        } else if (dadLastUpdate < momLastUpdate) {
+            return 'Мальчик 👦';
+        } else {
+            return 'Неопределённо (50/50) 👶';
+        }
+    }
+
+    document.getElementById('calcBlood').addEventListener('click', () => {
+        const momAge = parseInt(document.getElementById('bloodMomAge').value);
+        const dadAge = parseInt(document.getElementById('bloodDadAge').value);
+        const resultDiv = document.getElementById('bloodResult');
+        const resultText = document.getElementById('bloodResultText');
+        
+        if (!momAge || !dadAge || momAge < 15 || momAge > 55 || dadAge < 15 || dadAge > 65) {
+            alert('Пожалуйста, введите корректный возраст мамы (15–55) и папы (15–65)');
+            return;
+        }
+        
+        const gender = getBloodGender(momAge, dadAge);
+        const isBoy = gender.includes('Мальчик');
+        if (gender.includes('Неопределённо')) {
+            resultText.innerHTML = `<i class="fas fa-question-circle"></i> ${gender}`;
+            resultText.className = 'result-text';
+        } else {
+            resultText.innerHTML = `<i class="fas ${isBoy ? 'fa-mars' : 'fa-venus'}" style="margin-right: 8px;"></i> ${gender}`;
+            resultText.className = `result-text ${isBoy ? 'result-boy' : 'result-girl'}`;
+        }
+        resultDiv.style.display = 'block';
+    });
+
+    // Кнопки возврата
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+</script>
+</body>
+</html>
