@@ -79,27 +79,6 @@
             flex-wrap: wrap;
         }
 
-        .nav-btn {
-            background: #fbeae8;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            font-family: inherit;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: #9f5879;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .nav-btn:active {
-            background: #f0dbd6;
-            transform: scale(0.97);
-        }
-
         .section-card {
             background: white;
             border-radius: 28px;
@@ -341,12 +320,6 @@
 </div>
 
 <main class="container">
-    <div class="nav-buttons">
-        <button class="nav-btn" id="backToKnowledgeBtn">
-            <i class="fas fa-database"></i> Вернуться в Базу знаний
-        </button>
-    </div>
-
     <div class="method-tabs">
         <button class="method-tab active" data-method="chinese">Китайская таблица</button>
         <button class="method-tab" data-method="japanese">Японский метод</button>
@@ -652,14 +625,7 @@
         resultDiv.style.display = 'block';
     });
 
-    // Кнопки возврата
-    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
-    if (backToKnowledgeBtn) {
-        backToKnowledgeBtn.addEventListener("click", () => {
-            window.location.href = "https://maxonlinexd.github.io/BD.html";
-        });
-    }
-
+    // Кнопка "На главную"
     const floatingHomeBtn = document.getElementById("floatingHomeBtn");
     if (floatingHomeBtn) {
         floatingHomeBtn.addEventListener("click", () => {
