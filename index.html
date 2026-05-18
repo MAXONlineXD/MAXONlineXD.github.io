@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>Перинатальный центр — Забота о мамах и малышах</title>
-    <!-- Подключение шрифта Google Fonts для мягкого и современного стиля -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (бесплатные иконки) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -17,20 +15,18 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #fef7f2;  /* Теплый нежный фон */
+            background: #fef7f2;
             color: #2d2a2e;
             line-height: 1.4;
-            padding-bottom: 80px;  /* Отступ под нижнюю навигацию */
+            padding-bottom: 80px;
         }
 
-        /* Основные стили для мобильной версии (до 640px) */
         .container {
             max-width: 600px;
             margin: 0 auto;
             padding: 16px 18px;
         }
 
-        /* Хедер с градиентом и плавными тенями */
         .hero {
             background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
             border-radius: 0 0 32px 32px;
@@ -78,7 +74,6 @@
             margin-top: 12px;
         }
 
-        /* Карточки-секции */
         .card {
             background: white;
             border-radius: 28px;
@@ -112,14 +107,13 @@
             color: #4a2c3a;
         }
 
-        /* Список услуг и преимуществ */
-        .service-list, .tip-list, .tools-list {
+        .service-list, .tip-list {
             display: flex;
             flex-direction: column;
             gap: 14px;
         }
 
-        .service-item, .tip-item, .tool-item {
+        .service-item, .tip-item {
             display: flex;
             align-items: center;
             gap: 14px;
@@ -129,19 +123,18 @@
             border-bottom: 1px solid #faf0ea;
         }
 
-        .service-item i, .tip-item i, .tool-item i {
+        .service-item i, .tip-item i {
             width: 28px;
             color: #cd7c9b;
             font-size: 1.2rem;
             text-align: center;
         }
 
-        .service-item span, .tip-item span, .tool-item span {
+        .service-item span, .tip-item span {
             flex: 1;
             color: #2d2a2e;
         }
 
-        /* Кнопки быстрой помощи и инструментов */
         .btn-group {
             display: flex;
             flex-wrap: wrap;
@@ -177,7 +170,6 @@
             transform: scale(0.97);
         }
 
-        /* Экстренный контакт */
         .emergency {
             background: #ffefea;
             border-left: 8px solid #e06c8c;
@@ -227,7 +219,6 @@
             transform: scale(0.96);
         }
 
-        /* нижняя навигация (tab bar) */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -272,7 +263,6 @@
             opacity: 0.7;
         }
 
-        /* модальное окно */
         .modal {
             display: none;
             position: fixed;
@@ -323,12 +313,6 @@
             to { opacity: 1; transform: translateY(0);}
         }
 
-        /* простой скролл для контактов */
-        a {
-            text-decoration: none;
-        }
-
-        /* советы дня */
         .daily-tip {
             background: #fffaf5;
             border-radius: 24px;
@@ -374,7 +358,6 @@
 </div>
 
 <main class="container">
-    <!-- Быстрая помощь: частые запросы -->
     <div class="card">
         <div class="card-header">
             <i class="fas fa-life-ring"></i>
@@ -388,7 +371,6 @@
         </div>
     </div>
 
-    <!-- Услуги центра -->
     <div class="card">
         <div class="card-header">
             <i class="fas fa-stethoscope"></i>
@@ -403,7 +385,6 @@
         </div>
     </div>
 
-    <!-- Ежедневные советы для мамочек -->
     <div class="card">
         <div class="card-header">
             <i class="fas fa-lightbulb"></i>
@@ -415,7 +396,6 @@
         <p style="font-size: 0.7rem; margin-top: 12px; color:#b88f9b;"><i class="fas fa-sync-alt"></i> Нажмите на совет для смены</p>
     </div>
 
-    <!-- Полезные чек-листы/памятки -->
     <div class="card">
         <div class="card-header">
             <i class="fas fa-clipboard-list"></i>
@@ -428,7 +408,6 @@
         </div>
     </div>
 
-    <!-- ★★★ НОВЫЙ РАЗДЕЛ: ИНСТРУМЕНТЫ ★★★ -->
     <div class="card">
         <div class="card-header">
             <i class="fas fa-tools"></i>
@@ -436,10 +415,10 @@
         </div>
         <div class="btn-group">
             <button class="btn-tool" id="genderCalculatorBtn"><i class="fas fa-venus-mars"></i> Калькулятор пола ребёнка</button>
+            <button class="btn-tool" id="bmiCalculatorBtn"><i class="fas fa-calculator"></i> Калькулятор ИМТ</button>
         </div>
     </div>
 
-    <!-- Экстренный контакт + горячая линия -->
     <div class="card emergency">
         <div class="card-header">
             <i class="fas fa-phone-alt"></i>
@@ -457,16 +436,13 @@
     </footer>
 </main>
 
-<!-- Нижняя навигация (быстрые якоря) -->
 <div class="bottom-nav">
     <button class="nav-item active" data-nav="home"><i class="fas fa-home"></i><span>Главная</span></button>
     <button class="nav-item" data-nav="services"><i class="fas fa-notes-medical"></i><span>Услуги</span></button>
-    <!-- Кнопка "База знаний" заменяет "Советы" и ведет на внешнюю страницу -->
     <button class="nav-item" id="knowledgeBaseBtn" data-nav="knowledge"><i class="fas fa-database"></i><span>База знаний</span></button>
     <button class="nav-item" data-nav="contacts"><i class="fas fa-headset"></i><span>Помощь</span></button>
 </div>
 
-<!-- Модальное окно для всплывающих советов и контента -->
 <div id="infoModal" class="modal">
     <div class="modal-content">
         <i class="fas fa-info-circle" id="modalIcon"></i>
@@ -477,7 +453,7 @@
 </div>
 
 <script>
-    // 1. Массив ежедневных советов (переключение)
+    // 30 уникальных советов дня
     const tipsArray = [
         "🍼 Прикладывайте малыша по требованию — это стимулирует лактацию и дарит спокойствие.",
         "💤 Спите, когда спит ребенок. Даже 20 минут дневного сна восстанавливают силы.",
@@ -485,7 +461,30 @@
         "💧 Пейте достаточно воды (1.5-2л в день) для хорошей лактации и самочувствия.",
         "🤗 Не стесняйтесь просить помощи у близких. Вы не обязаны всё делать одна.",
         "📖 Записывайте 3 маленькие радости за день — это тренирует позитивное мышление.",
-        "🧴 Массаж стоп и контрастный душ помогут снять усталость после бессонной ночи."
+        "🧴 Массаж стоп и контрастный душ помогут снять усталость после бессонной ночи.",
+        "🦷 После каждого кормления смазывайте соски каплей молока — профилактика трещин.",
+        "🌿 Укропная вода и массаж живота помогают при коликах у новорожденных.",
+        "🚶 Ежедневные прогулки на свежем воздухе полезны и маме, и малышу.",
+        "📚 Читайте малышу вслух — это развивает речь и укрепляет эмоциональную связь.",
+        "🎵 Включите спокойную классическую музыку — она успокаивает и развивает слух.",
+        "😴 Не ждите, пока малыш устанет — укладывайте его при первых признаках сонливости.",
+        "🩲 Меняйте подгузник каждые 2–3 часа и после стула, чтобы избежать опрелостей.",
+        "🧼 Мойте руки перед каждым контактом с новорожденным — его иммунитет ещё слаб.",
+        "👕 Одевайте малыша по погоде: перегрев опаснее переохлаждения.",
+        "💕 Чаще берите малыша на руки — это не «приучит», а даст чувство безопасности.",
+        "🫧 Купайте малыша в тёплой воде (36–37°C) с добавлением отвара ромашки для успокоения.",
+        "🍽 Кормите маленькими порциями, но чаще — это снижает нагрузку на пищеварение.",
+        "🕯️ Приглушайте свет за час до сна — помогает настроиться на ночной отдых.",
+        "🗣 Разговаривайте с малышом, комментируйте свои действия — это развивает речь.",
+        "🖐️ Делайте лёгкий массаж спины и живота перед сном — улучшает пищеварение и сон.",
+        "🌡️ Температура в детской комнате должна быть 18–22°C, влажность 50–70%.",
+        "🛌 Правило безопасного сна: твёрдый матрас, без подушек и мягких игрушек.",
+        "👨‍👩‍👧 Привлекайте папу к уходу — это укрепляет связь и даёт вам отдохнуть.",
+        "📱 Ограничьте время в телефоне, пока малыш бодрствует — живое общение важнее.",
+        "💊 Принимайте витамины (по назначению врача) — они нужны и маме, и малышу.",
+        "😊 Улыбайтесь малышу — он уже умеет отвечать улыбкой с 1,5–2 месяцев.",
+        "🛁 Не используйте мыло при каждом купании — оно сушит нежную кожу.",
+        "✨ Не сравнивайте своего малыша с другими — каждый ребёнок уникален."
     ];
     
     let currentTipIndex = 0;
@@ -502,14 +501,19 @@
         updateDailyTip();
     }
     
-    // клик по совету дня — смена совета
+    // При загрузке выбираем случайный совет
+    function initRandomTip() {
+        currentTipIndex = Math.floor(Math.random() * tipsArray.length);
+        updateDailyTip();
+    }
+    
     const dailyTipDiv = document.getElementById("dailyTip");
     if (dailyTipDiv) {
         dailyTipDiv.addEventListener("click", nextTip);
     }
-    updateDailyTip();
+    initRandomTip();
 
-    // 2. Модальное окно для быстрых помощников и чек-листов
+    // Модальное окно
     const modal = document.getElementById("infoModal");
     const modalTitle = document.getElementById("modalTitle");
     const modalText = document.getElementById("modalText");
@@ -531,7 +535,7 @@
         if (e.target === modal) closeModal();
     });
     
-    // 3. Обработчики для кнопок быстрой помощи (data-action)
+    // Обработчики кнопок быстрой помощи
     const helpButtons = document.querySelectorAll(".btn-help");
     helpButtons.forEach(btn => {
         btn.addEventListener("click", (e) => {
@@ -548,7 +552,7 @@
         });
     });
     
-    // 4. Чек-листы (памятки) — клик по элементам
+    // Чек-листы
     const checklistItems = document.querySelectorAll("[data-checklist]");
     checklistItems.forEach(item => {
         item.addEventListener("click", () => {
@@ -563,7 +567,7 @@
         });
     });
     
-    // ★★★ НОВАЯ ФУНКЦИЯ: кнопка "Калькулятор пола ребёнка" в разделе Инструменты ★★★
+    // ★★★ Кнопка калькулятора пола ★★★
     const genderCalculatorBtn = document.getElementById("genderCalculatorBtn");
     if (genderCalculatorBtn) {
         genderCalculatorBtn.addEventListener("click", (e) => {
@@ -572,19 +576,26 @@
         });
     }
     
-    // 5. Обработчик экстренного вызова (эмуляция звонка)
+    // ★★★ НОВАЯ КНОПКА: Калькулятор ИМТ ★★★
+    const bmiCalculatorBtn = document.getElementById("bmiCalculatorBtn");
+    if (bmiCalculatorBtn) {
+        bmiCalculatorBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "https://maxonlinexd.github.io/calcIMT.html";
+        });
+    }
+    
+    // Экстренный вызов
     const emergencyBtn = document.getElementById("emergencyCallBtn");
     if (emergencyBtn) {
         emergencyBtn.addEventListener("click", () => {
             const phoneNumber = "83462550687";
-            // На мобильных устройствах откроется набор номера
             window.location.href = `tel:${phoneNumber}`;
-            // Также показываем модальное подтверждение
             showModal("Соединение с перинатальным центром", `Вы звоните на горячую линию ${phoneNumber}. Оператор поможет вам в ближайшее время. Оставайтесь на линии.`, "fas fa-phone-alt");
         });
     }
     
-    // ★★★ Кнопка "База знаний" ведет на внешнюю страницу ★★★
+    // База знаний
     const knowledgeBaseBtn = document.getElementById("knowledgeBaseBtn");
     if (knowledgeBaseBtn) {
         knowledgeBaseBtn.addEventListener("click", (e) => {
@@ -593,20 +604,11 @@
         });
     }
     
-    // 6. Нижняя навигация с плавной прокруткой
+    // Нижняя навигация
     const navHome = document.querySelector("[data-nav='home']");
     const navServices = document.querySelector("[data-nav='services']");
     const navContacts = document.querySelector("[data-nav='contacts']");
-    // Только три кнопки участвуют в скролле, База знаний — это внешний переход
     const navItems = [navHome, navServices, navContacts];
-    
-    function scrollToElement(selector, offset = 20) {
-        const element = document.querySelector(selector);
-        if (element) {
-            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-            window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
-        }
-    }
     
     function setActiveNav(activeNav) {
         navItems.forEach(item => {
@@ -623,7 +625,6 @@
     }
     if (navServices) {
         navServices.addEventListener("click", () => {
-            // услуги - второй карточке (услуги центра)
             const serviceCard = document.querySelector(".card .service-list")?.closest(".card");
             if (serviceCard) serviceCard.scrollIntoView({ behavior: "smooth", block: "start" });
             setActiveNav(navServices);
@@ -637,7 +638,6 @@
         });
     }
     
-    // Дополнительно: отслеживаем скролл, чтобы менять активную вкладку
     window.addEventListener("scroll", () => {
         const scrollPos = window.scrollY;
         const serviceCard = document.querySelector(".card .service-list")?.closest(".card");
@@ -655,13 +655,12 @@
         }
     });
     
-    // 7. Дополнительная функция для сохранения поддержки при клике на телефон
     setTimeout(() => {
         console.log("Перинатальный центр активен: помощь мамам всегда рядом 🌷");
     }, 100);
     
     if ('serviceWorker' in navigator) {
-        // Можно добавить pwa позже
+        // Можно добавить PWA позже
     }
 </script>
 </body>

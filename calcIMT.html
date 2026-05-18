@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Калькулятор ИМТ для детей — Перинатальный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f2;
+            color: #2d2a2e;
+            line-height: 1.5;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px 18px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8c9d4 0%, #fcd9e5 100%);
+            border-radius: 0 0 32px 32px;
+            padding: 24px 20px 32px 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #4a2c3a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 i {
+            background: #ffffffcc;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            color: #b35d7c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5e3e4b;
+        }
+
+        .badge {
+            background: #fff0e8;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f7f;
+            margin-top: 12px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #fbeae8;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #9f5879;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-btn:active {
+            background: #f0dbd6;
+            transform: scale(0.97);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #ffefe8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            animation: fadeInUp 0.3s ease backwards;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 2px dotted #ffe0d6;
+            padding-bottom: 12px;
+        }
+
+        .section-icon {
+            background: #fbeae8;
+            border-radius: 60px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #b35d7c;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #4a2c3a;
+        }
+
+        .section-content {
+            color: #4a4a55;
+            font-size: 0.95rem;
+        }
+
+        .section-content p {
+            margin-bottom: 10px;
+        }
+
+        .calculator-card {
+            background: #fffaf5;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #b35d7c;
+            margin-bottom: 6px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ffe0d6;
+            border-radius: 60px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: white;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: #cd7c9b;
+        }
+
+        .result-box {
+            background: #fef0e8;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        .result-bmi {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #e06c8c;
+            margin: 10px 0;
+        }
+
+        .result-category {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 8px 0;
+        }
+
+        .category-underweight {
+            color: #4a90e2;
+        }
+
+        .category-normal {
+            color: #2e7d32;
+        }
+
+        .category-overweight {
+            color: #f5a623;
+        }
+
+        .category-obese {
+            color: #e85d8e;
+        }
+
+        .calc-btn {
+            background: #e06c8c;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            font-family: inherit;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.2s;
+            margin-top: 10px;
+        }
+
+        .calc-btn:active {
+            background: #c95778;
+            transform: scale(0.97);
+        }
+
+        .tip-box {
+            background: #fffaf5;
+            border-left: 4px solid #f3bfcf;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-top: 12px;
+        }
+
+        .tip-box i {
+            margin-right: 8px;
+            color: #b45f7f;
+        }
+
+        .warning-box {
+            background: #fff5f0;
+            border-left: 4px solid #e06c8c;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 12px 0;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #e06c8c;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(224, 108, 140, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.6rem;
+        }
+
+        .floating-home-btn:active {
+            transform: scale(0.92);
+            background: #c95778;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #cba7b4;
+            padding: 20px 0 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 16px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .result-bmi {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>
+            <i class="fas fa-calculator"></i> 
+            Калькулятор ИМТ для детей
+        </h1>
+        <p>Оцените гармоничность развития вашего ребёнка</p>
+        <div class="badge"><i class="fas fa-heart"></i> Важно: результат имеет справочный характер</div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="section-card">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-child"></i></div>
+            <div class="section-title">Что такое детский ИМТ?</div>
+        </div>
+        <div class="section-content">
+            <p>Индекс массы тела (ИМТ) для детей оценивается <strong>с учётом возраста и пола</strong>, так как нормы меняются по мере роста. Результат интерпретируется с помощью центильных таблиц.</p>
+            <div class="warning-box">
+                <i class="fas fa-info-circle"></i> 
+                <strong>Важно:</strong> данный калькулятор даёт ориентировочную оценку. Точный диагноз может поставить только педиатр с учётом индивидуальных особенностей ребёнка.
+            </div>
+        </div>
+    </div>
+
+    <div class="section-card">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-sliders-h"></i></div>
+            <div class="section-title">Рассчитать ИМТ ребёнка</div>
+        </div>
+        <div class="section-content">
+            <div class="calculator-card">
+                <div class="form-group">
+                    <label><i class="fas fa-female"></i> <i class="fas fa-male"></i> Пол ребёнка</label>
+                    <select id="gender">
+                        <option value="boy">Мальчик 👦</option>
+                        <option value="girl">Девочка 👧</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-calendar-alt"></i> Возраст (лет)</label>
+                    <input type="number" id="age" placeholder="Например: 7" min="2" max="18" step="0.5">
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-weight-scale"></i> Вес (кг)</label>
+                    <input type="number" id="weight" placeholder="Например: 22" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-ruler"></i> Рост (см)</label>
+                    <input type="number" id="height" placeholder="Например: 120" step="0.5">
+                </div>
+                <button class="calc-btn" id="calculateBtn">Рассчитать ИМТ</button>
+                
+                <div id="resultContainer" style="display: none;">
+                    <div class="result-box">
+                        <i class="fas fa-chart-line" style="font-size: 2rem; color: #b45f7f;"></i>
+                        <div class="result-bmi" id="bmiValue">0.0</div>
+                        <div id="bmiCategory" class="result-category"></div>
+                        <div id="percentileInfo" style="font-size: 0.85rem; margin-top: 8px;"></div>
+                        <div id="recommendation" style="margin-top: 12px; font-size: 0.9rem;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Расшифровка категорий -->
+    <div class="section-card">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-chart-bar"></i></div>
+            <div class="section-title">Расшифровка результатов</div>
+        </div>
+        <div class="section-content">
+            <div class="tip-box">
+                <p><strong>📊 Категории ИМТ для детей (по центильным таблицам ВОЗ):</strong></p>
+                <ul>
+                    <li><span style="color: #4a90e2;">🔵 Дефицит массы тела</span> — ИМТ ниже 5-го центиля</li>
+                    <li><span style="color: #2e7d32;">🟢 Норма</span> — ИМТ между 5-м и 85-м центилем</li>
+                    <li><span style="color: #f5a623;">🟠 Избыточная масса тела</span> — ИМТ между 85-м и 95-м центилем</li>
+                    <li><span style="color: #e85d8e;">🔴 Ожирение</span> — ИМТ выше 95-го центиля</li>
+                </ul>
+                <p><strong>ℹ️ Важно:</strong> для детей до 2 лет ИМТ не рассчитывается — используются другие критерии оценки физического развития. Данный калькулятор предназначен для детей от 2 до 18 лет.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Советы -->
+    <div class="section-card">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-lightbulb"></i></div>
+            <div class="section-title">Как поддерживать здоровый вес</div>
+        </div>
+        <div class="section-content">
+            <div class="tip-box">
+                <ul>
+                    <li>🥦 <strong>Сбалансированное питание</strong> — больше овощей, фруктов, цельнозерновых продуктов, меньше сладостей и фастфуда.</li>
+                    <li>🏃‍♂️ <strong>Физическая активность</strong> — не менее 60 минут в день (подвижные игры, спорт, прогулки).</li>
+                    <li>📵 <strong>Ограничение экранного времени</strong> — не более 1–2 часов в день (телевизор, планшет, телефон).</li>
+                    <li>😴 <strong>Полноценный сон</strong> — недостаток сна связан с риском ожирения.</li>
+                    <li>🍽 <strong>Регулярное питание</strong> — не пропускать завтрак, обед и ужин.</li>
+                    <li>👨‍👩‍👧 <strong>Личный пример</strong> — дети копируют пищевые привычки родителей.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-seedling"></i> Сургутский клинический перинатальный центр — забота на каждом этапе
+    </footer>
+</main>
+
+<button class="floating-home-btn" id="floatingHomeBtn">
+    <i class="fas fa-home"></i>
+</button>
+
+<script>
+    // Функция определения категории ИМТ на основе центильных таблиц ВОЗ
+    function getBMICategory(bmi, age, gender) {
+        // Упрощённая классификация на основе средних центильных значений
+        // Для точной диагностики необходимы официальные таблицы ВОЗ
+        // Данная функция даёт примерную оценку
+        
+        let lowerLimit, upperLimit; // примерные границы нормы
+        
+        if (gender === 'boy') {
+            if (age <= 3) {
+                lowerLimit = 14.5;
+                upperLimit = 17.5;
+            } else if (age <= 5) {
+                lowerLimit = 14.0;
+                upperLimit = 17.0;
+            } else if (age <= 7) {
+                lowerLimit = 13.5;
+                upperLimit = 17.0;
+            } else if (age <= 9) {
+                lowerLimit = 13.5;
+                upperLimit = 17.5;
+            } else if (age <= 11) {
+                lowerLimit = 14.0;
+                upperLimit = 18.5;
+            } else if (age <= 13) {
+                lowerLimit = 14.5;
+                upperLimit = 19.5;
+            } else if (age <= 15) {
+                lowerLimit = 15.5;
+                upperLimit = 21.0;
+            } else if (age <= 17) {
+                lowerLimit = 16.5;
+                upperLimit = 22.5;
+            } else {
+                lowerLimit = 17.5;
+                upperLimit = 23.5;
+            }
+        } else { // girl
+            if (age <= 3) {
+                lowerLimit = 14.0;
+                upperLimit = 17.0;
+            } else if (age <= 5) {
+                lowerLimit = 13.5;
+                upperLimit = 16.5;
+            } else if (age <= 7) {
+                lowerLimit = 13.5;
+                upperLimit = 17.0;
+            } else if (age <= 9) {
+                lowerLimit = 13.5;
+                upperLimit = 17.5;
+            } else if (age <= 11) {
+                lowerLimit = 14.0;
+                upperLimit = 18.5;
+            } else if (age <= 13) {
+                lowerLimit = 14.5;
+                upperLimit = 20.0;
+            } else if (age <= 15) {
+                lowerLimit = 15.5;
+                upperLimit = 21.0;
+            } else if (age <= 17) {
+                lowerLimit = 16.5;
+                upperLimit = 22.5;
+            } else {
+                lowerLimit = 17.5;
+                upperLimit = 23.5;
+            }
+        }
+        
+        // Определение категории
+        let underweightLimit = lowerLimit - 1.0;
+        let overweightLimit = upperLimit;
+        let obeseLimit = upperLimit + 2.0;
+        
+        if (bmi < underweightLimit) {
+            return { category: "Дефицит массы тела", class: "category-underweight", percentile: "< 5%", recommendation: "Рекомендуется консультация педиатра и диетолога. Возможно, требуется коррекция питания." };
+        } else if (bmi < lowerLimit) {
+            return { category: "Нижняя граница нормы", class: "category-underweight", percentile: "5–15%", recommendation: "Постарайтесь улучшить питание, добавьте больше калорийных и полезных продуктов. Проконсультируйтесь с врачом." };
+        } else if (bmi <= upperLimit) {
+            return { category: "Норма", class: "category-normal", percentile: "15–85%", recommendation: "Отличный результат! Продолжайте поддерживать здоровый образ жизни." };
+        } else if (bmi <= obeseLimit) {
+            return { category: "Избыточная масса тела", class: "category-overweight", percentile: "85–95%", recommendation: "Рекомендуется увеличить физическую активность и скорректировать питание. Проконсультируйтесь с педиатром." };
+        } else {
+            return { category: "Ожирение", class: "category-obese", percentile: "> 95%", recommendation: "Обязательно проконсультируйтесь с педиатром и эндокринологом. Требуется комплексный подход к коррекции веса." };
+        }
+    }
+    
+    // Расчёт ИМТ
+    function calculateBMI(weight, heightCm) {
+        let heightM = heightCm / 100;
+        return weight / (heightM * heightM);
+    }
+    
+    // Обработчик кнопки
+    document.getElementById('calculateBtn').addEventListener('click', () => {
+        const gender = document.getElementById('gender').value;
+        const age = parseFloat(document.getElementById('age').value);
+        const weight = parseFloat(document.getElementById('weight').value);
+        const height = parseFloat(document.getElementById('height').value);
+        
+        // Валидация
+        if (!age || age < 2 || age > 18) {
+            alert('Пожалуйста, введите корректный возраст (от 2 до 18 лет)');
+            return;
+        }
+        
+        if (!weight || weight < 5 || weight > 200) {
+            alert('Пожалуйста, введите корректный вес (от 5 до 200 кг)');
+            return;
+        }
+        
+        if (!height || height < 50 || height > 250) {
+            alert('Пожалуйста, введите корректный рост (от 50 до 250 см)');
+            return;
+        }
+        
+        const bmi = calculateBMI(weight, height);
+        const bmiRounded = bmi.toFixed(1);
+        const result = getBMICategory(bmi, age, gender);
+        
+        document.getElementById('bmiValue').innerHTML = `${bmiRounded} кг/м²`;
+        document.getElementById('bmiCategory').innerHTML = `<span class="${result.class}">${result.category}</span>`;
+        document.getElementById('percentileInfo').innerHTML = `Примерный центиль: ${result.percentile}`;
+        document.getElementById('recommendation').innerHTML = result.recommendation;
+        
+        document.getElementById('resultContainer').style.display = 'block';
+        
+        // Плавный скролл к результату
+        setTimeout(() => {
+            document.getElementById('resultContainer').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+    });
+    
+    // Кнопка возврата в Базу знаний
+    const backToKnowledgeBtn = document.getElementById("backToKnowledgeBtn");
+    if (backToKnowledgeBtn) {
+        backToKnowledgeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/BD.html";
+        });
+    }
+    
+    // Плавающая кнопка "На главную"
+    const floatingHomeBtn = document.getElementById("floatingHomeBtn");
+    if (floatingHomeBtn) {
+        floatingHomeBtn.addEventListener("click", () => {
+            window.location.href = "https://maxonlinexd.github.io/";
+        });
+    }
+    
+    // Анимация при загрузке
+    window.addEventListener('load', () => {
+        console.log('Детский ИМТ калькулятор загружен');
+    });
+</script>
+</body>
+</html>
