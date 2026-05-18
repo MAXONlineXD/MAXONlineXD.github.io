@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Поздравление для Анны | Stranger Things</title>
+    <!-- Атмосферные шрифты 80-х и мистики -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Special+Elite&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at 20% 30%, #0a0a14, #000000);
+            font-family: 'Special Elite', 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Эффект «снега» из Изнанки (тёмные искры) */
+        .snow-flakes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .flake {
+            position: absolute;
+            top: -10px;
+            color: rgba(220, 20, 60, 0.6);
+            font-size: 1.2rem;
+            opacity: 0.7;
+            animation: fall linear infinite;
+            text-shadow: 0 0 5px crimson;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* Карточка с мерцающей красной рамкой */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(3px);
+            border: 2px solid #e30813;
+            box-shadow: 0 0 25px rgba(227, 8, 19, 0.6), inset 0 0 15px rgba(227, 8, 19, 0.3);
+            padding: 30px 25px 45px;
+            border-radius: 30px 12px 40px 12px;
+            position: relative;
+            transition: all 0.2s;
+            z-index: 20;
+        }
+
+        /* Глитч-эффект для заголовка */
+        .glitch {
+            font-family: 'Anton', sans-serif;
+            font-size: 3.2rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #e30813;
+            text-shadow: 3px 3px 0 #000, -2px -2px 0 #4b0082;
+            position: relative;
+            animation: glitchShake 0.3s infinite alternate;
+            text-align: center;
+            margin-bottom: 20px;
+            word-break: break-word;
+        }
+        @keyframes glitchShake {
+            0% { transform: skew(0deg, 0deg); opacity: 0.95; text-shadow: 3px 3px 0 #000, -2px -1px 0 #800000; }
+            100% { transform: skew(1deg, 0.5deg); opacity: 1; text-shadow: -2px 2px 0 #4b0082, 3px -1px 0 #e30813; }
+        }
+
+        /* Ретро-лента */
+        .retro-tape {
+            background: repeating-linear-gradient(45deg, rgba(227,8,19,0.2), rgba(227,8,19,0.2) 10px, rgba(0,0,0,0.4) 10px, rgba(0,0,0,0.4) 20px);
+            padding: 15px;
+            border-radius: 20px;
+            margin: 20px 0;
+        }
+
+        /* Основное сообщение */
+        .message {
+            font-family: 'Special Elite', monospace;
+            background: #0b0b12e0;
+            border-left: 6px solid #e30813;
+            padding: 20px;
+            color: #ece3d0;
+            font-size: 1.3rem;
+            line-height: 1.5;
+            text-shadow: 0 0 4px #000;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            transform: rotate(0.5deg);
+        }
+
+        .message p {
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: #ff4d4d;
+            font-weight: bold;
+            background: rgba(0,0,0,0.6);
+            display: inline-block;
+            padding: 0 6px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Кнопка в стиле 80-х */
+        .button-80s {
+            display: block;
+            width: fit-content;
+            margin: 30px auto 15px;
+            background: #111;
+            border: 2px solid #e30813;
+            color: #e30813;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1rem;
+            padding: 12px 28px;
+            cursor: pointer;
+            transition: 0.2s;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(227,8,19,0.5);
+            border-radius: 40px;
+            letter-spacing: 2px;
+        }
+
+        .button-80s:hover {
+            background: #e30813;
+            color: black;
+            box-shadow: 0 0 25px #ff2a2a;
+            transform: scale(1.02);
+            border-color: #ffcc00;
+        }
+
+        /* Подпись в духе персонажей */
+        .signature {
+            text-align: right;
+            font-family: 'Special Elite', monospace;
+            margin-top: 20px;
+            color: #b87333;
+            font-size: 1.1rem;
+            border-top: 1px dashed #e30813;
+            padding-top: 15px;
+        }
+
+        /* Гирлянда (рождественские огни) */
+        .christmas-lights {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0 10px;
+            flex-wrap: wrap;
+        }
+        .light {
+            width: 28px;
+            height: 28px;
+            background: #ffaa33;
+            border-radius: 50%;
+            box-shadow: 0 0 12px 3px rgba(255, 80, 40, 0.9);
+            animation: pulseLight 1.2s infinite alternate;
+            cursor: pointer;
+        }
+        .light:nth-child(odd) { background: #e30813; animation-duration: 0.9s; box-shadow: 0 0 15px 4px #ff4040; }
+        .light:nth-child(3n) { background: #2b6ef0; animation-duration: 1.5s; box-shadow: 0 0 10px 2px #5c9eff; }
+        .light:nth-child(5n+2) { background: #f7b32b; animation-duration: 1.1s; }
+
+        @keyframes pulseLight {
+            0% { opacity: 0.4; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* VHS оверлей */
+        .vhs-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: repeating-linear-gradient(0deg, rgba(0,0,0,0.2) 0px, rgba(0,0,0,0.2) 2px, transparent 2px, transparent 6px);
+            z-index: 30;
+            opacity: 0.25;
+        }
+
+        /* Боковые огни */
+        .side-lights {
+            position: fixed;
+            left: 10px;
+            top: 20%;
+            writing-mode: vertical-rl;
+            font-family: monospace;
+            color: #e30813;
+            font-size: 24px;
+            letter-spacing: 12px;
+            z-index: 25;
+            opacity: 0.5;
+        }
+        .side-lights.right {
+            left: auto;
+            right: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .glitch { font-size: 2rem; letter-spacing: 2px; }
+            .message { font-size: 1rem; padding: 15px; }
+            .button-80s { font-size: 0.7rem; padding: 8px 18px; }
+            .christmas-lights { gap: 8px; }
+            .light { width: 20px; height: 20px; }
+        }
+
+        .upside-down-text {
+            background: #000000aa;
+            font-style: italic;
+            border-radius: 8px;
+        }
+
+        .pulse-shadow {
+            animation: borderPulse 2s infinite ease-in-out;
+        }
+        @keyframes borderPulse {
+            0% { box-shadow: 0 0 10px rgba(227,8,19,0.4), inset 0 0 5px rgba(227,8,19,0.2); }
+            100% { box-shadow: 0 0 28px rgba(227,8,19,0.9), inset 0 0 15px rgba(227,8,19,0.5); }
+        }
+
+        /* СТРОГО ЦЕНТРИРОВАННОЕ ПРЕДУПРЕЖДЕНИЕ — ИДЕАЛЬНО ПО ЦЕНТРУ ЭКРАНА */
+        .centered-warning {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #0a0000ee;
+            backdrop-filter: blur(16px);
+            border: 4px solid #ff0000;
+            border-radius: 36px;
+            padding: 24px 32px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            color: #ff3333;
+            text-shadow: 0 0 8px darkred;
+            letter-spacing: 2px;
+            z-index: 300;
+            box-shadow: 0 0 60px rgba(255, 0, 0, 0.8);
+            white-space: nowrap;
+            animation: warningGlow 0.3s infinite alternate, glitchShake 0.15s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes warningGlow {
+            from { box-shadow: 0 0 20px rgba(255, 0, 0, 0.6); border-color: #ff4444; }
+            to { box-shadow: 0 0 60px rgba(255, 0, 0, 1); border-color: #ff0000; }
+        }
+
+        @media (max-width: 750px) {
+            .centered-warning {
+                font-size: 0.7rem;
+                padding: 16px 22px;
+                white-space: normal;
+                width: 90%;
+                text-align: center;
+                line-height: 1.5;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="snow-flakes" id="flakesContainer"></div>
+<div class="vhs-overlay"></div>
+<div class="side-lights">⦻ ⦻ ⦻</div>
+<div class="side-lights right">⦻ ⦻ ⦻</div>
+
+<div class="container pulse-shadow" id="mainCard">
+    <div class="glitch">
+        🎂 STRANGER THINGS 🎂
+    </div>
+    <div class="retro-tape">
+        <div style="text-align: center; font-family: 'Press Start 2P'; font-size: 0.7rem; color: #ff8866;">⚠️ ИЗНАНОЧНАЯ ЧАСТОТА ⚠️</div>
+    </div>
+
+    <div class="christmas-lights">
+        <div class="light"></div><div class="light"></div><div class="light"></div><div class="light"></div><div class="light"></div><div class="light"></div><div class="light"></div>
+    </div>
+
+    <div class="message" id="greetingMessage">
+        <p>🌀 <span class="highlight">Эй, АННА!</span> 🌀</p>
+        <p>Мы связались с тобой через <strong style="color:#e30813">Upside Down</strong> — параллельный мир, где время течёт иначе, но поздравления становятся легендарными.</p>
+        <p>Сегодня <span class="highlight">особенный день</span> — день, когда портал открылся именно для ТЕБЯ. Поздравляю с днём рождения! 🎮✨</p>
+        <p class="upside-down-text">🎁 Пусть твоя жизнь будет похожа на эпичный финал 4 сезона: с яркими победами, невероятной поддержкой друзей, тайнами, которые раскрываются только в твою пользу, и сиянием надежды даже в самой кромешной тьме.</p>
+        <p>📼 Помни: ты — главная героиня. Вокруг тебя — твоя «партия» (Party), которая готова сражаться с демогоргонами и искать проходы в безопасные миры. Сила в дружбе и вере в себя!</p>
+        <p>🔦 Зажигай огни, как Джойс Байерс — пусть каждый твой день освещают моменты счастья, Eggos и бесконечная музыка 80-х.</p>
+        <p>✨ <strong style="color:#ffbb88;">С днём рождения, Анна!</strong> Пусть твой личный «Хокинс» всегда будет под защитой, а изнанка сулит только удивительные приключения! ✨</p>
+    </div>
+
+    <div class="christmas-lights">
+        <div class="light"></div><div class="light"></div><div class="light"></div><div class="light"></div><div class="light"></div><div class="light"></div><div class="light"></div>
+    </div>
+
+    <button class="button-80s" id="sendWaveBtn">📡 ОТПРАВИТЬ СИГНАЛ 📡</button>
+    <div class="signature">
+        ~ Из глубин Изнанки с любовью<br>
+        <span style="font-size:0.9rem; letter-spacing: 2px;">🎈 Майк, Дастин, Лукас, Эл и Вилл 🎈</span>
+    </div>
+</div>
+
+<script>
+    // ----------------------------------------------
+    // ИНТЕРАКТИВНАЯ МАГИЯ "ОЧЕНЬ СТРАННЫХ ДЕЛ"
+    // Предупреждение появляется строго по центру экрана
+    // ----------------------------------------------
+
+    // Частицы как споры из Изнанки
+    function createFlakes() {
+        const container = document.getElementById('flakesContainer');
+        const flakeCount = 75;
+        for (let i = 0; i < flakeCount; i++) {
+            const flake = document.createElement('div');
+            flake.classList.add('flake');
+            const size = Math.random() * 15 + 8;
+            flake.style.fontSize = size + 'px';
+            flake.style.left = Math.random() * 100 + '%';
+            flake.style.animationDuration = Math.random() * 5 + 4 + 's';
+            flake.style.animationDelay = Math.random() * 10 + 's';
+            const symbols = ['⬤', '◉', '⦻', '✦', '✧', '⌬', '⚡', '◈', '⨀'];
+            flake.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+            flake.style.color = `rgba(${200 + Math.random() * 55}, ${30 + Math.random() * 40}, ${50 + Math.random() * 60}, ${0.3 + Math.random() * 0.5})`;
+            flake.style.textShadow = `0 0 6px crimson`;
+            container.appendChild(flake);
+        }
+    }
+
+    // Функция для отображения предупреждения строго по центру
+    function showCenteredWarning(message, duration = 4500) {
+        // Удаляем предыдущее предупреждение, если оно есть
+        const existingWarning = document.querySelector('.centered-warning');
+        if (existingWarning) existingWarning.remove();
+        
+        const warningDiv = document.createElement('div');
+        warningDiv.className = 'centered-warning';
+        warningDiv.innerText = message;
+        document.body.appendChild(warningDiv);
+        
+        // Принудительно проверяем позиционирование (перестраховка)
+        warningDiv.style.position = 'fixed';
+        warningDiv.style.top = '50%';
+        warningDiv.style.left = '50%';
+        warningDiv.style.transform = 'translate(-50%, -50%)';
+        
+        // Анимация исчезновения
+        setTimeout(() => {
+            if (warningDiv) {
+                warningDiv.style.transition = 'opacity 0.8s ease-out, transform 0.5s';
+                warningDiv.style.opacity = '0';
+                warningDiv.style.transform = 'translate(-50%, -50%) scale(0.8)';
+                setTimeout(() => {
+                    if (warningDiv && warningDiv.remove) warningDiv.remove();
+                }, 800);
+            }
+        }, duration);
+    }
+
+    // Эффект "радиоволны" и пульсация лампочек с центрированным криповым предупреждением
+    function setupInteractivity() {
+        const btn = document.getElementById('sendWaveBtn');
+        const lights = document.querySelectorAll('.light');
+
+        // Основное действие по кнопке — строго центрированное предупреждение!
+        btn.addEventListener('click', () => {
+            btn.innerText = "📡 ПЕРЕДАЧА... 📡";
+            btn.disabled = true;
+
+            // Тревожная пульсация лампочек
+            lights.forEach(light => {
+                light.style.animation = 'none';
+                light.style.opacity = '1';
+                setTimeout(() => { light.style.animation = ''; }, 10);
+                light.style.animationDuration = '0.15s';
+                setTimeout(() => { light.style.animationDuration = ''; }, 700);
+            });
+
+            // Глитч заголовка
+            const glitchTitle = document.querySelector('.glitch');
+            glitchTitle.style.transform = 'skew(3deg, 1deg)';
+            setTimeout(() => glitchTitle.style.transform = '', 300);
+            
+            // Эффект мигания рамки контейнера
+            const containerCard = document.getElementById('mainCard');
+            containerCard.style.transition = 'all 0.05s linear';
+            let blinkCount = 0;
+            const blinkInterval = setInterval(() => {
+                if (blinkCount >= 10) {
+                    clearInterval(blinkInterval);
+                    containerCard.style.borderColor = '#e30813';
+                    containerCard.style.boxShadow = '0 0 25px rgba(227,8,19,0.6)';
+                    return;
+                }
+                containerCard.style.borderColor = blinkCount % 2 === 0 ? '#ff8888' : '#4a0000';
+                containerCard.style.boxShadow = blinkCount % 2 === 0 ? '0 0 35px crimson' : '0 0 5px darkred';
+                blinkCount++;
+            }, 100);
+            setTimeout(() => {
+                containerCard.style.borderColor = '#e30813';
+                containerCard.style.transition = '';
+            }, 1000);
+
+            // Через небольшую задержку показываем ЦЕНТРИРОВАННОЕ предупреждение
+            setTimeout(() => {
+                // ГЛАВНОЕ ЦЕНТРИРОВАННОЕ СООБЩЕНИЕ — ТОЧНО ПО ЦЕНТРУ
+                showCenteredWarning("⚠️ ПРЕДУПРЕЖДЕНИЕ! ДЕМОГОРГОНЫ УЖЕ РЯДОМ! СРОЧНО ПРОВЕРЬ ХОЛОДИЛЬНИК! ⚠️", 4800);
+                
+                btn.innerText = "📡 ОТПРАВИТЬ СИГНАЛ 📡";
+                btn.disabled = false;
+
+                // Дополнительное сообщение внизу (не мешает центру)
+                const extraMsg = document.createElement('div');
+                extraMsg.style.position = 'fixed';
+                extraMsg.style.bottom = '20px';
+                extraMsg.style.left = '20px';
+                extraMsg.style.background = '#0a0000cc';
+                extraMsg.style.border = '2px solid #e30813';
+                extraMsg.style.padding = '8px 14px';
+                extraMsg.style.fontSize = '0.7rem';
+                extraMsg.style.fontFamily = "'Special Elite'";
+                extraMsg.style.color = '#ffaaaa';
+                extraMsg.style.zIndex = '99';
+                extraMsg.style.borderRadius = '20px';
+                extraMsg.style.backdropFilter = 'blur(5px)';
+                extraMsg.innerHTML = '📻 <strong style="color:#ff6666;">[ЧАСТОТА 11.80 МГц]</strong> ВНИМАНИЕ! Демогоргоны активировались! Срочно заберите вафли из холодильника, пока не поздно! 🧇👾📻';
+                document.body.appendChild(extraMsg);
+                setTimeout(() => {
+                    extraMsg.style.opacity = '0';
+                    extraMsg.style.transition = 'opacity 1.2s';
+                    setTimeout(() => extraMsg.remove(), 1300);
+                }, 5500);
+                
+                // Верхний плавающий знак (не перекрывает центр)
+                const warningSign = document.createElement('div');
+                warningSign.innerText = '👾🔊 ДЕМОГОРГОНЫ ЗДЕСЬ... ПРОВЕРЬ ХОЛОДИЛЬНИК! 🔊👾';
+                warningSign.style.position = 'fixed';
+                warningSign.style.top = '12%';
+                warningSign.style.left = '50%';
+                warningSign.style.transform = 'translateX(-50%)';
+                warningSign.style.backgroundColor = '#000000aa';
+                warningSign.style.border = '3px double red';
+                warningSign.style.color = '#ff7777';
+                warningSign.style.fontFamily = "'Press Start 2P'";
+                warningSign.style.fontSize = '0.7rem';
+                warningSign.style.padding = '8px 18px';
+                warningSign.style.whiteSpace = 'nowrap';
+                warningSign.style.zIndex = '180';
+                warningSign.style.borderRadius = '20px';
+                warningSign.style.textAlign = 'center';
+                warningSign.style.letterSpacing = '2px';
+                warningSign.style.backdropFilter = 'blur(8px)';
+                document.body.appendChild(warningSign);
+                setTimeout(() => {
+                    warningSign.style.opacity = '0';
+                    warningSign.style.transition = 'opacity 0.8s';
+                    setTimeout(() => warningSign.remove(), 1000);
+                }, 3800);
+            }, 400);
+        });
+
+        // Пасхалки по клику на лампочки
+        const phrases = ["DEMOGORGON!", "ПРОВЕРЬ ХОЛОДИЛЬНИК!", "UPSIDE DOWN", "WILL", "HOPPER", "EGGOS", "🧇 ВАФЛИ В ОПАСНОСТИ 🧇", "АННА ★", "👾 ДЕМОГОРГОН 👾"];
+        lights.forEach((light, idx) => {
+            light.addEventListener('click', (e) => {
+                e.stopPropagation();
+                light.style.transform = 'scale(1.6)';
+                light.style.backgroundColor = '#ffffff';
+                light.style.boxShadow = '0 0 25px yellow';
+                setTimeout(() => {
+                    light.style.transform = '';
+                    light.style.backgroundColor = '';
+                    light.style.boxShadow = '';
+                }, 250);
+                const msgText = phrases[idx % phrases.length];
+                const miniMsg = document.createElement('div');
+                miniMsg.innerText = msgText;
+                miniMsg.style.position = 'fixed';
+                miniMsg.style.bottom = '35%';
+                miniMsg.style.right = '15%';
+                miniMsg.style.backgroundColor = '#111';
+                miniMsg.style.border = '1px solid crimson';
+                miniMsg.style.padding = '6px 12px';
+                miniMsg.style.fontFamily = "'Press Start 2P'";
+                miniMsg.style.fontSize = '0.6rem';
+                miniMsg.style.color = '#ffaa66';
+                miniMsg.style.zIndex = '200';
+                miniMsg.style.borderRadius = '12px';
+                miniMsg.style.whiteSpace = 'nowrap';
+                document.body.appendChild(miniMsg);
+                setTimeout(() => miniMsg.remove(), 1300);
+            });
+        });
+    }
+
+    // Шумовая накладка (телевизионные помехи)
+    function addStaticNoiseEffect() {
+        const noiseDiv = document.createElement('div');
+        noiseDiv.style.position = 'fixed';
+        noiseDiv.style.top = '0';
+        noiseDiv.style.left = '0';
+        noiseDiv.style.width = '100%';
+        noiseDiv.style.height = '100%';
+        noiseDiv.style.pointerEvents = 'none';
+        noiseDiv.style.zIndex = '40';
+        noiseDiv.style.opacity = '0.06';
+        noiseDiv.style.background = 'url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjgiIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiLz48L3N2Zz4=)';
+        noiseDiv.style.backgroundRepeat = 'repeat';
+        document.body.appendChild(noiseDiv);
+    }
+
+    // Пасхалка с демогоргоном по двойному клику на текст
+    function easterEgg() {
+        const msgBox = document.querySelector('.message');
+        msgBox.addEventListener('dblclick', () => {
+            const demoDiv = document.createElement('div');
+            demoDiv.style.position = 'absolute';
+            demoDiv.style.bottom = '30%';
+            demoDiv.style.right = '5%';
+            demoDiv.style.fontSize = '3rem';
+            demoDiv.style.zIndex = '200';
+            demoDiv.innerText = '👾 DEMOGORGON 👾';
+            demoDiv.style.fontFamily = 'Anton';
+            demoDiv.style.color = '#a01c2c';
+            demoDiv.style.textShadow = '2px 2px 0 black';
+            demoDiv.style.background = 'rgba(0,0,0,0.7)';
+            demoDiv.style.padding = '8px 18px';
+            demoDiv.style.borderRadius = '30px';
+            demoDiv.style.border = '2px solid red';
+            demoDiv.style.transform = 'rotate(-5deg)';
+            document.body.appendChild(demoDiv);
+            setTimeout(() => demoDiv.remove(), 1800);
+            const containerBorder = document.getElementById('mainCard');
+            containerBorder.style.transform = 'translateX(4px)';
+            setTimeout(() => containerBorder.style.transform = '', 120);
+        });
+    }
+
+    // Пульсация рамки как "открытие портала"
+    function initPortalPulse() {
+        const card = document.getElementById('mainCard');
+        setInterval(() => {
+            const intensity = Math.random() * 8 + 5;
+            card.style.boxShadow = `0 0 ${intensity}px rgba(227,8,19,0.7), inset 0 0 10px rgba(255,0,0,0.4)`;
+            setTimeout(() => {
+                card.style.boxShadow = '0 0 25px rgba(227, 8, 19, 0.6), inset 0 0 15px rgba(227, 8, 19, 0.3)';
+            }, 150);
+        }, 2800);
+    }
+
+    // Случайный глитч на заголовке
+    function randomGlitchEffect() {
+        setInterval(() => {
+            if (Math.random() > 0.85) {
+                const glitchEl = document.querySelector('.glitch');
+                if (glitchEl) {
+                    glitchEl.style.letterSpacing = '8px';
+                    glitchEl.style.filter = 'blur(1px)';
+                    setTimeout(() => {
+                        glitchEl.style.letterSpacing = '5px';
+                        glitchEl.style.filter = 'blur(0px)';
+                    }, 120);
+                }
+            }
+        }, 4000);
+    }
+
+    // Запуск всей магии
+    window.addEventListener('DOMContentLoaded', () => {
+        createFlakes();
+        setupInteractivity();
+        addStaticNoiseEffect();
+        easterEgg();
+        initPortalPulse();
+        randomGlitchEffect();
+        console.log('⚡ Поздравление для Анны загружено. Предупреждение теперь строго по ЦЕНТРУ! ⚡');
+    });
+</script>
+</body>
+</html>
